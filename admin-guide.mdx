@@ -1,0 +1,406 @@
+---
+title: Admin User Guide
+description: Install, configure, and use the eBook Product Assistant plugin to generate AI-powered WooCommerce product drafts from PDF eBooks.
+---
+
+## Overview
+
+eBook Product Assistant turns uploaded PDF eBooks into WooCommerce draft products. It extracts text from each PDF on your server, sends a truncated portion to your configured AI provider for analysis, compares the result against your existing catalog, and prepares product copy, pricing suggestions, and category recommendations for review before anything is created.
+
+You use the plugin from **WooCommerce → eBook Assistant** when WooCommerce is active. If WooCommerce is inactive, the page appears under **Tools → eBook Assistant** instead.
+
+## Prerequisites
+
+<Callout kind="info">
+
+Before you install the plugin, confirm that your environment includes:
+
+- **WordPress 6.0 or later**
+- **WooCommerce active**
+- **PHP 7.4 or later** with the `iconv`, `zlib`, and `mbstring` extensions
+- **An AI provider API key** for OpenAI, Claude, or OpenRouter
+
+</Callout>
+
+## Installation
+
+Install the plugin on your WordPress site, then open the admin screen to finish setup.
+
+<Steps>
+  <Step title="Copy the plugin files" icon="folder" title-type="p">
+
+Place the plugin in your WordPress plugins directory:
+
+```bash
+cp -R ebook-product-assistant /var/www/html/wp-content/plugins/ebook-product-assistant
+```
+
+If you deploy manually, confirm the final path is `wp-content/plugins/ebook-product-assistant/`.
+
+  </Step>
+
+  <Step title="Install PHP dependencies" icon="terminal" title-type="p">
+
+Run Composer in the plugin directory:
+
+```bash
+cd /var/www/html/wp-content/plugins/ebook-product-assistant
+composer install --no-dev
+```
+
+When the command finishes, the plugin directory includes the Composer-managed dependencies required for PDF parsing.
+
+  </Step>
+
+  <Step title="Activate the plugin in WordPress" icon="check-circle" title-type="p">
+
+Open **Plugins** in WordPress admin and activate **eBook Product Assistant**.
+
+If activation succeeds, WordPress returns you to the Plugins screen without a fatal error or missing dependency notice.
+
+  </Step>
+
+  <Step title="Open the assistant page" icon="arrow-right" title-type="p">
+
+Go to **WooCommerce → eBook Assistant**.
+
+If WooCommerce is inactive, go to **Tools → eBook Assistant** instead. You should see tabs for **Single PDF** and **Batch processing**.
+
+  </Step>
+</Steps>
+
+## Configuration
+
+The plugin stores its settings in the WordPress options table under `ebook_assistant_settings`. Most administrators only need to configure the AI provider once, then adjust defaults and batch limits to match their catalog workflow.
+
+<Callout kind="tip">
+
+If you leave the **API key** field blank when saving settings, the plugin keeps the existing stored key.
+
+</Callout>
+
+### AI settings
+
+Configure the AI provider before you generate your first draft.
+
+<ParamField body="provider" param-type="string" required="true" show-location="false" enum="openai,claude,openrouter">
+Select which AI service the plugin uses for PDF analysis and draft generation.
+</ParamField>
+
+<ParamField body="api_key" param-type="string" required="true" show-location="false">
+Enter the API key for the selected provider. The plugin uses this key for analysis requests and for the connection test.
+</ParamField>
+
+<ParamField body="model" param-type="string" required="true" show-location="false">
+Choose the model to send analysis requests to. Use a model that your account can access through the selected provider.
+</ParamField>
+
+<ParamField body="max_pdf_characters" param-type="integer" required="false" show-location="false">
+Set how much extracted PDF text the plugin can send for AI analysis. Lower values reduce token usage and cost. Higher values give the model more source material.
+</ParamField>
+
+<ParamField body="max_upload_size" param-type="integer" required="false" show-location="false">
+Limit the maximum PDF size accepted by the plugin. Use this to block unusually large uploads before processing starts.
+</ParamField>
+
+<ParamField body="debug_logging" param-type="boolean" required="false" show-location="false">
+Enable diagnostic logging for troubleshooting. Use this only when needed, especially on production sites.
+</ParamField>
+
+After you save these settings, use **Test Connection** to verify that the provider, API key, and model work together. A successful test confirms that the plugin can authenticate before you upload any PDFs.
+
+### Product defaults
+
+Use product defaults to control how newly created WooCommerce drafts behave.
+
+<ParamField body="downloadable_by_default" param-type="boolean" required="false" show-location="false">
+Set whether generated draft products should be marked as downloadable by default. This saves time if you primarily sell digital eBooks.
+</ParamField>
+
+### Batch limits
+
+Batch limits help you control cost, file volume, and queue size during larger imports.
+
+<ParamField body="max_batch_files" param-type="integer" required="false" show-location="false">
+Limit how many PDFs a single batch can include.
+</ParamField>
+
+<ParamField body="max_batch_total_size" param-type="integer" required="false" show-location="false">
+Limit the combined size of all PDFs in a batch.
+</ParamField>
+
+<ParamField body="max_estimated_ai_cost" param-type="number" required="false" show-location="false">
+Set the highest estimated AI cost allowed before processing starts.
+</ParamField>
+
+<ParamField body="cost_per_1m_tokens" param-type="number" required="false" show-location="false">
+Define the token cost used for batch cost estimation. Keep this aligned with your provider pricing so estimates stay useful.
+</ParamField>
+
+## Single PDF analysis
+
+Use the **Single PDF** tab when you want to review one title closely before creating the draft. This is the best option when you are tuning prompts, checking pricing suggestions, or handling higher-value products.
+
+<Steps>
+  <Step title="Upload a PDF and add optional targeting notes" icon="upload" title-type="p">
+
+Choose a single PDF file, then add any targeting notes that should shape the generated copy. Use notes for audience, tone, positioning, or pricing context.
+
+After upload, the file is ready for analysis from the same screen.
+
+  </Step>
+
+  <Step title="Generate the draft" icon="play-circle" title-type="p">
+
+Click **Generate Product Draft**.
+
+The plugin extracts text locally, sends the configured portion to your AI provider, analyzes similar WooCommerce products, and returns a full review screen. When processing completes, you see extraction details and generated content on the page.
+
+  </Step>
+
+  <Step title="Review the analysis output" icon="book-open" title-type="p">
+
+Check the generated results before you create anything in WooCommerce. The review area includes:
+
+- PDF extraction information
+- A summary of the source content
+- Store pricing context
+- Similar products from your catalog
+- A price suggestion
+- Category suggestions
+- An AI-generated product draft
+
+Use this stage to catch weak extraction, poor matches, or pricing that does not fit your store.
+
+  </Step>
+
+  <Step title="Edit the draft fields" icon="edit" title-type="p">
+
+Update any generated field before saving the draft. You can edit:
+
+- Title
+- Short description
+- Long description
+- Price
+- Categories
+- Tags
+
+When the draft matches your catalog style and merchandising rules, move on to file handling.
+
+  </Step>
+
+  <Step title="Choose PDF attachment options" icon="settings" title-type="p">
+
+Decide how the source PDF should be attached to the WooCommerce product. The plugin stores source files privately and copies download files into WooCommerce's protected downloads location when needed.
+
+Review this choice carefully if your team separates source uploads from customer download files.
+
+  </Step>
+
+  <Step title="Create the WooCommerce draft" icon="check-circle" title-type="p">
+
+Click **Create WooCommerce Draft**.
+
+The plugin creates the product in **Draft** status only. If the action succeeds, the new draft appears in WooCommerce Products and remains unpublished until your team reviews and publishes it.
+
+  </Step>
+</Steps>
+
+## Batch processing
+
+Use **Batch processing** when you need to work through multiple PDFs in one queue. The plugin validates file count and total size up front, estimates cost before processing, and works through the batch one file at a time.
+
+<Steps>
+  <Step title="Drag and drop multiple PDFs" icon="upload" title-type="p">
+
+Open the **Batch processing** tab and add your files to the drop zone.
+
+The plugin validates the upload against your batch limits before analysis starts.
+
+  </Step>
+
+  <Step title="Review cost estimates and duplicate detection" icon="bar-chart" title-type="p">
+
+Check the estimated AI cost and look for any duplicate warnings based on file hash and filename checks.
+
+If the estimate exceeds your configured threshold, reduce the batch or adjust your limits before continuing.
+
+  </Step>
+
+  <Step title="Start processing the batch" icon="play-circle" title-type="p">
+
+Click **Process** to begin analysis.
+
+The plugin processes files incrementally, one at a time. This keeps the queue manageable and reduces the chance of long-running requests failing all at once.
+
+  </Step>
+
+  <Step title="Monitor progress" icon="monitor" title-type="p">
+
+Watch the queue status as each PDF moves through analysis.
+
+If you leave the page, **WP-Cron** can continue processing in the background. That behavior helps long batches finish without keeping the browser open.
+
+  </Step>
+
+  <Step title="Review the completed results table" icon="database" title-type="p">
+
+After processing finishes, inspect the review table for generated titles, prices, and confidence levels.
+
+Use the confidence signals to prioritize manual review before product creation, especially for books with weak extraction quality or unusual metadata.
+
+  </Step>
+
+  <Step title="Create all drafts" icon="check-circle" title-type="p">
+
+Click **Create All Drafts** when the results look correct.
+
+The plugin creates WooCommerce products as drafts, not published products. Your team can then review, enrich, and publish them through the normal WooCommerce workflow.
+
+  </Step>
+</Steps>
+
+## REST API reference
+
+The plugin exposes WordPress REST API endpoints under the `ebook-assistant/v1` namespace. These routes support the admin interface and can also support custom integrations.
+
+All endpoints require:
+
+- The `X-WP-Nonce` header
+- The `manage_woocommerce` capability by default
+
+| Endpoint | Method | Purpose |
+| --- | --- | --- |
+| `/analyze-pdf` | `POST` | Upload a PDF and return AI analysis plus a generated product draft |
+| `/create-draft` | `POST` | Create a WooCommerce draft product from reviewed data |
+| `/test-ai-connection` | `POST` | Verify provider credentials and model access |
+| `/batch-analyze` | `POST` | Upload multiple PDFs, validate limits, estimate cost, and create a batch |
+| `/batch-process/{batch_id}` | `POST` | Process the next queued file in a batch |
+| `/batch-status/{batch_id}` | `GET` | Return current batch progress and status |
+| `/bulk-create-drafts` | `POST` | Create WooCommerce drafts from completed batch results |
+
+### Example request
+
+<Request tabs="cURL" show-lines="true">
+```bash
+curl -X POST "https://store.acmebooks.com/wp-json/ebook-assistant/v1/test-ai-connection" \
+  -H "X-WP-Nonce: 4f6d8a2c11" \
+  -H "Content-Type: application/json" \
+  -b "wordpress_logged_in=admin_session_cookie" \
+  --data '{
+    "provider": "openai",
+    "api_key": "sk-example-9xmk7q2r",
+    "model": "gpt-4o-mini"
+  }'
+```
+</Request>
+
+<Response tabs="200,403" show-lines="false">
+```json
+{
+  "success": true,
+  "message": "Connection verified."
+}
+```
+
+```json
+{
+  "code": "rest_forbidden",
+  "message": "Sorry, you are not allowed to do that.",
+  "data": {
+    "status": 403
+  }
+}
+```
+</Response>
+
+## Security and privacy
+
+The plugin is designed to keep generation reviewable and restrict direct access to uploaded source files.
+
+- **API keys** are stored in `wp_options`.
+- **Debug logs** redact API keys, bearer tokens, nonces, file tokens, and long text content.
+- **PDF processing** happens locally on your server, and only truncated text is sent to the AI provider.
+- **Product creation** always uses WooCommerce draft status.
+- **Source PDFs** are stored in private uploads with cryptographically secure opaque tokens generated via `random_bytes()`.
+- **Downloadable files** are copied into WooCommerce protected uploads for customer delivery.
+- **Batch ownership** is enforced on all batch endpoints — only the user who created a batch can process, view status, or create drafts from it. Non-owners receive a 404 response.
+- **Token injection prevention** — bulk draft creation uses only the token stored with the batch record, ignoring any user-supplied `source_file_token` overrides.
+- **Batch locking** uses atomic `add_option`/`delete_option` operations to prevent race conditions during concurrent processing.
+
+## Developer hooks
+
+Use WordPress filters to adapt permissions, timeouts, and batch estimate output.
+
+<CodeGroup tabs="Capability filter,Timeout filter,Cost estimate filter">
+```php
+add_filter( 'ebook_assistant_required_capability', fn() => 'manage_options' );
+```
+
+```php
+add_filter( 'ebook_assistant_ai_timeout', fn() => 90 );
+```
+
+```php
+add_filter( 'ebook_assistant_batch_cost_estimate', function ( $estimate, $files, $settings ) {
+    return $estimate;
+}, 10, 3 );
+```
+</CodeGroup>
+
+### Hook details
+
+<ParamField body="ebook_assistant_required_capability" param-type="filter" show-location="false">
+Change the capability required to access protected plugin actions. The default capability is `manage_woocommerce`. The plugin validates that the returned value is either `manage_woocommerce` or `manage_options` — arbitrary capabilities are rejected.
+</ParamField>
+
+<ParamField body="ebook_assistant_ai_timeout" param-type="filter" show-location="false">
+Adjust the AI request timeout in seconds. The default timeout is `120`.
+</ParamField>
+
+<ParamField body="ebook_assistant_batch_cost_estimate" param-type="filter" show-location="false">
+Modify the batch cost estimate output before the admin UI displays it.
+</ParamField>
+
+## Uninstall behavior
+
+When you uninstall the plugin, WordPress performs a comprehensive cleanup:
+
+- Removes the `ebook_assistant_settings` option
+- Removes all `ebook_assistant_batch_*` options (batch records)
+- Removes the `ebook_assistant_processed_hashes` option
+- Recursively deletes the `ebook-assistant/private/` upload directory (source PDFs)
+- Recursively deletes the `ebook-assistant/batch/` upload directory (batch staging files)
+
+The uninstall routine does **not** remove WooCommerce download copies (stored in `woocommerce_uploads`) or draft products created by the plugin. Plan cleanup separately if your site has retention or storage policies for those assets.
+
+## Troubleshooting
+
+<Callout kind="alert">
+
+Common issues to check first:
+
+- **Missing `vendor/autoload.php`** — Run `composer install --no-dev` in the plugin directory.
+- **WooCommerce not active** — Activate WooCommerce, or look for the assistant under **Tools** until WooCommerce is enabled.
+- **AI connection failures** — Verify the selected provider, API key, and model, then run **Test Connection** again.
+- **Missing PHP extension** — Confirm that `iconv`, `zlib`, and `mbstring` are installed and enabled.
+
+</Callout>
+
+## Next steps
+
+<Columns cols={2}>
+  <Card
+    title="Run your first analysis"
+    href="/quickstart"
+    icon="rocket"
+    cta="Open quickstart"
+  />
+  <Card
+    title="Review WordPress hooks"
+    href="https://developer.wordpress.org/plugins/hooks/"
+    icon="code"
+    cta="Read hook docs"
+    target="_blank"
+  />
+</Columns>

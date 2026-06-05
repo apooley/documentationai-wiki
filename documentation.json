@@ -29,6 +29,11 @@
                 "icon": "zap"
               },
               {
+                "title": "Admin Guide",
+                "path": "admin-guide",
+                "icon": "shield"
+              },
+              {
                 "title": "Components",
                 "path": "components",
                 "icon": "code"
