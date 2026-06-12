@@ -3,36 +3,38 @@ title: Security & Privacy
 description: Security measures, data handling practices, and privacy considerations for the eBook Product Assistant plugin.
 ---
 
-## Security and privacy
+## Security and Privacy Overview
 
-The plugin is designed to keep generation reviewable and restrict direct access to uploaded source files.
+The eBook Product Assistant is designed to protect your intellectual property, secure your API credentials, and keep the product generation process entirely reviewable. 
 
 ## Security Measures
 
-- **API keys** are stored in `wp_options`.
-- **Debug logs** redact API keys, bearer tokens, nonces, file tokens, and long text content.
-- **PDF processing** happens locally on your server, and only truncated text is sent to the AI provider.
-- **Product creation** always uses WooCommerce draft status.
-- **Source PDFs** are stored in private uploads with cryptographically secure opaque tokens generated via `random_bytes()`.
-- **Downloadable files** are copied into WooCommerce protected uploads for customer delivery.
-- **Batch ownership** is enforced on all batch endpoints — only the user who created a batch can process, view status, or create drafts from it. Non-owners receive a 404 response.
-- **Token injection prevention** — bulk draft creation uses only the token stored with the batch record, ignoring any user-supplied `source_file_token` overrides.
-- **Batch locking** uses atomic `add_option`/`delete_option` operations to prevent race conditions during concurrent processing.
+- **Secure API Key Storage**: API keys are stored securely in the WordPress `wp_options` table.
+- **Local PDF Processing**: PDF text extraction happens locally on your server. **No full PDFs ever leave your server.** Only truncated text is sent to the AI provider for summarization.
+- **Reviewable Generation**: The plugin never publishes products automatically. Every product is created with the WooCommerce **Draft** status, ensuring human review before anything goes live.
+- **Protected File Storage**: Source PDFs are stored in private, protected upload directories. The plugin generates cryptographically secure, opaque tokens via `random_bytes()` to reference these files, preventing direct URL access or enumeration.
+- **Downloadable File Security**: When a PDF is attached to a draft, it is copied into the standard WooCommerce protected uploads directory, relying on WooCommerce's robust delivery security.
+- **Batch Ownership Enforcement**: All batch endpoints enforce ownership. Only the user account that created a batch can process it, view its status, or create drafts from it. Other administrators receive a 404 response if they attempt to access it.
+- **Token Injection Prevention**: During bulk draft creation, the plugin uses only the secure token stored internally with the batch record, actively ignoring any user-supplied `source_file_token` overrides to prevent file spoofing.
+- **Concurrency Locks**: Batch processing utilizes atomic `add_option`/`delete_option` locks to prevent race conditions when files are processed concurrently by WP-Cron or Action Scheduler.
+- **Safe Logging**: If debug logging is enabled, the plugin automatically redacts API keys, bearer tokens, nonces, file tokens, and long text content from the logs.
 
 ## Data Flow
 
-<Callout kind="info">
-
-PDF text is extracted locally on the server, truncated to the configured character limit, then sent to the AI provider. No full PDFs leave the server.
-
-</Callout>
+1. You upload a PDF via the WordPress admin interface.
+2. The plugin saves the PDF to a protected temporary directory.
+3. The plugin extracts the text locally using PHP libraries.
+4. The extracted text is truncated to your configured limit (e.g., 25,000 characters).
+5. The truncated text is sent to your chosen AI provider (OpenAI, Claude, or OpenRouter) via a secure HTTPS API call.
+6. The AI provider returns a JSON response containing the summary and draft suggestions.
+7. The plugin stores the source PDF in a private directory with an opaque token.
+8. The plugin presents the draft data for your review.
 
 ## Recommendations
 
 <Callout kind="alert">
-
-- Rotate API keys periodically.
-- Disable `debug_logging` in production.
-- Review batch ownership if multiple admins use the plugin.
-
+To maintain optimal security:
+- **Rotate API keys periodically** within your provider's dashboard.
+- **Disable debug logging** in production environments unless actively troubleshooting an issue.
+- **Review batch ownership** policies if multiple administrators are responsible for processing PDFs on your site.
 </Callout>

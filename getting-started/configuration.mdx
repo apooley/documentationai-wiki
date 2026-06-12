@@ -1,72 +1,58 @@
 ---
 title: Configuration
-description: Configure AI provider settings, product defaults, and batch processing limits for the eBook Product Assistant plugin.
+description: Configure AI providers, context limits, and batch settings for the eBook Product Assistant.
 ---
 
-## Configuration
+## Accessing Settings
 
-The plugin stores its settings in the WordPress options table under `ebook_assistant_settings`. Most administrators only need to configure the AI provider once, then adjust defaults and batch limits to match their catalog workflow.
+To configure the plugin, navigate to **WooCommerce > eBook Assistant** and click on the **Settings** tab.
 
-<Callout kind="tip">
+## AI Configuration
 
-If you leave the **API key** field blank when saving settings, the plugin keeps the existing stored key.
+The plugin relies on an external AI provider to summarize the extracted PDF text and generate product drafts. You must configure these settings before processing any files.
 
+| Setting | Description |
+| :--- | :--- |
+| **AI provider** | Choose between OpenAI (default), Claude (Anthropic), or OpenRouter. |
+| **API key** | Enter the API key for your chosen provider. This is stored securely in your WordPress database. |
+| **Model name** | Specify the exact model ID to use (e.g., `gpt-4o`, `claude-3-5-sonnet-20241022`, or `anthropic/claude-3.5-sonnet`). |
+| **Max PDF characters for AI** | Limits the amount of text sent to the AI model (default 25,000, max 50,000). This helps control API costs and prevents exceeding token limits. |
+| **Max PDF upload size (MB)** | Limits the file size for PDF uploads (default 32 MB, max 100 MB). |
+| **Debug logging** | When enabled, logs plugin lifecycle events to the PHP error log. API keys and full PDF text are never logged. |
+
+<Callout kind="info">
+After entering your API key and model name, click **Save settings**, then click the **Test AI Connection** button to verify that the plugin can successfully communicate with your provider.
 </Callout>
 
-## AI settings
+## Product Defaults
 
-Configure the AI provider before you generate your first draft.
+These settings control the default state of checkboxes on the product review form.
 
-<ParamField body="provider" param-type="string" required="true" show-location="false" enum="openai,claude,openrouter">
-Select which AI service the plugin uses for PDF analysis and draft generation.
-</ParamField>
+| Setting | Description |
+| :--- | :--- |
+| **Downloadable by default** | When enabled, the "Attach PDF as downloadable file" and "Make product downloadable" options are pre-checked on the review screen after a PDF is analyzed. |
 
-<ParamField body="api_key" param-type="string" required="true" show-location="false">
-Enter the API key for the selected provider. The plugin uses this key for analysis requests and for the connection test.
-</ParamField>
+## Store Context for AI
 
-<ParamField body="model" param-type="string" required="true" show-location="false">
-Choose the model to send analysis requests to. Use a model that your account can access through the selected provider.
-</ParamField>
+To provide accurate suggestions for pricing, categories, and tags, the plugin loads a sample of your existing WooCommerce catalog into the AI prompt. 
 
-<ParamField body="max_pdf_characters" param-type="integer" required="false" show-location="false">
-Set how much extracted PDF text the plugin can send for AI analysis. Lower values reduce token usage and cost. Higher values give the model more source material.
-</ParamField>
+| Setting | Description |
+| :--- | :--- |
+| **Products loaded for AI** | Maximum published simple products to sample (default 50, max 200). When categories match the PDF, products are loaded from those categories only; otherwise, recent store-wide products are used. |
+| **Categories loaded for AI** | Maximum product categories to load (default 100, max 500). Categories beyond this limit are omitted from AI prompts and the review form picker. |
+| **Tags loaded for AI** | Maximum product tags to load (default 50, max 200). Tags beyond this limit are omitted from AI suggestions. |
 
-<ParamField body="max_upload_size" param-type="integer" required="false" show-location="false">
-Limit the maximum PDF size accepted by the plugin. Use this to block unusually large uploads before processing starts.
-</ParamField>
+<Callout kind="warning">
+Higher limits improve AI suggestions but increase the prompt size and API costs. If your store exceeds these limits, a warning notice will appear at the top of the settings page.
+</Callout>
 
-<ParamField body="debug_logging" param-type="boolean" required="false" show-location="false">
-Enable diagnostic logging for troubleshooting. Use this only when needed, especially on production sites.
-</ParamField>
+## Batch Limits
 
-After you save these settings, use **Test Connection** to verify that the provider, API key, and model work together. A successful test confirms that the plugin can authenticate before you upload any PDFs.
+These settings enforce safety rails when processing multiple PDFs simultaneously.
 
-## Product defaults
-
-Use product defaults to control how newly created WooCommerce drafts behave.
-
-<ParamField body="downloadable_by_default" param-type="boolean" required="false" show-location="false">
-Set whether generated draft products should be marked as downloadable by default. This saves time if you primarily sell digital eBooks.
-</ParamField>
-
-## Batch limits
-
-Batch limits help you control cost, file volume, and queue size during larger imports.
-
-<ParamField body="max_batch_files" param-type="integer" required="false" show-location="false">
-Limit how many PDFs a single batch can include.
-</ParamField>
-
-<ParamField body="max_batch_total_size" param-type="integer" required="false" show-location="false">
-Limit the combined size of all PDFs in a batch.
-</ParamField>
-
-<ParamField body="max_estimated_ai_cost" param-type="number" required="false" show-location="false">
-Set the highest estimated AI cost allowed before processing starts.
-</ParamField>
-
-<ParamField body="cost_per_1m_tokens" param-type="number" required="false" show-location="false">
-Define the token cost used for batch cost estimation. Keep this aligned with your provider pricing so estimates stay useful.
-</ParamField>
+| Setting | Description |
+| :--- | :--- |
+| **Max batch files** | Maximum number of PDFs allowed in a single batch upload (default 25, max 100). |
+| **Max batch total size (MB)** | Maximum combined file size for a batch upload (default 250 MB, max 1000 MB). |
+| **Max estimated AI cost (USD)** | If the estimated API cost for a batch exceeds this amount, the plugin requires explicit confirmation before processing begins (default $20.00). |
+| **Estimated cost per 1M tokens (USD)** | Used to calculate the approximate batch cost range before processing (default $5.00). Adjust this based on your chosen AI provider's pricing. |

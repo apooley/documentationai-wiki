@@ -1,70 +1,56 @@
 ---
 title: Batch Processing
-description: Process multiple PDF eBooks simultaneously with the batch analysis workflow.
+description: How to process multiple PDF eBooks simultaneously and manage the batch queue.
 ---
 
-## Batch processing
+## Overview
 
-Use **Batch processing** when you need to work through multiple PDFs in one queue. The plugin validates file count and total size up front, estimates cost before processing, and works through the batch one file at a time.
+The **Batch processing** tab allows you to upload multiple PDFs at once. The plugin processes these files sequentially, estimating API costs upfront and allowing you to review the results in a unified table before generating product drafts.
 
-## Workflow
+To begin, navigate to **WooCommerce > eBook Assistant** and select the **Batch processing** tab.
 
-<Steps>
-  <Step title="Drag and drop multiple PDFs" icon="upload" title-type="p">
+## Step 1: Upload Files
 
-Open the **Batch processing** tab and add your files to the drop zone.
+1. **Add Files**: Drag and drop multiple PDF files into the dropzone, or click the dropzone to browse your computer.
+2. The plugin enforces the safety limits configured in your settings (e.g., max 25 files, max 250 MB total). If your selection exceeds these limits, a warning will appear.
+3. **Targeting / context notes (Optional)**: Enter notes that will apply to *all* PDFs in this batch.
+4. **Sample pages (Optional)**: Enter page numbers (e.g., `3, 12`) to extract as gallery images for *all* products in this batch.
+5. **Force reprocess duplicates**: By default, the plugin detects if a PDF has been processed before (using a file hash) and skips it to save AI costs. Check this box to force the plugin to re-analyze duplicates.
 
-The plugin validates the upload against your batch limits before analysis starts.
+## Step 2: Cost Estimation and Processing
 
-  </Step>
+When you add files, the plugin performs a quick local extraction pass to estimate the total token usage and API cost.
 
-  <Step title="Review cost estimates and duplicate detection" icon="bar-chart" title-type="p">
+1. Review the **Estimated AI cost**.
+2. If the estimate exceeds your configured "Max estimated AI cost" safety limit, you must explicitly confirm you want to proceed.
+3. Click **Start Batch**.
 
-Check the estimated AI cost and look for any duplicate warnings based on file hash and filename checks.
-
-If the estimate exceeds your configured threshold, reduce the batch or adjust your limits before continuing.
-
-  </Step>
-
-  <Step title="Start processing the batch" icon="play-circle" title-type="p">
-
-Click **Process** to begin analysis.
-
-The plugin processes files incrementally, one at a time. This keeps the queue manageable and reduces the chance of long-running requests failing all at once.
-
-  </Step>
-
-  <Step title="Monitor progress" icon="monitor" title-type="p">
-
-Watch the queue status as each PDF moves through analysis.
-
-If you leave the page, **WP-Cron** can continue processing in the background. That behavior helps long batches finish without keeping the browser open.
-
-  </Step>
-
-  <Step title="Review the completed results table" icon="database" title-type="p">
-
-After processing finishes, inspect the review table for generated titles, prices, and confidence levels.
-
-Use the confidence signals to prioritize manual review before product creation, especially for books with weak extraction quality or unusual metadata.
-
-  </Step>
-
-  <Step title="Create all drafts" icon="check-circle" title-type="p">
-
-Click **Create All Drafts** when the results look correct.
-
-The plugin creates WooCommerce products as drafts, not published products. Your team can then review, enrich, and publish them through the normal WooCommerce workflow.
-
-  </Step>
-</Steps>
+The plugin will begin processing the files one by one. The table will update in real-time, showing the status and stage (e.g., *Extracting*, *Summarizing*, *Drafting*) for each file.
 
 <Callout kind="info">
-
-You can adjust batch file limits, size limits, and cost thresholds on the [Configuration](/getting-started/configuration) page.
-
+If your site has Action Scheduler enabled, batch processing will continue in the background even if you leave the page. If Action Scheduler is not available, you must keep the browser tab open until processing finishes.
 </Callout>
 
-## Related
+## Step 3: Batch Review
 
-If you only need to process one file, use [Single PDF Analysis](/usage/single-pdf-analysis) instead.
+Once all files in the batch have been processed, the **Batch review** section appears below the queue.
+
+1. The review table displays the generated **Title**, **Price**, and AI **Confidence** for each file.
+2. Use the **Action** column to edit individual drafts if you want to make changes before creation.
+3. **Downloadable Options**:
+   - Check **Attach PDF as downloadable file** to attach the source PDFs to all generated products.
+   - Check **Make products downloadable** to mark all generated products as downloadable.
+4. Click **Create All Drafts**.
+
+The plugin will bulk-create WooCommerce draft products for all successful analyses in the batch.
+
+## The Queue Tab
+
+The **Queue** tab provides a global view of all active and recent batch items across your account.
+
+- Use the **Filter** dropdown to view items by status: *Processing*, *Ready for review*, *Creating draft*, or *Failed*.
+- This tab is especially useful for monitoring background processing if you navigated away from the Batch processing tab while a large batch was running.
+
+<Callout kind="warning">
+**Batch Ownership**: For security, batches are tied to the user account that created them. You can only view, process, or create drafts from your own batches. If multiple administrators use the site, they will each have their own isolated batch queue.
+</Callout>

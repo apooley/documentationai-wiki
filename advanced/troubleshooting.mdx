@@ -3,35 +3,46 @@ title: Troubleshooting
 description: Common issues, solutions, and uninstall behavior for the eBook Product Assistant plugin.
 ---
 
-## Check common issues first
-
-Check these common issues first when something is not working as expected.
-
 ## Common Issues
 
-<Callout kind="alert">
+If the plugin is not working as expected, check these common issues first:
 
-Common issues to check first:
+### Missing Dependencies Notice
+**Symptom**: An admin notice states *"eBook Product Assistant requires Composer dependencies."*
+**Solution**: If you installed the plugin via Git or downloaded the source code directly, you must run `composer install --no-dev` in the plugin directory to install required PHP libraries. If you downloaded the release `.zip` file, try reinstalling the plugin.
 
-- **Missing `vendor/autoload.php`** — Run `composer install --no-dev` in the plugin directory.
-- **WooCommerce not active** — Activate WooCommerce, or look for the assistant under **Tools** until WooCommerce is enabled.
-- **AI connection failures** — Verify the selected provider, API key, and model, then run **Test Connection** again.
-- **Missing PHP extension** — Confirm that `iconv`, `zlib`, and `mbstring` are installed and enabled.
+### Plugin Not Visible
+**Symptom**: The "eBook Assistant" menu is missing.
+**Solution**: 
+1. Ensure your user account has the `manage_woocommerce` capability (usually granted to Shop Managers and Administrators).
+2. If WooCommerce is not active, the plugin menu will appear under **Tools > eBook Assistant** instead of the WooCommerce menu.
 
-</Callout>
+### Draft Creation Fails
+**Symptom**: The analysis succeeds, but clicking "Create WooCommerce Draft" results in an error.
+**Solution**: WooCommerce must be installed and active to create product drafts. Ensure WooCommerce is enabled on your site.
+
+### AI Connection Failures
+**Symptom**: The analysis fails immediately, or the "Test AI Connection" button returns an error.
+**Solution**: 
+1. Verify you have selected the correct AI Provider in the Settings tab.
+2. Ensure your API Key is correct and has not expired or exhausted its billing quota.
+3. Verify the Model Name is typed exactly as required by the provider (e.g., `gpt-4o` or `claude-3-5-sonnet-20241022`).
+
+### Missing Cover Images
+**Symptom**: The plugin warns that cover and gallery images cannot be generated.
+**Solution**: PDF image extraction requires specific server-level extensions. Your server must have either the `imagick` PHP extension (with Ghostscript installed on the server) or the `gd` extension configured correctly. If these are missing, the plugin will still extract text and generate drafts, but you will need to upload product images manually in WooCommerce.
 
 ## Uninstall Behavior
 
-When you uninstall the plugin, WordPress performs a comprehensive cleanup.
+When you uninstall the eBook Product Assistant via the WordPress admin interface, the plugin performs a comprehensive cleanup routine to remove its footprint from your server.
 
-- Removes the `ebook_assistant_settings` option
-- Removes all `ebook_assistant_batch_*` options (batch records)
-- Removes the `ebook_assistant_processed_hashes` option
-- Recursively deletes the `ebook-assistant/private/` upload directory (source PDFs)
-- Recursively deletes the `ebook-assistant/batch/` upload directory (batch staging files)
+**The uninstall process automatically removes:**
+- The `ebook_assistant_settings` option from the database.
+- All batch record options (`ebook_assistant_batch_*`).
+- The `ebook_assistant_processed_hashes` option (duplicate detection cache).
+- The `ebook-assistant/private/` upload directory (where source PDFs are securely stored).
+- The `ebook-assistant/batch/` upload directory (where batch staging files are temporarily stored).
 
 <Callout kind="alert">
-
-The uninstall routine does not remove WooCommerce download copies stored in `woocommerce_uploads` or draft products created by the plugin. Plan cleanup separately if your site has retention or storage policies for those assets.
-
+**Important**: The uninstall routine **does not** remove WooCommerce download copies stored in the standard `woocommerce_uploads` directory, nor does it delete the draft products created by the plugin. You must manage the retention of these assets separately according to your site's policies.
 </Callout>

@@ -1,52 +1,105 @@
 ---
 title: Developer Hooks
-description: Available WordPress filters for extending and customizing eBook Product Assistant plugin behavior.
+description: Available WordPress filters and actions for extending the eBook Product Assistant plugin.
 ---
 
-## Developer hooks
+## Overview
 
-Use WordPress filters to adapt permissions, timeouts, and batch estimate output.
+The eBook Product Assistant provides several WordPress filters that allow developers to customize permissions, adjust timeouts, modify AI prompts, and alter WooCommerce queries.
 
-## Filter examples
+## Security & Core Filters
 
-<CodeGroup tabs="Capability filter,Timeout filter,Cost estimate filter">
+### `ebook_assistant_required_capability`
+Changes the capability required to access protected plugin actions, REST API endpoints, and admin menus.
+
+**Parameters:**
+- `$capability` (string): The current capability. Default is `manage_woocommerce`.
+
+**Example:**
 ```php
-add_filter( 'ebook_assistant_required_capability', fn() => 'manage_options' );
+add_filter( 'ebook_assistant_required_capability', function( $capability ) {
+    return 'manage_options'; // Restrict to Administrators only
+} );
 ```
-
-```php
-add_filter( 'ebook_assistant_ai_timeout', fn() => 90 );
-```
-
-```php
-add_filter( 'ebook_assistant_batch_cost_estimate', function ( $estimate, $files, $settings ) {
-    return $estimate;
-}, 10, 3 );
-```
-</CodeGroup>
-
-<Callout kind="tip">
-
-The capability filter only accepts `manage_woocommerce` or `manage_options`. Returning any other value will be rejected for security.
-
+<Callout kind="warning">
+The plugin strictly validates the returned capability. It must be either `manage_woocommerce` or `manage_options`. Any other value will be rejected, and the plugin will default back to `manage_woocommerce`.
 </Callout>
 
-## Hook details
+### `ebook_assistant_private_storage_dir`
+Modifies the absolute path where private PDFs are stored after analysis.
 
-<ParamField body="ebook_assistant_required_capability" param-type="filter" show-location="false">
+**Parameters:**
+- `$dir` (string): The default absolute path (usually inside `wp-content/uploads/ebook-assistant/private`).
 
-Change the capability required to access protected plugin actions. The default capability is `manage_woocommerce`. The plugin validates that the returned value is either `manage_woocommerce` or `manage_options` — arbitrary capabilities are rejected.
+**Example:**
+```php
+add_filter( 'ebook_assistant_private_storage_dir', function( $dir ) {
+    // Move storage completely outside the web root
+    return '/var/www/private_storage/ebooks';
+} );
+```
 
-</ParamField>
+## AI & Processing Filters
 
-<ParamField body="ebook_assistant_ai_timeout" param-type="filter" show-location="false">
+### `ebook_assistant_ai_timeout`
+Adjusts the HTTP request timeout when communicating with the AI provider.
 
-Adjust the AI request timeout in seconds. The default timeout is `120`.
+**Parameters:**
+- `$timeout` (int): The timeout in seconds. Default is `120`.
 
-</ParamField>
+**Example:**
+```php
+add_filter( 'ebook_assistant_ai_timeout', function( $timeout ) {
+    return 180; // Increase timeout for slower models
+} );
+```
 
-<ParamField body="ebook_assistant_batch_cost_estimate" param-type="filter" show-location="false">
+### `ebook_assistant_ai_client`
+Allows developers to intercept or replace the instantiated AI client object before it is used.
 
-Modify the batch cost estimate output before the admin UI displays it.
+**Parameters:**
+- `$client` (AIClientInterface): The instantiated client object.
+- `$settings` (array): The current plugin settings array.
 
-</ParamField>
+### `ebook_assistant_batch_cost_estimate`
+Modifies the batch cost estimate output before the admin UI displays it.
+
+**Parameters:**
+- `$estimate` (string): The formatted estimate string (e.g., "$1.50 – $3.00").
+- `$files` (array): Array of normalized file data.
+- `$settings` (array): The current plugin settings array.
+
+## WooCommerce Context Filters
+
+These filters control how the plugin queries WooCommerce to build the context injected into AI prompts.
+
+### `ebook_assistant_wc_context_limits`
+Overrides the configured limits for loading products, categories, and tags into the AI context.
+
+**Parameters:**
+- `$limits` (array): Array containing `products`, `categories`, and `tags` integer limits.
+
+### `ebook_assistant_wc_product_query_args`
+Modifies the arguments passed to `wc_get_products()` when loading store context or searching for similar products.
+
+**Parameters:**
+- `$args` (array): The query arguments array.
+
+### `ebook_assistant_wc_category_query_args`
+Modifies the arguments passed to `get_terms()` when loading product categories.
+
+**Parameters:**
+- `$args` (array): The term query arguments array.
+
+### `ebook_assistant_wc_tag_query_args`
+Modifies the arguments passed to `get_terms()` when loading product tags.
+
+**Parameters:**
+- `$args` (array): The term query arguments array.
+
+### `ebook_assistant_similarity_category_ids`
+Filters the expanded list of category IDs used to scope the similar products query.
+
+**Parameters:**
+- `$expanded_ids` (array): Array of integer category IDs (including descendants).
+- `$root_ids` (array): The original array of suggested root category IDs.

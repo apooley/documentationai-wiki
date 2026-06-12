@@ -1,68 +1,121 @@
 ---
-title: REST API Reference
-description: Complete REST API reference for the eBook Product Assistant plugin endpoints.
+title: REST API
+description: Reference documentation for the eBook Product Assistant REST API endpoints.
 ---
 
-## REST API reference
+## Overview
 
-The plugin exposes WordPress REST API endpoints under the `ebook-assistant/v1` namespace. These routes support the admin interface and can also support custom integrations.
+The eBook Product Assistant exposes several REST API endpoints under the `ebook-assistant/v1` namespace. These endpoints power the admin interface but can also be consumed by custom integrations or headless applications.
 
-## Authentication
+All endpoints require authentication and verify that the user possesses the required capability (default: `manage_woocommerce`). Requests must include a valid WordPress nonce via the `X-WP-Nonce` header.
 
-<Callout kind="alert">
-
-All endpoints require:
-
-- The `X-WP-Nonce` header
-- The `manage_woocommerce` capability by default
-
-</Callout>
+---
 
 ## Endpoints
 
-| Endpoint | Method | Purpose |
-| --- | --- | --- |
-| `/analyze-pdf` | `POST` | Upload a PDF and return AI analysis plus a generated product draft |
-| `/create-draft` | `POST` | Create a WooCommerce draft product from reviewed data |
-| `/test-ai-connection` | `POST` | Verify provider credentials and model access |
-| `/batch-analyze` | `POST` | Upload multiple PDFs, validate limits, estimate cost, and create a batch |
-| `/batch-process/{batch_id}` | `POST` | Process the next queued file in a batch |
-| `/batch-status/{batch_id}` | `GET` | Return current batch progress and status |
-| `/bulk-create-drafts` | `POST` | Create WooCommerce drafts from completed batch results |
+### Analyze a Single PDF
+`POST /wp-json/ebook-assistant/v1/analyze-pdf`
 
-## Example Request
+Extracts text from an uploaded PDF, summarizes it, and generates a product draft using the configured AI provider.
 
-<Request tabs="cURL" show-lines="true">
-```bash
-curl -X POST "https://store.acmebooks.com/wp-json/ebook-assistant/v1/test-ai-connection" \
-  -H "X-WP-Nonce: 4f6d8a2c11" \
-  -H "Content-Type: application/json" \
-  -b "wordpress_logged_in=admin_session_cookie" \
-  --data '{
-    "provider": "openai",
-    "api_key": "sk-example-9xmk7q2r",
-    "model": "gpt-4o-mini"
-  }'
-```
-</Request>
+**Parameters:**
+- `pdf` (file, required): The PDF file upload.
+- `targeting_notes` (string, optional): Context notes to guide the AI generation.
 
-## Example Response
+**Response:**
+Returns a JSON object containing the extraction metrics, summary, WooCommerce context (pricing stats, similar products), and the generated draft data.
 
-<Response tabs="200,403" show-lines="false">
-```json
-{
-  "success": true,
-  "message": "Connection verified."
-}
-```
+---
 
-```json
-{
-  "code": "rest_forbidden",
-  "message": "Sorry, you are not allowed to do that.",
-  "data": {
-    "status": 403
-  }
-}
-```
-</Response>
+### Create a Product Draft
+`POST /wp-json/ebook-assistant/v1/create-draft`
+
+Creates a WooCommerce draft product from validated payload data.
+
+**Parameters (JSON):**
+- `title` (string, required): Product title (max 200 chars).
+- `short_description` (string, optional): Product short description.
+- `long_description` (string, optional): Product long description.
+- `regular_price` (string, optional): Product price.
+- `category_ids` (array of ints, optional): Array of WooCommerce category IDs.
+- `tags` (string, optional): Comma-separated list of existing tag names.
+- `downloadable` (boolean, optional): Whether the product is downloadable.
+- `attach_pdf_download` (boolean, optional): Whether to attach the source PDF.
+- `source_file_token` (string, optional): The opaque token returned from `/analyze-pdf` required to attach the file.
+- `sample_pages` (string, optional): Comma-separated page numbers for image generation.
+
+**Response:**
+Returns the ID and edit URL of the created WooCommerce draft product.
+
+---
+
+### Enqueue a Batch
+`POST /wp-json/ebook-assistant/v1/batch-analyze`
+
+Uploads multiple PDFs and stages them for batch processing.
+
+**Parameters:**
+- `pdfs[]` (file array, required): Multiple PDF file uploads.
+- `targeting_notes` (string, optional): Context notes applied to all files.
+- `batch_options` (string, optional): JSON string containing options like `force_reprocess`.
+
+**Response:**
+Returns the `batch_id`, the list of staged files, and the estimated AI cost.
+
+---
+
+### Process Next Batch File
+`POST /wp-json/ebook-assistant/v1/batch-process/{batch_id}`
+
+Processes the next pending file in the specified batch. Used for manual polling when Action Scheduler is unavailable.
+
+**Response:**
+Returns the processing result or indicates if the batch is complete.
+
+---
+
+### Get Batch Status
+`GET /wp-json/ebook-assistant/v1/batch-status/{batch_id}`
+
+Retrieves the current progress, status, and file summaries for a specific batch.
+
+**Response:**
+Returns the batch metadata, progress counts, and an array of file records.
+
+---
+
+### Bulk Create Drafts
+`POST /wp-json/ebook-assistant/v1/bulk-create-drafts`
+
+Creates WooCommerce drafts for all successfully analyzed files in a batch.
+
+**Parameters (JSON):**
+- `batch_id` (string, required): The ID of the batch.
+- `downloadable` (boolean, optional): Apply to all created drafts.
+- `attach_pdf_download` (boolean, optional): Apply to all created drafts.
+
+**Response:**
+Returns an array of created product IDs and any errors encountered.
+
+---
+
+### Get Global Queue
+`GET /wp-json/ebook-assistant/v1/batch-queue`
+
+Retrieves a list of batch items owned by the current user across all batches.
+
+**Parameters:**
+- `filter` (string, optional): Filter by status (e.g., `processing`, `failed`).
+
+**Response:**
+Returns an array of queue items and a boolean indicating if Action Scheduler is enabled.
+
+---
+
+### Cancel Batch
+`POST /wp-json/ebook-assistant/v1/batch-cancel/{batch_id}`
+
+Cancels pending Action Scheduler jobs and clears the cron lock for a batch.
+
+**Response:**
+Returns confirmation of cancellation.

@@ -1,70 +1,64 @@
 ---
 title: Installation
-description: Prerequisites and step-by-step installation instructions for the eBook Product Assistant plugin.
+description: How to install and activate the eBook Product Assistant plugin.
 ---
-
-## Installation
-
-Confirm your environment meets the requirements below, then install and activate the plugin.
 
 ## Prerequisites
 
-<Callout kind="info">
+Before installing the eBook Product Assistant, ensure your server meets the following requirements:
 
-Before you install the plugin, confirm that your environment includes:
+- **WordPress**: Version 6.0 or higher.
+- **PHP**: Version 7.4 or higher.
+- **WooCommerce**: Installed and active. The plugin requires WooCommerce to create product drafts.
+- **Composer**: Required to install PHP dependencies if installing from source.
 
-- **WordPress 6.0 or later**
-- **WooCommerce active**
-- **PHP 7.4 or later** with the `iconv`, `zlib`, and `mbstring` extensions
-- **An AI provider API key** for OpenAI, Claude, or OpenRouter
+## Installation Methods
 
-</Callout>
+### Option 1: Install via ZIP file
 
-## Installation Steps
+1. Download the latest plugin `.zip` file from the repository releases.
+2. Log in to your WordPress admin dashboard.
+3. Navigate to **Plugins > Add New Plugin**.
+4. Click **Upload Plugin** at the top of the page.
+5. Choose the `.zip` file you downloaded and click **Install Now**.
+6. After installation completes, click **Activate Plugin**.
 
-<Steps>
-  <Step title="Copy the plugin files" icon="folder" title-type="p">
+### Option 2: Install via Git (For Developers)
 
-Place the plugin in your WordPress plugins directory:
-
-```bash
-cp -R ebook-product-assistant /var/www/html/wp-content/plugins/ebook-product-assistant
-```
-
-If you deploy manually, confirm the final path is `wp-content/plugins/ebook-product-assistant/`.
-
-  </Step>
-
-  <Step title="Install PHP dependencies" icon="terminal" title-type="p">
-
-Run Composer in the plugin directory:
+If you are cloning the repository directly, you must install the Composer dependencies before the plugin will function.
 
 ```bash
-cd /var/www/html/wp-content/plugins/ebook-product-assistant
+cd wp-content/plugins/
+git clone https://github.com/ebook-product-assistant/ebook-product-assistant.git
+cd ebook-product-assistant
 composer install --no-dev
 ```
 
-When the command finishes, the plugin directory includes the Composer-managed dependencies required for PDF parsing.
+After installing dependencies, activate the plugin via the WordPress admin dashboard or using WP-CLI:
 
-  </Step>
+```bash
+wp plugin activate ebook-product-assistant
+```
 
-  <Step title="Activate the plugin in WordPress" icon="check-circle" title-type="p">
+## Post-Installation Checks
 
-Open **Plugins** in WordPress admin and activate **eBook Product Assistant**.
+Once activated, navigate to **WooCommerce > eBook Assistant** (or **Tools > eBook Assistant** if WooCommerce is inactive). 
 
-If activation succeeds, WordPress returns you to the Plugins screen without a fatal error or missing dependency notice.
+If you see an error stating *"eBook Product Assistant requires Composer dependencies"*, you need to run `composer install` in the plugin directory as described in Option 2.
 
-  </Step>
-
-  <Step title="Open the assistant page" icon="arrow-right" title-type="p">
-
-Go to **WooCommerce → eBook Assistant**.
-
-If WooCommerce is inactive, go to **Tools → eBook Assistant** instead. You should see tabs for **Single PDF** and **Batch processing**.
-
-  </Step>
-</Steps>
+<Callout kind="warning">
+The plugin requires WooCommerce to be active to generate product drafts. If WooCommerce is disabled, the plugin interface will display a warning and draft creation will be disabled.
+</Callout>
 
 ## Next Steps
 
-After installation, configure your AI provider and plugin settings on the [Configuration](/getting-started/configuration) page.
+After successfully installing and activating the plugin, you must configure your AI provider settings before you can process any PDFs.
+
+<Columns cols={2}>
+  <Card
+    title="Configuration"
+    href="/getting-started/configuration"
+    icon="settings"
+    cta="Configure AI settings"
+  />
+</Columns>

@@ -1,25 +1,33 @@
 ---
 title: Introduction
-description: Overview of the eBook Product Assistant plugin — what it does, where to find it, and how it fits into your WooCommerce workflow.
+description: Overview of the eBook Product Assistant plugin for WooCommerce.
 ---
 
-## What eBook Product Assistant is
+## What is eBook Product Assistant?
 
-eBook Product Assistant turns uploaded PDF eBooks into WooCommerce draft products using AI. You upload a PDF, the plugin analyzes it, compares the result against your existing catalog, and prepares a draft product for you to review before you publish anything.
+The **eBook Product Assistant** is a WordPress plugin designed to accelerate the process of adding digital products to your WooCommerce store. By uploading a PDF file, the assistant extracts its contents locally, summarizes the text, and leverages an AI provider to automatically generate a comprehensive WooCommerce product draft.
 
-## What It Does
+This tool significantly reduces manual data entry by suggesting titles, descriptions, prices, categories, and tags based on the contents of the eBook and the existing context of your WooCommerce catalog.
 
-The plugin extracts text from each PDF on your server and sends a truncated portion to your configured AI provider for analysis. You can use OpenAI, Claude, or OpenRouter to help identify product details from the uploaded eBook.
+## Key Features
 
-After analysis, the plugin compares the result against your existing WooCommerce catalog. It then prepares product copy, pricing suggestions, and category recommendations based on what it found in the PDF and how that information fits with the products you already have.
+- **Local PDF Extraction**: Text is extracted from uploaded PDFs directly on your server, ensuring privacy and security.
+- **AI-Powered Generation**: Uses advanced AI models (OpenAI, Claude, or OpenRouter) to generate product titles, short and long descriptions, and pricing suggestions.
+- **WooCommerce Context Integration**: The assistant analyzes your existing store products, categories, and tags to make intelligent suggestions that fit your catalog.
+- **Batch Processing**: Upload multiple PDFs at once to process them sequentially, either in the background or via the admin interface.
+- **Secure File Storage**: Source PDFs are stored in protected directories with opaque tokens to prevent unauthorized access.
+- **Automatic Downloadable Products**: Easily attach the analyzed PDF to the generated draft and mark the product as downloadable with a single click.
 
-Nothing is published automatically. Every product the plugin creates is saved as a **Draft**, so you can review the title, description, pricing, categories, and any other details before it goes live.
+## Audience Guide
 
-## Where to Find It
+This documentation is structured to serve different users of the plugin:
 
-When WooCommerce is active, open **WooCommerce → eBook Assistant** to use the plugin. If WooCommerce is inactive, the plugin appears under **Tools → eBook Assistant** instead.
+- **Admin User**: If you are managing the store, processing PDFs, or configuring the plugin settings, focus on the [Getting Started](/getting-started/installation) and [Usage](/usage/single-pdf-analysis) sections.
+- **Developer**: If you are extending the plugin, integrating with its REST API, or modifying its behavior via hooks, refer to the [API Reference](/api-reference/rest-api) and [Advanced](/advanced/developer-hooks) sections.
 
-Inside the plugin screen, you work from tabs for **Single PDF** and **Batch** processing. Use **Single PDF** when you want to review one upload at a time, or **Batch** when you want to process multiple PDFs in one session.
+<Callout kind="info">
+The plugin focuses on creating **Draft** products. You will always have the opportunity to review, edit, and attach images before publishing the product to your live store.
+</Callout>
 
 ## Next Steps
 
@@ -28,12 +36,12 @@ Inside the plugin screen, you work from tabs for **Single PDF** and **Batch** pr
     title="Installation"
     href="/getting-started/installation"
     icon="download"
-    cta="Get started"
+    cta="Install the plugin"
   />
   <Card
     title="Configuration"
     href="/getting-started/configuration"
     icon="settings"
-    cta="Configure the plugin"
+    cta="Configure AI settings"
   />
 </Columns>
