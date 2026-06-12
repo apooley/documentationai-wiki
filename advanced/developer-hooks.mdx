@@ -1,0 +1,52 @@
+---
+title: Developer Hooks
+description: Available WordPress filters for extending and customizing eBook Product Assistant plugin behavior.
+---
+
+## Developer hooks
+
+Use WordPress filters to adapt permissions, timeouts, and batch estimate output.
+
+## Filter examples
+
+<CodeGroup tabs="Capability filter,Timeout filter,Cost estimate filter">
+```php
+add_filter( 'ebook_assistant_required_capability', fn() => 'manage_options' );
+```
+
+```php
+add_filter( 'ebook_assistant_ai_timeout', fn() => 90 );
+```
+
+```php
+add_filter( 'ebook_assistant_batch_cost_estimate', function ( $estimate, $files, $settings ) {
+    return $estimate;
+}, 10, 3 );
+```
+</CodeGroup>
+
+<Callout kind="tip">
+
+The capability filter only accepts `manage_woocommerce` or `manage_options`. Returning any other value will be rejected for security.
+
+</Callout>
+
+## Hook details
+
+<ParamField body="ebook_assistant_required_capability" param-type="filter" show-location="false">
+
+Change the capability required to access protected plugin actions. The default capability is `manage_woocommerce`. The plugin validates that the returned value is either `manage_woocommerce` or `manage_options` — arbitrary capabilities are rejected.
+
+</ParamField>
+
+<ParamField body="ebook_assistant_ai_timeout" param-type="filter" show-location="false">
+
+Adjust the AI request timeout in seconds. The default timeout is `120`.
+
+</ParamField>
+
+<ParamField body="ebook_assistant_batch_cost_estimate" param-type="filter" show-location="false">
+
+Modify the batch cost estimate output before the admin UI displays it.
+
+</ParamField>

@@ -1,0 +1,70 @@
+---
+title: Batch Processing
+description: Process multiple PDF eBooks simultaneously with the batch analysis workflow.
+---
+
+## Batch processing
+
+Use **Batch processing** when you need to work through multiple PDFs in one queue. The plugin validates file count and total size up front, estimates cost before processing, and works through the batch one file at a time.
+
+## Workflow
+
+<Steps>
+  <Step title="Drag and drop multiple PDFs" icon="upload" title-type="p">
+
+Open the **Batch processing** tab and add your files to the drop zone.
+
+The plugin validates the upload against your batch limits before analysis starts.
+
+  </Step>
+
+  <Step title="Review cost estimates and duplicate detection" icon="bar-chart" title-type="p">
+
+Check the estimated AI cost and look for any duplicate warnings based on file hash and filename checks.
+
+If the estimate exceeds your configured threshold, reduce the batch or adjust your limits before continuing.
+
+  </Step>
+
+  <Step title="Start processing the batch" icon="play-circle" title-type="p">
+
+Click **Process** to begin analysis.
+
+The plugin processes files incrementally, one at a time. This keeps the queue manageable and reduces the chance of long-running requests failing all at once.
+
+  </Step>
+
+  <Step title="Monitor progress" icon="monitor" title-type="p">
+
+Watch the queue status as each PDF moves through analysis.
+
+If you leave the page, **WP-Cron** can continue processing in the background. That behavior helps long batches finish without keeping the browser open.
+
+  </Step>
+
+  <Step title="Review the completed results table" icon="database" title-type="p">
+
+After processing finishes, inspect the review table for generated titles, prices, and confidence levels.
+
+Use the confidence signals to prioritize manual review before product creation, especially for books with weak extraction quality or unusual metadata.
+
+  </Step>
+
+  <Step title="Create all drafts" icon="check-circle" title-type="p">
+
+Click **Create All Drafts** when the results look correct.
+
+The plugin creates WooCommerce products as drafts, not published products. Your team can then review, enrich, and publish them through the normal WooCommerce workflow.
+
+  </Step>
+</Steps>
+
+<Callout kind="info">
+
+You can adjust batch file limits, size limits, and cost thresholds on the [Configuration](/getting-started/configuration) page.
+
+</Callout>
+
+## Related
+
+If you only need to process one file, use [Single PDF Analysis](/usage/single-pdf-analysis) instead.

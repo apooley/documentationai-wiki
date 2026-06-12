@@ -1,0 +1,37 @@
+---
+title: Troubleshooting
+description: Common issues, solutions, and uninstall behavior for the eBook Product Assistant plugin.
+---
+
+## Check common issues first
+
+Check these common issues first when something is not working as expected.
+
+## Common Issues
+
+<Callout kind="alert">
+
+Common issues to check first:
+
+- **Missing `vendor/autoload.php`** — Run `composer install --no-dev` in the plugin directory.
+- **WooCommerce not active** — Activate WooCommerce, or look for the assistant under **Tools** until WooCommerce is enabled.
+- **AI connection failures** — Verify the selected provider, API key, and model, then run **Test Connection** again.
+- **Missing PHP extension** — Confirm that `iconv`, `zlib`, and `mbstring` are installed and enabled.
+
+</Callout>
+
+## Uninstall Behavior
+
+When you uninstall the plugin, WordPress performs a comprehensive cleanup.
+
+- Removes the `ebook_assistant_settings` option
+- Removes all `ebook_assistant_batch_*` options (batch records)
+- Removes the `ebook_assistant_processed_hashes` option
+- Recursively deletes the `ebook-assistant/private/` upload directory (source PDFs)
+- Recursively deletes the `ebook-assistant/batch/` upload directory (batch staging files)
+
+<Callout kind="alert">
+
+The uninstall routine does not remove WooCommerce download copies stored in `woocommerce_uploads` or draft products created by the plugin. Plan cleanup separately if your site has retention or storage policies for those assets.
+
+</Callout>

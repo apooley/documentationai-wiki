@@ -1,0 +1,38 @@
+---
+title: Security & Privacy
+description: Security measures, data handling practices, and privacy considerations for the eBook Product Assistant plugin.
+---
+
+## Security and privacy
+
+The plugin is designed to keep generation reviewable and restrict direct access to uploaded source files.
+
+## Security Measures
+
+- **API keys** are stored in `wp_options`.
+- **Debug logs** redact API keys, bearer tokens, nonces, file tokens, and long text content.
+- **PDF processing** happens locally on your server, and only truncated text is sent to the AI provider.
+- **Product creation** always uses WooCommerce draft status.
+- **Source PDFs** are stored in private uploads with cryptographically secure opaque tokens generated via `random_bytes()`.
+- **Downloadable files** are copied into WooCommerce protected uploads for customer delivery.
+- **Batch ownership** is enforced on all batch endpoints — only the user who created a batch can process, view status, or create drafts from it. Non-owners receive a 404 response.
+- **Token injection prevention** — bulk draft creation uses only the token stored with the batch record, ignoring any user-supplied `source_file_token` overrides.
+- **Batch locking** uses atomic `add_option`/`delete_option` operations to prevent race conditions during concurrent processing.
+
+## Data Flow
+
+<Callout kind="info">
+
+PDF text is extracted locally on the server, truncated to the configured character limit, then sent to the AI provider. No full PDFs leave the server.
+
+</Callout>
+
+## Recommendations
+
+<Callout kind="alert">
+
+- Rotate API keys periodically.
+- Disable `debug_logging` in production.
+- Review batch ownership if multiple admins use the plugin.
+
+</Callout>

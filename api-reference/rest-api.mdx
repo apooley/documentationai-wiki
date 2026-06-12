@@ -1,0 +1,68 @@
+---
+title: REST API Reference
+description: Complete REST API reference for the eBook Product Assistant plugin endpoints.
+---
+
+## REST API reference
+
+The plugin exposes WordPress REST API endpoints under the `ebook-assistant/v1` namespace. These routes support the admin interface and can also support custom integrations.
+
+## Authentication
+
+<Callout kind="alert">
+
+All endpoints require:
+
+- The `X-WP-Nonce` header
+- The `manage_woocommerce` capability by default
+
+</Callout>
+
+## Endpoints
+
+| Endpoint | Method | Purpose |
+| --- | --- | --- |
+| `/analyze-pdf` | `POST` | Upload a PDF and return AI analysis plus a generated product draft |
+| `/create-draft` | `POST` | Create a WooCommerce draft product from reviewed data |
+| `/test-ai-connection` | `POST` | Verify provider credentials and model access |
+| `/batch-analyze` | `POST` | Upload multiple PDFs, validate limits, estimate cost, and create a batch |
+| `/batch-process/{batch_id}` | `POST` | Process the next queued file in a batch |
+| `/batch-status/{batch_id}` | `GET` | Return current batch progress and status |
+| `/bulk-create-drafts` | `POST` | Create WooCommerce drafts from completed batch results |
+
+## Example Request
+
+<Request tabs="cURL" show-lines="true">
+```bash
+curl -X POST "https://store.acmebooks.com/wp-json/ebook-assistant/v1/test-ai-connection" \
+  -H "X-WP-Nonce: 4f6d8a2c11" \
+  -H "Content-Type: application/json" \
+  -b "wordpress_logged_in=admin_session_cookie" \
+  --data '{
+    "provider": "openai",
+    "api_key": "sk-example-9xmk7q2r",
+    "model": "gpt-4o-mini"
+  }'
+```
+</Request>
+
+## Example Response
+
+<Response tabs="200,403" show-lines="false">
+```json
+{
+  "success": true,
+  "message": "Connection verified."
+}
+```
+
+```json
+{
+  "code": "rest_forbidden",
+  "message": "Sorry, you are not allowed to do that.",
+  "data": {
+    "status": 403
+  }
+}
+```
+</Response>

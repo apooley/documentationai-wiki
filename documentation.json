@@ -15,13 +15,71 @@
         "icon": "book",
         "groups": [
           {
-            "group": "Start Here",
+            "group": "Getting Started",
             "icon": "rocket",
             "pages": [
               {
-                "title": "Admin Guide",
-                "path": "admin-guide",
+                "title": "Introduction",
+                "path": "getting-started/introduction",
+                "icon": "house"
+              },
+              {
+                "title": "Installation",
+                "path": "getting-started/installation",
+                "icon": "download"
+              },
+              {
+                "title": "Configuration",
+                "path": "getting-started/configuration",
+                "icon": "settings"
+              }
+            ]
+          },
+          {
+            "group": "Usage",
+            "icon": "play",
+            "pages": [
+              {
+                "title": "Single PDF Analysis",
+                "path": "usage/single-pdf-analysis",
+                "icon": "file"
+              },
+              {
+                "title": "Batch Processing",
+                "path": "usage/batch-processing",
+                "icon": "files"
+              }
+            ]
+          },
+          {
+            "group": "API Reference",
+            "icon": "code",
+            "pages": [
+              {
+                "title": "REST API",
+                "path": "api-reference/rest-api",
+                "icon": "plug"
+              }
+            ]
+          },
+          {
+            "group": "Advanced",
+            "icon": "wrench",
+            "pages": [
+              {
+                "title": "Security & Privacy",
+                "path": "advanced/security",
                 "icon": "shield"
+              },
+              {
+                "title": "Developer Hooks",
+                "path": "advanced/developer-hooks",
+                "icon": "webhook"
+              },
+              {
+                "title": "Troubleshooting",
+                "path": "advanced/troubleshooting",
+                "icon": "bug"
               }
             ]
           }

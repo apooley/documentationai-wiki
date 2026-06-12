@@ -1,0 +1,72 @@
+---
+title: Configuration
+description: Configure AI provider settings, product defaults, and batch processing limits for the eBook Product Assistant plugin.
+---
+
+## Configuration
+
+The plugin stores its settings in the WordPress options table under `ebook_assistant_settings`. Most administrators only need to configure the AI provider once, then adjust defaults and batch limits to match their catalog workflow.
+
+<Callout kind="tip">
+
+If you leave the **API key** field blank when saving settings, the plugin keeps the existing stored key.
+
+</Callout>
+
+## AI settings
+
+Configure the AI provider before you generate your first draft.
+
+<ParamField body="provider" param-type="string" required="true" show-location="false" enum="openai,claude,openrouter">
+Select which AI service the plugin uses for PDF analysis and draft generation.
+</ParamField>
+
+<ParamField body="api_key" param-type="string" required="true" show-location="false">
+Enter the API key for the selected provider. The plugin uses this key for analysis requests and for the connection test.
+</ParamField>
+
+<ParamField body="model" param-type="string" required="true" show-location="false">
+Choose the model to send analysis requests to. Use a model that your account can access through the selected provider.
+</ParamField>
+
+<ParamField body="max_pdf_characters" param-type="integer" required="false" show-location="false">
+Set how much extracted PDF text the plugin can send for AI analysis. Lower values reduce token usage and cost. Higher values give the model more source material.
+</ParamField>
+
+<ParamField body="max_upload_size" param-type="integer" required="false" show-location="false">
+Limit the maximum PDF size accepted by the plugin. Use this to block unusually large uploads before processing starts.
+</ParamField>
+
+<ParamField body="debug_logging" param-type="boolean" required="false" show-location="false">
+Enable diagnostic logging for troubleshooting. Use this only when needed, especially on production sites.
+</ParamField>
+
+After you save these settings, use **Test Connection** to verify that the provider, API key, and model work together. A successful test confirms that the plugin can authenticate before you upload any PDFs.
+
+## Product defaults
+
+Use product defaults to control how newly created WooCommerce drafts behave.
+
+<ParamField body="downloadable_by_default" param-type="boolean" required="false" show-location="false">
+Set whether generated draft products should be marked as downloadable by default. This saves time if you primarily sell digital eBooks.
+</ParamField>
+
+## Batch limits
+
+Batch limits help you control cost, file volume, and queue size during larger imports.
+
+<ParamField body="max_batch_files" param-type="integer" required="false" show-location="false">
+Limit how many PDFs a single batch can include.
+</ParamField>
+
+<ParamField body="max_batch_total_size" param-type="integer" required="false" show-location="false">
+Limit the combined size of all PDFs in a batch.
+</ParamField>
+
+<ParamField body="max_estimated_ai_cost" param-type="number" required="false" show-location="false">
+Set the highest estimated AI cost allowed before processing starts.
+</ParamField>
+
+<ParamField body="cost_per_1m_tokens" param-type="number" required="false" show-location="false">
+Define the token cost used for batch cost estimation. Keep this aligned with your provider pricing so estimates stay useful.
+</ParamField>

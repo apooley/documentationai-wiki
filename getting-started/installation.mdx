@@ -1,0 +1,70 @@
+---
+title: Installation
+description: Prerequisites and step-by-step installation instructions for the eBook Product Assistant plugin.
+---
+
+## Installation
+
+Confirm your environment meets the requirements below, then install and activate the plugin.
+
+## Prerequisites
+
+<Callout kind="info">
+
+Before you install the plugin, confirm that your environment includes:
+
+- **WordPress 6.0 or later**
+- **WooCommerce active**
+- **PHP 7.4 or later** with the `iconv`, `zlib`, and `mbstring` extensions
+- **An AI provider API key** for OpenAI, Claude, or OpenRouter
+
+</Callout>
+
+## Installation Steps
+
+<Steps>
+  <Step title="Copy the plugin files" icon="folder" title-type="p">
+
+Place the plugin in your WordPress plugins directory:
+
+```bash
+cp -R ebook-product-assistant /var/www/html/wp-content/plugins/ebook-product-assistant
+```
+
+If you deploy manually, confirm the final path is `wp-content/plugins/ebook-product-assistant/`.
+
+  </Step>
+
+  <Step title="Install PHP dependencies" icon="terminal" title-type="p">
+
+Run Composer in the plugin directory:
+
+```bash
+cd /var/www/html/wp-content/plugins/ebook-product-assistant
+composer install --no-dev
+```
+
+When the command finishes, the plugin directory includes the Composer-managed dependencies required for PDF parsing.
+
+  </Step>
+
+  <Step title="Activate the plugin in WordPress" icon="check-circle" title-type="p">
+
+Open **Plugins** in WordPress admin and activate **eBook Product Assistant**.
+
+If activation succeeds, WordPress returns you to the Plugins screen without a fatal error or missing dependency notice.
+
+  </Step>
+
+  <Step title="Open the assistant page" icon="arrow-right" title-type="p">
+
+Go to **WooCommerce → eBook Assistant**.
+
+If WooCommerce is inactive, go to **Tools → eBook Assistant** instead. You should see tabs for **Single PDF** and **Batch processing**.
+
+  </Step>
+</Steps>
+
+## Next Steps
+
+After installation, configure your AI provider and plugin settings on the [Configuration](/getting-started/configuration) page.
