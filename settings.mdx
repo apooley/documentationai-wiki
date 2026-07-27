@@ -1,0 +1,137 @@
+---
+title: App Settings & Configuration
+description: How to configure app preferences, connect peripherals, and manage device settings for optimal performance.
+---
+
+## Overview
+
+Configure your Brew Wizz app to match your brewing workflow. Access settings from the main menu by tapping the gear icon in the top right corner. Key areas include Bluetooth pairings for device connectivity, notification preferences for brewing alerts, unit conversions for recipes, and firmware updates for the latest features.
+
+<Columns cols={2}>
+  <Card title="Bluetooth Pairing" icon="bluetooth" href="#bluetooth-pairing">
+    Connect your Brew Wizz device wirelessly for real-time monitoring.
+  </Card>
+  <Card title="Notifications" icon="bell" href="#notifications">
+    Customize alerts for timers, temperature changes, and process completions.
+  </Card>
+  <Card title="Units" icon="ruler" href="#units">
+    Switch between imperial and metric systems seamlessly.
+  </Card>
+  <Card title="Firmware" icon="upload" href="#firmware">
+    Keep your hardware updated for optimal performance and new capabilities.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Save changes after each adjustment and restart the app if connectivity issues arise.
+</Callout>
+
+## Bluetooth Pairing
+
+Pair your Brew Wizz device to enable wireless control and data syncing.
+
+<Steps>
+  <Step title="Enable Bluetooth" icon="bluetooth">
+    Go to your phone's settings and turn on Bluetooth. Ensure your Brew Wizz device is powered on and in pairing mode (hold power button for 5 seconds).
+  </Step>
+  <Step title="Scan and Pair" icon="search">
+    In the app, navigate to Settings > Devices. Tap "Scan for Devices". Select your Brew Wizz from the list and confirm the pairing code on both screens.
+  </Step>
+  <Step title="Test Connection" icon="check-circle">
+    Return to the dashboard and verify live data like temperature appears.
+  </Step>
+</Steps>
+
+<Callout kind="alert">
+  Keep devices within 10 meters for stable connection. Interference from other Bluetooth devices may require re-pairing.
+</Callout>
+
+## Notification Preferences
+
+Tailor notifications to avoid distractions while staying informed about your brews.
+
+<Tabs>
+  <Tab title="iOS" icon="apple">
+    Open Settings > Notifications > Brew Wizz. Enable alerts for timers and temperature thresholds. Customize sounds and badges here.
+  </Tab>
+  <Tab title="Android" icon="android">
+    Go to Settings > Apps > Brew Wizz > Notifications. Toggle categories like "Brew Complete" and "Low Battery". Set priority levels for critical alerts.
+  </Tab>
+</Tabs>
+
+## Unit Conversions
+
+Brew Wizz supports seamless switching between unit systems for recipes and measurements.
+
+| Measurement | Imperial | Metric |
+|-------------|----------|--------|
+| Volume     | Gallons, Quarts | Liters, Milliliters |
+| Weight     | Pounds, Ounces | Kilograms, Grams |
+| Temperature| Fahrenheit | Celsius |
+
+To change units:
+
+1. Open Settings > Preferences > Units.
+2. Select "Imperial" or "Metric".
+3. All active recipes update automatically.
+
+<Expandable title="Advanced Unit Customization" default-open="false">
+  For custom scales, edit the config file:
+  
+  <CodeGroup tabs="JSON">
+  ```json
+  {
+    "units": {
+      "volume": "liters",
+      "weight": "grams",
+      "temperature": "celsius"
+    }
+  }
+  ```
+  </CodeGroup>
+  
+  Save and restart the app.
+</Expandable>
+
+## Firmware Updates
+
+Regular updates improve stability and add features like advanced brewing profiles.
+
+<Steps>
+  <Step title="Check for Updates" icon="refresh-cw">
+    In Settings > Device > Firmware, tap "Check Now".
+  </Step>
+  <Step title="Download and Install" icon="download-cloud">
+    If available, download the update (ensure 50%+ battery). Follow on-screen prompts to install.
+  </Step>
+  <Step title="Verify" icon="check">
+    Restart the device and confirm version in settings.
+  </Step>
+</Steps>
+
+## Troubleshooting Common Issues
+
+<ExpandableGroup>
+  <Expandable title="Bluetooth Won't Connect" default-open="true">
+    Forget the device in phone settings, restart both, and re-pair. Update app to latest version.
+  </Expandable>
+  <Expandable title="Notifications Not Working">
+    Verify app permissions in phone settings. Disable Do Not Disturb mode during brews.
+  </Expandable>
+  <Expandable title="Units Not Switching">
+    Clear app cache via phone settings and relaunch.
+  </Expandable>
+</ExpandableGroup>
+
+<Board title="Settings Status Tracker">
+  <BoardColumn title="Configured" color="2" icon="check-circle">
+    <BoardCard title="Bluetooth Paired" description="Device connected successfully" />
+    <BoardCard title="Notifications Enabled" icon="bell" />
+  </BoardColumn>
+  <BoardColumn title="Pending" color="1" icon="loader">
+    <BoardCard title="Firmware Update" dueDate="2024-12-15" />
+    <BoardCard title="Unit Review" description="Confirm metric for recipes" />
+  </BoardColumn>
+</Board>
+
+Ready to brew? Check the [quickstart](/quickstart) for your first session.
