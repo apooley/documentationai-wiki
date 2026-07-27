@@ -1,0 +1,81 @@
+<!--meta
+title: FizzWizz Health Check: Purpose and When to Run It
+slug: fizzwizz-health-check-overview
+excerpt: What the FizzWizz Health Check covers, when to run it, what you need before you start, and how the A-X check IDs tie the procedure, results form and troubleshooting guide together.
+order: 1
+-->
+
+<p>The <strong>Health Check</strong> is a structured test sequence that confirms every element of the FizzWizz&trade; is operating correctly and identifies any maintenance requirements before they affect a brew.</p>
+
+<p>It walks through seven checks covering the power supply, the display readings, all three internal solenoids, the arm circuit and the stone circuit. Each individual test result is given a letter ID from <strong>A</strong> to <strong>X</strong>.</p>
+
+<h2>When to run a Health Check</h2>
+
+<ul>
+  <li>When commissioning a new or relocated FizzWizz</li>
+  <li>As part of scheduled preventative maintenance</li>
+  <li>Before returning a unit to service after a repair</li>
+  <li>When carbonation results are off target &mdash; for example, set to 2.7 volumes but achieving 2.1</li>
+  <li>Whenever you suspect a leak, a stuck solenoid or a faulty sensor</li>
+</ul>
+
+<h2>The A&ndash;X ID system</h2>
+
+<p>The letter IDs are the single most useful thing to understand about this documentation set. The same letter means the same test in all three documents:</p>
+
+<ul>
+  <li><strong>This procedure</strong> tells you how to perform test <code>C</code> and what a good result looks like.</li>
+  <li><strong>The results form</strong> gives you a row to record the outcome of test <code>C</code>.</li>
+  <li><strong>The troubleshooting guide</strong> tells you what to do when test <code>C</code> fails.</li>
+</ul>
+
+<p>So if a unit fails at <code>C</code>, you go straight to Ident <code>C</code> in the troubleshooting guide. No hunting.</p>
+
+<h2>The seven checks</h2>
+
+<table>
+  <thead>
+    <tr><th>Check</th><th>Covers</th><th>IDs</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><a href="{{DOCS}}/health-check-setup-and-power-check">Setup and wall-wart power supply</a></td><td>&mdash;</td></tr>
+    <tr><td>2</td><td><a href="{{DOCS}}/health-check-2-co2-in-display-values">CO<sub>2</sub>_In display values</a></td><td>A&ndash;C</td></tr>
+    <tr><td>3</td><td><a href="{{DOCS}}/health-check-3-solenoid-function-co2-in">Solenoid function, CO<sub>2</sub>_In</a></td><td>D&ndash;J</td></tr>
+    <tr><td>4</td><td><a href="{{DOCS}}/health-check-4-solenoid-function-arm">Solenoid function, ARM</a></td><td>K&ndash;Q</td></tr>
+    <tr><td>5</td><td><a href="{{DOCS}}/health-check-5-arm-display-values">ARM display values</a></td><td>R&ndash;T</td></tr>
+    <tr><td>6</td><td><a href="{{DOCS}}/health-check-6-gloved-finger-separator">Gloved finger and separator integrity</a></td><td>U&ndash;V</td></tr>
+    <tr><td>7</td><td><a href="{{DOCS}}/health-check-7-stone-hose-isolation-valve">Stone hose connections and isolation valve</a></td><td>W&ndash;X</td></tr>
+  </tbody>
+</table>
+
+<p>Work through them in order. Checks 4, 6 and 7 depend on the CO<sub>2</sub> connection being moved, so skipping around will give you misleading results.</p>
+
+<h2>What you need before you start</h2>
+
+<ul>
+  <li>A CO<sub>2</sub> supply with a regulator that can be set to <strong>30&ndash;40 psi</strong></li>
+  <li>The FizzWizz wall-wart power supply</li>
+  <li>The stone hose and a carbonation stone (needed for Check 7)</li>
+  <li>The arm hose with separator fitted (needed for Check 6)</li>
+  <li>A push-to-connect jumper hose for moving CO<sub>2</sub> between ports</li>
+  <li>A disposable glove (needed for Check 6)</li>
+  <li>A printed <a href="{{DOCS}}/fizzwizz-health-test-results-form">Health Test Results Form</a></li>
+</ul>
+
+<h2>Before you begin: the most common root cause</h2>
+
+<p><strong>Faults affecting pressure transducers and solenoids are typically caused by fluid getting into the FizzWizz.</strong> This happens when the arm separator is not used or is overwhelmed, or when check valves are stuck open or were never installed.</p>
+
+<p>If a unit fails several unrelated tests at once, suspect fluid ingress before you start replacing individual components.</p>
+
+<h2>Record your results</h2>
+
+<p>Fill in the <a href="{{DOCS}}/fizzwizz-health-test-results-form">Health Test Results Form</a> as you go rather than from memory. Record the <em>actual measured values</em>, not just pass or fail &mdash; a reading that passes today but has drifted since the last check is useful early warning, and it is the first thing support will ask for.</p>
+
+<h2>Related articles</h2>
+
+<ul>
+  <li><a href="{{DOCS}}/fizzwizz-pneumatics-schematic">FizzWizz Pneumatics: Schematic and Component Reference</a></li>
+  <li><a href="{{DOCS}}/fizzwizz-test-mode">How to Put the FizzWizz into Test Mode</a></li>
+  <li><a href="{{DOCS}}/fizzwizz-troubleshooting-by-symptom">Troubleshooting by Symptom (Ident A&ndash;X)</a></li>
+</ul>

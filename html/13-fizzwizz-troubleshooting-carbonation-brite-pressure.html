@@ -1,0 +1,62 @@
+<!--meta
+title: Troubleshooting Low Carbonation and Brite Pressure Problems
+slug: fizzwizz-troubleshooting-carbonation-brite-pressure
+excerpt: Why a FizzWizz set to 2.7 volumes might only reach 2.1, and what to check when the brite tank will not build pressure. Covers hydrophobic stones, flow rates and leak paths.
+order: 13
+-->
+
+<p>These are performance problems rather than component failures. A unit can pass every check in the <a href="{{DOCS}}/fizzwizz-health-check-overview">Health Check</a> and still under-carbonate, so this article covers the causes that a pass/fail test will not catch.</p>
+
+<h2>Carbonation is well below target</h2>
+
+<p><em>For example: set to 2.7 volumes, achieving only 2.1.</em></p>
+
+<h3>1. Check the brite starting pressure</h3>
+
+<p>The brite starting pressure <strong>should be close to zero psi</strong>. Starting from a pressurised tank changes the whole carbonation calculation and is the first thing to rule out.</p>
+
+<h3>2. Check the CO<sub>2</sub> flow rates</h3>
+
+<p>Use the <strong>flow rate calculator in the BrewWizz app</strong> to confirm the actual flow matches expectations. A flow rate well below what the setting calls for points to a restricted stone.</p>
+
+<h3>3. Suspect a hydrophobic carbonation stone</h3>
+
+<p>A dirty carbonation stone becomes <strong>hydrophobic</strong> &mdash; it repels water rather than diffusing gas into it, so CO<sub>2</sub> passes through without dissolving properly. This is one of the most common causes of persistent under-carbonation.</p>
+
+<p><strong>Fix:</strong> use a torpedo to clean the carbonation stone.</p>
+
+<h3>4. Check the temperature sensor</h3>
+
+<p>Carbonation is temperature-dependent, so a probe reading a few degrees warm will systematically under-carbonate. Run the <a href="{{DOCS}}/slushy-wizztemp-temperature-probe-test">Slushy WizzTemp Test</a> and check <strong>C</strong> in the <a href="{{DOCS}}/health-check-2-co2-in-display-values">Health Check</a>.</p>
+
+<h3>5. Brite pressure building very quickly</h3>
+
+<p>If brite pressure rises faster than expected, gas is reaching the tank head without going through the stone. Two causes:</p>
+
+<ul>
+  <li>A <strong>leaking head transfer solenoid</strong> &mdash; confirm with check <strong>U</strong> in <a href="{{DOCS}}/health-check-6-gloved-finger-separator">Check 6</a>.</li>
+  <li>A <strong>broken or damaged carbonation stone</strong> &mdash; gas is bypassing the diffusion surface entirely.</li>
+</ul>
+
+<h2>Brite tank not building up pressure</h2>
+
+<p>This is the opposite symptom and is almost always a leak. Work through these:</p>
+
+<ol>
+  <li><strong>Run Checks 6 and 7</strong> from the Health Check &mdash; see <a href="{{DOCS}}/health-check-6-gloved-finger-separator">Check 6</a> and <a href="{{DOCS}}/health-check-7-stone-hose-isolation-valve">Check 7</a>. These are designed to find exactly this.</li>
+  <li><strong>Check for a leak on the stone hose</strong>, especially at the pneumatic push fittings.</li>
+  <li><strong>Check for a leak on the stone modification kit.</strong></li>
+  <li><strong>Check for a leak on the arm hose and separator</strong>, including the swiffer valve.</li>
+</ol>
+
+<h2>A note on stone maintenance</h2>
+
+<p>Carbonation stones account for a disproportionate share of performance complaints, in both directions &mdash; a blocked or hydrophobic stone under-carbonates, and a cracked stone lets gas bypass the water entirely. Cleaning stones on a regular schedule prevents most of these problems before they start.</p>
+
+<h2>Related articles</h2>
+
+<ul>
+  <li><a href="{{DOCS}}/fizzwizz-troubleshooting-by-symptom">Troubleshooting by Symptom (Ident A&ndash;X)</a></li>
+  <li><a href="{{DOCS}}/fizzwizz-pneumatics-schematic">FizzWizz Pneumatics: Schematic and Component Reference</a></li>
+  <li><a href="{{DOCS}}/brewwizz-support-and-parts">Getting Support and Ordering Parts</a></li>
+</ul>

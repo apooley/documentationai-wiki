@@ -1,0 +1,75 @@
+<!--meta
+title: Check 4 - Solenoid Function on ARM (K-Q)
+slug: health-check-4-solenoid-function-arm
+excerpt: Repeating the FizzWizz solenoid tests with CO2 moved to the ARM port. This reverses which buttons produce flow and proves the vent path. Covers check IDs K to Q.
+order: 7
+-->
+
+<p>Check 4 repeats the solenoid tests with the CO<sub>2</sub> supply moved to the <strong>ARM</strong> port. Feeding gas in from the other direction exercises paths that Check 3 cannot reach &mdash; in particular it is the only test that proves the vent path actually flows.</p>
+
+<h2>Step 4: Move the CO<sub>2</sub> connection</h2>
+
+<p>Disconnect the CO<sub>2</sub> push-to-connect from <strong>CO<sub>2</sub>_In</strong> and reconnect it to <strong>ARM</strong>.</p>
+
+<figure>
+  <img src="{{IMG}}/arm-jumper-connection.png" alt="Wall-mounted FizzWizz with a yellow jumper hose looping from the CO2 supply into the ARM connection on the underside of the enclosure." />
+  <figcaption>CO<sub>2</sub> jumper moved to the ARM connection.</figcaption>
+</figure>
+
+<h2>Check 4.1: at rest, nothing should flow</h2>
+
+<p>With <strong>no buttons pressed</strong>, confirm no gas is flowing from:</p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Confirm no flow from</th><th>Pass</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>K</strong></td><td>Stone connection</td><td>No flow</td></tr>
+    <tr><td><strong>L</strong></td><td>Arm connection</td><td>No flow</td></tr>
+    <tr><td><strong>M</strong></td><td>Vent valve</td><td>No flow</td></tr>
+    <tr><td><strong>N</strong></td><td>Flow meter ball should be down</td><td>Ball down, no flow</td></tr>
+  </tbody>
+</table>
+
+<p><strong>On check L:</strong> the CO<sub>2</sub> supply is connected to this port, so flow out of it is not physically possible. Treat L as a check that the connection is properly seated and not leaking around the fitting.</p>
+
+<h2>Checks 4.2 to 4.4: button tests</h2>
+
+<p>Note that the expected results are effectively swapped compared with Check 3 &mdash; that reversal is the point of the test.</p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Press and hold</th><th>Expected result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>O</strong></td><td>Up</td><td><strong>No gas</strong> flows from anywhere &mdash; you should hear a quiet click</td></tr>
+    <tr><td><strong>P</strong></td><td>Down</td><td>Gas pulses out of the <strong>Stone</strong> connection, and the flow meter ball bounces</td></tr>
+    <tr><td><strong>Q</strong></td><td>Enter</td><td>Gas pulses from the <strong>Vent valve</strong></td></tr>
+  </tbody>
+</table>
+
+<p><strong>Check Q is the important one.</strong> It is the only point in the Health Check where gas should actually come out of the vent, so it is the only test that will catch a vent solenoid stuck closed.</p>
+
+<h2>If a check fails</h2>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Symptom</th><th>Action</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>K</strong></td><td>Gas continuously flowing through stone connection</td><td>Change the CO<sub>2</sub>_in solenoid &mdash; stuck OPEN.</td></tr>
+    <tr><td><strong>L</strong></td><td>Gas continuously flowing around the CO<sub>2</sub>_In connection</td><td>Replace the CO<sub>2</sub>_In check valve. The FizzWizz will still operate, but there is a risk of reverse fluid flow if the CO<sub>2</sub> supply runs out.</td></tr>
+    <tr><td><strong>M</strong></td><td>Gas continuously flowing through vent valve</td><td>Change the Vent solenoid &mdash; stuck OPEN.</td></tr>
+    <tr><td><strong>N</strong></td><td>Flow meter ball is up</td><td>Same cause as K &mdash; change the CO<sub>2</sub>_in solenoid, stuck OPEN.</td></tr>
+    <tr><td><strong>O</strong></td><td>Up pressed, no clicking sound</td><td>Confirm the flow meter is not turned fully off, then investigate the Head_Transfer solenoid.</td></tr>
+    <tr><td><strong>P</strong></td><td>Down pressed, gas does not pulse through stone</td><td>Rotate the flow meter knob counterclockwise and retest. If still no pulse, change the CO<sub>2</sub>_in solenoid, stuck CLOSED.</td></tr>
+    <tr><td><strong>Q</strong></td><td>Enter pressed, gas does not pulse through vent valve</td><td>First check the vent valve itself is OPEN. If it is, change the Vent solenoid &mdash; stuck CLOSED.</td></tr>
+  </tbody>
+</table>
+
+<p>Full detail in <a href="{{DOCS}}/fizzwizz-troubleshooting-by-symptom">Troubleshooting by Symptom</a>.</p>
+
+<h2>Next step</h2>
+
+<p>Leave the CO<sub>2</sub> connected to ARM and continue to <a href="{{DOCS}}/health-check-5-arm-display-values">Check 5 &mdash; ARM Display Values</a>.</p>

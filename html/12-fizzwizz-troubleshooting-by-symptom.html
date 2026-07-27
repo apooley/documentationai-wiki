@@ -1,0 +1,218 @@
+<!--meta
+title: FizzWizz Troubleshooting by Symptom (Ident A-X)
+slug: fizzwizz-troubleshooting-by-symptom
+excerpt: What to do when a FizzWizz Health Check fails. Every check ID from A to X with its symptom and the actions to take, in order.
+order: 12
+-->
+
+<p>Find the ID letter of the check that failed and work through its actions in order. The IDs match the <a href="{{DOCS}}/fizzwizz-health-check-overview">Health Check procedure</a> and the <a href="{{DOCS}}/fizzwizz-health-test-results-form">results form</a> exactly.</p>
+
+<div class="td-callout td-callout-warning">
+  <p><strong>Read this first.</strong> Faults affecting pressure transducers and solenoids are typically caused by <strong>fluid in the FizzWizz</strong>. This happens when the arm separator is either not used or is overwhelmed, or when check valves are stuck open or were never installed.</p>
+  <p>If several unrelated checks fail at once, find and fix the fluid path before replacing components &mdash; otherwise the replacements will fail the same way.</p>
+</div>
+
+<h2>Power</h2>
+
+<table>
+  <thead>
+    <tr><th>Ident</th><th>Symptom</th><th>Action</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Check 1</strong></td>
+      <td>No green light, FizzWizz will not turn on</td>
+      <td>Replace the plug-in power supply. Confirm the outlet is live and the connector is fully seated first.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Display values &mdash; CO<sub>2</sub>_In (Check 2)</h2>
+
+<table>
+  <thead>
+    <tr><th>Ident</th><th>Symptom</th><th>Actions, in order</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>A</strong></td>
+      <td>Wrong reg psi</td>
+      <td><ol><li>Try a different CO<sub>2</sub> regulator.</li><li>Change the CO<sub>2</sub>_In pressure transducer.</li></ol></td>
+    </tr>
+    <tr>
+      <td><strong>B</strong></td>
+      <td>Brite psi reads wrong pressure</td>
+      <td>Change the Brite pressure transducer, and inspect for fluid in the pipe leading to the transducers.</td>
+    </tr>
+    <tr>
+      <td><strong>C</strong></td>
+      <td>Temperature reads wrong</td>
+      <td><ol><li>Change the WizzTemp sensor.</li><li>Inspect the temperature sensor internal loom.</li></ol>Confirm with the <a href="{{DOCS}}/slushy-wizztemp-temperature-probe-test">Slushy WizzTemp Test</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Solenoid function &mdash; CO<sub>2</sub>_In (Check 3)</h2>
+
+<table>
+  <thead>
+    <tr><th>Ident</th><th>Symptom</th><th>Actions, in order</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>D</strong></td>
+      <td>Gas continuously flowing through stone connection</td>
+      <td>Change the CO<sub>2</sub>_in solenoid &mdash; stuck OPEN.</td>
+    </tr>
+    <tr>
+      <td><strong>E</strong></td>
+      <td>Gas continuously flowing through ARM connection</td>
+      <td>Change the Head_Transfer solenoid &mdash; stuck OPEN.</td>
+    </tr>
+    <tr>
+      <td><strong>F</strong></td>
+      <td>Gas continuously flowing through ARM and vent</td>
+      <td>Change the Head_Transfer and Vent solenoids &mdash; both stuck OPEN.</td>
+    </tr>
+    <tr>
+      <td><strong>G</strong></td>
+      <td>Flow meter ball is up</td>
+      <td>Same cause as <strong>D</strong>. Change the CO<sub>2</sub>_in solenoid &mdash; stuck OPEN.</td>
+    </tr>
+    <tr>
+      <td><strong>H</strong></td>
+      <td>Up button pressed, gas does not pulse through ARM</td>
+      <td>Change the Head_Transfer solenoid &mdash; stuck CLOSED.</td>
+    </tr>
+    <tr>
+      <td><strong>I</strong></td>
+      <td>Down button pressed, gas does not pulse through STONE</td>
+      <td><ol><li>The flow meter may be turned all the way off. Rotate the flow meter knob counterclockwise and retest.</li><li>If it still does not pulse, change the CO<sub>2</sub>_in solenoid &mdash; stuck CLOSED.</li></ol></td>
+    </tr>
+    <tr>
+      <td><strong>J</strong></td>
+      <td>Enter button pressed, no clicking sound</td>
+      <td><ol><li>Check the vent valve is OPEN.</li><li>Change the Vent solenoid &mdash; stuck CLOSED.</li></ol></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Solenoid function &mdash; ARM (Check 4)</h2>
+
+<table>
+  <thead>
+    <tr><th>Ident</th><th>Symptom</th><th>Actions, in order</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>K</strong></td>
+      <td>Gas continuously flowing through stone connection</td>
+      <td>Same as <strong>D</strong>. Change the CO<sub>2</sub>_in solenoid &mdash; stuck OPEN.</td>
+    </tr>
+    <tr>
+      <td><strong>L</strong></td>
+      <td>Gas continuously flowing through CO<sub>2</sub>_in connection</td>
+      <td>Replace the CO<sub>2</sub>_In check valve. The FizzWizz will still operate, but there is a risk of reverse fluid flow if the operation runs out of CO<sub>2</sub>.</td>
+    </tr>
+    <tr>
+      <td><strong>M</strong></td>
+      <td>Gas continuously flowing through vent valve</td>
+      <td>Change the Vent solenoid &mdash; stuck OPEN.</td>
+    </tr>
+    <tr>
+      <td><strong>N</strong></td>
+      <td>Flow meter ball is up</td>
+      <td>Same cause as <strong>D</strong>. Change the CO<sub>2</sub>_in solenoid &mdash; stuck OPEN.</td>
+    </tr>
+    <tr>
+      <td><strong>O</strong></td>
+      <td>Up button pressed, no clicking sound</td>
+      <td><ol><li>Confirm the flow meter is not turned all the way off &mdash; rotate the knob counterclockwise and retest.</li><li>If there is still no click, investigate the Head_Transfer solenoid.</li></ol></td>
+    </tr>
+    <tr>
+      <td><strong>P</strong></td>
+      <td>Down button pressed, gas does not pulse through STONE</td>
+      <td>Same as <strong>I</strong>. Rotate the flow meter knob counterclockwise and retest; if still no pulse, change the CO<sub>2</sub>_in solenoid &mdash; stuck CLOSED.</td>
+    </tr>
+    <tr>
+      <td><strong>Q</strong></td>
+      <td>Enter button pressed, gas does not pulse through vent valve</td>
+      <td><ol><li>Check the vent valve is OPEN.</li><li>Change the Vent solenoid &mdash; stuck CLOSED.</li></ol></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Display values &mdash; ARM (Check 5)</h2>
+
+<table>
+  <thead>
+    <tr><th>Ident</th><th>Symptom</th><th>Actions, in order</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>R</strong></td>
+      <td>Wrong reg psi</td>
+      <td><ol><li>Try a different CO<sub>2</sub> regulator.</li><li>Change the CO<sub>2</sub>_In pressure transducer.</li><li>Replace the CO<sub>2</sub>_In check valve (see <strong>L</strong>).</li></ol></td>
+    </tr>
+    <tr>
+      <td><strong>S</strong></td>
+      <td>Brite psi reads wrong pressure</td>
+      <td>Same as <strong>B</strong>. Change the Brite pressure transducer and inspect for fluid in the pipe leading to the transducers.</td>
+    </tr>
+    <tr>
+      <td><strong>T</strong></td>
+      <td>Temperature reads wrong</td>
+      <td>Same as <strong>C</strong>. Change the WizzTemp sensor and inspect the internal loom.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Leak tests (Check 6)</h2>
+
+<table>
+  <thead>
+    <tr><th>Ident</th><th>Symptom</th><th>Actions, in order</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>U</strong></td>
+      <td>Pressure increased on finger test</td>
+      <td>Replace the Head_Transfer solenoid &mdash; it has a small leak.</td>
+    </tr>
+    <tr>
+      <td><strong>V</strong></td>
+      <td>Arm hose and separator pressure drops quickly</td>
+      <td><ol><li>Check the swiffer valve.</li><li>Remove the separator and recheck.</li><li>Suspect a leak in the arm hose or separator.</li><li>Check the vent solenoid &mdash; see <strong>M</strong>, stuck OPEN.</li></ol></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Stone circuit (Check 7)</h2>
+
+<table>
+  <thead>
+    <tr><th>Ident</th><th>Symptom</th><th>Actions, in order</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>W</strong></td>
+      <td>Ball stays down</td>
+      <td><ol><li>The flow meter may be turned all the way off. Rotate the knob counterclockwise and retest.</li><li>Possible blocked carbonation stone.</li><li>Check the sanitary and inline check valves.</li></ol></td>
+    </tr>
+    <tr>
+      <td><strong>X</strong></td>
+      <td>Ball stays up</td>
+      <td>Check the stone hose for leaks, especially around the pneumatic push fittings.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="td-callout td-callout-info">
+  <p><strong>Note on Ident O.</strong> The original troubleshooting guide cross-references Ident <strong>I</strong> here, which concerns the flow meter being turned off. Since check O is a listening test for solenoid actuation, the flow meter setting is unlikely to be the whole story &mdash; the Head_Transfer solenoid is the more probable cause if the click is genuinely absent. Both steps are listed above.</p>
+</div>
+
+<h2>Still not resolved?</h2>
+
+<p>If the Health Check passes but performance is still poor, see <a href="{{DOCS}}/fizzwizz-troubleshooting-carbonation-brite-pressure">Troubleshooting Low Carbonation and Brite Pressure Problems</a>.</p>
+
+<p>For parts or further assistance, see <a href="{{DOCS}}/brewwizz-support-and-parts">Getting Support and Ordering Parts</a>.</p>

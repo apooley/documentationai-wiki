@@ -1,0 +1,217 @@
+<!--meta
+title: FizzWizz Health Test Results Form and Pass/Fail Criteria
+slug: fizzwizz-health-test-results-form
+excerpt: The complete FizzWizz Health Check record sheet. Every check from A to X with its pass/fail criterion and the values to record, in one consolidated reference.
+order: 11
+-->
+
+<p>This is the record sheet for a full <a href="{{DOCS}}/fizzwizz-health-check-overview">FizzWizz Health Check</a>, with every criterion in one place. Use it as your working reference while testing, and keep the completed record with the unit.</p>
+
+<div class="td-callout td-callout-info">
+  <p><strong>Record actual measured values, not just pass or fail.</strong> A reading that passes today but has moved since the last check is early warning of a developing fault, and it is the first thing support will ask you for.</p>
+</div>
+
+<h2>Header details</h2>
+
+<table>
+  <tbody>
+    <tr><th>Tester's name</th><td>&nbsp;</td><th>FizzWizz name</th><td>&nbsp;</td></tr>
+    <tr><th>Test date</th><td>&nbsp;</td><th>FizzWizz serial number</th><td>&nbsp;</td></tr>
+  </tbody>
+</table>
+
+<h2>Check 1: Power and Test Mode</h2>
+
+<table>
+  <thead>
+    <tr><th>Step</th><th>Criterion</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Check 1</td><td>Wall-wart power supply &mdash; side green power light is ON</td><td>Yes / No</td></tr>
+    <tr><td>Step 2</td><td>FizzWizz powered up in <a href="{{DOCS}}/fizzwizz-test-mode">Test Mode</a></td><td>Yes / No</td></tr>
+  </tbody>
+</table>
+
+<h2>Check 2: CO<sub>2</sub>_In display values</h2>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Criterion</th><th>Record</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>A</strong></td>
+      <td>&ldquo;Reg psi&rdquo; = supply regulator &plusmn;3 psi. Should be between 30 and 40 psi</td>
+      <td>FizzWizz Reg PSI: ____<br />Supply Regulator PSI: ____</td>
+      <td>Pass / Fail</td>
+    </tr>
+    <tr>
+      <td><strong>B</strong></td>
+      <td>&ldquo;Brite psi&rdquo; should = 0.000. Minimum &minus;0.18, maximum +0.18</td>
+      <td>Brite Pressure: ____</td>
+      <td>Pass / Fail</td>
+    </tr>
+    <tr>
+      <td><strong>C</strong></td>
+      <td>&ldquo;Temperature&rdquo; = representative value</td>
+      <td>Expected: ____<br />FizzWizz Temperature: ____</td>
+      <td>Pass / Fail</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Check 3: Correct solenoid function, CO<sub>2</sub>_In</h2>
+
+<p><strong>3.1</strong> &mdash; CO<sub>2</sub>_In connected, no buttons pressed, no gas should be flowing from:</p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Criterion</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>D</strong></td><td>Confirm no flow from stone connection</td><td>Pass (no flow) / Fail (flow)</td></tr>
+    <tr><td><strong>E</strong></td><td>Confirm no flow from arm connection</td><td>Pass (no flow) / Fail (flow)</td></tr>
+    <tr><td><strong>F</strong></td><td>Confirm no flow from vent valve</td><td>Pass (no flow) / Fail (flow)</td></tr>
+    <tr><td><strong>G</strong></td><td>Flow meter ball should be down, no flow</td><td>Pass (no flow) / Fail (flow)</td></tr>
+  </tbody>
+</table>
+
+<p><strong>3.2 to 3.4</strong> &mdash; CO<sub>2</sub>_In connected, solenoid test, use buttons to confirm:</p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Criterion</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>H</strong></td><td>Up button &mdash; gas should pulse from arm</td><td>Pass (gas pulse) / Fail</td></tr>
+    <tr><td><strong>I</strong></td><td>Down button &mdash; gas should pulse from stone</td><td>Pass (gas pulse) / Fail</td></tr>
+    <tr><td><strong>J</strong></td><td>Enter button &mdash; no gas should flow, listen for click</td><td>Pass (quiet click) / Fail</td></tr>
+  </tbody>
+</table>
+
+<h2>Check 4: Correct solenoid function, ARM</h2>
+
+<p><strong>4.1</strong> &mdash; CO<sub>2</sub> connected to ARM, no buttons pressed, no gas should be flowing from:</p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Criterion</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>K</strong></td><td>Confirm no flow from stone connection</td><td>Pass (no flow) / Fail (flow)</td></tr>
+    <tr><td><strong>L</strong></td><td>Confirm no flow from arm connection</td><td>Pass (no flow) / Fail (flow)</td></tr>
+    <tr><td><strong>M</strong></td><td>Confirm no flow from vent valve</td><td>Pass (no flow) / Fail (flow)</td></tr>
+    <tr><td><strong>N</strong></td><td>Flow meter ball should be down, no flow</td><td>Pass (no flow) / Fail (flow)</td></tr>
+  </tbody>
+</table>
+
+<p><strong>4.2 to 4.4</strong> &mdash; CO<sub>2</sub> connected to ARM, solenoid test, use buttons to confirm:</p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Criterion</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>O</strong></td><td>Up button &mdash; no gas should flow, listen for click</td><td>Pass (quiet click) / Fail</td></tr>
+    <tr><td><strong>P</strong></td><td>Down button &mdash; gas should pulse from stone</td><td>Pass (gas pulse) / Fail</td></tr>
+    <tr><td><strong>Q</strong></td><td>Enter button &mdash; gas should pulse from vent</td><td>Pass (gas pulse) / Fail</td></tr>
+  </tbody>
+</table>
+
+<h2>Check 5: ARM testing display values</h2>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Criterion</th><th>Record</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>R</strong></td>
+      <td>&ldquo;Reg psi&rdquo; = supply regulator &plusmn;3 psi. Should be between 30 and 40 psi</td>
+      <td>FizzWizz Reg PSI: ____<br />Supply Regulator PSI: ____</td>
+      <td>Pass / Fail</td>
+    </tr>
+    <tr>
+      <td><strong>S</strong></td>
+      <td>&ldquo;Brite psi&rdquo; = &ldquo;Reg psi&rdquo; &plusmn;3 psi. Should be between 30 and 40 psi</td>
+      <td>FizzWizz Brite PSI: ____<br />FizzWizz Reg PSI: ____</td>
+      <td>Pass / Fail</td>
+    </tr>
+    <tr>
+      <td><strong>T</strong></td>
+      <td>&ldquo;Temperature&rdquo; = representative value, similar to check C</td>
+      <td>Expected: ____<br />FizzWizz Temperature: ____</td>
+      <td>Pass / Fail</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Check 6: Gloved finger and separator integrity</h2>
+
+<p><em>Step 6: disconnect CO<sub>2</sub> from ARM and reconnect to CO<sub>2</sub>_In. Allow 2 minutes to settle.</em></p>
+
+<p><strong>6.1</strong> &mdash; Gloved finger test on ARM, for 30 seconds:</p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Criterion</th><th>Record</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>U</strong></td>
+      <td>Pressure <strong>increase</strong> should be less than 0.10 psi</td>
+      <td>Start Pressure: ____<br />Finish Pressure: ____<br />Finish &minus; Start: ____</td>
+      <td>Pass / Fail</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="td-callout td-callout-warning">
+  <p><strong>Documentation discrepancy &mdash; pending confirmation.</strong> The original form records row U as <em>Start &minus; Finish</em>. The procedure and troubleshooting guide both describe this test as detecting a pressure <em>increase</em>, so the subtraction is shown here as <em>Finish &minus; Start</em>. See <a href="{{DOCS}}/health-check-6-gloved-finger-separator">Check 6</a>.</p>
+</div>
+
+<p><strong>6.2</strong> &mdash; Connect arm hose with separator to ARM, swiffer valve must be closed. Press Up button for one pulse:</p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Criterion</th><th>Record</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>V</strong></td>
+      <td>Brite pressure should not <strong>drop</strong> by more than 1.5 psi</td>
+      <td>Start Pressure: ____<br />Finish Pressure: ____<br />Start &minus; Finish: ____</td>
+      <td>Pass / Fail</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Check 7: Stone hose connections</h2>
+
+<p><em>Step 7: CO<sub>2</sub> carbonation stone and isolation valve check. Put the FizzWizz in Carbonation mode.</em></p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Criterion</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>W</strong></td><td><em>7.1 Isolation valve open.</em> Rotate knob &mdash; ball is fully adjustable up and down</td><td>Pass / Fail</td></tr>
+    <tr><td><strong>X</strong></td><td><em>7.2 Close carbonation stone isolation valve.</em> Ball drops to zero</td><td>Pass / Fail</td></tr>
+  </tbody>
+</table>
+
+<div class="td-callout td-callout-warning">
+  <p><strong>Documentation discrepancy &mdash; pending confirmation.</strong> The original form allows approximately <strong>10 seconds</strong> for the ball to drop; the procedure allows approximately <strong>15 seconds</strong>. Allow 15 seconds before recording a failure. See <a href="{{DOCS}}/health-check-7-stone-hose-isolation-valve">Check 7</a>.</p>
+</div>
+
+<h2>Comments and notes</h2>
+
+<p>Record anything unusual observed during testing, parts replaced, and any readings that passed but had moved noticeably since the previous check.</p>
+
+<h2>Related articles</h2>
+
+<ul>
+  <li><a href="{{DOCS}}/fizzwizz-health-check-overview">FizzWizz Health Check: Purpose and When to Run It</a></li>
+  <li><a href="{{DOCS}}/fizzwizz-troubleshooting-by-symptom">Troubleshooting by Symptom (Ident A&ndash;X)</a></li>
+  <li><a href="{{DOCS}}/brewwizz-support-and-parts">Getting Support and Ordering Parts</a></li>
+</ul>

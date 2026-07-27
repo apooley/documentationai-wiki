@@ -1,0 +1,73 @@
+<!--meta
+title: Check 5 - ARM Display Values (R-T)
+slug: health-check-5-arm-display-values
+excerpt: Verifying FizzWizz regulator, Brite and temperature readings with CO2 connected to the ARM port. Confirms the Brite transducer responds to real pressure. Covers check IDs R, S and T.
+order: 8
+-->
+
+<p>Check 5 re-reads the same three display values as <a href="{{DOCS}}/health-check-2-co2-in-display-values">Check 2</a>, but with CO<sub>2</sub> supplied to the <strong>ARM</strong> port.</p>
+
+<p>This matters because in Check 2 the arm circuit was open to atmosphere, so Brite psi read zero. A transducer that is stuck at zero would have passed. Here the arm circuit is pressurised, so <strong>Brite psi should now read a real pressure</strong> &mdash; which is what proves the transducer is actually responding.</p>
+
+<h2>Preconditions</h2>
+
+<ul>
+  <li>CO<sub>2</sub> still connected to <strong>ARM</strong> from <a href="{{DOCS}}/health-check-4-solenoid-function-arm">Check 4</a></li>
+  <li>Regulator at 30&ndash;40 psi</li>
+  <li>FizzWizz in <a href="{{DOCS}}/fizzwizz-test-mode">Test Mode</a></li>
+</ul>
+
+<h2>The checks</h2>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Display value</th><th>Criterion</th><th>Tolerance</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>R</strong></td>
+      <td>CO2 reg psi</td>
+      <td>Equals the supply regulator dial, and falls between 30 and 40 psi</td>
+      <td>&plusmn;3 psi</td>
+    </tr>
+    <tr>
+      <td><strong>S</strong></td>
+      <td>Brite psi</td>
+      <td>Equals the CO2 reg psi reading, and falls between 30 and 40 psi</td>
+      <td>&plusmn;3 psi</td>
+    </tr>
+    <tr>
+      <td><strong>T</strong></td>
+      <td>Temperature</td>
+      <td>A representative value, similar to the reading recorded at check <strong>C</strong></td>
+      <td>Judgement</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Reading S: the key measurement</h2>
+
+<p>With gas fed into the ARM port, the arm circuit is pressurised to supply pressure. <strong>Brite psi</strong> and <strong>CO2 reg psi</strong> should therefore agree within 3 psi.</p>
+
+<p>If Brite psi still reads near zero, the Brite transducer is not responding &mdash; change it and inspect for fluid in the pipe leading to the transducers.</p>
+
+<h2>Reading T: compare against C</h2>
+
+<p>Temperature should be close to whatever you recorded at check <strong>C</strong>. A significant change between the two readings, taken minutes apart in the same location, points to an intermittent sensor or a loom fault.</p>
+
+<h2>If a check fails</h2>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Symptom</th><th>Action</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>R</strong></td><td>Wrong reg psi</td><td>As for check <strong>A</strong>: try a different CO<sub>2</sub> regulator, then change the CO<sub>2</sub>_In pressure transducer. Also check the CO<sub>2</sub>_In check valve.</td></tr>
+    <tr><td><strong>S</strong></td><td>Brite psi reads wrong pressure</td><td>As for check <strong>B</strong>: change the Brite pressure transducer and inspect for fluid in the pipe leading to the transducers.</td></tr>
+    <tr><td><strong>T</strong></td><td>Temperature reads wrong</td><td>As for check <strong>C</strong>: change the WizzTemp sensor and inspect the temperature sensor internal loom. Confirm with the <a href="{{DOCS}}/slushy-wizztemp-temperature-probe-test">Slushy WizzTemp Test</a>.</td></tr>
+  </tbody>
+</table>
+
+<h2>Next step</h2>
+
+<p><a href="{{DOCS}}/health-check-6-gloved-finger-separator">Check 6 &mdash; Gloved Finger and Separator Integrity</a></p>

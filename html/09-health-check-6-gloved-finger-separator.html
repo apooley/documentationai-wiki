@@ -1,0 +1,93 @@
+<!--meta
+title: Check 6 - Gloved Finger and Separator Integrity (U-V)
+slug: health-check-6-gloved-finger-separator
+excerpt: Two leak tests on the FizzWizz arm circuit. The gloved finger test detects a leaking Head_Transfer solenoid; the separator test detects leaks in the arm hose, separator or swiffer valve. Covers check IDs U and V.
+order: 9
+-->
+
+<p>Check 6 is a pair of leak tests on the arm circuit. They are the most sensitive tests in the Health Check, and the ones most likely to reveal a slow fault that has not yet caused an obvious symptom.</p>
+
+<h2>Step 6: Reconnect CO<sub>2</sub> to CO<sub>2</sub>_In</h2>
+
+<ol>
+  <li>Disconnect the push-to-connect from the <strong>ARM</strong> connection and re-attach it to <strong>CO<sub>2</sub>_In</strong>.</li>
+  <li><strong>Allow the values to settle for 2 minutes.</strong></li>
+</ol>
+
+<p>Do not rush the settling time. Starting either test before readings are stable is the most common cause of a false failure here.</p>
+
+<h2>Check 6.1: Gloved finger test (U)</h2>
+
+<p>Using a gloved hand, cover and plug the <strong>ARM</strong> connection. Observe the Brite pressure for <strong>30 seconds</strong>.</p>
+
+<figure>
+  <img src="{{IMG}}/gloved-finger-test.png" alt="A gloved hand pressed over the ARM connection on the underside of the FizzWizz enclosure while the display is observed." />
+  <figcaption>Plug the ARM connection with a gloved finger and watch the Brite pressure.</figcaption>
+</figure>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Criterion</th><th>Pass</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>U</strong></td>
+      <td>Brite pressure should not <strong>increase</strong> by more than 0.10 psi over 30 seconds</td>
+      <td>Increase &lt; 0.10 psi</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>What this test is looking for:</strong> CO<sub>2</sub> is on the CO<sub>2</sub>_In port and the Head_Transfer solenoid should be closed, so the sealed arm circuit should hold steady. A rising Brite pressure means gas is seeping past the Head_Transfer solenoid.</p>
+
+<div class="td-callout td-callout-warning">
+  <p><strong>Documentation discrepancy &mdash; pending confirmation.</strong> The Health Test Procedure specifies a pressure <em>increase</em> of no more than 0.10 psi, and the troubleshooting guide agrees (&ldquo;pressure increased on finger test&rdquo; indicates a leaking Head_Transfer solenoid). However, the Results Form records this row as <em>Start &minus; Finish</em>, which computes a pressure <em>drop</em>. Record <strong>Finish &minus; Start</strong> for this row until the form is corrected.</p>
+</div>
+
+<h3>If U fails</h3>
+
+<p>Replace the Head_Transfer solenoid &mdash; it has a small leak.</p>
+
+<h2>Check 6.2: Arm hose and separator test (V)</h2>
+
+<ol>
+  <li>Connect the <strong>arm hose with separator</strong> to the ARM connection.</li>
+  <li>Ensure the <strong>swiffer valve is closed</strong>.</li>
+  <li>Press the <strong>Up</strong> button for <strong>one pulse</strong>. This squirts CO<sub>2</sub> into the arm and pressurises the circuit.</li>
+  <li>Observe the Brite pressure for <strong>30 seconds</strong>.</li>
+</ol>
+
+<figure>
+  <img src="{{IMG}}/arm-circuit-separator.png" alt="Schematic of the arm circuit showing the manifold, check valve, arm hose coiling to the arm separator and swiffer valve, alongside two display photographs labelled Before Pulse reading 0.001 Brite psi and After Pulse reading 13.277 Brite psi." />
+  <figcaption>The arm circuit under test, with typical before and after pulse readings.</figcaption>
+</figure>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Criterion</th><th>Pass</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>V</strong></td>
+      <td>Brite pressure should not <strong>drop</strong> by more than 1.5 psi over 30 seconds</td>
+      <td>Drop &le; 1.5 psi</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Record the start and finish pressures, and the difference. In the example readings above, one pulse took the circuit from 0.001 to 13.277 psi &mdash; the absolute value is not important, the rate of decay is.</p>
+
+<h3>If V fails</h3>
+
+<p>Work through these in order &mdash; the first two cost nothing to check:</p>
+
+<ol>
+  <li><strong>Check the swiffer valve.</strong> An unclosed or worn swiffer valve is the most common cause.</li>
+  <li><strong>Remove the separator and recheck.</strong> If the leak disappears, the separator is at fault.</li>
+  <li><strong>Suspect a leak in the arm hose or separator</strong> itself &mdash; check fittings and connections along the whole run.</li>
+  <li><strong>Check the vent solenoid.</strong> A vent solenoid stuck open will bleed the circuit; see Ident <strong>M</strong> in the troubleshooting guide.</li>
+</ol>
+
+<h2>Next step</h2>
+
+<p><a href="{{DOCS}}/health-check-7-stone-hose-isolation-valve">Check 7 &mdash; Stone Hose Connections and Isolation Valve</a></p>
