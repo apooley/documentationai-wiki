@@ -1,60 +1,111 @@
 ---
-title: Temperature Probe Testing
-description: Verify FizzWizz temperature sensor accuracy using an ice-water slushy mixture at 0C / 32F.
+title: Slushy WizzTemp Test
+description: Verify WizzTemp sensor accuracy against a 0°C ice-water reference — the definitive temperature calibration test for the FizzWizz.
 ---
 
-## Verify the temperature probe
+## Slushy WizzTemp test
 
-Verify the accuracy of the FizzWizz temperature sensor by testing it against a known `0C / 32F` reference point created with an ice-water slushy mixture.
+The Health Check (Ident C) confirms the temperature reading is plausible. This test confirms it is **accurate** by comparing against a `0°C / 32°F` ice-water reference — the only way to prove the probe is genuinely calibrated.
 
-<Callout kind="alert">
+<Callout kind="info">
 
-FizzWizz must be in Test Mode before starting. See the [Health Check Procedure Step 2](/health-check/procedure) for instructions on entering Test Mode.
+The FizzWizz must be in [Test Mode](/health-check/test-mode) before starting this test.
 
 </Callout>
 
+## Step 1: Make a slushy
+
 <Steps>
-  <Step title="Prepare the slushy">
+  <Step title="Fill container with crushed ice">
 
-  - Fill the entire container with crushed ice, as crushed as possible.
-  - Pour in approximately 20% additional tap water.
-  - Do not worry if the water overflows, but keep the ice.
-  - Fill all gaps between the ice pieces with water.
-  - The interface between the ice and the water will be exactly `0C / 32F`.
+  Use ice that is as finely crushed as possible. The smaller the pieces, the more complete the contact between ice and water.
 
   </Step>
-  <Step title="Insert the temperature sensor">
+  <Step title="Add water">
 
-  - Place the FizzWizz temperature sensor into the ice-water slushy mixture.
-  - Ensure the sensor is surrounded by the ice-water interface.
+  Pour in approximately 20% additional tap water. Do not worry if it overflows — the important thing is to keep the ice.
 
   </Step>
-  <Step title="Stir and observe">
+  <Step title="Fill all gaps">
 
-  - Move the sensor constantly in the slushy while you watch the temperature reading on the FizzWizz display.
-  - Continue moving the sensor until the reading stabilizes.
+  Ensure all gaps between ice pieces are filled with water. The ice-water interface is exactly `0°C / 32°F` — this is the reference point you are testing against.
 
   </Step>
 </Steps>
 
-<Callout kind="success">
+![Slushy preparation](/images/slushy-preparation.png)
 
-**Expected Results:** With constant movement, the sensor should reach `0.25C / 32.45F` or lower, depending on impurities in the water. It should not be possible to go lower than `-0.16C / 31.71F`. For more accurate testing, use deionized water.
+*Target consistency: crushed ice with gaps filled by water.*
+
+## Step 2: Agitate the sensor continuously
+
+<Steps>
+  <Step title="Insert the sensor">
+
+  Place the WizzTemp sensor into the slushy.
+
+  </Step>
+  <Step title="Agitate vigorously">
+
+  Continually and vigorously move the sensor — like mixing a cup of tea. Move it up and down and around.
+
+  </Step>
+  <Step title="Keep moving for 2–3 minutes">
+
+  After `2–3` minutes, check the reading on the display, but do not stop moving the sensor.
+
+  </Step>
+  <Step title="Never stop during the test">
+
+  Continuous agitation is required for the entire duration of the test. If you stop, the test becomes invalid.
+
+  </Step>
+</Steps>
+
+![Sensor agitation](/images/slushy-sensor-agitation.png)
+
+*Move the sensor continuously, up and down and around.*
+
+## Why agitation matters
+
+<Callout kind="alert">
+
+A stationary probe forms a warmer meltwater layer around itself and reads high. Insufficient agitation is the most common reason the test appears to fail on a healthy probe. If your reading is above the pass threshold, agitate more vigorously and try again before suspecting the sensor.
 
 </Callout>
+
+## Expected results
+
+| Reading | Result | Action |
+| --- | --- | --- |
+| `0.25°C / 32.45°F` or lower | Pass | Sensor is accurate. Exact threshold depends on water impurities. |
+| Above `0.25°C / 32.45°F` | Fail — reading high | 1. Confirm vigorous agitation and fresh ice. 2. Then suspect the probe. |
+| Below `−0.16°C / 31.71°F` | Fail — impossibly low | Faulty probe or internal loom. Replace WizzTemp sensor. |
+
+![Display reading](/images/slushy-display-reading.png)
+
+*A passing reading during the slushy test.*
+
+## For more accurate testing
 
 <Callout kind="tip">
 
-If the sensor does not reach the expected range, the temperature sensor may be faulty. Refer to [issue C in the Troubleshooting Guide](/troubleshooting-guide) and consider replacing the wizztemp sensor or inspecting the temp sensor internal loom.
+Use deionized water instead of tap water. Without dissolved impurities, the freezing point is closer to exactly `0°C`, giving a tighter pass/fail band.
 
 </Callout>
 
+## If the test fails
+
+1. Repeat the test properly — fresh slushy, fresh ice, vigorous agitation. Most "failures" are actually insufficient agitation.
+2. Inspect the internal loom for damage or corrosion.
+3. Change the WizzTemp sensor.
+
+See Ident C in [Troubleshooting by Symptom](/troubleshooting-guide) for full diagnostic steps.
+
+## Why this matters for carbonation
+
 <Callout kind="info">
 
-For assistance or parts ordering, visit `www.BrewWizz.com` or call `902 656-2652`.
-
-Out-of-hours support: `1-902-579-2121`.
-
-Parts and service support are provided via Allendale Electronics, authorized distributor and manufacturer of BrewWizz products.
+Carbonation volumes are calculated from temperature. A probe that reads warm causes systematic under-carbonation — the FizzWizz thinks the beer is warmer than it is and calculates less CO₂ than needed. See [Carbonation & Brite Pressure](/troubleshooting-carbonation) for the full chain of cause and effect.
 
 </Callout>

@@ -1,61 +1,90 @@
 ---
-title: FizzWizz Troubleshooting Overview
-description: Identify, diagnose, and resolve FizzWizz carbonation system issues with troubleshooting guides, health check procedures, and temperature probe testing.
+title: Health Check Overview
+description: Run the FizzWizz Health Check — a structured 7-check sequence using A–X IDs to diagnose pneumatics, solenoids, sensors, and leaks.
 ---
 
-## Find the right fix for your FizzWizz
+## Run the FizzWizz Health Check
 
-FizzWizz is a carbonation system used in home brewing, and most faults can be traced quickly when you start with the right procedure. Use this page to jump straight to the troubleshooting guide, run a full system health check, or verify whether the temperature probe is reading accurately.
+The Health Check is a structured test sequence that isolates problems across 7 checks using a shared A–X ID system. Each check tests a specific part of the pneumatics, and every test result is identified by a letter — A through X — that appears consistently across the procedure pages, the results form, and the troubleshooting guide.
 
-## What's inside
+## When to run the Health Check
 
-Use these resources based on the problem you are trying to solve:
+- Commissioning a new or relocated FizzWizz
+- Preventative maintenance during off-season or scheduled service
+- After replacing a component (solenoid, transducer, sensor)
+- Carbonation results are off-target with no obvious cause
+- Suspected leak, stuck solenoid, or faulty sensor
 
-- **Troubleshooting Guide** — diagnose common issues across the system with targeted checks and corrective actions.
-- **Health Check Procedure** — run a complete operational check across the main FizzWizz components.
-- **Temperature Probe Testing** — confirm whether the temperature sensor is reporting accurate readings using an ice-water slushy mixture.
+## The 7 checks at a glance
 
-## Choose a troubleshooting path
+| Check | What it tests | ID letters | Go to |
+| --- | --- | --- | --- |
+| Check 1 | Setup and power supply | — | [Setup & Power Check](/health-check/setup-and-power-check) |
+| Check 2 | Display values on CO₂_In circuit | A–C | [Check 2 — Display Values](/health-check/check-2-display-values) |
+| Check 3 | Solenoid function on CO₂_In | D–J | [Check 3 — Solenoid CO₂_In](/health-check/check-3-solenoid-co2-in) |
+| Check 4 | Solenoid function on ARM | K–Q | [Check 4 — Solenoid ARM](/health-check/check-4-solenoid-arm) |
+| Check 5 | Display values on ARM circuit | R–T | [Check 5 — ARM Display Values](/health-check/check-5-arm-display-values) |
+| Check 6 | Leak testing (arm circuit) | U–V | [Check 6 — Leak Testing](/health-check/check-6-leak-testing) |
+| Check 7 | Stone hose and isolation valve | W–X | [Check 7 — Stone/Isolation Valve](/health-check/check-7-stone-isolation-valve) |
+
+## Prerequisites
+
+<Callout kind="info">
+
+- CO₂ supply with regulator (30–40 psi)
+- Wall-wart power supply for the FizzWizz
+- Stone hose and carbonation stone
+- Arm hose with separator
+- Push-to-connect jumper hose
+- Disposable glove
+- Printed [Results Form](/health-check/results-form)
+
+</Callout>
+
+## Common root cause
+
+<Callout kind="alert">
+
+Fluid inside the FizzWizz is the most common root cause of transducer and solenoid failures. It happens when the arm separator is not used or is overwhelmed, or when check valves are stuck open or missing. If several unrelated checks fail, investigate the fluid path before replacing individual components. See the [Pneumatics Schematic](/pneumatics-schematic) for component locations.
+
+</Callout>
+
+## Record results as you go
+
+<Callout kind="tip">
+
+Fill in the [Results Form](/health-check/results-form) during each check, recording actual measured values — not just pass or fail. The numbers help diagnose borderline or intermittent issues during support calls.
+
+</Callout>
+
+## Related articles
 
 <Columns cols={3}>
   <Card
-    title="Troubleshooting Guide"
+    title="Pneumatics Schematic"
+    href="/pneumatics-schematic"
+    icon="book-open"
+  >
+
+  Reference diagram and component glossary for all three pneumatic circuits
+
+  </Card>
+  <Card
+    title="Test Mode"
+    href="/health-check/test-mode"
+    icon="play-circle"
+  >
+
+  How to enter Test Mode and what the buttons do
+
+  </Card>
+  <Card
+    title="Troubleshooting by Symptom"
     href="/troubleshooting-guide"
     icon="wrench"
   >
 
-  Comprehensive reference for issues A through X with diagnostic steps and solutions
-
-  </Card>
-  <Card
-    title="Health Check Procedure"
-    href="/health-check/procedure"
-    icon="heart-pulse"
-  >
-
-  Step-by-step 7-step procedure to verify all FizzWizz components operate correctly
-
-  </Card>
-  <Card
-    title="Temperature Probe Testing"
-    href="/testing/temperature-probe"
-    icon="thermometer"
-  >
-
-  Verify temperature sensor accuracy using an ice-water slushy mixture
+  Look up a failed ident letter for ordered actions
 
   </Card>
 </Columns>
-
-## Support and parts
-
-<Callout kind="info">
-
-If you need assistance or need to order parts, use the contacts below.
-
-- **Website:** [www.BrewWizz.com](https://www.BrewWizz.com)
-- **Phone:** `902 656-2652`
-- **Out-of-hours support:** `1-902-579-2121`
-- **Parts and service:** Allendale Electronics, Authorized Distributor and Manufacturer of BrewWizz Products
-
-</Callout>

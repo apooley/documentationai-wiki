@@ -1,0 +1,80 @@
+---
+title: Check 3 — Solenoid CO₂_In
+description: Test each solenoid for stuck-open and stuck-closed failures with CO2 on the CO2_In port — Health Check Idents D through J.
+---
+
+## Check 3 — Solenoid function on CO₂_In
+
+Verify each solenoid opens and closes correctly by observing gas flow at the Stone, Arm, and Vent ports when buttons are pressed in Test Mode. This check proves two things: no solenoid leaks at rest, and each button operates the correct solenoid.
+
+## Preconditions
+
+<Callout kind="info">
+
+- CO₂ connected to `CO₂_In`, regulator at 30–40 psi
+- Stone hose and arm hose disconnected, so you can feel and hear flow at each port
+- FizzWizz in [Test Mode](/health-check/test-mode)
+- [Check 2](/health-check/check-2-display-values) passed
+
+</Callout>
+
+![Solenoid button mapping](/images/solenoid-button-mapping.png)
+
+*Each button operates one internal solenoid.*
+
+## Button-to-solenoid mapping
+
+| Button | Solenoid operated | Port |
+| --- | --- | --- |
+| **Up** | Head_Transfer | ARM |
+| **Down** | CO₂_in | STONE |
+| **Enter** | Vent | Vent valve |
+
+## At rest — nothing should flow
+
+With CO₂ connected and no buttons pressed, confirm there is no gas flowing from any port. Any flow at rest means a solenoid is stuck open.
+
+| Ident | Confirm no flow from | Pass |
+| --- | --- | --- |
+| **D** | Stone connection | No flow |
+| **E** | Arm connection | No flow |
+| **F** | Vent valve | No flow |
+| **G** | Flow meter ball | Ball down, no flow |
+
+## Button tests — each button pulses the right port
+
+Press and hold each button in turn and observe the result.
+
+| Ident | Press and hold | Expected result |
+| --- | --- | --- |
+| **H** | Up | Gas pulses out of the **Arm** connection |
+| **I** | Down | Gas pulses out of the **Stone** connection, and the flow meter ball bounces |
+| **J** | Enter | **No gas** flows from anywhere — you should hear a quiet click |
+
+## Ident J is a listening test
+
+<Callout kind="tip">
+
+Check J is a listening test, not a flow test. With CO₂ on the `CO₂_In` port, operating the vent solenoid should not release gas. The click confirms the solenoid is actuating.
+
+</Callout>
+
+## If a check fails
+
+| Ident | Symptom | Likely cause / actions |
+| --- | --- | --- |
+| **D** | Gas continuously flowing through stone connection | CO₂_in solenoid stuck OPEN — change the CO₂_in solenoid. |
+| **E** | Gas continuously flowing through arm connection | Head_Transfer solenoid stuck OPEN — change the Head_Transfer solenoid. |
+| **F** | Gas flowing through both arm and vent | Change the Head_Transfer and Vent solenoids — both stuck OPEN. |
+| **G** | Flow meter ball is up | Same cause as D — change the CO₂_in solenoid, stuck OPEN. |
+| **H** | Up pressed, gas does not pulse through arm | Head_Transfer solenoid stuck CLOSED — change the Head_Transfer solenoid. |
+| **I** | Down pressed, gas does not pulse through stone | 1. Confirm the flow meter is not turned all the way off — rotate the knob counterclockwise and retest. 2. If it still does not pulse, change the CO₂_in solenoid, stuck CLOSED. |
+| **J** | Enter pressed, no clicking sound | 1. Confirm the vent valve is not physically open. 2. Change the Vent solenoid, stuck CLOSED. |
+
+## Next step
+
+<Card title="Check 4 — Solenoid ARM" href="/health-check/check-4-solenoid-arm" icon="terminal">
+
+Move CO₂ to the ARM port and repeat the solenoid tests.
+
+</Card>

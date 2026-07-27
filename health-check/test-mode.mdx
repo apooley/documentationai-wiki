@@ -1,0 +1,82 @@
+---
+title: Test Mode
+description: Enter FizzWizz Test Mode to view live sensor readings and manually trigger solenoids — required for Health Checks 2 through 6.
+---
+
+## Test Mode
+
+Test Mode shows live pressure and temperature readings and lets you manually fire each solenoid from the front panel. Health Checks 2 through 6 require Test Mode. Check 7 is performed in Carbonation mode instead.
+
+![Test Mode entry sequence](/images/test-mode-entry-sequence.png)
+
+*Hold the top two buttons while switching on to enter Test Mode.*
+
+## Entering Test Mode
+
+<Steps>
+  <Step title="Start powered off">
+
+  Ensure the FizzWizz is switched OFF.
+
+  </Step>
+  <Step title="Press and hold top two buttons">
+
+  Press and hold both top buttons on the front panel.
+
+  </Step>
+  <Step title="Switch on while holding">
+
+  While still holding both buttons, switch the FizzWizz ON.
+
+  </Step>
+  <Step title="Hold for 6 seconds">
+
+  Continue holding both buttons for 6 seconds.
+
+  </Step>
+  <Step title="Release">
+
+  Release the buttons. The display should now show Test Mode.
+
+  </Step>
+</Steps>
+
+## Confirming Test Mode
+
+<Callout kind="info">
+
+The display should show `Test Mode` at the top. If the unit boots normally instead of entering Test Mode, switch it OFF and try the entry sequence again.
+
+</Callout>
+
+## Display values in Test Mode
+
+| Display field | What it shows |
+| --- | --- |
+| CO₂ reg psi | Pressure at the CO₂ inlet port |
+| Brite psi | Pressure in the arm/head transfer circuit |
+| Temperature | WizzTemp probe reading |
+
+## Button-to-solenoid mapping
+
+| Button | Solenoid activated | Port/circuit |
+| --- | --- | --- |
+| **Up** | Head_Transfer | ARM |
+| **Down** | CO₂_in | STONE |
+| **Enter** | Vent | Vent valve |
+
+## Which port produces gas depends on where CO₂ is connected
+
+<Callout kind="tip">
+
+The button you press determines which solenoid opens, but which port the gas comes out of depends on where the CO₂ supply is connected. When CO₂ is on `CO₂_In`, pressing Down sends gas to the Stone port. When CO₂ is moved to ARM for Check 4, the same Down button still opens the `CO₂_in` solenoid but the expected results swap — that reversal is the point of the test.
+
+</Callout>
+
+## Check 7 uses Carbonation mode
+
+<Callout kind="alert">
+
+Check 7 (stone hose and isolation valve) is performed in Carbonation mode, not Test Mode. It is the only check that does not use Test Mode. To exit Test Mode, switch the FizzWizz OFF and back ON without holding any buttons — it will boot normally into Carbonation mode.
+
+</Callout>

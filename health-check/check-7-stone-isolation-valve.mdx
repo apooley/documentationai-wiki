@@ -1,0 +1,87 @@
+---
+title: Check 7 — Stone/Isolation Valve
+description: Verify the stone isolation valve opens and closes correctly in Carbonation mode — the final Health Check, Idents W and X.
+---
+
+## Check 7 — Stone hose and isolation valve
+
+Confirm the stone isolation valve controls gas flow to the carbonation stone. This is the final check in the Health Check sequence.
+
+## Preconditions
+
+<Callout kind="alert">
+
+This check runs in **Carbonation mode**, not Test Mode. It is the only check that does not use Test Mode. Complete [Check 6](/health-check/check-6-leak-testing) before you begin.
+
+</Callout>
+
+## Step 7: Setup
+
+<Steps>
+  <Step title="Connect carbonation stone">
+
+  Connect the carbonation stone to the stone hose.
+
+  </Step>
+  <Step title="Switch to Carbonation mode">
+
+  Put the FizzWizz into Carbonation mode. To exit Test Mode, switch the FizzWizz OFF and back ON without holding any buttons. The unit then boots normally into Carbonation mode.
+
+  </Step>
+</Steps>
+
+![Stone circuit isolation valve](/images/stone-circuit-isolation-valve.png)
+
+*The stone circuit isolation valve and flow controller.*
+
+## Check 7.1 — Isolation valve OPEN (Ident W)
+
+Rotate the knob on the flow controller to open the isolation valve. The flow meter ball should be fully adjustable up and down by turning the knob.
+
+| Ident | Test | Pass |
+| --- | --- | --- |
+| **W** | Isolation valve open — ball adjustable | Ball fully adjustable up and down |
+
+## If the ball stays down (W fails)
+
+1. Flow meter may not be fully off — rotate the knob counterclockwise and retest.
+2. Carbonation stone may be blocked — inspect and clean if necessary.
+3. Check the sanitary check valve and inline check valve for blockage.
+
+## If the ball stays up (W fails)
+
+Check the stone hose for leaks, especially at the pneumatic push fittings between the FizzWizz and the isolation valve.
+
+## Check 7.2 — Isolation valve CLOSED (Ident X)
+
+Rotate the knob to close the isolation valve. The flow meter ball should drop fully to the bottom of the meter, indicating no gas is flowing to the stone.
+
+| Ident | Test | Pass |
+| --- | --- | --- |
+| **X** | Isolation valve closed — ball drops | Ball at bottom after ~15 seconds |
+
+## Documentation discrepancy
+
+<Callout kind="alert">
+
+The procedure says to allow approximately 15 seconds for the ball to drop, but the Results Form says approximately 10 seconds. Allow 15 seconds before recording a failure.
+
+</Callout>
+
+## If the ball does not drop (X fails)
+
+Check the stone hose and push fittings between the FizzWizz and the isolation valve for leaks that could prevent the circuit from holding.
+
+## Health Check complete
+
+<Callout kind="success">
+
+The Health Check is finished. File the completed [Results Form](/health-check/results-form). If any check failed, see [Troubleshooting by Symptom](/troubleshooting-guide). If all checks passed but carbonation is still poor, see [Carbonation & Brite Pressure](/troubleshooting-carbonation).
+
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Results Form" href="/health-check/results-form" icon="check-circle" />
+  <Card title="Troubleshooting by Symptom" href="/troubleshooting-guide" icon="help-circle" />
+  <Card title="Carbonation and Brite Pressure" href="/troubleshooting-carbonation" icon="settings" />
+</Columns>

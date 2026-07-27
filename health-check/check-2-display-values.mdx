@@ -1,0 +1,55 @@
+---
+title: Check 2 — Display Values
+description: Verify CO2 regulator, Brite pressure, and temperature readings on the FizzWizz display in Test Mode — Health Check Idents A, B, and C.
+---
+
+## Check 2 — CO₂_In display values
+
+Confirm the three display readings are plausible before testing solenoids. This check verifies sensors, not solenoids. If a sensor is misreading, every later check that depends on it becomes unreliable, so resolve failures here first.
+
+## Preconditions
+
+<Callout kind="info">
+
+- [Setup and Check 1](/health-check/setup-and-power-check) complete
+- CO₂ connected to CO₂_In, regulator set to 30–40 psi
+- Stone hose and arm hose still disconnected
+- FizzWizz in [Test Mode](/health-check/test-mode)
+
+</Callout>
+
+## The checks
+
+| Ident | Display value | Criterion | Tolerance |
+| --- | --- | --- | --- |
+| **A** | CO₂ reg psi | Equals the supply regulator dial, and falls between 30 and 40 psi | ±3 psi |
+| **B** | Brite psi | Reads 0.000 — the arm circuit is open to atmosphere | −0.18 to +0.18 psi |
+| **C** | Temperature | A representative value for the probe's surroundings | Judgement |
+
+## Reading A: regulator pressure
+
+Compare the CO₂ reg psi figure on the display against the dial on your supply regulator. They should agree within 3 psi, and the value should sit in the 30–40 psi band. Record both numbers on the [Results Form](/health-check/results-form) — the gap between them tells you whether a transducer is drifting.
+
+## Reading B: Brite pressure
+
+With the arm hose disconnected, the arm circuit is vented to atmosphere, so Brite psi should read essentially zero. Anything outside ±0.18 psi indicates a transducer problem, and often fluid in the pipe feeding the transducers.
+
+## Reading C: temperature
+
+Representative means the reading should be plausible for wherever the probe currently is — roughly ambient if it is sitting in the open, or roughly tank temperature if it is still installed. This is a sanity check, not a calibration. If you need to confirm the probe is genuinely accurate, run the [Slushy WizzTemp Test](/testing/temperature-probe), which verifies it against a known 0°C reference.
+
+## If a check fails
+
+| Ident | Symptom | Actions |
+| --- | --- | --- |
+| **A** | Wrong reg psi | 1. Try a different CO₂ regulator to rule out the regulator itself. 2. If still wrong, change the CO₂_In pressure transducer. 3. Check the CO₂_In check valve. |
+| **B** | Brite psi reads wrong pressure | 1. Change the Brite pressure transducer. 2. Inspect for fluid in the pipe leading to the transducers. |
+| **C** | Temperature reads wrong | 1. Change the WizzTemp sensor. 2. Inspect the temperature sensor internal loom. Confirm with the [Slushy WizzTemp Test](/testing/temperature-probe). |
+
+## Next step
+
+<Card title="Check 3 — Solenoid CO₂_In" href="/health-check/check-3-solenoid-co2-in" icon="zap">
+
+Test each solenoid for stuck-open and stuck-closed failures.
+
+</Card>

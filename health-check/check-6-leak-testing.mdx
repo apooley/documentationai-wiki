@@ -1,0 +1,119 @@
+---
+title: Check 6 — Leak Testing
+description: Test the arm circuit for leaks using the gloved finger pressure-hold test and the separator decay test — Health Check Idents U and V.
+---
+
+## Check 6 — Leak testing
+
+Verify the arm circuit holds pressure with two leak tests — a sealed-port pressure hold and a separator-equipped decay test. These are the most sensitive tests in the Health Check, and the ones most likely to reveal a slow fault that has not yet caused an obvious symptom.
+
+## Preconditions
+
+<Callout kind="info">
+
+- [Check 5](/health-check/check-5-arm-display-values) passed
+- FizzWizz in [Test Mode](/health-check/test-mode)
+
+</Callout>
+
+## Step 6: Reconnect CO₂ to CO₂_In
+
+<Steps>
+  <Step title="Disconnect from ARM">
+
+  Disconnect the push-to-connect from the ARM connection.
+
+  </Step>
+  <Step title="Reconnect to CO₂_In">
+
+  Re-attach it to the CO₂_In port.
+
+  </Step>
+  <Step title="Allow to settle">
+
+  Wait 2 minutes for pressure readings to stabilize before starting either test.
+
+  </Step>
+</Steps>
+
+Do not rush the settling time. Starting either test before readings are stable is the most common cause of a false failure here.
+
+## Check 6.1 — Gloved finger test (Ident U)
+
+Using a gloved hand, cover and plug the ARM connection to seal the arm circuit. Observe the Brite pressure reading for 30 seconds.
+
+![Gloved finger test](/images/gloved-finger-test.png)
+
+*Plug the ARM connection with a gloved finger and watch the Brite pressure.*
+
+| Ident | Criterion | Pass |
+| --- | --- | --- |
+| **U** | Brite pressure should not increase by more than 0.10 psi over 30 seconds | Increase < 0.10 psi |
+
+## What the gloved finger test looks for
+
+With CO₂ on the CO₂_In port, the Head_Transfer solenoid should be closed and the sealed arm circuit should hold steady. A rising Brite pressure means gas is seeping past the Head_Transfer solenoid.
+
+## Documentation discrepancy
+
+<Callout kind="alert">
+
+The Health Test Procedure specifies a pressure **increase** of no more than 0.10 psi, and the troubleshooting guide agrees. "Pressure increased on finger test" indicates a leaking Head_Transfer solenoid. However, the Results Form records this row as Start − Finish, which computes a pressure **drop**. Record **Finish − Start** for this row until the form is corrected, so a positive value indicates the pressure rise the test is looking for.
+
+</Callout>
+
+## If U fails
+
+Replace the Head_Transfer solenoid — it has a small leak past the seat.
+
+## Check 6.2 — Arm hose and separator test (Ident V)
+
+<Steps>
+  <Step title="Connect arm hose with separator">
+
+  Attach the arm hose with the separator fitted to the ARM connection.
+
+  </Step>
+  <Step title="Close swiffer valve">
+
+  Ensure the swiffer drain valve on the separator is closed.
+
+  </Step>
+  <Step title="Press Up for one pulse">
+
+  Briefly press the Up button to pressurize the arm circuit with one pulse of CO₂.
+
+  </Step>
+  <Step title="Observe for 30 seconds">
+
+  Watch the Brite pressure for 30 seconds. It should not drop by more than 1.5 psi.
+
+  </Step>
+</Steps>
+
+![Arm circuit separator](/images/arm-circuit-separator.png)
+
+*The arm circuit under test, with typical before and after pulse readings.*
+
+| Ident | Criterion | Pass |
+| --- | --- | --- |
+| **V** | Brite pressure should not drop by more than 1.5 psi over 30 seconds | Drop ≤ 1.5 psi |
+
+## Recording V results
+
+Record the start pressure, finish pressure, and the difference, Start − Finish, on the [Results Form](/health-check/results-form). In the example readings, one pulse took the circuit from `0.001` to `13.277` psi — the absolute value is not important, the rate of decay is.
+
+## If V fails
+
+1. **Check the swiffer valve.** An unclosed or worn swiffer valve is the most common cause.
+2. **Remove the separator and recheck.** If the leak disappears, the separator is at fault.
+3. **Suspect a leak in the arm hose or separator** itself — check fittings and connections along the whole run.
+4. **Check the vent solenoid.** A vent solenoid stuck open will bleed the circuit — see Ident M in [Troubleshooting by Symptom](/troubleshooting-guide).
+
+## Next step
+
+<Card title="Check 7 — Stone/Isolation Valve" href="/health-check/check-7-stone-isolation-valve" icon="check-circle">
+
+Verify the stone isolation valve in Carbonation mode — the final check.
+
+</Card>

@@ -14,17 +14,17 @@
         "tab": "Troubleshooting",
         "pages": [
           {
-            "title": "Overview",
+            "title": "Health Check Overview",
             "path": "overview",
             "icon": "info"
           },
           {
-            "group": "Troubleshooting",
-            "icon": "wrench",
+            "group": "Reference",
+            "icon": "book-open",
             "pages": [
               {
-                "title": "Troubleshooting Guide",
-                "path": "troubleshooting-guide"
+                "title": "Pneumatics Schematic",
+                "path": "pneumatics-schematic"
               }
             ]
           },
@@ -33,12 +33,54 @@
             "icon": "heart-pulse",
             "pages": [
               {
-                "title": "Health Check Procedure",
-                "path": "health-check/procedure"
+                "title": "Setup & Power Check",
+                "path": "health-check/setup-and-power-check"
               },
               {
-                "title": "Health Check Results Form",
+                "title": "Test Mode",
+                "path": "health-check/test-mode"
+              },
+              {
+                "title": "Check 2 — Display Values",
+                "path": "health-check/check-2-display-values"
+              },
+              {
+                "title": "Check 3 — Solenoid CO₂_In",
+                "path": "health-check/check-3-solenoid-co2-in"
+              },
+              {
+                "title": "Check 4 — Solenoid ARM",
+                "path": "health-check/check-4-solenoid-arm"
+              },
+              {
+                "title": "Check 5 — ARM Display Values",
+                "path": "health-check/check-5-arm-display-values"
+              },
+              {
+                "title": "Check 6 — Leak Testing",
+                "path": "health-check/check-6-leak-testing"
+              },
+              {
+                "title": "Check 7 — Stone/Isolation Valve",
+                "path": "health-check/check-7-stone-isolation-valve"
+              },
+              {
+                "title": "Results Form",
                 "path": "health-check/results-form"
+              }
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "icon": "wrench",
+            "pages": [
+              {
+                "title": "By Symptom (A–X)",
+                "path": "troubleshooting-guide"
+              },
+              {
+                "title": "Carbonation & Brite Pressure",
+                "path": "troubleshooting-carbonation"
               }
             ]
           },
@@ -47,8 +89,18 @@
             "icon": "thermometer",
             "pages": [
               {
-                "title": "Temperature Probe Testing",
+                "title": "Slushy WizzTemp Test",
                 "path": "testing/temperature-probe"
+              }
+            ]
+          },
+          {
+            "group": "Support",
+            "icon": "life-buoy",
+            "pages": [
+              {
+                "title": "Support & Parts",
+                "path": "support-and-parts"
               }
             ]
           }

@@ -1,0 +1,76 @@
+---
+title: Pneumatics Schematic
+description: Reference diagram and component glossary for the three FizzWizz pneumatic circuits: CO2 inlet, stone/carbonation, and arm/head transfer.
+---
+
+## Pneumatics reference
+
+Understand the three pneumatic circuits and identify components before running the Health Check or ordering parts. Most troubleshooting and Health Check articles refer back to the component names defined here.
+
+![FizzWizz pneumatics schematic](/images/schematic-pneumatics-overview.png)
+
+*FizzWizz pneumatics, basic schematic.*
+
+## The three circuits
+
+| Circuit | Path | What it does |
+| --- | --- | --- |
+| **CO₂ inlet** | Regulator → CO₂ check valve → Manifold | Supplies gas to everything else. Tested in Check 2. |
+| **Stone (carbonation)** | CO₂-in solenoid → Flow controller → Stone hose → Inline check valve → Isolation valve → Sanitary check valve → Carbonation stone | Delivers metered CO₂ into the tank through the stone. Tested in Check 7. |
+| **Arm (head transfer)** | Head_Transfer solenoid → Arm hose → Separator → Tank head | Applies and senses head pressure. Tested in Check 6. |
+
+## Component glossary
+
+Components are grouped by location — inside the enclosure, in the stone circuit, and in the arm circuit.
+
+### Inside the enclosure
+
+| Component | Description |
+| --- | --- |
+| **Flow Controller** | The vertical flow meter with the adjustment knob. The ball indicates CO₂ flow rate into the stone circuit. Rotate the knob counterclockwise to open. |
+| **Head_Transfer Solenoid** | Controls gas to the ARM connection. Operated by the **Up** button in Test Mode. |
+| **CO₂-in Solenoid** | Controls gas to the STONE connection. Operated by the **Down** button in Test Mode. |
+| **Vent Solenoid** | Controls gas to the vent valve. Operated by the **Enter** button in Test Mode. |
+| **Internal Filter** | Protects the solenoids and transducers from particulate carried in the gas stream. |
+| **Vent Valve** | The manual valve on the manifold that releases pressure to atmosphere. Must be open for the vent test in Check 4. |
+| **CO₂ check valve** | One-way valve on the CO₂ inlet. Prevents reverse flow back toward the regulator if the supply runs out. |
+
+### Stone circuit
+
+| Component | Description |
+| --- | --- |
+| **Stone hose** | 5/16 inch ID NSF tubing running from the FizzWizz to the stone assembly. |
+| **Inline check valve** | One-way valve in the stone hose. Blocks liquid travelling back toward the unit. |
+| **1/4 inch NPT pneumatic push fitting** | Threaded fitting joining the hose to the stone assembly. |
+| **Push-to-connect fitting** | Quick-release connector. A common source of small leaks — check these first when the flow meter ball behaves oddly. |
+| **Stone Isolation Valve** | Manual valve that isolates the carbonation stone. Used to prove the stone circuit holds in Check 7. |
+| **Sanitary Check Valve** | Second one-way valve immediately before the stone, on the wetted side. |
+| **Elbow** | Right-angle fitting connecting the check valve assembly to the stone. |
+| **Carbonation stone** | The diffusion stone itself. Can be left in the tank. Blocked or dirty stones are a leading cause of low carbonation. |
+
+### Arm circuit
+
+| Component | Description |
+| --- | --- |
+| **Arm Hose** | Connects the ARM port to the tank head. |
+| **Separator** | Catches liquid and foam before it can reach the FizzWizz. **The single most important component for protecting the unit.** |
+| **Swiffer valve** | Drain valve on the separator. Must be **closed** during Check 6.2, and is the first thing to check if the arm circuit will not hold pressure. |
+
+## Why the check valves and separator matter
+
+<Callout kind="alert">
+
+Pressure transducer and solenoid failures are usually not component defects — they are the downstream consequence of fluid reaching parts that were never meant to see it. The separator, the inline check valve, and the sanitary check valve exist solely to prevent this. If you find fluid inside the unit, replacing the failed transducer or solenoid without also establishing how the fluid got in will simply produce the same failure again.
+
+</Callout>
+
+## Related articles
+
+<Columns cols={2}>
+  <Card title="Health Check Overview" href="/overview" icon="info">
+    Start here: the 7-check test sequence
+  </Card>
+  <Card title="Troubleshooting by Symptom" href="/troubleshooting-guide" icon="wrench">
+    Look up a failed ident letter for ordered actions
+  </Card>
+</Columns>

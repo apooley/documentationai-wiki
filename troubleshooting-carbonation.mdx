@@ -1,0 +1,102 @@
+---
+title: Carbonation & Brite Pressure
+description: Diagnose under-carbonation and brite pressure problems when the FizzWizz passes all Health Checks but carbonation is off-target.
+---
+
+## Carbonation and brite pressure problems
+
+These are performance problems, not component failures. A FizzWizz can pass every Health Check and still under-carbonate. Use this guide when all checks pass but carbonation results are off-target.
+
+## Carbonation is well below target
+
+<Callout kind="info">
+
+Example: you set 2.7 volumes and achieve 2.1.
+
+</Callout>
+
+<Steps>
+  <Step title="Check brite starting pressure">
+  
+  The brite tank should start close to zero psi. If the tank is already pressurized, the differential pressure driving CO₂ into solution is reduced, and carbonation will be lower than expected.
+  
+  </Step>
+  <Step title="Check CO₂ flow rates">
+  
+  Use the BrewWizz app flow rate calculator to verify that flow rates match expectations for your tank volume and target volumes.
+  
+  </Step>
+  <Step title="Suspect a hydrophobic carbonation stone">
+  
+  A dirty stone repels water, reducing diffusion efficiency. Clean the stone using a torpedo or another appropriate cleaning method. Blocked or dirty stones are a leading cause of low carbonation.
+  
+  </Step>
+  <Step title="Check the temperature sensor">
+  
+  Carbonation is temperature-dependent. Run the [Slushy WizzTemp Test](/testing/temperature-probe) to confirm the probe is accurate, and check Ident C on the [Results Form](/health-check/results-form).
+  
+  </Step>
+  <Step title="Brite pressure building very quickly">
+  
+  Check for these two causes:
+  
+  - A leaking Head_Transfer solenoid. Confirm this with [Check 6 — Leak Testing](/health-check/check-6-leak-testing) and review Ident U.
+  - A broken or damaged carbonation stone. Gas can bypass the diffusion surface entirely.
+  
+  </Step>
+</Steps>
+
+## Brite tank not building up pressure
+
+This is almost always a leak. Work through these steps in order:
+
+<Steps>
+  <Step title="Run Checks 6 and 7">
+  
+  Start with [Check 6 — Leak Testing](/health-check/check-6-leak-testing) and [Check 7 — Stone/Isolation Valve](/health-check/check-7-stone-isolation-valve) to isolate the circuit that is leaking.
+  
+  </Step>
+  <Step title="Check the stone hose for leaks">
+  
+  Inspect the stone hose closely, especially at the push-to-connect fittings. These fittings are a common source of small leaks.
+  
+  </Step>
+  <Step title="Check the stone modification kit">
+  
+  Inspect the modification kit connections for any signs of gas escaping.
+  
+  </Step>
+  <Step title="Check the arm hose and separator">
+  
+  Make sure the swiffer valve on the separator is fully closed and not leaking. If the arm circuit will not hold pressure, check the swiffer valve first.
+  
+  </Step>
+</Steps>
+
+## Stone maintenance
+
+<Callout kind="tip">
+
+Carbonation stones cause a disproportionate share of carbonation complaints. A regular cleaning schedule prevents hydrophobic buildup and most stone-related issues. Clean the stone with a torpedo or another appropriate cleaning method as part of routine maintenance.
+
+</Callout>
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Health Check Overview" href="/overview" icon="info">
+  
+  Start the 7-check sequence
+  
+  </Card>
+  <Card title="Slushy WizzTemp Test" href="/testing/temperature-probe" icon="thermometer">
+  
+  Verify temperature sensor accuracy
+  
+  </Card>
+  <Card title="Support & Parts" href="/support-and-parts" icon="life-buoy">
+  
+  Contact Allendale Electronics
+  
+  </Card>
+</Columns>

@@ -1,0 +1,58 @@
+---
+title: Check 5 — ARM Display Values
+description: Verify CO2 regulator, Brite pressure, and temperature readings with CO2 on the ARM port — Health Check Idents R, S, and T.
+---
+
+## Check 5 — ARM display values
+
+With CO2 still connected to the ARM port from [Check 4](/health-check/check-4-solenoid-arm), re-read the same three display values as Check 2. This matters because in Check 2 the arm circuit was open to atmosphere, so Brite psi read zero and a transducer stuck at zero could have passed. Here the arm circuit is pressurized, so Brite psi should now show a real pressure, which is what proves the transducer is actually responding.
+
+## Preconditions
+
+<Callout kind="info">
+
+- CO2 still connected to ARM from [Check 4](/health-check/check-4-solenoid-arm)
+- Regulator at 30–40 psi
+- FizzWizz in [Test Mode](/health-check/test-mode)
+
+</Callout>
+
+## The checks
+
+| Ident | Display value | Criterion | Tolerance |
+| --- | --- | --- | --- |
+| **R** | CO2 reg psi | Equals the supply regulator dial, and falls between 30 and 40 psi | ±3 psi |
+| **S** | Brite psi | Equals the CO2 reg psi reading, and falls between 30 and 40 psi | ±3 psi |
+| **T** | Temperature | A representative value, similar to the reading recorded at check C | Judgement |
+
+## Reading R: regulator pressure
+
+Same as Ident A. Compare the display's CO2 reg psi against the supply regulator dial, then record both numbers on the [Results Form](/health-check/results-form).
+
+## Reading S: the key measurement
+
+<Callout kind="tip">
+
+With gas fed into the ARM port, the arm circuit is pressurized to supply pressure. Brite psi and CO2 reg psi should therefore agree within 3 psi. If Brite psi still reads near zero, the Brite transducer is not responding. Change it and inspect for fluid in the pipe leading to the transducers.
+
+</Callout>
+
+## Reading T: compare against C
+
+Temperature should be close to whatever you recorded at check C. A significant change between the two readings, taken minutes apart in the same location, points to an intermittent sensor or a loom fault.
+
+## If a check fails
+
+| Ident | Symptom | Actions |
+| --- | --- | --- |
+| **R** | Wrong reg psi | 1. Try a different CO2 regulator. 2. Change the CO2_In pressure transducer. 3. Check the CO2_In check valve per Ident L. |
+| **S** | Brite psi reads wrong pressure | 1. Change the Brite pressure transducer. 2. Inspect for fluid inside the unit. |
+| **T** | Temperature reads wrong | 1. Change the WizzTemp sensor. 2. Inspect the internal loom. Confirm with the [Slushy WizzTemp Test](/testing/temperature-probe). |
+
+## Next step
+
+<Card title="Check 6 — Leak Testing" href="/health-check/check-6-leak-testing" icon="shield">
+
+Test the arm circuit for leaks with the gloved finger and separator tests.
+
+</Card>

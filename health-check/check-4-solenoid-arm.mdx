@@ -1,0 +1,85 @@
+---
+title: Check 4 — Solenoid ARM
+description: Repeat solenoid tests with CO2 moved to the ARM port — expected results swap. Health Check Idents K through Q.
+---
+
+## Check 4 — Solenoid function on ARM
+
+Move the CO2 supply to the ARM port and repeat the solenoid tests. Because CO2 now enters the arm circuit, the expected results for each button swap compared to Check 3. That reversal is the point of the test. This is also the only check that proves the vent path actually flows.
+
+## Preconditions
+
+<Callout kind="info">
+
+- [Check 3](/health-check/check-3-solenoid-co2-in) passed
+- FizzWizz in [Test Mode](/health-check/test-mode)
+
+</Callout>
+
+## Step 4: Move the CO2 connection
+
+<Steps>
+  <Step title="Disconnect from CO2_In">
+
+Disconnect the push-to-connect CO2 line from the `CO2_In` port.
+
+  </Step>
+  <Step title="Connect to ARM">
+
+Reconnect the CO2 line to the `ARM` port.
+
+  </Step>
+</Steps>
+
+![ARM jumper connection](/images/arm-jumper-connection.png)
+
+*CO2 jumper moved to the ARM connection.*
+
+## At rest — nothing should flow
+
+With no buttons pressed, confirm no gas is flowing from any port.
+
+| Ident | Confirm no flow from | Pass |
+| --- | --- | --- |
+| **K** | Stone connection | No flow |
+| **L** | Arm connection | No flow `CO2` is connected here — check fitting is seated and not leaking |
+| **M** | Vent valve | No flow |
+| **N** | Flow meter ball | Ball down, no flow |
+
+## Button tests — results are swapped vs Check 3
+
+Note that the expected results are effectively swapped compared with Check 3. That reversal is what proves the routing is correct.
+
+| Ident | Press and hold | Expected result |
+| --- | --- | --- |
+| **O** | Up | **No gas** flows from anywhere — you should hear a quiet click |
+| **P** | Down | Gas pulses out of the **Stone** connection, and the flow meter ball bounces |
+| **Q** | Enter | Gas pulses from the **Vent valve** |
+
+## Ident Q is the important one
+
+<Callout kind="tip">
+
+Check Q is the only point in the Health Check where gas should actually come out of the vent. It is the only test that will catch a vent solenoid stuck closed.
+
+</Callout>
+
+## If a check fails
+
+| Ident | Symptom | Likely cause / actions |
+| --- | --- | --- |
+| **K** | Gas continuously flowing through stone connection | CO2_in solenoid stuck OPEN — change the CO2_in solenoid. |
+| **L** | Gas continuously flowing around the CO2_In connection | Replace the CO2_In check valve. The FizzWizz will still operate, but there is a risk of reverse fluid flow if the CO2 supply runs out. |
+| **M** | Gas continuously flowing through vent valve | Vent solenoid stuck OPEN — change the Vent solenoid. |
+| **N** | Flow meter ball is up | Same cause as K — change the CO2_in solenoid, stuck OPEN. |
+| **O** | Up pressed, gas pulse from arm instead of quiet click | 1. Confirm the flow meter is not turned fully off — rotate CCW. 2. Investigate the Head_Transfer solenoid. Note: the original guide cross-references Ident I `flow meter`, but O is a listening test and `Head_Transfer` is the more probable cause. Both steps are listed. |
+| **P** | Down pressed, gas does not pulse through stone | 1. Rotate the flow meter knob counterclockwise and retest. 2. If still no pulse, change the CO2_in solenoid, stuck CLOSED. |
+| **Q** | Enter pressed, gas does not pulse through vent valve | 1. Check the vent valve itself is OPEN. 2. If it is, change the Vent solenoid, stuck CLOSED. |
+
+## Next step
+
+<Card title="Check 5 — ARM Display Values" href="/health-check/check-5-arm-display-values" icon="bar-chart">
+
+Verify Brite pressure responds to real pressure with CO2 on the ARM port.
+
+</Card>

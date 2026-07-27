@@ -1,99 +1,124 @@
 ---
-title: Health Check Results Form
-description: Record pass/fail results for each check and test ID during the FizzWizz health check procedure.
+title: Results Form
+description: >-
+  Record actual measured values for every Health Check ident A–X — print this
+  form and fill it in as you run each check.
 ---
+## Results form
 
-## Record health check results
+Print this form and fill in actual measured values as you complete each check. Record numbers, not just pass or fail — the values help diagnose borderline or intermittent issues during support calls.
 
-Use this form to record pass or fail results for each check during the FizzWizz health check procedure.
-
-<Callout kind="tip">
-
-Run the [Health Check Procedure](/health-check/procedure) alongside this form.
-
+<Callout kind="tip" collapsed="false">
+  Record the actual measured value, such as `13.277 psi` or `0.45°F`, in every column. Pass or fail alone is not enough. A completed form with real numbers is the single most useful thing you can provide when calling support.
 </Callout>
 
-### Header fields
+## Header
 
-| Field | Value |
-| --- | --- |
-| Tester's Name | ___ |
-| FizzWizz Name | ___ |
-| Test Date | ___ |
-| FizzWizz Serial Number | ___ |
+| Field         | Value  |
+| ------------- | ------ |
+| Tester's name | \_\_\_ |
+| FizzWizz name | \_\_\_ |
+| Test date     | \_\_\_ |
+| Serial number | \_\_\_ |
 
-### Check 1 — Power supply
+## Check 1 and Step 2
 
-| ID | Description | Expected Result | Pass/Fail |
-| --- | --- | --- | --- |
-| Check 1 | Wall-wart power supply green light | Green light ON | ___ |
+| Step    | Description             | Yes/No |
+| ------- | ----------------------- | ------ |
+| Check 1 | Green power light is ON | \_\_\_ |
+| Step 2  | Powered up in Test Mode | \_\_\_ |
 
-### Check 2 — CO2_In display values
+## Check 2 — Display values (A–C)
 
-| ID | Description | Expected Result | Pass/Fail |
-| --- | --- | --- | --- |
-| A | Reg psi | 30-40 psi (supply regulator +/- 3 psi) | ___ |
-| B | Brite psi | 0.000 (range: -0.18 to +0.18) | ___ |
-| C | Temperature | Representative value | ___ |
+| Ident | Reading     | Measured values                                        | Pass/Fail |
+| ----- | ----------- | ------------------------------------------------------ | --------- |
+| A     | CO₂ reg psi | FizzWizz Reg PSI: \_\_\_; Supply Regulator PSI: \_\_\_ | \_\_\_    |
+| B     | Brite psi   | Brite Pressure: \_\_\_                                 | \_\_\_    |
+| C     | Temperature | Expected: \_\_\_; FizzWizz Temperature: \_\_\_         | \_\_\_    |
 
-### Check 3 — CO2_In solenoid function
+## Check 3 — Solenoid function CO₂\_In (D–J)
 
-| ID | Description | Expected Result | Pass/Fail |
-| --- | --- | --- | --- |
-| D | No buttons — no gas from Stone | No flow | ___ |
-| E | No buttons — no gas from Arm | No flow | ___ |
-| F | No buttons — no gas from Vent | No flow | ___ |
-| G | No buttons — flow meter ball | Ball down | ___ |
-| H | Press UP — gas from Arm | Gas pulse | ___ |
-| I | Press DOWN — gas from Stone | Gas pulse, ball bounces | ___ |
-| J | Press ENTER — Vent | No gas, quiet click | ___ |
+| Ident | Description                    | Pass/Fail                                    |
+| ----- | ------------------------------ | -------------------------------------------- |
+| D     | No buttons — no gas from Stone | Pass (no flow) / Fail (flow) \_\_\_          |
+| E     | No buttons — no gas from Arm   | Pass (no flow) / Fail (flow) \_\_\_          |
+| F     | No buttons — no gas from Vent  | Pass (no flow) / Fail (flow) \_\_\_          |
+| G     | No buttons — flow meter ball   | Pass (down) / Fail (up) \_\_\_               |
+| H     | Press UP — gas from Arm        | Pass (gas pulse) / Fail \_\_\_               |
+| I     | Press DOWN — gas from Stone    | Pass (gas pulse, ball bounces) / Fail \_\_\_ |
+| J     | Press ENTER — Vent             | Pass (quiet click) / Fail \_\_\_             |
 
-### Check 4 — ARM solenoid function
+## Check 4 — Solenoid function ARM (K–Q)
 
-| ID | Description | Expected Result | Pass/Fail |
-| --- | --- | --- | --- |
-| K | No buttons — no gas from Stone | No flow | ___ |
-| L | No buttons — no gas from Arm | No flow | ___ |
-| M | No buttons — no gas from Vent | No flow | ___ |
-| N | No buttons — flow meter ball | Ball down | ___ |
-| O | Press UP — Arm | No gas, quiet click | ___ |
-| P | Press DOWN — gas from Stone | Gas pulse, ball bounces | ___ |
-| Q | Press ENTER — gas from Vent | Gas pulse | ___ |
+| Ident | Description                    | Pass/Fail                                    |
+| ----- | ------------------------------ | -------------------------------------------- |
+| K     | No buttons — no gas from Stone | Pass (no flow) / Fail (flow) \_\_\_          |
+| L     | No buttons — no gas from Arm   | Pass (no flow) / Fail (flow) \_\_\_          |
+| M     | No buttons — no gas from Vent  | Pass (no flow) / Fail (flow) \_\_\_          |
+| N     | No buttons — flow meter ball   | Pass (down) / Fail (up) \_\_\_               |
+| O     | Press UP — Arm                 | Pass (quiet click) / Fail \_\_\_             |
+| P     | Press DOWN — gas from Stone    | Pass (gas pulse, ball bounces) / Fail \_\_\_ |
+| Q     | Press ENTER — gas from Vent    | Pass (gas pulse) / Fail \_\_\_               |
 
-### Check 5 — ARM display values
+## Check 5 — ARM display values (R–T)
 
-| ID | Description | Expected Result | Pass/Fail |
-| --- | --- | --- | --- |
-| R | Reg psi | 30-40 psi (supply regulator +/- 3 psi) | ___ |
-| S | Brite psi | = Reg psi +/- 3 psi (30-40 psi) | ___ |
-| T | Temperature | Representative value | ___ |
+| Ident | Reading     | Measured values                                        | Pass/Fail |
+| ----- | ----------- | ------------------------------------------------------ | --------- |
+| R     | CO₂ reg psi | FizzWizz Reg PSI: \_\_\_; Supply Regulator PSI: \_\_\_ | \_\_\_    |
+| S     | Brite psi   | FizzWizz Brite PSI: \_\_\_; FizzWizz Reg PSI: \_\_\_   | \_\_\_    |
+| T     | Temperature | Expected: \_\_\_; FizzWizz Temperature: \_\_\_         | \_\_\_    |
 
-### Check 6 — Leak testing
+## Check 6 — Leak testing (U–V)
 
-| ID | Description | Expected Result | Pass/Fail |
-| --- | --- | --- | --- |
-| U | Gloved finger test — Brite pressure increase | < 0.10 psi over 30 sec | ___ |
-| V | Arm Hose + Separator — Brite pressure drop | < 1.5 psi over 30 sec | ___ |
-
-### Check 7 — Stone hose connections
-
-| ID | Description | Expected Result | Pass/Fail |
-| --- | --- | --- | --- |
-| W | Isolation Valve OPEN — ball adjustable | Fully adjustable up and down | ___ |
-| X | Isolation Valve CLOSED — ball drops | Ball at bottom after ~15 sec | ___ |
-
-### Comments and notes
-
-> Record any observations, anomalies, or maintenance notes here.
->
-> 
->
-> 
->
-> 
-
-<Callout kind="info">
-
-Support: [www.BrewWizz.com](https://www.BrewWizz.com), 902 656-2652, out-of-hours 1-902-579-2121, parts and service via Allendale Electronics.
-
+<Callout kind="info" collapsed="false">
+  Disconnect CO₂ from ARM and reconnect to CO₂\_In. Allow 2 minutes to settle before testing.
 </Callout>
+
+| Ident | Description                                  | Measured values                                       | Pass/Fail |
+| ----- | -------------------------------------------- | ----------------------------------------------------- | --------- |
+| U     | Gloved finger test — Brite pressure increase | Start: \_\_\_; Finish: \_\_\_; Finish − Start: \_\_\_ | \_\_\_    |
+| V     | Arm hose + separator — Brite pressure drop   | Start: \_\_\_; Finish: \_\_\_; Start − Finish: \_\_\_ | \_\_\_    |
+
+<Callout kind="alert" collapsed="false">
+  The form records Start − Finish for Ident U, but the test detects a pressure **increase**. Record **Finish − Start** instead, so a positive value indicates the pressure rise the test is looking for.
+</Callout>
+
+## Check 7 — Stone hose and isolation valve (W–X)
+
+<Callout kind="info" collapsed="false">
+  Put FizzWizz in Carbonation mode before testing.
+</Callout>
+
+| Ident | Description                                 | Pass/Fail          |
+| ----- | ------------------------------------------- | ------------------ |
+| W     | Isolation valve OPEN — ball adjustable      | Pass / Fail \_\_\_ |
+| X     | Isolation valve CLOSED — ball drops to zero | Pass / Fail \_\_\_ |
+
+<Callout kind="alert" collapsed="false">
+  The form says `~10 seconds` for the ball to drop, but the procedure says `~15 seconds`. Allow 15 seconds before recording a failure.
+</Callout>
+
+## Comments
+
+> ---
+>
+> ---
+>
+> ---
+
+## Related articles
+
+<Columns cols="3">
+  <Card title="Health Check Overview" href="/overview" icon="info" horizontal="false">
+    Start the 7-check sequence
+  </Card>
+
+  <Card title="Troubleshooting by Symptom" href="/troubleshooting-guide" icon="wrench" horizontal="false">
+    Look up failed idents
+  </Card>
+
+  <Card title="Support & Parts" href="/support-and-parts" icon="life-buoy" horizontal="false">
+    Contact Allendale Electronics
+  </Card>
+</Columns>
+
