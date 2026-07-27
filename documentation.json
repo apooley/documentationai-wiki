@@ -1,0 +1,64 @@
+{
+  "name": "BrewWizz",
+  "colors": {
+    "light": {
+      "brand": "#f59e0b"
+    },
+    "dark": {
+      "brand": "#f59e0b"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Troubleshooting",
+        "pages": [
+          {
+            "title": "Overview",
+            "path": "overview",
+            "icon": "info"
+          },
+          {
+            "group": "Troubleshooting",
+            "icon": "wrench",
+            "pages": [
+              {
+                "title": "Troubleshooting Guide",
+                "path": "troubleshooting-guide"
+              }
+            ]
+          },
+          {
+            "group": "Health Check",
+            "icon": "heart-pulse",
+            "pages": [
+              {
+                "title": "Health Check Procedure",
+                "path": "health-check/procedure"
+              },
+              {
+                "title": "Health Check Results Form",
+                "path": "health-check/results-form"
+              }
+            ]
+          },
+          {
+            "group": "Testing",
+            "icon": "thermometer",
+            "pages": [
+              {
+                "title": "Temperature Probe Testing",
+                "path": "testing/temperature-probe"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "seo": {
+    "siteName": "BrewWizz",
+    "defaultDescription": "FizzWizz troubleshooting documentation — diagnose issues, run health checks, and test temperature probes for the FizzWizz carbonation system.",
+    "defaultImage": "https://brewwizz.com/og-image.png"
+  }
+}

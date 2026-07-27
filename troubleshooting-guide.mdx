@@ -1,0 +1,140 @@
+---
+title: FizzWizz Troubleshooting Guide
+description: Reference guide for diagnosing and resolving FizzWizz issues A through X, plus general carbonation and pressure problems.
+---
+
+## Find the issue by symptom category
+
+Diagnose and resolve FizzWizz issues using this reference guide organized by issue ID and symptom category. Each entry maps a specific symptom to its likely cause and the corrective action required.
+
+<Callout kind="alert">
+
+Issues affecting pressure transducers and solenoids are typically caused by fluid in the FizzWizz. This happens when the Arm Separator is not used or is overwhelmed, or when check valves are stuck open or not installed.
+
+</Callout>
+
+<Tabs>
+  <Tab title="Power" icon="zap">
+
+  | ID | Symptom | Solution |
+  | --- | --- | --- |
+  | Check 1 | No green light, FizzWizz will not turn on | Replace plug-in power supply |
+
+  </Tab>
+  <Tab title="Pressure Transducers" icon="bar-chart">
+
+  | ID | Symptom | Solution |
+  | --- | --- | --- |
+  | A | Wrong reg psi | Try different CO2 regulator. If still wrong, change CO2_In pressure transducer. |
+  | B | Brite psi reads wrong pressure | Change brite pressure transducer. Inspect for fluid in pipe leading to transducers. |
+  | R | Wrong reg psi | See issue A and L |
+  | S | Brite psi reads wrong pressure | See issue B |
+
+  </Tab>
+  <Tab title="Temperature Sensor" icon="settings">
+
+  | ID | Symptom | Solution |
+  | --- | --- | --- |
+  | C | Temperature reads wrong | Change wizztemp sensor. If still wrong, inspect temperature sensor internal loom. |
+  | T | Temperature reads wrong | See issue C |
+
+  </Tab>
+  <Tab title="Solenoid Stuck Open" icon="alert-triangle">
+
+  | ID | Symptom | Solution |
+  | --- | --- | --- |
+  | D | Gas continuously flowing through stone connection | Change CO2_In solenoid — solenoid stuck OPEN |
+  | E | Gas continuously flowing through ARM connection | Change Head_Transfer solenoid — solenoid stuck OPEN |
+  | F | Gas continuously flowing through ARM and Vent | Change Head_Transfer and Vent solenoids — solenoids stuck OPEN |
+  | G | Flow meter ball is up | See issue D |
+  | K | Gas continuously flowing through stone connection | See issue D |
+  | M | Gas continuously flowing through Vent valve | Change Vent solenoid — solenoid stuck OPEN |
+  | N | Flow meter ball is up | See issue D |
+
+  </Tab>
+  <Tab title="Solenoid Stuck Closed" icon="x-circle">
+
+  | ID | Symptom | Solution |
+  | --- | --- | --- |
+  | H | UP button pressed, gas does not pulse through ARM | Change Head_Transfer solenoid — solenoid stuck CLOSED |
+  | I | DOWN button pressed, gas does not pulse through STONE | Change CO2_In solenoid — solenoid stuck CLOSED |
+  | I | Flow meter turned all the way off | Rotate flow meter knob counterclockwise and retest |
+  | O | UP button pressed, no clicking sound | See issue I |
+  | P | DOWN button pressed, gas does not pulse through STONE | See issue I |
+
+  </Tab>
+  <Tab title="Vent Valve" icon="settings">
+
+  | ID | Symptom | Solution |
+  | --- | --- | --- |
+  | J | ENTER button pressed, no clicking sound | See issue Q |
+  | Q | ENTER button pressed, gas does not pulse through Vent valve | Check Vent Valve is OPEN. If still not working, change Vent solenoid — solenoid stuck CLOSED. |
+
+  </Tab>
+  <Tab title="Check Valve" icon="shield">
+
+  | ID | Symptom | Solution |
+  | --- | --- | --- |
+  | L | Gas continuously flowing through CO2_In connection | Replace CO2_In check valve. FizzWizz will still operate, but possible reverse fluid flow if operation runs out of CO2. |
+
+  </Tab>
+  <Tab title="Leak Testing" icon="search">
+
+  | ID | Symptom | Solution |
+  | --- | --- | --- |
+  | U | Pressure increased on finger test | Replace Head_Transfer solenoid — solenoid has a small leak |
+  | V | Arm Hose and Separator pressure drops quickly | Check Swiffer valve. Remove Separator and recheck. Possible leak in ARM hose or Separator. See issue M. |
+
+  </Tab>
+  <Tab title="Flow Meter" icon="activity">
+
+  | ID | Symptom | Solution |
+  | --- | --- | --- |
+  | W | Ball stays down | See issue I. Possible blocked carbonation stone. Check sanitary and inline check valves. |
+  | X | Ball stays up | Check Stone hose for leaks, especially around the pneumatic push fittings. |
+
+  </Tab>
+  <Tab title="General Issues" icon="help-circle">
+
+  Use these entries when the symptom affects carbonation performance or overall pressure behavior rather than a single component.
+
+  <ExpandableGroup>
+    <Expandable title="Carbonation very low (e.g., set to 2.7 = 2.1)">
+
+    - Check Brite starting pressure. It should be close to zero psi.
+    - Check CO2 flow rates using the BrewWizz app flow rate calculator.
+    - A hydrophobic stone may be caused by a dirty carbonation stone.
+    - Clean the carbonation stone with torpedo.
+    - A faulty temperature sensor may cause low carbonation. Refer to the Slushy test and health test C.
+    - If Brite pressure builds very quickly, the Head_Transfer solenoid may be leaking.
+    - If Brite pressure builds very quickly, the carbonation stone may be broken or damaged.
+
+    </Expandable>
+    <Expandable title="Brite tank not building up pressure">
+
+    - Refer to Step 6 and Step 7 of the health test.
+    - Check for a leak on the stone hose.
+    - Check for a leak on the stone modification kit.
+    - Check for a leak on the ARM hose and Separator.
+
+    </Expandable>
+  </ExpandableGroup>
+
+  </Tab>
+</Tabs>
+
+## Get support or order parts
+
+Use the support channels below if the issue remains unresolved or you need replacement parts.
+
+<Callout kind="info">
+
+Visit [www.BrewWizz.com](https://www.BrewWizz.com) for assistance or parts ordering.
+
+Call **902 656-2652** for support.
+
+For out-of-hours support, call **1-902-579-2121**.
+
+Parts and service support is provided by Allendale Electronics, the authorized distributor and manufacturer of BrewWizz products.
+
+</Callout>

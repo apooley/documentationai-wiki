@@ -1,0 +1,182 @@
+---
+title: FizzWizz Health Check Procedure
+description: Run a complete 7-step FizzWizz health check to verify all components operate correctly and identify maintenance needs.
+---
+
+## Complete health check procedure
+
+Run this 7-step procedure to verify all FizzWizz elements operate correctly and identify any maintenance requirements before issues arise.
+
+<Callout kind="info">
+
+Purpose: This test sequence ensures all elements of the FizzWizz operate correctly and identifies maintenance requirements.
+
+</Callout>
+
+<Steps>
+  <Step title="Setup and Power Check" icon="settings">
+
+  Confirm the unit is safe to work on before you begin the test sequence.
+
+  <Callout kind="alert">
+
+  Ensure FizzWizz power is OFF before disconnecting or reconnecting hoses.
+
+  </Callout>
+
+  - FizzWizz power should be **OFF**.
+  - Disconnect the **Stone Hose**.
+  - Disconnect the **Arm Hose**.
+  - Connect **CO2 from the regulator to CO2_In**.
+  - Set the regulator to approximately **30 to 40 psi**.
+  - Ensure the **Temperature Sensor** is connected.
+
+  Your first power check is complete when the power supply is connected and the **green light is ON**.
+
+  </Step>
+
+  <Step title="Enter Test Mode" icon="play-circle">
+
+  Put the FizzWizz into test mode before checking readings and solenoid behavior.
+
+  - Press and hold the **top two buttons**.
+  - Turn the FizzWizz **on** while keeping both buttons pressed.
+  - Keep holding the buttons for **6 seconds**.
+  - Release the buttons after the device enters **test mode**.
+
+  Test mode is active when the unit remains on and is ready for the checks below.
+
+  </Step>
+
+  <Step title="CO2_In Display Values (Check 2)" icon="bar-chart">
+
+  Compare the displayed values against the expected readings with CO2 connected to `CO2_In`.
+
+  | ID | Check | Expected Value |
+  | --- | --- | --- |
+  | A | reg psi | Should equal supply regulator dial +/- 3 psi |
+  | B | Brite psi | Should equal 0.000 +/- 0.18 |
+  | C | Temperature | Should be a representative value |
+
+  If these values are out of range, inspect the regulator setting, pressure path, and temperature sensor connection before continuing.
+
+  </Step>
+
+  <Step title="Solenoid Function — CO2_In Testing (Check 3)" icon="zap">
+
+  Test each internal solenoid while CO2 remains connected to `CO2_In`.
+
+  Each button operates one solenoid when you press and hold it:
+
+  - **UP** button pulses the **Head Transfer solenoid**
+  - **DOWN** button pulses the **CO2_In solenoid**
+  - **ENTER** button pulses the **Vent solenoid**
+
+  | ID | Action | Expected Result |
+  | --- | --- | --- |
+  | D | No buttons pressed — Stone connection | No gas flowing |
+  | E | No buttons pressed — Arm connection | No gas flowing |
+  | F | No buttons pressed — Vent valve | No gas flowing |
+  | G | No buttons pressed — Flow meter ball | Ball should be down, no flow |
+  | H | Press and hold UP button — Arm connection | Gas should pulse out |
+  | I | Press and hold DOWN button — Stone connection | Gas should pulse out, flow meter ball should bounce |
+  | J | Press and hold ENTER button | No gas should flow, should hear a quiet click |
+
+  A passing result here confirms the CO2_In path and related solenoid responses are working as expected.
+
+  </Step>
+
+  <Step title="Solenoid Function — ARM Testing (Check 4 and Check 5)" icon="terminal">
+
+  Move the CO2 connection to the ARM side, then repeat the functional checks.
+
+  - Disconnect the **CO2_In push-to-connect**.
+  - Reconnect it to the **ARM** port.
+
+  ### Check 4: ARM solenoid behavior
+
+  | ID | Action | Expected Result |
+  | --- | --- | --- |
+  | K | No buttons pressed — Stone connection | No gas flowing |
+  | L | No buttons pressed — Arm connection | No gas flowing (CO2 connected here) |
+  | M | No buttons pressed — Vent valve | No gas flowing |
+  | N | No buttons pressed — Flow meter ball | Ball should be down, no flow |
+  | O | Press and hold UP button | No gas should flow, should hear a quiet click |
+  | P | Press and hold DOWN button — Stone connection | Gas should pulse out, flow meter ball should bounce |
+  | Q | Press and hold ENTER button — Vent valve | Gas should pulse from Vent valve |
+
+  ### Check 5: ARM display values
+
+  | ID | Check | Expected Value |
+  | --- | --- | --- |
+  | R | reg psi | Should equal supply regulator dial +/- 3 psi |
+  | S | Brite psi | Should equal reg psi +/- 3 psi (30-40 psi) |
+  | T | Temperature | Should be a representative value similar to check C |
+
+  When both tables match expected results, the ARM routing and display behavior are within range.
+
+  </Step>
+
+  <Step title="Head Transfer, Arm Hose and Separator Leak Testing (Check 6)" icon="shield">
+
+  Test for pressure changes that indicate leaks in the head transfer path, arm hose, or separator.
+
+  - Disconnect the **push-to-connect** from **ARM**.
+  - Reattach it to **CO2_In**.
+  - Allow values to settle for **2 minutes**.
+
+  <Callout kind="tip">
+
+  Allow 2 minutes for pressure to settle before leak testing.
+
+  </Callout>
+
+  | ID | Action | Expected Result |
+  | --- | --- | --- |
+  | 6.1 (U) | Gloved finger test: cover or plug the Arm connection with a gloved hand, then observe Brite pressure for 30 seconds | Brite pressure should not increase by more than 0.10 psi |
+  | 6.2 (V) | Connect Arm Hose with Separator to Arm. Ensure Swiffer Valve is closed. Press UP button for one pulse to pressurize the circuit. Observe Brite pressure for 30 seconds | Brite pressure should not drop more than 1.5 psi |
+
+  <Callout kind="info">
+
+  If either pressure threshold is exceeded, inspect the arm connection, hose, separator, and related seals for leaks or wear.
+
+  </Callout>
+
+  </Step>
+
+  <Step title="CO2 Carbonation Stone and Isolation Valve Check (Check 7)" icon="check-circle">
+
+  Confirm the carbonation stone circuit and isolation valve control flow correctly.
+
+  - Connect a **carbonation stone** to the **stone hose**.
+  - Put the FizzWizz in **Carbonation mode**.
+
+  | ID | Action | Expected Result |
+  | --- | --- | --- |
+  | 7.1 (W) | Isolation Valve OPEN: rotate knob on flow controller, observe flow indicator ball | Ball should be fully adjustable up and down |
+  | 7.2 (X) | CLOSE Isolation Valve, observe flow indicator ball | After approximately 15 seconds, ball should be fully at bottom of meter, indicating no flow |
+
+  This final check confirms the stone path can flow when open and fully stop when isolated.
+
+  </Step>
+</Steps>
+
+## Get help or record your results
+
+<Callout kind="info">
+
+For assistance or parts ordering, visit [www.BrewWizz.com](https://www.BrewWizz.com) or call **902 656-2652**. For out-of-hours support, call **1-902-579-2121**. Parts and service support is available via **Allendale Electronics**, authorized distributor and manufacturer of BrewWizz products.
+
+</Callout>
+
+<Columns cols={1}>
+  <Card
+    title="Health Check Results Form"
+    href="/health-check/results-form"
+    icon="clipboard-list"
+  >
+  
+  Print or reference the results form to record pass/fail for each check.
+  
+  </Card>
+</Columns>
