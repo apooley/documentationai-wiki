@@ -2,11 +2,24 @@
   "name": "BrewWizz",
   "colors": {
     "light": {
-      "brand": "#f59e0b"
+      "brand": "#1F3442",
+      "background": "#FFFFFF",
+      "backgroundSecondary": "#F6F7F8",
+      "text": "#2F3A45",
+      "headingText": "#1F3442"
     },
     "dark": {
-      "brand": "#f59e0b"
+      "brand": "#34936B",
+      "background": "#131E27",
+      "backgroundSecondary": "#1C2C38",
+      "text": "#D7DEE2",
+      "headingText": "#EDF1F3"
     }
+  },
+  "typography": {
+    "headings": "Manrope",
+    "body": "Inter",
+    "code": "IBM Plex Mono"
   },
   "navigation": {
     "tabs": [
