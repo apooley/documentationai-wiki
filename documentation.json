@@ -125,5 +125,10 @@
     "siteName": "BrewWizz",
     "defaultDescription": "FizzWizz troubleshooting documentation — diagnose issues, run health checks, and test temperature probes for the FizzWizz carbonation system.",
     "defaultImage": "https://brewwizz.com/og-image.png"
-  }
+  },
+  "customCss": [
+    {
+      "src": "styles/Footer override.css"
+    }
+  ]
 }
