@@ -1,0 +1,69 @@
+---
+title: Understanding Your Plan
+description: How BrewWizz feature flags control what you can see and do — alert history, alert rules, email, and SMS notifications based on your subscription status.
+---
+
+## Understand what your plan unlocks
+
+Your billing plan determines which dashboard features you can access. Use this page to understand why navigation items appear or disappear, what each feature flag controls, and what changes when your subscription status updates.
+
+## The Four Feature Flags
+
+| Flag | What It Enables | Affected Nav |
+| --- | --- | --- |
+| `in_app_alerts` | Alert history page + alert bell icon | Alerts |
+| `alert_rules` | Create and edit per-device alert rules | (within Alerts) |
+| `email_notifications` | Outbound alert emails to your registered email address | Notifications |
+| `sms_notifications` | Outbound alert SMS to your verified phone number | Notifications |
+
+These four flags are stored on your billing plan and resolved against your organization's subscription state. The dashboard uses the resolved result to decide which pages to show and which actions to allow.
+
+## Subscription States and What You See
+
+Your experience in the dashboard depends on both your subscription status and the feature flags attached to the billing plan.
+
+**No subscription:** BrewWizz enables `in_app_alerts` and turns the other three flags off. You can view in-app alert history, but you cannot create alert rules or receive alert emails or SMS messages. The dashboard shows **Upgrade** instead of **Notifications**.
+
+**Active or trialing:** BrewWizz resolves features from your plan's feature settings. If your plan does not specify feature settings, all four flags default to enabled. That state gives you full access to Alerts, Notifications, and alert rule creation unless the plan explicitly turns specific flags off.
+
+**Paid in-app-only plan:** Some paid plans include only `in_app_alerts`. In that case, you keep the **Alerts** navigation item instead of **Upgrade**, but **Notifications** stays hidden. Device alert rules remain read-only.
+
+**past_due, cancelled, or incomplete:** BrewWizz resolves all four flags to `false`. The dashboard shows **Upgrade**, hides **Notifications**, and stops new alert delivery. If the subscription is `past_due`, the billing page also shows a Stripe banner.
+
+## Navigation Gating
+
+<Callout kind="info">
+
+The client layout and plan feature logic control which navigation items render. The **Upgrade** nav item appears when your organization is not entitled, while **Notifications** only appears when at least one of `alert_rules`, `email_notifications`, or `sms_notifications` is `true`.
+
+</Callout>
+
+The difference between **Upgrade** and **Alerts** is important. A paid in-app-only plan still counts as entitled for in-app alerts, so it keeps **Alerts** instead of switching to **Upgrade**.
+
+## How Flags Are Resolved
+
+The plan features context loads your organization's subscription and resolves the active feature flags for the dashboard. The dashboard updates automatically when your plan or subscription changes, so open sessions reflect new access without waiting for a manual refresh.
+
+## Downgrade Behavior
+
+<Callout kind="alert">
+
+When a plan is downgraded or becomes inactive, channels that are no longer entitled are automatically disabled. Alert rules are deactivated when the `alert_rules` flag is lost, and you can turn off a blocked notification channel but cannot re-enable it without plan entitlement.
+
+</Callout>
+
+Downgrades do not always remove every record from the system. Existing notification settings can remain so you can disable blocked channels cleanly, but BrewWizz prevents those channels from being turned back on until the plan includes them again.
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Alerts & Alert Rules" href="/dashboard-web/client/alerts-and-rules" icon="help-circle">
+  Learn how alert history, per-device rules, and read-only states work in the client dashboard.
+  </Card>
+  <Card title="Notification Preferences" href="/dashboard-web/client/notification-preferences" icon="info">
+  See how SMS, email, and in-app preferences behave when your plan allows or blocks each channel.
+  </Card>
+  <Card title="Billing" href="/dashboard-web/client/billing" icon="credit-card">
+  Manage your subscription, understand billing status changes, and review what happens when a plan becomes past due.
+  </Card>
+</Columns>

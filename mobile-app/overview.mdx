@@ -1,0 +1,52 @@
+---
+title: Mobile App Overview
+description: Understand the BrewWizz mobile app's navigation, main tabs, and how it complements the web dashboard for monitoring your devices on the go.
+---
+
+## The BrewWizz mobile app at a glance
+
+Use the BrewWizz mobile app to check device health, review alerts, and manage key account settings when you are away from your desk. It complements the web dashboard by bringing the most important monitoring and account tools to your phone, with live updates designed for quick checks and fast action. From this page, you can understand the app's navigation, main tabs, and how it fits alongside the web dashboard.
+
+## Main navigation
+
+The mobile app centers on three bottom tabs so you can move quickly between monitoring, alert review, and account settings.
+
+- **Devices** — Browse and monitor all devices assigned to your organization, with live health badges and instant search.
+- **Alerts** — Review alert history, filter by severity or device, and acknowledge alerts to clear your unread count.
+- **Settings** — Manage your profile, configure notification destinations, and handle subscription billing.
+
+<Callout kind="info">
+
+Some features in the mobile app depend on your subscription plan. If Alerts or certain settings are not available, your plan may not include those capabilities. See [Understanding Your Plan](/dashboard-web/client/understanding-your-plan) for details on how plan features work.
+
+</Callout>
+
+## Device health states
+
+Device health is based on how recently BrewWizz received a reading from the device. These same states appear throughout the app so you can spot reporting issues quickly.
+
+| State | Color | Last reading received | Meaning |
+| --- | --- | --- | --- |
+| **Online** | Green | Within 10 minutes | Actively reporting |
+| **Stale** | Yellow | 10–120 minutes ago | Intermittent or delayed |
+| **Offline** | Red | More than 120 minutes ago or never | Not reporting; needs attention |
+
+## How telemetry flows
+
+Your BrewWizz device sends telemetry readings to BrewWizz, where the readings are stored and checked against your alert rules. The mobile app receives those updates automatically, so you see fresh readings, health changes, and new alerts without needing to refresh.
+
+When a reading crosses one of your alert thresholds, BrewWizz creates an alert event that appears in your Alerts tab. Depending on your plan and notification preferences, that alert may also trigger a notification so you can respond quickly even when the app is not in front of you.
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Getting Started" href="/mobile-app/getting-started" icon="log-in">
+  Set up the app, sign in, and connect the mobile experience to your BrewWizz account.
+  </Card>
+  <Card title="Device List" href="/mobile-app/devices" icon="smartphone">
+  See how to search devices, understand health badges, and open device details.
+  </Card>
+  <Card title="Alerts" href="/mobile-app/alerts" icon="bell">
+  Learn how alert history, filters, and acknowledgements work in the mobile app.
+  </Card>
+</Columns>

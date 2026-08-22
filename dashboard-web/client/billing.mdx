@@ -1,0 +1,56 @@
+---
+title: Billing
+description: Manage your BrewWizz subscription — Stripe checkout for new plans, the Customer Portal for updates, and what past_due and trial statuses mean for your access.
+---
+
+## Starting a Subscription
+
+The Billing page lets you start a paid BrewWizz subscription or manage one you already have. If you do not have a Stripe-managed subscription yet, use **Upgrade** or select a plan on the Billing page to open Stripe Checkout and complete payment.
+
+After you choose a plan, BrewWizz creates a Stripe Checkout session and redirects you to Stripe. Once payment succeeds, Stripe sends the subscription update back to BrewWizz, which syncs your subscription record automatically.
+
+When the sync completes, your dashboard refreshes to reflect your new access. If your plan includes entitled features, your navigation and pages update to match that plan.
+
+## Managing Your Subscription
+
+Use the Billing page to open the Stripe Customer Portal when you already have a Stripe-managed subscription. The portal is available for subscriptions that are already active in Stripe and lets you manage billing details without contacting support.
+
+From the Customer Portal, you can update your payment method, review billing details, change plans when multiple Stripe prices are available, or cancel your subscription. BrewWizz creates a portal session and redirects you to Stripe.
+
+Changes you make in Stripe are synced back to BrewWizz automatically. If you update your subscription successfully, the dashboard reflects the new status and plan entitlements after the sync completes.
+
+## Subscription Statuses
+
+| Status | Entitled? | What It Means |
+| --- | --- | --- |
+| Active | Yes | Subscription is current; full plan features enabled |
+| Trialing | Yes | Trial period active; full plan features enabled |
+| Past due | No | Payment failed; all feature flags set to false; Upgrade nav shown |
+| Cancelled | No | Subscription ended; all feature flags set to false |
+| Incomplete | No | Subscription setup did not complete; all feature flags set to false |
+
+## Past Due Banner
+
+<Callout kind="alert">
+
+When your subscription enters `past_due` status, a banner appears across the dashboard prompting you to update your payment method. All feature flags are set to false, which means no new alerts are generated and the Notifications page is hidden. Click the banner to open the Stripe Customer Portal and resolve the payment issue.
+
+</Callout>
+
+## Comp and Trial Subscriptions
+
+Platform admins can create complimentary or trial subscriptions without going through Stripe. These subscriptions appear as `active` or `trialing`, grant entitlement like a normal subscription, and are managed directly by the platform team rather than through Stripe. You cannot create these subscriptions yourself, so contact your platform admin if you need one.
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Understanding Your Plan" href="/dashboard-web/client/understanding-your-plan" icon="credit-card">
+  Learn how BrewWizz plan features control alerts, notifications, and upgrade prompts.
+  </Card>
+  <Card title="Notification Preferences" href="/dashboard-web/client/notification-preferences" icon="mail">
+  Manage in-app, email, and SMS notification settings based on your current plan.
+  </Card>
+  <Card title="Dashboard Overview" href="/dashboard-web/overview" icon="gauge">
+  Explore the BrewWizz dashboard — device health states, navigation, and real-time telemetry.
+  </Card>
+</Columns>

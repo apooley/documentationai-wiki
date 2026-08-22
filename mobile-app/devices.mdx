@@ -1,0 +1,76 @@
+---
+title: Device List
+description: Browse, search, and filter all devices assigned to your organization in the BrewWizz mobile app.
+---
+
+## Your device list
+
+Use the Devices tab to browse every device assigned to your organization, open a device for more detail, and quickly narrow the list with search and health filters. The Devices tab is your home screen for monitoring all of your devices, and every device appears as a tappable row.
+
+## What each device row shows
+
+Each row gives you the most important device information at a glance.
+
+| Element | What you see |
+| --- | --- |
+| Serial number | Bold text — the device's primary identifier |
+| Health badge | Colored dot and label showing the device's current status |
+| Live metrics | Temperature and CO2 values from the most recent reading, when available |
+| Last reading | How long ago the device last reported, such as `3 minutes ago`, or `Never` |
+| Firmware version | The device's current firmware, or a dash if unknown |
+
+Tap any row to open the device detail page. For more about what you can do there, see [Device Detail](/mobile-app/device-detail).
+
+## Search by serial number
+
+Use the **Search serial** field above the list to find a device by part of its serial number. As you type, the list filters instantly to show only matching devices.
+
+Search works while you type, so you do not need to tap a search button or reload the page. The match is based on the serial number shown in each row.
+
+## Filter by health
+
+Use the pill-shaped buttons below the search bar to show only devices in a specific health state.
+
+- **All** — Shows every device by default
+- **Online** — Shows only devices actively reporting
+- **Stale** — Shows only devices with intermittent or delayed reporting
+- **Offline** — Shows only devices that are not reporting
+
+The active filter is highlighted so you can see which view you are using. You can also combine search and health filters, such as searching for part of a serial number while showing only Offline devices.
+
+## Health badges explained
+
+Device health is based on how long it has been since the last reading.
+
+| Badge | Color | Last reading received | What it means |
+| --- | --- | --- | --- |
+| **Online** | Green | Within 10 minutes | The device is actively reporting |
+| **Stale** | Yellow | 10–120 minutes ago | The device may have a connectivity issue |
+| **Offline** | Red | More than 120 minutes ago or never | The device is not reporting and may need attention |
+
+## Automatic updates
+
+The device list updates automatically while the app is open. If a device changes status while you are looking at the list, that row updates without a manual refresh.
+
+You can still pull down to refresh the list at any time. The **Last reading** timestamps also update every 60 seconds, so relative times stay current instead of becoming stale on screen.
+
+## Empty states
+
+The Devices tab shows a different message depending on why the list is empty.
+
+- If your organization has no devices, you see **No devices assigned yet**.
+- If your current search or health filter returns no matches, you see **No devices match your filters**.
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Device Detail" href="/mobile-app/device-detail" icon="line-chart">
+  Open a device to view its latest readings, charts, batches, and alert rules.
+  </Card>
+  <Card title="Mobile App Overview" href="/mobile-app/overview" icon="gauge">
+  See how the main areas of the BrewWizz mobile app fit together.
+  </Card>
+  <Card title="Alerts" href="/mobile-app/alerts" icon="bell">
+  Monitor alert activity and review which devices need attention.
+  </Card>
+</Columns>

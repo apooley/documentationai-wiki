@@ -1,0 +1,58 @@
+---
+title: Dashboard Overview
+description: Explore the BrewWizz carbonation telemetry dashboard — device health states, navigation, and the real-time data flow from keg to screen.
+---
+
+## BrewWizz Dashboard at a glance
+
+BrewWizz Dashboard is your online hub for monitoring carbonation telemetry from your BrewWizz devices. It runs at [bw-dash.allendale.biz](https://bw-dash.allendale.biz) and gives you a single place to check device health, review telemetry data, manage alerts, and handle your subscription billing.
+
+## Your Dashboard
+
+When you sign in to BrewWizz, you land on your organization's dashboard. The dashboard centers on your devices, their current health, and the alerts and billing tools available on your plan.
+
+- **Overview** — See your device list and current health state at a glance.
+- **Device detail** — Open a device by serial number to inspect charts, readings, metadata, and alert rules.
+- **Alerts** — Review alert history for your organization when in-app alerts are enabled.
+- **Notifications** — Manage SMS, email, and in-app notification preferences when your plan allows those channels.
+- **Billing** — View subscription status and access billing actions.
+
+<Callout kind="info">
+
+Some navigation items depend on plan feature flags. If Alerts or Notifications do not appear, check [Understanding Your Plan](/dashboard-web/client/understanding-your-plan).
+
+</Callout>
+
+## Device Detail View
+
+The device detail page gives client users the closest view of a single unit. You can follow real-time telemetry on charts, inspect recent readings, review device metadata such as serial number and firmware version, and confirm the current health badge.
+
+If your plan includes alert rules, the same page also exposes the per-device thresholds that drive alert evaluation. When alert-rule access is not included, the page remains available but rule management becomes read-only or hidden based on entitlement.
+
+## Device Health States
+
+Device health is determined by how long it has been since the last reported reading.
+
+| State | Last reading age | Color | Meaning |
+| --- | --- | --- | --- |
+| **Online** | Less than 10 minutes | Green | Actively reporting |
+| **Stale** | 10–120 minutes | Yellow | Intermittent reporting |
+| **Offline** | More than 120 minutes | Red | Not reporting |
+
+## How Telemetry Flows
+
+Your BrewWizz device sends telemetry readings to BrewWizz, where they are validated and stored. When a new reading arrives, BrewWizz checks your active alert rules and creates alert events when thresholds are crossed. If your plan includes SMS or email notifications, BrewWizz sends those based on your preferences. The dashboard updates automatically as new data arrives, so you see fresh readings and alerts without needing to refresh the page.
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Understanding Your Plan" href="/dashboard-web/client/understanding-your-plan" icon="credit-card">
+  Learn how plan feature flags control Alerts, Notifications, and rule access.
+  </Card>
+  <Card title="Alerts & Alert Rules" href="/dashboard-web/client/alerts-and-rules" icon="bell">
+  See how rules are evaluated and where alert history appears in the dashboard.
+  </Card>
+  <Card title="Troubleshooting" href="/dashboard-web/troubleshooting" icon="wrench">
+  Diagnose missing readings, offline devices, and alerts that did not fire.
+  </Card>
+</Columns>

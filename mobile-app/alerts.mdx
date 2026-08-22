@@ -1,0 +1,87 @@
+---
+title: Alerts
+description: Review alert history, filter by severity or device, and acknowledge alerts to clear your unread count in the BrewWizz mobile app.
+---
+
+## Your alert history
+
+Review, filter, and acknowledge alerts from your phone so you can keep up with what happened on your devices and clear alerts you have already seen. The Alerts tab shows every alert event triggered by your devices, with tools to narrow the list and mark alerts as acknowledged.
+
+<Callout kind="info">
+
+The Alerts tab focuses on alert events that have already fired. Use the filters at the top of the screen to move quickly between new alerts and older history.
+
+</Callout>
+
+## The alert badge
+
+Watch the numeric badge on the Alerts tab icon to see how many alerts still need your attention. The badge shows your current count of unacknowledged alerts.
+
+That count updates in real time. When a new alert fires, the badge increases immediately. As you acknowledge alerts, the count decreases. When the count reaches zero, the badge disappears entirely.
+
+## Filters
+
+Use the filters at the top of the Alerts screen to narrow the list to the alerts you need to review.
+
+- **Unacknowledged only** — A toggle switch that is on by default. When it is on, you see only alerts you have not yet acknowledged. Turn it off to see your full alert history.
+- **Warning / Critical** — Pill buttons that filter by severity. Tap a severity to show only that level. Tap the active severity again to clear the filter and show both.
+- **Device** — A dropdown picker that shows alerts from a single device. It defaults to **All devices**.
+- **Acknowledge all visible** — A button that acknowledges every unacknowledged alert currently shown in the list. Use it when you want to clear several alerts at once.
+
+## What each alert row shows
+
+Each row gives you enough detail to understand what happened without opening another screen.
+
+| Element | What you see |
+| --- | --- |
+| Severity badge | Warning or Critical, shown in distinct colors |
+| Serial number | The device that triggered the alert |
+| Description | A plain-language summary, for example `Temperature above 30.0 °C — reached 32.4 °C` |
+| Triggered time | When the alert fired, shown as a relative time |
+| Notified via | Icons showing which channels were used: email, SMS, or in-app |
+| Acknowledged label | Appears as muted text when the alert has already been acknowledged |
+
+## Acknowledge alerts
+
+Mark alerts as seen directly from the list.
+
+<Steps>
+  <Step title="Swipe left on the alert row">
+
+  Swipe left on any unacknowledged alert to reveal the acknowledge action.
+
+  </Step>
+  <Step title="Tap Acknowledge">
+
+  Tap **Acknowledge** to mark that alert as seen. The alert stays in your history, but the row now shows it as acknowledged.
+
+  </Step>
+  <Step title="Check the filtered view">
+
+  If **Unacknowledged only** is turned on, the acknowledged alert disappears from the current list because it no longer matches the filter.
+
+  </Step>
+</Steps>
+
+When you need to clear multiple alerts at once, use **Acknowledge all visible** at the top of the screen. That action applies to every unacknowledged alert currently shown in the filtered list.
+
+## Scrolling and refreshing
+
+Keep scrolling to load older alerts automatically. The list uses infinite scroll, so older events appear as you reach the bottom.
+
+Pull down from the top of the screen to refresh the list manually. This is useful when you want to confirm that the latest alerts and acknowledgment changes are visible.
+
+## Empty states
+
+The Alerts tab shows different empty messages depending on your current filter.
+
+- If **Unacknowledged only** is on and there are no pending alerts, you see `No unacknowledged alerts`.
+- If **Unacknowledged only** is off and there are no alerts at all, you see `No alerts yet`.
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Device Detail" href="/mobile-app/device-detail" icon="line-chart" />
+  <Card title="Notification Preferences" href="/dashboard-web/client/notification-preferences" icon="mail" />
+  <Card title="Troubleshooting" href="/mobile-app/troubleshooting" icon="wrench" />
+</Columns>

@@ -1,0 +1,114 @@
+---
+title: Settings
+description: Update your profile, configure notification destinations, and manage your subscription in the BrewWizz mobile app.
+---
+
+## The Settings tab
+
+Update your name, choose where alerts are delivered, and manage your subscription from the Settings tab. Settings is your hub for account and subscription management, with three sections: **Profile**, **Notifications**, and **Billing**.
+
+## Profile
+
+Profile shows the account details tied to your BrewWizz sign-in. Some details are for reference only, while your full name can be updated directly in the app.
+
+<Callout kind="info">
+
+Your email address, role, and organization are shown for reference. Only your full name is editable on this screen.
+
+</Callout>
+
+| Field | What you see |
+| --- | --- |
+| Email | Shown as read-only — you cannot change your email address in the app |
+| Role | Displayed as a badge, such as `client` or `admin` |
+| Organization | Shown as read-only and managed by an administrator |
+| Full name | Editable — enter your name and tap **Save profile** to update it. A confirmation toast appears when the update succeeds |
+
+The profile screen also shows the note: `Role and organization are managed by an administrator.`
+
+Tap **Sign out** to end your session and return to the sign-in screen.
+
+At the bottom of the screen, the app version and build number appear in small text, such as `BrewWizz v1.3.0 (42)`.
+
+## Notifications
+
+In-app alerts are always enabled while the app is running. Configure SMS and email destinations below.
+
+Tap **Enable local notifications** to request permission for local device notifications. If permission is denied, the app shows a message explaining that local alerts require permission.
+
+The **In-app** channel appears as a fixed row with an **Always on** badge. You cannot turn this channel off.
+
+Each existing SMS or email destination appears as its own card. The card shows the channel type, the destination address or phone number, a toggle to enable or disable that destination, and a **Delete** button. When you delete a destination, the app asks for confirmation before removing it.
+
+<Callout kind="info">
+
+If you have not configured a personal email destination, alert emails are sent to your organization's default contact email address instead.
+
+</Callout>
+
+### Add a new channel
+
+Use the controls at the bottom of the screen to add a personal email or SMS destination.
+
+<Steps>
+  <Step title="Choose a channel type" icon="settings">
+
+Select **Email** or **SMS** using the pill toggle buttons.
+
+  </Step>
+  <Step title="Enter the destination" icon="edit">
+
+For **Email**, enter a valid email address. For **SMS**, enter a phone number in E.164 format, such as `+12025551234`.
+
+  </Step>
+  <Step title="Save the destination" icon="check-circle">
+
+Tap **Add channel** to save the new destination.
+
+  </Step>
+</Steps>
+
+Validation runs before the app saves the destination. Email entries must be valid email addresses, and SMS entries must use E.164 format. If the format is wrong, the app shows a message that explains what to enter.
+
+## Billing
+
+Billing shows your current subscription status and the actions available for your account. What you see depends on whether you belong to an organization and whether a subscription already exists.
+
+### No organization assigned
+
+If you do not have an organization, the billing screen shows: `Billing is available after an administrator assigns you to an organization.`
+
+### Current subscription
+
+When a subscription exists, the screen shows a card with the current billing details.
+
+| Field | What you see |
+| --- | --- |
+| Subscription status | Current state, such as `active`, `trialing`, `past_due`, `cancelled`, or `incomplete` |
+| Plan name | The name of your current plan |
+| Billing period end date | When the current billing period ends |
+| Manage billing button | Opens the billing portal in your device's browser for subscriptions managed through the billing system |
+
+If the subscription is not managed through the billing system, the screen shows this note: `This subscription is managed locally. Contact support for billing changes.`
+
+### Past due warning
+
+When payment is overdue, the billing screen shows a warning card with an **Open billing portal** button. Use it to update your payment method and avoid service interruption.
+
+### Incomplete checkout
+
+If checkout was started but not completed, the billing screen shows a card prompting you to resume checkout or open the billing portal.
+
+### Available plans
+
+When there is no active subscription, or when the current subscription is cancelled or incomplete, the screen shows available plans as cards. Each card includes the plan name, the price, and a **Subscribe** button.
+
+Tap **Subscribe** to open checkout in your device's browser. After you complete checkout and return to the app, the billing screen automatically confirms your subscription.
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Mobile App Overview" href="/mobile-app/overview" icon="monitor" />
+  <Card title="Alerts" href="/mobile-app/alerts" icon="alert-triangle" />
+  <Card title="Troubleshooting" href="/mobile-app/troubleshooting" icon="settings" />
+</Columns>

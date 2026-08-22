@@ -1,0 +1,146 @@
+---
+title: Troubleshooting
+description: Quickly diagnose and fix common BrewWizz mobile app issues — sign-in, missing devices, alerts, notifications, and billing.
+---
+
+## Common issues and how to fix them
+
+Quickly diagnose and fix the most common BrewWizz mobile app problems. Each section covers a specific issue with the most likely causes first, then walks you through the checks that usually resolve it.
+
+## Can't sign in
+
+**Symptom:** You enter your email and password, but the app does not sign you in.
+
+**Likely causes:**
+
+1. Your email or password is incorrect.
+2. Your password was changed recently and the app still has the old value saved.
+3. You need to reset your password.
+
+**Steps to resolve:**
+
+1. Check that you are using the correct email address and password.
+2. Re-enter your password manually if your device auto-filled an older saved password.
+3. If you forgot your password, use the reset flow from the app and complete the reset on the web dashboard.
+4. After you finish the reset in your browser, return to the app and sign in again.
+5. If you need a walkthrough of the sign-in and password reset flow, see [Getting Started](/mobile-app/getting-started).
+6. If the problem continues after resetting your password, contact BrewWizz support.
+
+## Stuck on the No organization screen
+
+**Symptom:** The app signs you in, but you stay on the **No organization** screen and cannot open devices or alerts.
+
+**Likely causes:**
+
+1. Your account has not been assigned to an organization yet.
+2. The organization assignment was completed for a different email address.
+3. Your app has not refreshed since the assignment was made.
+
+**Steps to resolve:**
+
+1. Confirm with your administrator that your account has been assigned to an organization.
+2. After your administrator confirms the assignment, tap **Refresh** on the no-organization screen.
+3. If the screen still appears, confirm that the assignment was completed for the same email address you use to sign in to the app.
+4. If needed, sign out and sign back in with the correct email address.
+
+<Callout kind="info">
+
+The no-organization screen cannot be bypassed. You will stay on this screen until an organization is assigned to your account.
+
+</Callout>
+
+## No devices showing
+
+**Symptom:** The Devices tab opens, but you do not see any devices.
+
+**Likely causes:**
+
+1. Your organization does not have any devices assigned.
+2. The device list has not refreshed yet.
+3. A filter is hiding the devices you expect to see.
+
+**Steps to resolve:**
+
+1. Pull down on the Devices tab to refresh the device list.
+2. Check that the health filter is set to **All**.
+3. If the filter is set to **Online**, **Stale**, or **Offline**, switch back to **All** and check the list again.
+4. If no devices appear, confirm with your administrator that devices have been assigned to your organization.
+
+## Alerts tab is empty
+
+**Symptom:** The Alerts tab shows no items, even though you expected to see alert activity.
+
+**Likely causes:**
+
+1. Your plan does not include alert rules or alert history.
+2. The **Unacknowledged only** filter is hiding older acknowledged alerts.
+3. Your subscription status is limiting alert features.
+
+**Steps to resolve:**
+
+1. Check whether your plan includes alert features. See [Understanding Your Plan](/dashboard-web/client/understanding-your-plan).
+2. If **Unacknowledged only** is turned on, turn it off to see your full alert history.
+3. Open Billing from [Settings](/mobile-app/settings) and check whether your subscription is past due, cancelled, or incomplete.
+4. If alert features should be available on your plan and the tab is still empty, contact BrewWizz support.
+
+## Not receiving local notifications
+
+**Symptom:** The app does not show local notifications on your device when alerts happen.
+
+**Likely causes:**
+
+1. Notification permission has not been granted for the app.
+2. Notification permission was denied earlier in your device settings.
+3. You are expecting SMS or email alerts, which are configured separately.
+
+**Steps to resolve:**
+
+1. Open **Settings** in the app, then open **Notifications**.
+2. Tap **Enable local notifications** to request notification permission.
+3. If you previously denied permission, open your device's system settings and re-enable notifications for the BrewWizz app.
+4. If you are not receiving SMS or email alerts, check your notification destinations in **Settings** and make sure they are configured correctly.
+
+<Callout kind="info">
+
+Local notifications are separate from SMS and email alerts. Enable and manage those channels from the Notifications settings screen.
+
+</Callout>
+
+## Billing screen shows a message
+
+**Symptom:** The Billing screen shows a message instead of a full billing overview.
+
+**Likely causes:**
+
+1. Your account has not been assigned to an organization.
+2. Your subscription is managed outside the standard billing portal.
+
+**Steps to resolve:**
+
+1. If the screen says **Billing is available after an administrator assigns you to an organization**, contact your administrator and ask them to complete the organization assignment.
+2. If the screen says **This subscription is managed locally. Contact support for billing changes**, contact BrewWizz support for any billing updates or subscription changes.
+
+## App seems stale or not updating
+
+**Symptom:** Device readings, alert counts, or screen content do not appear to update.
+
+**Likely causes:**
+
+1. The app lost network access.
+2. The current screen has not refreshed yet.
+3. The app needs to reconnect.
+
+**Steps to resolve:**
+
+1. Check that your device has a working internet connection.
+2. Pull down to refresh on the Devices or Alerts tab.
+3. Close the app completely, then reopen it.
+4. If the app still does not update, wait a moment and refresh again after your connection is stable.
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Mobile App Overview" href="/mobile-app/overview" icon="monitor" />
+  <Card title="Getting Started" href="/mobile-app/getting-started" icon="book-open" />
+  <Card title="Device List" href="/mobile-app/devices" icon="smartphone" />
+</Columns>

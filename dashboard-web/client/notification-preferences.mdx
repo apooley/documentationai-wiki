@@ -1,0 +1,72 @@
+---
+title: Notification Preferences
+description: Manage SMS opt-in/out with STOP/START/HELP keywords, email and in-app alert delivery, and how plan downgrades affect your notification channels.
+---
+
+## Configure notification delivery
+
+Notification preferences control how you receive alert notifications in BrewWizz: in-app, email, or SMS. Your plan determines which channels are available, and you can use the Notifications page to turn eligible channels on or off for your account.
+
+## Prerequisites
+
+<Callout kind="alert">
+
+The **Notifications** page appears only when your plan includes at least one of these capabilities: `email_notifications`, `sms_notifications`, or `alert_rules`. If the page is missing, review [Understanding Your Plan](/dashboard-web/client/understanding-your-plan) to see which features your organization currently has.
+
+</Callout>
+
+## Available Channels
+
+| Channel | Plan Flag Required | How It Works |
+| --- | --- | --- |
+| In-app | `in_app_alerts` | Alert events appear in the Alerts page and alert bell; always on if this flag is enabled |
+| Email | `email_notifications` | Alert emails are sent to your registered email address |
+| SMS | `sms_notifications` | Alert text messages are sent to your verified phone number; SMS delivery also requires opt-in |
+
+## SMS Opt-In and Opt-Out
+
+SMS alerts depend on both your plan and your phone number's current opt-in status. If SMS is enabled for your account, BrewWizz sends alert texts to your verified phone number.
+
+Use these keywords to control SMS delivery:
+
+- **STOP** — Reply `STOP` to any BrewWizz alert text to unsubscribe from all SMS notifications.
+- **START** — Reply `START` to opt back in and resume SMS delivery.
+- **HELP** — Reply `HELP` to receive information about the SMS service.
+
+BrewWizz processes these inbound text messages automatically and updates your SMS opt-in status. You do not need to change anything manually in the dashboard after sending one of these keywords.
+
+<Callout kind="tip">
+
+SMS opt-in status is managed per phone number, not per device. If you stop SMS delivery, BrewWizz stops sending alert texts for all devices on your account to that phone number.
+
+</Callout>
+
+## Email and In-App Preferences
+
+Email notifications are sent to the email address on your account profile. If your plan includes email delivery, use the Notifications page to turn email alerts on or off for your account.
+
+In-app alerts appear in the Alerts page and in the bell icon count in the dashboard header. If your plan includes in-app alerts, those alert events are available there whenever alert activity occurs.
+
+## Downgrade Behavior
+
+If your plan changes, BrewWizz updates your available notification channels to match your current entitlement. A removed channel does not stay active after the plan no longer includes it.
+
+<Callout kind="alert">
+
+If your plan is downgraded or becomes `past_due` or `cancelled`, channels that are no longer entitled are automatically disabled. You can turn off a blocked channel, but you cannot turn it back on until your plan includes that channel again. For example, if your plan no longer includes SMS, the SMS toggle becomes disabled and greyed out.
+
+</Callout>
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Alerts and alert rules" href="/dashboard-web/client/alerts-and-rules" icon="bell">
+  Learn how alert rules trigger notifications and where alert events appear.
+  </Card>
+  <Card title="Understanding your plan" href="/dashboard-web/client/understanding-your-plan" icon="credit-card">
+  Check which alert and notification features your current plan includes.
+  </Card>
+  <Card title="Billing" href="/dashboard-web/client/billing" icon="credit-card">
+  Review subscription status changes that can affect notification delivery.
+  </Card>
+</Columns>

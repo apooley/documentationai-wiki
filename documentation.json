@@ -118,6 +118,83 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Dashboard - Web",
+        "pages": [
+          {
+            "title": "Overview",
+            "path": "dashboard-web/overview",
+            "icon": "gauge"
+          },
+          {
+            "group": "Client Guide",
+            "icon": "user",
+            "pages": [
+              {
+                "title": "Understanding Your Plan",
+                "path": "dashboard-web/client/understanding-your-plan"
+              },
+              {
+                "title": "Alerts & Alert Rules",
+                "path": "dashboard-web/client/alerts-and-rules"
+              },
+              {
+                "title": "Notification Preferences",
+                "path": "dashboard-web/client/notification-preferences"
+              },
+              {
+                "title": "Billing",
+                "path": "dashboard-web/client/billing"
+              }
+            ]
+          },
+          {
+            "title": "Troubleshooting",
+            "path": "dashboard-web/troubleshooting",
+            "icon": "wrench"
+          }
+        ]
+      },
+      {
+        "tab": "Mobile Application",
+        "pages": [
+          {
+            "title": "Mobile App Overview",
+            "path": "mobile-app/overview",
+            "icon": "gauge"
+          },
+          {
+            "title": "Getting Started",
+            "path": "mobile-app/getting-started",
+            "icon": "log-in"
+          },
+          {
+            "title": "Device List",
+            "path": "mobile-app/devices",
+            "icon": "smartphone"
+          },
+          {
+            "title": "Device Detail",
+            "path": "mobile-app/device-detail",
+            "icon": "line-chart"
+          },
+          {
+            "title": "Alerts",
+            "path": "mobile-app/alerts",
+            "icon": "bell"
+          },
+          {
+            "title": "Settings",
+            "path": "mobile-app/settings",
+            "icon": "settings"
+          },
+          {
+            "title": "Troubleshooting",
+            "path": "mobile-app/troubleshooting",
+            "icon": "wrench"
+          }
+        ]
       }
     ]
   },

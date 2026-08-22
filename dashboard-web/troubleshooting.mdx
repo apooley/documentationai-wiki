@@ -1,0 +1,110 @@
+---
+title: Troubleshooting
+description: Solve common BrewWizz dashboard issues — devices showing no readings, alerts not firing, SMS opt-in problems, and plan-related feature gaps.
+---
+
+## Common issues and how to fix them
+
+Use this page to quickly diagnose and fix the most common BrewWizz dashboard problems with device readings, alerts, and notifications. Each section lists the most likely causes first, then walks you through the checks that usually resolve the issue.
+
+## No Readings — Device Appears Offline
+
+A device appears offline when it has not reported any data for more than 2 hours, or when no recent readings appear on the dashboard. In most cases, the device has lost power, lost network connectivity, or is temporarily unavailable during a firmware update.
+
+**Symptom:** Device shows **Offline** status or no data on the dashboard.
+
+**Likely causes:**
+
+1. The device lost power.
+2. The device lost network connectivity.
+3. A firmware update is in progress.
+
+**Steps to resolve:**
+
+1. Check that the device has power and that its network connection is working.
+2. Wait a few minutes. A device in **Stale** status may recover on its own.
+3. If you recently moved or reinstalled the device, confirm that the setup is complete and correct.
+4. If the problem persists, contact BrewWizz support.
+
+<Callout kind="info">
+
+A device showing **Stale** status means it has not reported in the last 10 to 120 minutes. This may resolve on its own, so wait 10 minutes before investigating further.
+
+</Callout>
+
+## Alerts Not Firing
+
+If a device reading crosses a threshold but no alert appears, the problem is usually related to plan access, rule setup, cooldown timing, or subscription status. Check each item in order before moving to the next one.
+
+**Symptom:** A device reading crosses a threshold but no alert is generated.
+
+**Check in order:**
+
+1. **Plan includes alert rules:** Does your plan include the `alert_rules` feature? See [Understanding Your Plan](/dashboard-web/client/understanding-your-plan).
+2. **Rule exists:** Confirm that an active alert rule exists for the specific device and condition.
+3. **Cooldown:** Check whether the same rule fired recently. The cooldown period may still be active.
+4. **Rule condition:** Confirm that the reading actually matches the rule threshold.
+5. **Subscription status:** Confirm that your subscription is active or trialing. Past due, cancelled, or incomplete subscriptions disable all feature flags.
+
+<Callout kind="alert">
+
+If your organization has no subscription, only `in_app_alerts` is enabled. `alert_rules` is disabled, so rules are not evaluated. See [Billing](/dashboard-web/client/billing) to start a subscription.
+
+</Callout>
+
+## SMS Notifications Not Received
+
+If alerts are firing but no text message arrives, check your plan access and notification settings before assuming delivery failed. SMS delivery depends on both plan entitlement and your phone-level opt-in status.
+
+**Symptom:** Alerts fire but no SMS is received.
+
+**Check in order:**
+
+1. **Plan includes SMS:** Confirm that your plan includes the `sms_notifications` feature.
+2. **Opt-in status:** If you previously replied `STOP`, reply `START` to any BrewWizz alert text to opt back in.
+3. **Phone number:** Confirm that a valid phone number is saved in your notification preferences.
+4. **SMS toggled on:** Confirm that SMS is turned on in the Notifications page.
+5. If all of these are correct and SMS still does not arrive, contact BrewWizz support.
+
+## SMS STOP / START / HELP
+
+Use these keywords to control SMS delivery for your phone number.
+
+| Keyword | Action |
+|---|---|
+| STOP | Unsubscribe from all BrewWizz SMS notifications |
+| START | Re-enable SMS delivery |
+| HELP | Receive help information about the service |
+
+<Callout kind="tip">
+
+SMS opt-in is tied to your phone number, not to an individual device. Replying `STOP` affects SMS alerts across all devices on your account.
+
+</Callout>
+
+## Email Notifications Not Received
+
+If alert emails are missing, start by checking whether your plan includes email notifications and whether the email channel is turned on. After that, check your inbox filters before contacting support.
+
+**Check in order:**
+
+1. Confirm that your plan includes the `email_notifications` feature.
+2. Confirm that the email channel is turned on in your notification preferences.
+3. Check the spam or junk folder for your registered email address.
+4. If all of these are correct and emails still do not arrive, contact BrewWizz support.
+
+## Dashboard Shows Upgrade Instead of Alerts
+
+<Callout kind="info">
+
+If the dashboard shows **Upgrade** instead of **Alerts**, your subscription is not currently entitled. This usually means there is no subscription, or the subscription status is past due, cancelled, or incomplete. All feature flags are disabled in that state. See [Billing](/dashboard-web/client/billing) to resolve payment issues or start a subscription.
+
+</Callout>
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Dashboard Overview" href="/dashboard-web/overview" icon="gauge" />
+  <Card title="Alerts and Alert Rules" href="/dashboard-web/client/alerts-and-rules" icon="bell" />
+  <Card title="Understanding Your Plan" href="/dashboard-web/client/understanding-your-plan" icon="credit-card" />
+</Columns>

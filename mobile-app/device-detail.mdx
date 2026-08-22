@@ -1,0 +1,126 @@
+---
+title: Device Detail
+description: Drill into a single device's live metrics, historical charts, batch history, and alert rules in the BrewWizz mobile app.
+---
+
+## Open a device
+
+Drill into a single device's readings, charts, and alert rules from one scrollable screen. Tap any device row on the **Devices** tab to open that device's detail page, where the serial number appears as the page title.
+
+The Device Detail screen helps you answer two questions quickly: what the device is reporting right now, and whether its alert rules are configured the way you expect. From the same page, you can review identity details, inspect recent history, check batch records, and manage threshold-based alerts.
+
+## Device identity
+
+The top section shows the device's identifying details and current reporting status.
+
+| Field | What it shows |
+| --- | --- |
+| Serial number | Large bold heading |
+| Health badge | Same Online/Stale/Offline indicator as the device list |
+| Firmware version | Current firmware, or a dash if unknown |
+| MAC address | Device hardware address, or a dash if unknown |
+| First seen | Date and time the device was first registered |
+| Last reading | When the most recent reading was received |
+
+If the health badge shows **Stale** or **Offline**, check the **Last reading** value first. That timestamp tells you whether the device is still reporting regularly or whether the displayed metrics may be outdated.
+
+## Latest reading
+
+The latest reading section shows the most recent sensor values reported by the device. Each value appears in its own metric card so you can scan the current state at a glance.
+
+| Metric | Example |
+| --- | --- |
+| Temperature | 22.1 °C |
+| Tank pressure | 2.34 bar |
+| Target pressure | 2.00 bar |
+| CO2 | 5.3 g/L |
+| Volume | 99.5 |
+
+If the latest reading includes any special device state flags, the screen shows them as a badge below the metric grid. That badge highlights unusual device conditions without requiring you to inspect the chart history.
+
+## Charts
+
+The chart section lets you inspect how readings changed over time. Two sets of pill buttons control what appears on the chart: **Time range** and **Metric**.
+
+**Time range** changes how far back the chart looks:
+
+- **1h** — Last hour
+- **6h** — Last 6 hours
+- **24h** — Last 24 hours
+- **7d** — Last 7 days
+
+**Metric** controls which readings are plotted:
+
+- **Temperature**
+- **Tank pressure**
+- **Target pressure**
+- **CO2**
+
+You can select up to **2 metrics** at once. The chart draws two colored lines for the selected metrics, and if you add a third metric, the oldest selected metric is replaced automatically.
+
+If the selected range has no readings, the chart area shows `No chart data for this range.` On longer ranges with heavy data volume, you may also see an informational badge showing that the chart is displaying only the latest readings for that range or that the data was downsampled for display.
+
+## Batches
+
+The batches section shows recent batch history for the selected device. Use it to confirm when batches arrived and which gateway relayed them.
+
+Each batch row shows:
+
+- When the batch was received
+- Start temperature
+- Gateway ID, which is the upstream relay that sent the batch
+
+If the device has more than 3 batches, the screen shows the first 3 by default. Tap **Show all** to expand the full list, then tap **Show less** to collapse it again.
+
+If no batch records are available yet, the section stays empty until the device reports them.
+
+## Alert rules
+
+The alert rules section is where you manage threshold rules for this specific device. Each rule watches one metric and triggers an alert when the reading goes above or below the threshold you set.
+
+Each existing rule row shows:
+
+- An **Active** or **Paused** badge
+- A plain-language description such as `Temperature above 30.0 °C`
+- Cooldown duration such as `Cooldown 30 min`
+- A toggle switch to activate or pause the rule
+- **Edit** and **Delete** buttons
+
+<Callout kind="info">
+
+Alert rules require a plan that includes the alert rules feature. If your plan does not include this feature, existing rules are paused and the section becomes read-only. See [Understanding Your Plan](/dashboard-web/client/understanding-your-plan) on the Dashboard - Web tab for details.
+
+</Callout>
+
+### Add a rule
+
+Tap **Add rule** to open the rule form.
+
+| Field | Control |
+| --- | --- |
+| Metric | Dropdown: Temperature, Tank pressure, Target pressure, CO2 |
+| Condition | Dropdown: Above or Below |
+| Threshold | Number input, labeled with the unit for the chosen metric |
+| Cooldown minutes | Number input (minimum 0) |
+
+If you enter a threshold outside the typical range for the selected metric, the form shows a hint. The hint does not block saving, so you can still create the rule if the value is intentional.
+
+### Edit or pause a rule
+
+Use the toggle switch when you want to pause a rule without deleting it. Use **Edit** when you need to change the metric, condition, threshold, or cooldown value.
+
+A paused rule stays in the list, which makes it useful for seasonal or temporary monitoring changes. Turn the toggle back on when you want the rule to resume.
+
+### Delete a rule
+
+Tap **Delete** on a rule row to remove it. Before the rule is deleted, the app asks for confirmation with the message `Remove this alert rule?`
+
+Use deletion when you no longer need the rule at all. If you may want the same rule again later, pause it instead.
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Device List" href="/mobile-app/devices" icon="smartphone" />
+  <Card title="Alerts" href="/mobile-app/alerts" icon="bell" />
+  <Card title="Getting Started" href="/mobile-app/getting-started" icon="log-in" />
+</Columns>

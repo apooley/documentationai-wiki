@@ -1,0 +1,84 @@
+---
+title: Alerts & Alert Rules
+description: Create per-device alert rules, understand cooldowns, and track in-app alert history — the full alert evaluation pipeline from sensor reading to notification.
+---
+
+## Alerts & Alert Rules
+
+Alert rules let you define thresholds for each device's telemetry readings and turn those thresholds into actionable alerts. When a reading crosses a rule condition, BrewWizz evaluates the rule, applies its cooldown, and records an alert event that you can review in the dashboard. Use this page to understand how rules work, why alerts fire or do not fire, and where to review your alert history.
+
+## Prerequisites
+
+<Callout kind="alert">
+
+Your plan must include the `alert_rules` feature flag to create or edit alert rules. The `in_app_alerts` flag is required to view alert history and the alert bell. See [Understanding Your Plan](/dashboard-web/client/understanding-your-plan).
+
+</Callout>
+
+## Alert Rules
+
+Each alert rule is tied to a specific device. You configure the rule on that device so the system knows which readings to watch and what condition should trigger an alert.
+
+A rule compares incoming telemetry against a threshold condition, such as temperature above a value, temperature below a value, or pressure outside an expected range. When a new reading arrives, BrewWizz evaluates that reading against the device's active rules.
+
+The dashboard enforces the same plan limits as the server, so if your organization is not entitled to alert rules, the UI becomes read-only and BrewWizz stops evaluating rules for new readings.
+
+## Rule Evaluation Pipeline
+
+1. Your device sends a telemetry reading to BrewWizz.
+2. The reading is validated and stored.
+3. BrewWizz loads your organization's plan feature flags.
+4. If `alert_rules` is enabled, BrewWizz matches the reading against that device's active alert rules.
+5. The system checks cooldown. If the same rule fired recently and is still inside its cooldown window, BrewWizz skips it.
+6. If the rule matches and cooldown has elapsed, BrewWizz creates an alert event.
+7. If your plan and notification preferences allow it, BrewWizz sends SMS and or email notifications for that alert event.
+
+## Cooldowns
+
+Cooldowns prevent alert storms when the same problem continues across multiple readings. If a rule fires and later readings still match that same condition, BrewWizz waits until the rule's cooldown period has elapsed before creating another alert from the same rule.
+
+Cooldown is set per rule, so different devices or conditions can use different repeat intervals. Short cooldowns make recurring issues more visible, while longer cooldowns reduce repeated notifications during extended fault conditions.
+
+## In-App Alert History
+
+The Alerts page shows a chronological history of alert events for devices in your organization. Use it to confirm that a rule fired, review when it happened, and compare alert timing against device activity.
+
+If your plan includes `in_app_alerts`, the navigation also shows an alert bell with the count of unacknowledged alerts. That bell updates automatically as new alert events occur, so new in-app alerts appear without requiring a manual refresh.
+
+## Read-Only Rules
+
+<Callout kind="info">
+
+When the `alert_rules` flag is not enabled on your plan, existing rules are deactivated and the rule UI becomes read-only. BrewWizz stops evaluating rules entirely. Rules are not deleted, and they can be reactivated if the flag is restored later.
+
+</Callout>
+
+## When Alerts Don't Fire
+
+<Callout kind="info">
+
+Check these conditions first:
+
+- Your plan must have `alert_rules` enabled.
+- A rule must exist for the device that sent the reading.
+- The rule's cooldown window must have elapsed.
+- The incoming reading must match the rule condition.
+- Your subscription must be active or trialing for paid alert features to run.
+
+For broader diagnosis steps, see [Troubleshooting](/dashboard-web/troubleshooting).
+
+</Callout>
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Understanding Your Plan" href="/dashboard-web/client/understanding-your-plan" icon="credit-card">
+  Learn which plan flags control alert rules, in-app alerts, SMS, and email access.
+  </Card>
+  <Card title="Notification Preferences" href="/dashboard-web/client/notification-preferences" icon="mail">
+  Choose how you receive alert notifications and manage channel-specific settings.
+  </Card>
+  <Card title="Troubleshooting" href="/dashboard-web/troubleshooting" icon="wrench">
+  Diagnose missing readings, inactive subscriptions, and alert delivery issues.
+  </Card>
+</Columns>
