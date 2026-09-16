@@ -120,6 +120,44 @@
         ]
       },
       {
+        "pages": [
+          {
+            "icon": "box",
+            "path": "hardware-setup/product-overview",
+            "title": "Product Overview"
+          },
+          {
+            "title": "Battery Backup",
+            "path": "hardware-setup/battery-backup"
+          },
+          {
+            "title": "Carbonation Stone Check Valve",
+            "path": "hardware-setup/check-valve"
+          },
+          {
+            "title": "WizzStone-Combo",
+            "path": "hardware-setup/wizzstone-combo"
+          },
+          {
+            "title": "Foot Pressure Sensor",
+            "path": "hardware-setup/foot-pressure-sensor"
+          },
+          {
+            "title": "Solenoid Cleaning & Servicing",
+            "path": "hardware-setup/solenoid-cleaning"
+          },
+          {
+            "title": "Ultrasonic Stone Cleaner",
+            "path": "hardware-setup/ultrasonic-cleaner"
+          },
+          {
+            "title": "WizzKoga Selector",
+            "path": "hardware-setup/wizzkoga-selector"
+          }
+        ],
+        "tab": "Hardware & Setup"
+      },
+      {
         "tab": "Dashboard - Web",
         "pages": [
           {
