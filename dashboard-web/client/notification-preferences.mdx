@@ -11,17 +11,17 @@ Notification preferences control how you receive alert notifications in BrewWizz
 
 <Callout kind="alert">
 
-The **Notifications** page appears only when your plan includes at least one of these capabilities: `email_notifications`, `sms_notifications`, or `alert_rules`. If the page is missing, review [Understanding Your Plan](/dashboard-web/client/understanding-your-plan) to see which features your organization currently has.
+The **Notifications** page appears only when your plan includes email notifications, SMS notifications, or alert rules. If the page is missing, review [Understanding Your Plan](/dashboard-web/client/understanding-your-plan) to see which features your organization currently has.
 
 </Callout>
 
 ## Available Channels
 
-| Channel | Plan Flag Required | How It Works |
+| Channel | Plan feature needed | How it works |
 | --- | --- | --- |
-| In-app | `in_app_alerts` | Alert events appear in the Alerts page and alert bell; always on if this flag is enabled |
-| Email | `email_notifications` | Alert emails are sent to your registered email address |
-| SMS | `sms_notifications` | Alert text messages are sent to your verified phone number; SMS delivery also requires opt-in |
+| In-app | In-app alerts | Alerts appear on the Alerts page and in the alert bell. Always on when your plan includes in-app alerts. |
+| Email | Email notifications | Alert emails are sent to the email address on your account. |
+| SMS | SMS notifications | Alert texts are sent to your verified phone number. You must also be opted in to SMS. |
 
 ## SMS Opt-In and Opt-Out
 
@@ -49,11 +49,11 @@ In-app alerts appear in the Alerts page and in the bell icon count in the dashbo
 
 ## Downgrade Behavior
 
-If your plan changes, BrewWizz updates your available notification channels to match your current entitlement. A removed channel does not stay active after the plan no longer includes it.
+If your plan changes, BrewWizz updates your available notification channels to match. A channel your plan no longer includes is switched off.
 
 <Callout kind="alert">
 
-If your plan is downgraded or becomes `past_due` or `cancelled`, channels that are no longer entitled are automatically disabled. You can turn off a blocked channel, but you cannot turn it back on until your plan includes that channel again. For example, if your plan no longer includes SMS, the SMS toggle becomes disabled and greyed out.
+If your plan is downgraded, or your subscription is past due or cancelled, any channel your plan no longer includes is turned off automatically. You can turn off a blocked channel, but you cannot turn it back on until your plan includes that channel again. For example, if your plan no longer includes SMS, the SMS toggle becomes disabled and greyed out.
 
 </Callout>
 

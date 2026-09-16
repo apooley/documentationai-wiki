@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-description: Solve common BrewWizz dashboard issues — devices showing no readings, alerts not firing, SMS opt-in problems, and plan-related feature gaps.
+description: Solve common BrewWizz dashboard issues: devices showing no readings, alerts not firing, SMS opt-in problems, and features missing from your plan.
 ---
 
 ## Common issues and how to fix them
@@ -34,33 +34,33 @@ A device showing **Stale** status means it has not reported in the last 10 to 12
 
 ## Alerts Not Firing
 
-If a device reading crosses a threshold but no alert appears, the problem is usually related to plan access, rule setup, cooldown timing, or subscription status. Check each item in order before moving to the next one.
+If a device reading crosses a threshold but no alert appears, the cause is usually your plan, the rule setup, the rule's cooldown, or your subscription status. Check each item in order before moving to the next one.
 
 **Symptom:** A device reading crosses a threshold but no alert is generated.
 
 **Check in order:**
 
-1. **Plan includes alert rules:** Does your plan include the `alert_rules` feature? See [Understanding Your Plan](/dashboard-web/client/understanding-your-plan).
+1. **Plan includes alert rules:** Check that your plan includes alert rules. See [Understanding Your Plan](/dashboard-web/client/understanding-your-plan).
 2. **Rule exists:** Confirm that an active alert rule exists for the specific device and condition.
 3. **Cooldown:** Check whether the same rule fired recently. The cooldown period may still be active.
 4. **Rule condition:** Confirm that the reading actually matches the rule threshold.
-5. **Subscription status:** Confirm that your subscription is active or trialing. Past due, cancelled, or incomplete subscriptions disable all feature flags.
+5. **Subscription status:** Confirm that your subscription is Active or in Trial. Alert features are switched off while a subscription is past due, cancelled, or incomplete.
 
 <Callout kind="alert">
 
-If your organization has no subscription, only `in_app_alerts` is enabled. `alert_rules` is disabled, so rules are not evaluated. See [Billing](/dashboard-web/client/billing) to start a subscription.
+Without a subscription, you can still see alert history, but alert rules don't run, so no new rule-based alerts are created. See [Billing](/dashboard-web/client/billing) to start a subscription.
 
 </Callout>
 
 ## SMS Notifications Not Received
 
-If alerts are firing but no text message arrives, check your plan access and notification settings before assuming delivery failed. SMS delivery depends on both plan entitlement and your phone-level opt-in status.
+If alerts are firing but no text message arrives, check your plan and notification settings before assuming delivery failed. SMS delivery depends on both your plan and your phone number's opt-in status.
 
 **Symptom:** Alerts fire but no SMS is received.
 
 **Check in order:**
 
-1. **Plan includes SMS:** Confirm that your plan includes the `sms_notifications` feature.
+1. **Plan includes SMS:** Confirm that your plan includes SMS notifications.
 2. **Opt-in status:** If you previously replied `STOP`, reply `START` to any BrewWizz alert text to opt back in.
 3. **Phone number:** Confirm that a valid phone number is saved in your notification preferences.
 4. **SMS toggled on:** Confirm that SMS is turned on in the Notifications page.
@@ -88,16 +88,16 @@ If alert emails are missing, start by checking whether your plan includes email 
 
 **Check in order:**
 
-1. Confirm that your plan includes the `email_notifications` feature.
+1. Confirm that your plan includes email notifications.
 2. Confirm that the email channel is turned on in your notification preferences.
 3. Check the spam or junk folder for your registered email address.
 4. If all of these are correct and emails still do not arrive, contact BrewWizz support.
 
-## Dashboard Shows Upgrade Instead of Alerts
+## Dashboard Shows Upgrade
 
 <Callout kind="info">
 
-If the dashboard shows **Upgrade** instead of **Alerts**, your subscription is not currently entitled. This usually means there is no subscription, or the subscription status is past due, cancelled, or incomplete. All feature flags are disabled in that state. See [Billing](/dashboard-web/client/billing) to resolve payment issues or start a subscription.
+If the dashboard menu shows **Upgrade**, you don't have an active or trial subscription. Either there is no subscription yet, or it is past due, cancelled, or incomplete. See [Billing](/dashboard-web/client/billing) to start a subscription or fix a payment.
 
 </Callout>
 

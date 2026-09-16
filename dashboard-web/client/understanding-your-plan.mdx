@@ -1,69 +1,63 @@
 ---
 title: Understanding Your Plan
-description: How BrewWizz feature flags control what you can see and do — alert history, alert rules, email, and SMS notifications based on your subscription status.
+description: Which alert and notification features your BrewWizz plan includes, and how your subscription status affects what you can see and do in the dashboard.
 ---
 
-## Understand what your plan unlocks
+## What your plan includes
 
-Your billing plan determines which dashboard features you can access. Use this page to understand why navigation items appear or disappear, what each feature flag controls, and what changes when your subscription status updates.
+Your BrewWizz plan decides which alert and notification features you can use in the dashboard. If a menu item or setting you expect is missing, it is usually because your plan does not include that feature or your subscription is not currently active.
 
-## The Four Feature Flags
+## Plan features
 
-| Flag | What It Enables | Affected Nav |
+| Feature | What it gives you | Where you see it |
 | --- | --- | --- |
-| `in_app_alerts` | Alert history page + alert bell icon | Alerts |
-| `alert_rules` | Create and edit per-device alert rules | (within Alerts) |
-| `email_notifications` | Outbound alert emails to your registered email address | Notifications |
-| `sms_notifications` | Outbound alert SMS to your verified phone number | Notifications |
+| **In-app alerts** | Alert history and the alert bell in the dashboard header | Alerts |
+| **Alert rules** | Create and edit alert thresholds for each device | Device detail page |
+| **Email notifications** | Alert emails sent to your account email address | Notifications |
+| **SMS notifications** | Alert text messages sent to your verified phone number | Notifications |
 
-These four flags are stored on your billing plan and resolved against your organization's subscription state. The dashboard uses the resolved result to decide which pages to show and which actions to allow.
+Most paid plans include all four. Some plans include in-app alerts only.
 
-## Subscription States and What You See
+## What you see for each subscription status
 
-Your experience in the dashboard depends on both your subscription status and the feature flags attached to the billing plan.
+| Subscription status | What you can use |
+| --- | --- |
+| **Active or trial** | Every feature included in your plan. |
+| **Active, in-app alerts only plan** | Alert history and the alert bell. The **Notifications** menu item is hidden and device alert rules are read-only. |
+| **No subscription** | Alert history only. You can't create alert rules or receive alert emails or texts. **Upgrade** appears in the menu and **Notifications** is hidden. |
+| **Past due, cancelled, or incomplete** | No alert features. No new alerts are created or sent, **Upgrade** appears in the menu, and **Notifications** is hidden. If a payment is past due, a banner asks you to update your payment method. |
 
-**No subscription:** BrewWizz enables `in_app_alerts` and turns the other three flags off. You can view in-app alert history, but you cannot create alert rules or receive alert emails or SMS messages. The dashboard shows **Upgrade** instead of **Notifications**.
-
-**Active or trialing:** BrewWizz resolves features from your plan's feature settings. If your plan does not specify feature settings, all four flags default to enabled. That state gives you full access to Alerts, Notifications, and alert rule creation unless the plan explicitly turns specific flags off.
-
-**Paid in-app-only plan:** Some paid plans include only `in_app_alerts`. In that case, you keep the **Alerts** navigation item instead of **Upgrade**, but **Notifications** stays hidden. Device alert rules remain read-only.
-
-**past_due, cancelled, or incomplete:** BrewWizz resolves all four flags to `false`. The dashboard shows **Upgrade**, hides **Notifications**, and stops new alert delivery. If the subscription is `past_due`, the billing page also shows a Stripe banner.
-
-## Navigation Gating
+## Why a menu item is missing
 
 <Callout kind="info">
 
-The client layout and plan feature logic control which navigation items render. The **Upgrade** nav item appears when your organization is not entitled, while **Notifications** only appears when at least one of `alert_rules`, `email_notifications`, or `sms_notifications` is `true`.
+**Notifications** appears only when your plan includes alert rules, email notifications, or SMS notifications. **Upgrade** appears when you don't have an active or trial subscription. See [Billing](/dashboard-web/client/billing) to start or fix a subscription.
 
 </Callout>
 
-The difference between **Upgrade** and **Alerts** is important. A paid in-app-only plan still counts as entitled for in-app alerts, so it keeps **Alerts** instead of switching to **Upgrade**.
+The dashboard updates automatically when your plan or subscription changes. You don't need to sign out or refresh the page.
 
-## How Flags Are Resolved
-
-The plan features context loads your organization's subscription and resolves the active feature flags for the dashboard. The dashboard updates automatically when your plan or subscription changes, so open sessions reflect new access without waiting for a manual refresh.
-
-## Downgrade Behavior
+## When your plan changes
 
 <Callout kind="alert">
 
-When a plan is downgraded or becomes inactive, channels that are no longer entitled are automatically disabled. Alert rules are deactivated when the `alert_rules` flag is lost, and you can turn off a blocked notification channel but cannot re-enable it without plan entitlement.
+If your plan is downgraded or your subscription stops being active, any features no longer included are switched off automatically:
+
+- Your alert rules are paused. They are kept, and start working again when your plan includes alert rules.
+- Email or SMS notifications that are no longer included are turned off. You can't turn them back on until your plan includes them again.
 
 </Callout>
 
-Downgrades do not always remove every record from the system. Existing notification settings can remain so you can disable blocked channels cleanly, but BrewWizz prevents those channels from being turned back on until the plan includes them again.
-
-## Related Articles
+## Related articles
 
 <Columns cols={3}>
-  <Card title="Alerts & Alert Rules" href="/dashboard-web/client/alerts-and-rules" icon="help-circle">
-  Learn how alert history, per-device rules, and read-only states work in the client dashboard.
+  <Card title="Alerts & Alert Rules" href="/dashboard-web/client/alerts-and-rules" icon="bell">
+  How alert history and per-device alert rules work.
   </Card>
-  <Card title="Notification Preferences" href="/dashboard-web/client/notification-preferences" icon="info">
-  See how SMS, email, and in-app preferences behave when your plan allows or blocks each channel.
+  <Card title="Notification Preferences" href="/dashboard-web/client/notification-preferences" icon="mail">
+  Turn email, SMS, and in-app notifications on or off.
   </Card>
   <Card title="Billing" href="/dashboard-web/client/billing" icon="credit-card">
-  Manage your subscription, understand billing status changes, and review what happens when a plan becomes past due.
+  Start, change, or fix your subscription.
   </Card>
 </Columns>

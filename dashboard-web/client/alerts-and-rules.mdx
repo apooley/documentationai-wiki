@@ -1,6 +1,6 @@
 ---
 title: Alerts & Alert Rules
-description: Create per-device alert rules, understand cooldowns, and track in-app alert history — the full alert evaluation pipeline from sensor reading to notification.
+description: Create per-device alert rules, understand cooldowns, and review your in-app alert history, from device reading to notification.
 ---
 
 ## Alerts & Alert Rules
@@ -11,7 +11,7 @@ Alert rules let you define thresholds for each device's telemetry readings and t
 
 <Callout kind="alert">
 
-Your plan must include the `alert_rules` feature flag to create or edit alert rules. The `in_app_alerts` flag is required to view alert history and the alert bell. See [Understanding Your Plan](/dashboard-web/client/understanding-your-plan).
+Your plan must include **alert rules** to create or edit alert rules, and **in-app alerts** to see alert history and the alert bell. See [Understanding Your Plan](/dashboard-web/client/understanding-your-plan).
 
 </Callout>
 
@@ -21,17 +21,16 @@ Each alert rule is tied to a specific device. You configure the rule on that dev
 
 A rule compares incoming telemetry against a threshold condition, such as temperature above a value, temperature below a value, or pressure outside an expected range. When a new reading arrives, BrewWizz evaluates that reading against the device's active rules.
 
-The dashboard enforces the same plan limits as the server, so if your organization is not entitled to alert rules, the UI becomes read-only and BrewWizz stops evaluating rules for new readings.
+If your plan doesn't include alert rules, the rule settings are read-only and BrewWizz doesn't check new readings against your rules.
 
-## Rule Evaluation Pipeline
+## How an alert is created
 
-1. Your device sends a telemetry reading to BrewWizz.
-2. The reading is validated and stored.
-3. BrewWizz loads your organization's plan feature flags.
-4. If `alert_rules` is enabled, BrewWizz matches the reading against that device's active alert rules.
-5. The system checks cooldown. If the same rule fired recently and is still inside its cooldown window, BrewWizz skips it.
-6. If the rule matches and cooldown has elapsed, BrewWizz creates an alert event.
-7. If your plan and notification preferences allow it, BrewWizz sends SMS and or email notifications for that alert event.
+1. Your device sends a reading to BrewWizz.
+2. BrewWizz checks the reading and stores it.
+3. If your plan includes alert rules, BrewWizz compares the reading with that device's active rules.
+4. If the same rule fired recently and is still within its cooldown period, BrewWizz skips it.
+5. If the rule matches and the cooldown has passed, BrewWizz creates an alert.
+6. If your plan and notification preferences allow it, BrewWizz sends the alert by SMS, email, or both.
 
 ## Cooldowns
 
@@ -43,13 +42,13 @@ Cooldown is set per rule, so different devices or conditions can use different r
 
 The Alerts page shows a chronological history of alert events for devices in your organization. Use it to confirm that a rule fired, review when it happened, and compare alert timing against device activity.
 
-If your plan includes `in_app_alerts`, the navigation also shows an alert bell with the count of unacknowledged alerts. That bell updates automatically as new alert events occur, so new in-app alerts appear without requiring a manual refresh.
+If your plan includes in-app alerts, the dashboard header also shows an alert bell with the count of unacknowledged alerts. That bell updates automatically as new alert events occur, so new in-app alerts appear without requiring a manual refresh.
 
 ## Read-Only Rules
 
 <Callout kind="info">
 
-When the `alert_rules` flag is not enabled on your plan, existing rules are deactivated and the rule UI becomes read-only. BrewWizz stops evaluating rules entirely. Rules are not deleted, and they can be reactivated if the flag is restored later.
+If your plan doesn't include alert rules, your existing rules are paused and shown as read-only, and BrewWizz stops checking readings against them. The rules aren't deleted, and they start working again if your plan includes alert rules later.
 
 </Callout>
 
@@ -59,11 +58,11 @@ When the `alert_rules` flag is not enabled on your plan, existing rules are deac
 
 Check these conditions first:
 
-- Your plan must have `alert_rules` enabled.
+- Your plan must include alert rules.
 - A rule must exist for the device that sent the reading.
 - The rule's cooldown window must have elapsed.
 - The incoming reading must match the rule condition.
-- Your subscription must be active or trialing for paid alert features to run.
+- Your subscription must be active or in trial.
 
 For broader diagnosis steps, see [Troubleshooting](/dashboard-web/troubleshooting).
 
@@ -73,7 +72,7 @@ For broader diagnosis steps, see [Troubleshooting](/dashboard-web/troubleshootin
 
 <Columns cols={3}>
   <Card title="Understanding Your Plan" href="/dashboard-web/client/understanding-your-plan" icon="credit-card">
-  Learn which plan flags control alert rules, in-app alerts, SMS, and email access.
+  Learn which plan features control alert rules, in-app alerts, SMS, and email.
   </Card>
   <Card title="Notification Preferences" href="/dashboard-web/client/notification-preferences" icon="mail">
   Choose how you receive alert notifications and manage channel-specific settings.
