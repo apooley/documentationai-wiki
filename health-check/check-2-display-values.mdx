@@ -1,6 +1,6 @@
 ---
 title: Check 2 — Display Values
-description: Verify CO2 regulator, Brite pressure, and temperature readings on the FizzWizz display in Test Mode — Health Check Idents A, B, and C.
+description: Verify CO₂ regulator, Brite pressure, and temperature readings on the FizzWizz display in Test Mode — Health Check Idents A, B, and C.
 ---
 
 ## Check 2 — CO₂_In display values
@@ -37,6 +37,12 @@ With the arm hose disconnected, the arm circuit is vented to atmosphere, so Brit
 ## Reading C: temperature
 
 Representative means the reading should be plausible for wherever the probe currently is — roughly ambient if it is sitting in the open, or roughly tank temperature if it is still installed. This is a sanity check, not a calibration. If you need to confirm the probe is genuinely accurate, run the [Slushy WizzTemp Test](/testing/temperature-probe), which verifies it against a known 0°C reference.
+
+<Callout kind="info">
+
+The FizzWizz temperature connector is also used by the [Foot Pressure Sensor](/hardware-setup/sensors-and-power/foot-pressure-sensor), and may be routed through a sensor switch box or a [WizzKoga Selector](/hardware-setup/sensors-and-power/wizzkoga-selector). If either is fitted, make sure the temperature probe is the sensor currently connected before recording Ident C.
+
+</Callout>
 
 ## If a check fails
 

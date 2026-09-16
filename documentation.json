@@ -75,7 +75,7 @@
             ]
           },
           {
-            "group": "Troubleshooting",
+            "group": "Diagnosis",
             "icon": "wrench",
             "pages": [
               {
@@ -247,7 +247,7 @@
   },
   "seo": {
     "siteName": "BrewWizz",
-    "defaultDescription": "FizzWizz troubleshooting documentation — diagnose issues, run health checks, and test temperature probes for the FizzWizz carbonation system.",
+    "defaultDescription": "FizzWizz documentation from BrewWizz: health checks and troubleshooting, hardware setup and accessories, and the BrewWizz dashboard and mobile app.",
     "defaultImage": "https://brewwizz.com/og-image.png"
   },
   "customCss": [
