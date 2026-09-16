@@ -1,0 +1,13 @@
+/* BrewWizz typography
+   Body font is set by theme.font in documentation.json (Inter).
+   Headings and code fonts are not configurable there, so they are set here. */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+code, pre, kbd, samp {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
