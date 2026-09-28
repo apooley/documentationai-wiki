@@ -1,0 +1,81 @@
+---
+title: Devices & Health States
+description: Reading the BrewWizz dashboard device list — health badges, what Online, Stale, and Offline mean, and how to find a device quickly.
+---
+
+## Devices and health states
+
+The device list is the dashboard's home view. It shows every FizzWizz in your organisation and its current health at a glance.
+
+## The device list
+
+Each device appears with:
+
+- Its **name** — ideally the tank or vessel it serves
+- Its **health badge** — Online, Stale, or Offline
+- Its **latest readings** — current pressure and temperature values
+
+Selecting a device opens its [detail page](/dashboard/device-detail) with charts, readings, metadata, and alert rules.
+
+## Device health states
+
+Health is determined entirely by **how long it has been since the last reported reading**. It is a measure of reporting, not of whether the unit is carbonating correctly.
+
+| State | Last reading age | Colour | Meaning |
+| --- | --- | --- | --- |
+| **Online** | Less than 10 minutes | Green | Actively reporting |
+| **Stale** | 10–120 minutes | Yellow | Intermittent reporting |
+| **Offline** | More than 120 minutes | Red | Not reporting |
+
+<Callout kind="info">
+
+A device showing **Stale** may recover on its own. Wait 10 minutes before investigating.
+
+</Callout>
+
+<Callout kind="alert">
+
+A green **Online** badge does **not** mean carbonation is on target. It only means the unit is reporting. A FizzWizz can be reporting perfectly while carbonation drifts — that is what [alert rules](/dashboard/alerts-and-rules) are for. See [Understanding Your Readings](/dashboard/readings-explained) for what to actually watch.
+
+</Callout>
+
+## Why a device goes Stale or Offline
+
+| Cause | Detail |
+| --- | --- |
+| **Power interruption** | The unit lost power, or the power supply failed |
+| **Network connectivity** | Wi-Fi dropped, or signal is marginal at the mounting location |
+| **Firmware update** | The device is briefly unavailable during an update |
+| **Relocation** | The unit was moved and has not reconnected |
+| **Account or organisation change** | Device assignment changed |
+
+Full diagnosis is on [Device Offline or Not Reporting](/troubleshooting/device-offline).
+
+## Finding a device
+
+As your fleet grows, use search and filtering to find a specific unit:
+
+- **Search** by device name or serial number
+- **Filter** by health state to see only the devices needing attention
+
+In the [mobile app](/mobile-app/devices), the same filtering is available with the same health states, so a device showing **Stale** on your phone means the same thing as on the desktop.
+
+## What to do with a red device
+
+1. Confirm whether carbonation is actually affected, or whether it is only reporting that stopped. The unit carbonates without the network.
+2. Work through [Device Offline or Not Reporting](/troubleshooting/device-offline).
+3. Once it reconnects, review its [charts](/dashboard/device-detail) for the gap period to confirm the batch stayed on track.
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Device Detail & Charts" href="/dashboard/device-detail" icon="line-chart">
+  Drill into a single device.
+  </Card>
+  <Card title="Understanding Your Readings" href="/dashboard/readings-explained" icon="gauge">
+  What the numbers mean.
+  </Card>
+  <Card title="Device Offline or Not Reporting" href="/troubleshooting/device-offline" icon="wifi-off">
+  Fix a red device.
+  </Card>
+</Columns>

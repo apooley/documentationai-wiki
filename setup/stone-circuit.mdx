@@ -1,0 +1,128 @@
+---
+title: Stone Circuit
+description: Installing the stone hose, isolation valve, inline check valve, and carbonation stone — and why the push fittings matter.
+---
+
+## Stone circuit
+
+The stone circuit is where CO₂ enters the beer. Gas leaves the FizzWizz through the stone hose, passes a series of one-way valves, and diffuses into the tank through the carbonation stone.
+
+This is the circuit most exposed to product, so the valves that protect it — and the fittings that seal it — matter as much as the stone itself.
+
+## The circuit path
+
+| Order | Component | Purpose |
+| --- | --- | --- |
+| 1 | **CO₂-in solenoid** (inside the unit) | Opens gas flow to the stone |
+| 2 | **Flow controller** (inside the unit) | Meters the flow rate. The ball indicates rate |
+| 3 | **Stone hose** | 5/16 inch ID NSF tubing from the unit to the stone assembly |
+| 4 | **Inline check valve** | One-way valve in the hose — blocks liquid travelling back toward the unit |
+| 5 | **Stone Isolation Valve** | Manual valve that isolates the stone. Used in Check 7 |
+| 6 | **Sanitary Check Valve** | Second one-way valve, immediately before the stone on the wetted side |
+| 7 | **Carbonation stone** | Porous ceramic diffusion element inside the tank |
+
+See the [Pneumatics Schematic](/get-started/pneumatics-schematic) for the diagram and the full component glossary.
+
+## Connecting the stone hose
+
+<Callout kind="danger">
+
+Power the FizzWizz **OFF** before connecting or disconnecting any hoses.
+
+</Callout>
+
+<Steps>
+  <Step title="Power off">
+
+  Switch the FizzWizz OFF.
+
+  </Step>
+  <Step title="Connect the hose to the unit">
+
+  Fit the stone hose to the STONE connection on the FizzWizz.
+
+  </Step>
+  <Step title="Fit the inline check valve">
+
+  Install the inline check valve in the stone hose, oriented to block flow back toward the unit. Check the flow direction arrow if one is marked.
+
+  </Step>
+  <Step title="Route the hose to the stone assembly">
+
+  Route the hose to the tank, avoiding tight bends and anywhere it can be stood on or crushed.
+
+  </Step>
+  <Step title="Assemble the stone end">
+
+  Fit the isolation valve, check valve, elbow, and carbonation stone in the correct order. The [Check Valve](/setup/check-valve#installation) page has the assembly order, including the vertical mounting requirement.
+
+  </Step>
+  <Step title="Fit the stone into the tank">
+
+  Install the carbonation stone in the tank port. See [WizzStone-Combo](/setup/wizzstone-combo) for assembly of the carrier and stone.
+
+  </Step>
+</Steps>
+
+## Push-to-connect fittings
+
+The stone circuit uses push-to-connect fittings, including a ¼ in NPT pneumatic push fitting where the hose joins the stone assembly.
+
+<Callout kind="alert">
+
+**Push-to-connect fittings are a common source of small leaks.** Check these first when the flow meter ball behaves oddly, when the stone circuit will not hold pressure, or when a tank will not build pressure. A small leak here is easy to miss and produces symptoms that look like a component failure.
+
+</Callout>
+
+To test a suspect fitting, spray it with soapy water and look for bubbles. This is the first step for Health Check **Ident X** and part of the diagnosis for **Ident V**.
+
+## The isolation valve
+
+The stone isolation valve is a manual valve that isolates the carbonation stone from the rest of the circuit. It is used to prove the stone circuit holds pressure in [Check 7](/troubleshooting/health-check/check-7-stone-isolation-valve).
+
+| Valve position | What it does |
+| --- | --- |
+| **Open** | Normal operation — gas flows to the stone |
+| **Closed** | Isolates the stone. Used to test whether the circuit holds |
+
+During Check 7, the flow meter ball should be adjustable with the valve open, and should drop when the valve is closed. If it does not drop, there is a leak between the FizzWizz and the isolation valve — check the hose and push fittings.
+
+## Carbonation stones
+
+The stone is a porous ceramic element. The WizzStone-Combo uses a 16 in stone with 0.5 micron pores, producing very fine bubbles and high CO₂ transfer.
+
+Because the pores are small, the stone clogs easily and **must be cleaned after every use**. A dirty stone becomes hydrophobic — it repels water rather than diffusing gas — and is a leading cause of low carbonation.
+
+See [WizzStone-Combo cleaning](/setup/wizzstone-combo#cleaning) for the torpedo and ultrasonic methods.
+
+## Setting the flow rate
+
+The flow controller on the side of the unit sets how fast CO₂ enters the stone. The correct rate depends on stone length, porosity, product height over the stone, and finish gravity.
+
+Use the BrewWizz app's CO₂ Stone flow rate calculator — see [Setting the CO₂ flow rate](/setup/wizzstone-combo#setting-the-co-flow-rate). The WizzStone-Combo supports up to 16 CFH.
+
+## Checking the circuit
+
+After connecting, run [Check 7 — Stone/Isolation Valve](/troubleshooting/health-check/check-7-stone-isolation-valve) to confirm the circuit holds. If carbonation is low and the Health Check passes, see [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure).
+
+## Next step
+
+<Card title="Arm Circuit & Separator" href="/setup/arm-circuit" icon="shield">
+
+Connect the arm hose and the separator — the unit's main protection.
+
+</Card>
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="WizzStone-Combo" href="/setup/wizzstone-combo" icon="circle-dot">
+  Assembly, cleaning, and flow rate.
+  </Card>
+  <Card title="Check Valve" href="/setup/check-valve" icon="shield">
+  Construction and assembly order.
+  </Card>
+  <Card title="Check 7 — Stone/Isolation Valve" href="/troubleshooting/health-check/check-7-stone-isolation-valve" icon="circle-check">
+  Prove the circuit holds.
+  </Card>
+</Columns>

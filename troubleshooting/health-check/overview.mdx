@@ -1,0 +1,90 @@
+---
+title: Health Check Overview
+description: Run the FizzWizz Health Check — a structured 7-check sequence using A–X IDs to diagnose pneumatics, solenoids, sensors, and leaks.
+---
+
+## Run the FizzWizz Health Check
+
+The Health Check is a structured test sequence that isolates problems across 7 checks using a shared A–X ID system. Each check tests a specific part of the pneumatics, and every test result is identified by a letter — A through X — that appears consistently across the procedure pages, the results form, and the troubleshooting guide.
+
+## When to run the Health Check
+
+- Commissioning a new or relocated FizzWizz
+- Preventative maintenance during off-season or scheduled service
+- After replacing a component (solenoid, transducer, sensor)
+- Carbonation results are off-target with no obvious cause
+- Suspected leak, stuck solenoid, or faulty sensor
+
+## The 7 checks at a glance
+
+| Check | What it tests | ID letters | Go to |
+| --- | --- | --- | --- |
+| Check 1 | Setup and power supply | — | [Setup & Power Check](/troubleshooting/health-check/setup-and-power-check) |
+| Check 2 | Display values on CO₂_In circuit | A–C | [Check 2 — Display Values](/troubleshooting/health-check/check-2-display-values) |
+| Check 3 | Solenoid function on CO₂_In | D–J | [Check 3 — Solenoid CO₂_In](/troubleshooting/health-check/check-3-solenoid-co2-in) |
+| Check 4 | Solenoid function on ARM | K–Q | [Check 4 — Solenoid ARM](/troubleshooting/health-check/check-4-solenoid-arm) |
+| Check 5 | Display values on ARM circuit | R–T | [Check 5 — ARM Display Values](/troubleshooting/health-check/check-5-arm-display-values) |
+| Check 6 | Leak testing (arm circuit) | U–V | [Check 6 — Leak Testing](/troubleshooting/health-check/check-6-leak-testing) |
+| Check 7 | Stone hose and isolation valve | W–X | [Check 7 — Stone/Isolation Valve](/troubleshooting/health-check/check-7-stone-isolation-valve) |
+
+## Prerequisites
+
+<Callout kind="info">
+
+- CO₂ supply with regulator (30–40 psi)
+- Wall-wart power supply for the FizzWizz
+- Stone hose and carbonation stone
+- Arm hose with separator
+- Push-to-connect jumper hose
+- Disposable glove
+- Printed [Results Form](/troubleshooting/health-check/results-form)
+
+</Callout>
+
+## Common root cause
+
+<Callout kind="alert">
+
+Fluid inside the FizzWizz is the most common root cause of transducer and solenoid failures. It happens when the arm separator is not used or is overwhelmed, or when check valves are stuck open or missing. If several unrelated checks fail, investigate the fluid path before replacing individual components. See the [Pneumatics Schematic](/get-started/pneumatics-schematic) for component locations.
+
+</Callout>
+
+## Record results as you go
+
+<Callout kind="tip">
+
+Fill in the [Results Form](/troubleshooting/health-check/results-form) during each check, recording actual measured values — not just pass or fail. The numbers help diagnose borderline or intermittent issues during support calls.
+
+</Callout>
+
+## Related articles
+
+<Columns cols={3}>
+  <Card
+    title="Pneumatics Schematic"
+    href="/get-started/pneumatics-schematic"
+    icon="book-open"
+  >
+
+  Reference diagram and component glossary for all three pneumatic circuits
+
+  </Card>
+  <Card
+    title="Test Mode"
+    href="/troubleshooting/health-check/test-mode"
+    icon="play-circle"
+  >
+
+  How to enter Test Mode and what the buttons do
+
+  </Card>
+  <Card
+    title="Troubleshooting by Symptom"
+    href="/troubleshooting/by-symptom"
+    icon="wrench"
+  >
+
+  Look up a failed ident letter for ordered actions
+
+  </Card>
+</Columns>

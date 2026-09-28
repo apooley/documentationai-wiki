@@ -1,0 +1,107 @@
+---
+title: Understanding Your Readings
+description: What each FizzWizz metric means — CO₂ reg psi, Brite psi, and temperature — and what good values look like during carbonation and packaging.
+---
+
+## Understanding your readings
+
+The dashboard and the FizzWizz display show three core values. Understanding what each one represents makes it much easier to tell a normal run from a problem.
+
+## The three core readings
+
+| Reading | What it measures | Where it comes from |
+| --- | --- | --- |
+| **CO₂ reg psi** | Pressure at the CO₂ inlet port | CO₂_In pressure transducer |
+| **Brite psi** | Pressure in the arm/head transfer circuit — the tank head space pressure | Brite pressure transducer |
+| **Temperature** | Product temperature | WizzTemp sensor |
+
+All three are visible on the FizzWizz display, in [Test Mode](/troubleshooting/health-check/test-mode), and on the dashboard.
+
+## CO₂ reg psi
+
+**What it should be:** 30–40 psi, matching your regulator setting, and **steady**.
+
+This is your supply pressure. It tells you how much CO₂ is available to push into the tank.
+
+| Value | Meaning |
+| --- | --- |
+| Steady 30–40 psi | Normal |
+| Slowly declining | CO₂ supply running low — plan a cylinder change |
+| Well below the regulator setting | Regulator problem, or a failed CO₂_In transducer |
+| Not matching the regulator at all | Ident A — [By Symptom](/troubleshooting/by-symptom) |
+
+<Callout kind="tip">
+
+A declining CO₂ reg psi is one of the alerts the FizzWizz raises. Running out mid-batch stalls carbonation, and the batch then has to be rested so CO₂ can re-dissolve at the right equilibrium pressure.
+
+</Callout>
+
+## Brite psi
+
+**What it should be:** climbing steadily toward the finish pressure during carbonation, then holding.
+
+This is the pressure in the tank head space — the pressure actually driving CO₂ into solution.
+
+| Value | Meaning |
+| --- | --- |
+| Not near zero at rest | Brite transducer issue, or fluid inside the unit — Ident B |
+| Climbing steadily toward target | Normal carbonation in progress |
+| Flat, never climbing | A leak — see [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
+| Climbing unusually fast | Leaking Head_Transfer solenoid, or a broken stone — Ident U |
+| Not matching CO₂ reg psi when expected to | Brite transducer, or fluid inside the unit — Ident S |
+
+### Why Brite psi alone is not the whole story
+
+Carbonation depends on **both** pressure and temperature. The FizzWizz calculates the finish pressure required for your target at the current temperature — so the same Brite psi means different carbonation at different temperatures.
+
+This is why the unit recalculates continuously, and why a temperature error causes systematic carbonation error even when pressure looks perfect.
+
+## Temperature
+
+**What it should be:** stable, and **accurate**.
+
+| Value | Meaning |
+| --- | --- |
+| Stable at the product setpoint | Normal |
+| Drifting or stepping | Probe, loom, or glycol system — Ident C / T |
+| Implausible (impossibly low or high) | Faulty probe or internal loom |
+| Plausible but inaccurate | Causes systematic under- or over-carbonation — run the [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+
+<Callout kind="alert">
+
+Carbonation volumes are calculated from temperature. A probe that reads **warm** makes the FizzWizz calculate *less* CO₂ than needed, and the beer is systematically under-carbonated — while every pressure reading looks correct. This is one of the hardest faults to spot from the dashboard alone, and one of the most common causes of persistent under-carbonation.
+
+</Callout>
+
+## During packaging
+
+During kegging, canning, or bottling, the important reading is the pressure the **packaging line** sees. If you have a [Foot Pressure Sensor](/setup/foot-pressure-sensor) fitted at the tank foot, that is the value to watch.
+
+The foot pressure must stay at or above the finish pressure, or CO₂ starts coming out of solution. Once breakout starts it tends to run away and is difficult to stop.
+
+**Minimum foot pressure = (product depth in ft × 0.43 psi) + finish pressure**
+
+See [Choosing a foot pressure](/setup/foot-pressure-sensor#choosing-a-foot-pressure) for worked examples.
+
+## Quick reference
+
+| Reading | Normal | Warning sign | Go to |
+| --- | --- | --- | --- |
+| CO₂ reg psi | Steady 30–40 psi | Declining, or not matching regulator | [Responding to Alerts](/troubleshooting/responding-to-alerts) |
+| Brite psi | Climbing, then holding | Flat, or climbing too fast | [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
+| Temperature | Stable and accurate | Drifting or inaccurate | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+| Health badge | Online | Stale or Offline | [Device Offline](/troubleshooting/device-offline) |
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Device Detail & Charts" href="/dashboard/device-detail" icon="line-chart">
+  See these values over time.
+  </Card>
+  <Card title="Monitoring Your Carbonation" href="/get-started/monitoring" icon="gauge">
+  The monitoring workflow.
+  </Card>
+  <Card title="Carbonation & Brite Pressure" href="/troubleshooting/carbonation-and-brite-pressure" icon="wrench">
+  When the numbers are off.
+  </Card>
+</Columns>

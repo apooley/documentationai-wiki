@@ -1,0 +1,106 @@
+---
+title: Device Offline or Not Reporting
+description: Diagnose a FizzWizz showing Stale or Offline on the dashboard — power, network, Wi-Fi, firmware, and account causes.
+---
+
+## Device offline or not reporting
+
+A FizzWizz appears **Offline** when it has not sent a reading for more than 2 hours, and **Stale** when the gap is 10 to 120 minutes.
+
+The unit may still be carbonating normally — a reporting problem is not necessarily a carbonation problem. But you lose monitoring and alerts, so it is worth fixing promptly.
+
+## Device health states
+
+| State | Last reading received | Meaning |
+| --- | --- | --- |
+| **Online** | Within 10 minutes | Actively reporting |
+| **Stale** | 10–120 minutes ago | Intermittent or delayed reporting |
+| **Offline** | More than 120 minutes ago, or never | Not reporting — needs attention |
+
+<Callout kind="info">
+
+A device showing **Stale** may recover on its own. Wait 10 minutes before investigating further.
+
+</Callout>
+
+## Work through these in order
+
+### 1. Check power
+
+The most common cause is a power interruption.
+
+1. Confirm the FizzWizz is powered on.
+2. Check the green light on the power supply — if it is off, see [Power Connection](/setup/power).
+3. If power cuts are common on site, fit a [Battery Backup](/setup/battery-backup).
+
+### 2. Check network connectivity
+
+1. Confirm your network is up and other devices on it are working.
+2. Check Wi-Fi signal strength at the FizzWizz's mounting location. Breweries are often poor Wi-Fi environments, and signal can change with tank and equipment positions.
+3. If the unit is on the edge of coverage, reposition it or add an access point.
+4. See [Network & Account Setup](/setup/network-and-account) for the connection procedure.
+
+### 3. Check whether a firmware update is in progress
+
+A device is temporarily unavailable during a firmware update. Wait a few minutes and check again.
+
+### 4. Check whether the device was moved or reinstalled
+
+If the unit was recently relocated or reinstalled, confirm the setup is complete and correct — see [Network & Account Setup](/setup/network-and-account).
+
+### 5. Check the account side
+
+<Callout kind="alert">
+
+**The no-organization state cannot be bypassed.** If your account is not assigned to an organisation, no devices appear at all — dashboard or mobile app. This is the most common "no devices showing" cause, and it looks like an offline device.
+
+</Callout>
+
+1. Confirm your account is assigned to an organisation — see [Signing In & Account Setup](/dashboard/signing-in).
+2. Confirm the device is assigned to that organisation — see [Adding & Claiming a Device](/dashboard/adding-a-device).
+3. Confirm your subscription is Active or in Trial.
+
+### 6. Still not reporting
+
+Contact support with your serial number and what you have tried — see [Support & Parts](/get-started/support-and-parts).
+
+## Distinguishing the causes
+
+| Symptom | Likely cause | Where to go |
+| --- | --- | --- |
+| Device never appeared after installation | Network setup or account assignment incomplete | [Network & Account Setup](/setup/network-and-account) |
+| Was Online, now Offline after a power event | Power interruption | [Power Connection](/setup/power) |
+| Intermittent Stale status | Marginal Wi-Fi signal | [Site Requirements](/setup/site-requirements) |
+| Offline after being moved | Setup incomplete after relocation | [Network & Account Setup](/setup/network-and-account) |
+| Offline, and no devices appear anywhere | Account not assigned to an organisation | [Signing In & Account Setup](/dashboard/signing-in) |
+| Offline briefly, then recovers | Firmware update | Wait, then recheck |
+
+## What happens while offline
+
+The FizzWizz continues to carbonate using its own sensors and calculations — carbonation does not depend on the network. What you lose is:
+
+- Live readings and telemetry charts on the dashboard
+- Alert evaluation, so no new alerts are created
+- Notification delivery
+
+When the device reconnects, reporting resumes and new readings appear. Because alerts are evaluated when readings arrive, a condition that developed during the outage may not have generated an alert.
+
+<Callout kind="tip">
+
+If a device was offline during a critical part of a carbonation run, review the pressure and temperature trace once it reconnects to confirm the batch stayed on track. See [Device Detail & Charts](/dashboard/device-detail).
+
+</Callout>
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Network & Account Setup" href="/setup/network-and-account" icon="wifi">
+  Get the unit reporting.
+  </Card>
+  <Card title="Dashboard Troubleshooting" href="/dashboard/troubleshooting" icon="wrench">
+  Dashboard-side diagnosis.
+  </Card>
+  <Card title="Responding to Alerts" href="/troubleshooting/responding-to-alerts" icon="bell">
+  What each alert means.
+  </Card>
+</Columns>

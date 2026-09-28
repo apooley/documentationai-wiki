@@ -1,0 +1,95 @@
+---
+title: Adding & Claiming a Device
+description: How to get a FizzWizz assigned to your BrewWizz organisation so it appears in the dashboard, mobile app, and alerting.
+---
+
+## Adding and claiming a device
+
+A FizzWizz has to be assigned to your organisation before it appears anywhere in BrewWizz. This page covers that link — the connection between the hardware you installed and the account you monitor it from.
+
+## What you need
+
+| Requirement | Where to find it |
+| --- | --- |
+| **Serial number** | On the FizzWizz label |
+| **Device name** | What you want to call it in the dashboard — use something recognisable, such as the tank it serves |
+| Organisation assignment | Your account must already be assigned to an organisation — see [Signing In & Account Setup](/dashboard/signing-in) |
+| Network connection | The unit must be online — see [Network & Account Setup](/setup/network-and-account) |
+
+<Callout kind="tip">
+
+Name devices by the tank or vessel they serve, not by serial number. When an alert fires at 2 a.m., `Brite Tank 2` is far more useful than `FW-0413`.
+
+</Callout>
+
+## Claiming the device
+
+<Steps>
+  <Step title="Confirm the unit is online">
+
+  The FizzWizz must be connected to your network and reporting before it can be claimed. See [Network & Account Setup](/setup/network-and-account).
+
+  </Step>
+  <Step title="Sign in to the dashboard">
+
+  Sign in at [bw-dash.allendale.biz](https://bw-dash.allendale.biz).
+
+  </Step>
+  <Step title="Add the device">
+
+  Add the FizzWizz using its serial number, and give it a recognisable name.
+
+  </Step>
+  <Step title="Confirm it appears">
+
+  The device should now appear in your device list with a health badge. **Online** means it has reported within the last 10 minutes.
+
+  </Step>
+</Steps>
+
+If the device does not appear, work through the checks below.
+
+## If the device does not appear
+
+| Check | What to confirm | Where to go |
+| --- | --- | --- |
+| **Is the unit online?** | Green power light on, unit reporting | [Power Connection](/setup/power) · [Network & Account Setup](/setup/network-and-account) |
+| **Is the serial number correct?** | Match against the label on the unit | — |
+| **Is your account assigned to an organisation?** | Without this, nothing appears at all | [Signing In & Account Setup](/dashboard/signing-in) |
+| **Was the device claimed for a different email?** | The claim must be made from the account that will use it | [Signing In & Account Setup](/dashboard/signing-in) |
+| **Has the list refreshed?** | The dashboard updates automatically, but refresh to be sure | — |
+| **Is the device shown as Stale or Offline?** | It is claimed but not reporting | [Device Offline or Not Reporting](/troubleshooting/device-offline) |
+
+<Callout kind="alert">
+
+If **no** devices appear — not just this one — the most likely cause is that your account is not assigned to an organisation. See [Signing In & Account Setup](/dashboard/signing-in).
+
+</Callout>
+
+## After claiming
+
+Once the device is listed and reporting:
+
+1. **[Review its health state](/dashboard/devices)** to confirm it is Online.
+2. **[Open the device detail page](/dashboard/device-detail)** to see its telemetry charts and metadata.
+3. **[Configure alert rules](/dashboard/alerts-and-rules)** for that device's thresholds.
+4. **[Set notification preferences](/dashboard/notification-preferences)** so alerts reach you.
+5. **[Check your plan](/dashboard/understanding-your-plan)** if alert features are missing.
+
+## Moving or replacing a device
+
+If you relocate a FizzWizz to a different tank, update its name so the dashboard still reflects what it serves. If you replace a unit, claim the new serial number and remove or rename the old entry so you are not alerted on a device that no longer exists.
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Devices & Health States" href="/dashboard/devices" icon="monitor">
+  Read the device list.
+  </Card>
+  <Card title="Alerts & Alert Rules" href="/dashboard/alerts-and-rules" icon="bell">
+  Set thresholds for this device.
+  </Card>
+  <Card title="Network & Account Setup" href="/setup/network-and-account" icon="wifi">
+  Get the hardware online first.
+  </Card>
+</Columns>

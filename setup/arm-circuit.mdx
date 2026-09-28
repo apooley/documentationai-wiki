@@ -1,0 +1,136 @@
+---
+title: Arm Circuit & Separator
+description: Installing the arm hose and separator — the single most important component for protecting the FizzWizz from fluid ingress — plus maintenance and troubleshooting.
+---
+
+## Arm circuit and separator
+
+The arm circuit connects the FizzWizz to the tank head rather than to the beer. It applies head pressure during packaging and senses the tank's head space pressure.
+
+The **separator** sits in this circuit and is the single most important component for protecting the unit.
+
+<Callout kind="alert">
+
+**Read this page before commissioning.** Fluid ingress is the most common root cause of pressure transducer and solenoid failures on the FizzWizz. The separator, the inline check valve, and the sanitary check valve exist solely to prevent it. Most of the failures the rest of this documentation helps you diagnose are preventable at this stage.
+
+</Callout>
+
+## The circuit path
+
+| Order | Component | Purpose |
+| --- | --- | --- |
+| 1 | **Head_Transfer solenoid** (inside the unit) | Opens gas flow to the arm. Operated by the **Up** button |
+| 2 | **Arm Hose** | Connects the ARM port to the tank head |
+| 3 | **Separator** | Catches liquid and foam before it can reach the unit |
+| 4 | **Swiffer valve** | Drain valve on the separator |
+| 5 | **Tank head** | Where head pressure is applied and sensed |
+
+The **Brite psi** reading on the display shows pressure in this circuit.
+
+## Why the separator matters
+
+During carbonation and especially during packaging, foam and liquid can travel up the arm hose toward the FizzWizz. The separator intercepts it.
+
+Without a separator — or with one that is undersized, blocked, or allowed to fill — liquid reaches the pressure transducers and solenoids inside the unit. Those parts are not designed to see product.
+
+The failure mode is deceptive. A transducer or solenoid that fails this way looks like a component defect, so the natural response is to replace the part. But if the fluid path is not fixed at the same time, the replacement fails the same way.
+
+<Callout kind="danger">
+
+If you find fluid inside the unit, **establish how it got in before replacing anything.** Check the separator is fitted and functioning, and that the inline and sanitary check valves are present and not stuck open. Replacing a failed transducer or solenoid without fixing the fluid path will simply reproduce the failure.
+
+</Callout>
+
+The Health Check is built around this principle: if several unrelated checks fail, investigate the fluid path first.
+
+## Installing the arm hose
+
+<Callout kind="danger">
+
+Power the FizzWizz **OFF** before connecting or disconnecting any hoses.
+
+</Callout>
+
+<Steps>
+  <Step title="Power off">
+
+  Switch the FizzWizz OFF.
+
+  </Step>
+  <Step title="Mount the separator">
+
+  Mount the separator between the ARM port and the tank head. Where possible, position it so it sits **below** the arm hose run, so liquid and foam collect in the separator rather than draining back toward the unit. Mount it where you can see it and reach the swiffer valve.
+
+  </Step>
+  <Step title="Connect the hose to the unit">
+
+  Fit the arm hose to the ARM connection on the FizzWizz.
+
+  </Step>
+  <Step title="Connect through the separator">
+
+  Route the hose through the separator to the tank head connection. Leave enough slack that the hose is not pulled taut.
+
+  </Step>
+  <Step title="Close the swiffer valve">
+
+  The swiffer valve must be **closed** for normal operation and during [Check 6.2](/troubleshooting/health-check/check-6-leak-testing). An open swiffer valve is the first thing to check if the arm circuit will not hold pressure.
+
+  </Step>
+  <Step title="Check for leaks">
+
+  Pressurise the circuit and check the connections. See [Check 6 — Leak Testing](/troubleshooting/health-check/check-6-leak-testing) for the proper procedure.
+
+  </Step>
+</Steps>
+
+## Maintenance
+
+| Task | When | What to do |
+| --- | --- | --- |
+| **Drain the separator** | Whenever it has collected liquid or foam | Open the swiffer valve to drain, then close it again |
+| **Inspect the separator** | At the start of each season, and after any batch that produced heavy foam | Check for blockages, damage, and correct orientation |
+| **Check the swiffer valve** | Before every packaging run | Confirm it is fully closed |
+| **Check the arm hose** | During the Health Check | Look for kinks, cracks, and loose fittings |
+
+## Troubleshooting the arm circuit
+
+| Symptom | Likely cause | Where to go |
+| --- | --- | --- |
+| Arm circuit will not hold pressure | Swiffer valve open, separator leaking, or a leak in the hose | Ident V — [Check 6](/troubleshooting/health-check/check-6-leak-testing) |
+| Brite psi not near zero at rest | Brite pressure transducer, or fluid inside the unit | Ident B — [By Symptom](/troubleshooting/by-symptom) |
+| Brite psi not matching reg psi | Brite pressure transducer, or fluid inside the unit | Ident S — [By Symptom](/troubleshooting/by-symptom) |
+| Pressure rises more than 0.10 psi in 30 seconds | Head_Transfer solenoid leaking past its seat | Ident U — [Check 6](/troubleshooting/health-check/check-6-leak-testing) |
+| Flow from Arm at rest | Head_Transfer solenoid stuck open | Ident E — [Check 3](/troubleshooting/health-check/check-3-solenoid-co2-in) |
+| Gas pulse from Arm when Up is pressed (should be a quiet click) | Flow meter not fully off, or Head_Transfer solenoid | Ident O — [Check 4](/troubleshooting/health-check/check-4-solenoid-arm) |
+
+## How the separator is tested
+
+Two Health Check idents cover this circuit directly:
+
+- **Ident U** — the gloved finger test, which detects a pressure *increase* indicating the Head_Transfer solenoid is leaking past its seat.
+- **Ident V** — the separator decay test, which detects a pressure *drop* indicating a leak in the arm hose, separator, or swiffer valve.
+
+See [Check 6 — Leak Testing](/troubleshooting/health-check/check-6-leak-testing) for both procedures.
+
+## Next step
+
+<Card title="Temperature Sensor (WizzTemp)" href="/setup/temperature-sensor" icon="thermometer">
+
+Connect the sensor that drives the carbonation calculation.
+
+</Card>
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Check 6 — Leak Testing" href="/troubleshooting/health-check/check-6-leak-testing" icon="search">
+  Test the arm circuit.
+  </Card>
+  <Card title="Pneumatics Schematic" href="/get-started/pneumatics-schematic" icon="book-open">
+  Where the separator sits in the gas path.
+  </Card>
+  <Card title="Solenoid Cleaning & Servicing" href="/setup/solenoid-cleaning" icon="hammer">
+  If product reaches a solenoid.
+  </Card>
+</Columns>

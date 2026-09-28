@@ -1,0 +1,119 @@
+---
+title: Site Requirements
+description: What a brewhouse needs before a FizzWizz is installed — CO₂, power, mounting, network, tank fittings, and safety requirements.
+---
+
+## Site requirements
+
+Confirm these before starting an installation. Almost every installation problem traces back to something on this page that was missing or undersized at the planning stage.
+
+## CO₂ supply
+
+| Requirement | Detail |
+| --- | --- |
+| Supply pressure | 30–40 psi at the regulator |
+| Regulator | Required. A regulator problem shows up as Health Check Ident A or R |
+| Connection | To the `CO₂_In` port |
+| Capacity | Sized for your batch volume and carbonation target — the [CO₂ Stone flow rate calculator](/setup/wizzstone-combo#setting-the-co-flow-rate) in the BrewWizz app gives the maximum flow rate for your stone |
+
+<Callout kind="tip">
+
+Diminishing CO₂ supply is one of the alerts the FizzWizz raises. On a site where CO₂ runs out mid-batch, carbonation stalls and the batch has to be rested — worth planning cylinder changes ahead of long runs.
+
+</Callout>
+
+## Power
+
+| Requirement | Detail |
+| --- | --- |
+| Supply | Mains power for the wall-wart power supply |
+| Outlet | A live outlet within reach of the power supply cable |
+| Reliability | The unit tolerates brief interruptions, but a [Battery Backup](/setup/battery-backup) is recommended where brownouts are common |
+| Indicator | The green light on the power supply confirms it is functional |
+
+## Mounting
+
+| Requirement | Detail |
+| --- | --- |
+| Surface | Wall, tank, or another surface |
+| Dimensions | 6 × 10.6 × 5.7 in (15.2 × 26.9 × 14.5 cm) — see [Specifications](/get-started/specifications) |
+| Access | Leave room to reach the front panel and the flow controller on the side |
+| Hose runs | The unit must be within reach of the stone hose and arm hose runs |
+
+## Tank requirements
+
+| Requirement | Detail |
+| --- | --- |
+| **Pressure relief valve** | **Required.** Must be fitted and set to 15 psi |
+| Stone connection | A port for the carbonation stone, or a tri-clamp tee |
+| Arm connection | A connection to the tank head for the arm hose |
+| Isolation valves | Recommended on the stone circuit; required either side of a [Foot Pressure Sensor](/setup/foot-pressure-sensor) |
+| Temperature probe access | A thermowell or port for the WizzTemp sensor — the WizzStone-Combo carrier includes a built-in thermowell |
+
+<Callout kind="danger">
+
+Only use BrewWizz products with tanks that have a pressure relief valve (PRV) fitted, set to 15 psi. Do not proceed with an installation on a tank without one.
+
+</Callout>
+
+## Network
+
+| Requirement | Detail |
+| --- | --- |
+| Wi-Fi | The FizzWizz is Wi-Fi enabled and needs network access for dashboard reporting |
+| Signal | Adequate coverage where the unit is mounted — breweries are often poor Wi-Fi environments |
+| Account | A BrewWizz account with the device assigned, for dashboard monitoring |
+
+Without network access the unit still carbonates normally, but you lose remote monitoring and alerts, and the device shows as **Stale** or **Offline** on the dashboard. See [Device Offline or Not Reporting](/troubleshooting/device-offline).
+
+## Fluids and environment
+
+| Consideration | Detail |
+| --- | --- |
+| Condensation | Brewery electronics move between cold rooms and a humid brewhouse. The FizzWizz boards are conformally coated, but the electronics are **not** waterproof |
+| Splash | The unit is not designed for direct spray or washdown |
+| Arm separator | Always fit one. It is the single most important component for protecting the unit from fluid ingress |
+| Glycol | Glycol system issues are one of the conditions the FizzWizz alerts on — check glycol runs near the unit |
+
+## Consumables to have on hand
+
+For commissioning and ongoing operation:
+
+- Disposable gloves (used in [Check 6 leak testing](/troubleshooting/health-check/check-6-leak-testing))
+- A printed [Results Form](/troubleshooting/health-check/results-form)
+- A push-to-connect jumper hose (used to move the CO₂ supply between ports during testing)
+- Cleaning chemicals: a caustic cleaner such as PBW, plus sanitiser
+- Spare orange O-rings and hairpin cotter pins (supplied with the WizzStone-Combo)
+
+## Checklist
+
+<Callout kind="info">
+
+Work through this before ordering or installing:
+
+- [ ] CO₂ supply available at 30–40 psi with a working regulator
+- [ ] Live power outlet within reach of the power supply
+- [ ] Mounting surface identified, with access to the front panel and flow controller
+- [ ] Tank has a PRV fitted and set to 15 psi
+- [ ] Port available for the carbonation stone, and for the arm hose to the tank head
+- [ ] Thermowell or port available for the temperature sensor
+- [ ] Wi-Fi coverage at the mounting location
+- [ ] BrewWizz account ready for device assignment
+- [ ] Arm separator on hand
+- [ ] Cleaning chemicals and a printed Results Form on hand
+
+</Callout>
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Installation Overview" href="/setup/installation-overview" icon="clipboard-list">
+  The full installation sequence.
+  </Card>
+  <Card title="Mounting the Unit" href="/setup/mounting" icon="package">
+  Fixing the unit in place.
+  </Card>
+  <Card title="Specifications" href="/get-started/specifications" icon="ruler">
+  Dimensions and ratings.
+  </Card>
+</Columns>

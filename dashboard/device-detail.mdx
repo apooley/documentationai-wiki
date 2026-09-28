@@ -1,0 +1,100 @@
+---
+title: Device Detail & Charts
+description: Using the BrewWizz device detail page — telemetry charts, recent readings, device metadata, and per-device alert rules.
+---
+
+## Device detail and charts
+
+The device detail page is where you inspect a single FizzWizz in depth. Open it by selecting a device from the [device list](/dashboard/devices).
+
+## What the page shows
+
+| Section | Contents |
+| --- | --- |
+| **Telemetry charts** | Pressure and temperature plotted over time, updating automatically as new readings arrive |
+| **Recent readings** | The latest values from the unit |
+| **Device metadata** | Serial number, name, firmware version |
+| **Health badge** | The device's current reporting state |
+| **Alert rules** | Thresholds for this device — editable if your plan includes alert rules, otherwise read-only |
+
+If your plan does not include alert rules, the page still opens but the alert rules section is read-only. See [Understanding Your Plan](/dashboard/understanding-your-plan).
+
+## Reading the charts
+
+The charts show the same values the front panel displays, but with history — which is what makes them useful.
+
+| Metric | What to look for |
+| --- | --- |
+| **CO₂ reg psi** | Should hold steady at your regulator setting. A steady decline means the CO₂ supply is running low |
+| **Brite psi** | Should climb steadily during carbonation toward the finish pressure, then hold |
+| **Temperature** | Should be stable. Drift shifts the required finish pressure with it |
+
+### What a healthy carbonation run looks like
+
+During a normal run:
+
+1. **Temperature holds steady** at the setpoint for the product.
+2. **CO₂ reg psi stays flat** at 30–40 psi.
+3. **Brite psi climbs** as CO₂ dissolves, then flattens as the tank approaches the finish pressure for the target carbonation.
+
+The FizzWizz recalculates the required finish pressure continuously as conditions change, so the plateau may shift slightly if temperature moves.
+
+### What problem patterns look like
+
+| Pattern | Likely cause | Where to go |
+| --- | --- | --- |
+| Brite psi flat, never climbing | A leak in the arm or stone circuit | [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
+| Brite psi climbing unusually fast | Leaking Head_Transfer solenoid, or a broken stone | [Check 6 — Leak Testing](/troubleshooting/health-check/check-6-leak-testing) |
+| CO₂ reg psi declining steadily | CO₂ supply running low | [Responding to Alerts](/troubleshooting/responding-to-alerts) |
+| Temperature drifting or stepping | WizzTemp probe, loom, or glycol | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+| Temperature implausibly low or high | Faulty probe or internal loom | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+| A gap in the data | Device went Stale or Offline | [Device Offline or Not Reporting](/troubleshooting/device-offline) |
+| Pressure sawtooth pattern | Vent or solenoid cycling unexpectedly | [By Symptom](/troubleshooting/by-symptom) |
+
+## Recent readings
+
+The readings panel gives the latest values without needing to interpret a chart. This is the fastest way to answer "what is it doing right now?" — useful when checking on a device from your phone.
+
+## Device metadata
+
+Metadata confirms you are looking at the right unit and helps support:
+
+| Field | Use |
+| --- | --- |
+| **Serial number** | Quote this when ordering parts or contacting support |
+| **Name** | Confirms which tank this unit serves |
+| **Firmware version** | Support will ask for this. Some features — such as the [Foot Pressure Sensor](/setup/foot-pressure-sensor) — need V2 code or newer |
+
+<Callout kind="tip">
+
+Check the firmware version when installing a Foot Pressure Sensor. It requires FizzWizz-BAE running **V2 code or newer**. If your unit runs earlier code, contact support about updating it.
+
+</Callout>
+
+## Alert rules on this page
+
+Each device has its own alert thresholds. If your plan includes alert rules, you can create and edit them here; if not, they are read-only.
+
+See [Alerts & Alert Rules](/dashboard/alerts-and-rules) for how rules are evaluated, cooldowns, and where alert history appears.
+
+## Using charts for quality control
+
+Because the dashboard retains the full run, you can keep telemetry as a batch record:
+
+- Correlate a finished batch's carbonation result against the pressure and temperature trace it was produced under
+- Investigate an off-target batch by finding where the trace diverged from a good run
+- Confirm a batch stayed on track through a device outage
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Understanding Your Readings" href="/dashboard/readings-explained" icon="gauge">
+  What each metric means.
+  </Card>
+  <Card title="Alerts & Alert Rules" href="/dashboard/alerts-and-rules" icon="bell">
+  Configure thresholds.
+  </Card>
+  <Card title="Monitoring Your Carbonation" href="/get-started/monitoring" icon="line-chart">
+  The full monitoring picture.
+  </Card>
+</Columns>

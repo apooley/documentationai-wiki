@@ -1,0 +1,72 @@
+---
+title: Monitoring Your Carbonation
+description: How to watch a carbonation run from the FizzWizz display, the BrewWizz dashboard, and the mobile app — and what good data looks like.
+---
+
+## Monitoring your carbonation
+
+A carbonation run takes hours to days, and most of it happens unattended. The FizzWizz gives you three ways to keep an eye on it: the front panel, the web dashboard, and the mobile app.
+
+## On the front panel
+
+The display shows the three values that drive the carbonation calculation:
+
+| Field | What it tells you |
+| --- | --- |
+| **CO₂ reg psi** | Pressure at the CO₂ inlet. If this drops, your CO₂ supply is running low |
+| **Brite psi** | Pressure in the arm/head transfer circuit — the tank head space pressure |
+| **Temperature** | Product temperature from the WizzTemp probe |
+
+During a normal carbonation run, expect **Brite psi to climb steadily** toward the finish pressure while **temperature stays stable**. A temperature that drifts shifts the target pressure with it; the FizzWizz recalculates automatically, but a large drift is worth investigating.
+
+For a live, updating view of all three values plus manual solenoid control, use [Test Mode](/troubleshooting/health-check/test-mode).
+
+## On the dashboard
+
+The [BrewWizz dashboard](/dashboard/overview) is the main monitoring tool for day-to-day use. It runs at [bw-dash.allendale.biz](https://bw-dash.allendale.biz) and shows:
+
+- **Device health** — whether each FizzWizz is reporting, and how recently
+- **Telemetry charts** — pressure and temperature over time
+- **Alert rules and alert history** — what has fired and when
+- **Recent readings** — the latest values from each device
+
+Because the dashboard keeps historical data, it is the best place to answer questions like *"when did the pressure stop climbing?"* or *"has the temperature been drifting all week?"*. See [Device Detail & Charts](/dashboard/device-detail) for how to read the charts.
+
+## On the mobile app
+
+The [BrewWizz mobile app](/mobile-app/overview) brings device health, alerts, and account settings to your phone, with the same health states and alert history as the dashboard. It is currently in development — the Mobile App section describes planned features.
+
+## What to watch for
+
+<Callout kind="tip">
+
+These are the signals that most often precede a problem. Each one links to the relevant diagnosis.
+
+</Callout>
+
+| Signal | Likely meaning | Where to go |
+| --- | --- | --- |
+| **CO₂ reg psi falling** | CO₂ supply running low, or a regulator problem | [Responding to Alerts](/troubleshooting/responding-to-alerts) |
+| **Brite psi not climbing** | A leak in the arm or stone circuit | [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
+| **Brite psi climbing unusually fast** | Leaking Head_Transfer solenoid, or a broken stone | [Check 6 — Leak Testing](/troubleshooting/health-check/check-6-leak-testing) |
+| **Temperature reading implausible or drifting** | WizzTemp probe or internal loom | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+| **Device showing Stale or Offline** | Power, network, or a firmware update | [Device Offline or Not Reporting](/troubleshooting/device-offline) |
+| **Carbonation ends up below target** | Stone fouling, temperature error, or brite starting pressure | [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
+
+## Using the data for quality control
+
+Recorded telemetry can be kept as a quality record for each batch. Because the dashboard stores the full run, you can correlate a finished batch's carbonation result against the pressure and temperature trace it was produced under — useful for repeatability and for investigating a batch that came out off-target.
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Dashboard Overview" href="/dashboard/overview" icon="gauge">
+  The web monitoring tool.
+  </Card>
+  <Card title="Understanding Your Readings" href="/dashboard/readings-explained" icon="line-chart">
+  What each metric means and what good looks like.
+  </Card>
+  <Card title="Responding to Alerts" href="/troubleshooting/responding-to-alerts" icon="bell">
+  What to do when an alert fires.
+  </Card>
+</Columns>

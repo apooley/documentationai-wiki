@@ -1,11 +1,17 @@
 ---
 title: Settings
-description: Update your profile, configure notification destinations, and manage your subscription in the BrewWizz mobile app.
+description: Update your profile and manage your subscription in the BrewWizz mobile app.
 ---
 
 ## The Settings tab
 
-Update your name, choose where alerts are delivered, and manage your subscription from the Settings tab. Settings is your hub for account and subscription management, with three sections: **Profile**, **Notifications**, and **Billing**.
+Settings is your hub for account and subscription management, with three sections: **Profile**, **Notifications**, and **Billing**.
+
+<Callout kind="alert">
+
+**Coming Soon** — The BrewWizz mobile app is currently in development. This page describes planned features and may change before release.
+
+</Callout>
 
 ## Profile
 
@@ -32,43 +38,7 @@ At the bottom of the screen, the app version and build number appear in small te
 
 ## Notifications
 
-In-app alerts are always enabled while the app is running. Configure SMS and email destinations below.
-
-Tap **Enable local notifications** to request permission for local device notifications. If permission is denied, the app shows a message explaining that local alerts require permission.
-
-The **In-app** channel appears as a fixed row with an **Always on** badge. You cannot turn this channel off.
-
-Each existing SMS or email destination appears as its own card. The card shows the channel type, the destination address or phone number, a toggle to enable or disable that destination, and a **Delete** button. When you delete a destination, the app asks for confirmation before removing it.
-
-<Callout kind="info">
-
-If you have not configured a personal email destination, alert emails are sent to your organization's default contact email address instead.
-
-</Callout>
-
-### Add a new channel
-
-Use the controls at the bottom of the screen to add a personal email or SMS destination.
-
-<Steps>
-  <Step title="Choose a channel type" icon="settings">
-
-Select **Email** or **SMS** using the pill toggle buttons.
-
-  </Step>
-  <Step title="Enter the destination" icon="edit">
-
-For **Email**, enter a valid email address. For **SMS**, enter a phone number in E.164 format, such as `+12025551234`.
-
-  </Step>
-  <Step title="Save the destination" icon="check-circle">
-
-Tap **Add channel** to save the new destination.
-
-  </Step>
-</Steps>
-
-Validation runs before the app saves the destination. Email entries must be valid email addresses, and SMS entries must use E.164 format. If the format is wrong, the app shows a message that explains what to enter.
+Notification destinations and local notification permissions are configured on the [Notifications](/mobile-app/notifications) page.
 
 ## Billing
 
@@ -109,6 +79,6 @@ Tap **Subscribe** to open checkout in your device's browser. After you complete 
 
 <Columns cols={3}>
   <Card title="Mobile App Overview" href="/mobile-app/overview" icon="monitor" />
-  <Card title="Alerts" href="/mobile-app/alerts" icon="alert-triangle" />
+  <Card title="Notifications" href="/mobile-app/notifications" icon="bell" />
   <Card title="Troubleshooting" href="/mobile-app/troubleshooting" icon="settings" />
 </Columns>

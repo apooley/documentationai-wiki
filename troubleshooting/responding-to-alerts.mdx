@@ -1,0 +1,133 @@
+---
+title: Responding to Alerts
+description: What each FizzWizz alert means, what to do when one fires, and how alerts reach you from the unit to your phone.
+---
+
+## Responding to alerts
+
+The FizzWizz detects conditions that affect carbonation and sends notifications. This page covers what each alert means from the *machine's* side — what is actually happening, and what to do about it.
+
+For how alerts are configured and delivered, see [Alerts & Alert Rules](/dashboard/alerts-and-rules) and [Notification Preferences](/dashboard/notification-preferences).
+
+## How alerts reach you
+
+Readings flow from the FizzWizz to BrewWizz, where they are validated and stored. When a new reading arrives, BrewWizz checks your active alert rules and creates an alert event when a threshold is crossed. Depending on your plan and preferences, that event appears in the dashboard and can also be sent by email or SMS.
+
+| Layer | What to configure | Where |
+| --- | --- | --- |
+| Detection | The FizzWizz measures the condition | On the unit |
+| Rules | Thresholds and cooldowns per device | [Alerts & Alert Rules](/dashboard/alerts-and-rules) |
+| Delivery | Email, SMS, and in-app channels | [Notification Preferences](/dashboard/notification-preferences) |
+| Visibility | Alert history in the dashboard | [Alerts & Alert Rules](/dashboard/alerts-and-rules) |
+
+<Callout kind="alert">
+
+If a threshold is crossed but no alert appears, the cause is usually your plan, the rule setup, or the cooldown — not the device. Check in this order: plan includes alert rules → rule exists for that device and condition → cooldown has expired → the reading actually matches the threshold → subscription is Active or in Trial. Alert features are switched off while a subscription is past due, cancelled, or incomplete.
+
+</Callout>
+
+## What the FizzWizz alerts on
+
+### Diminishing CO₂ supply
+
+**What it means:** Pressure at the CO₂ inlet is falling. Your supply is running low.
+
+**What to do:**
+
+1. Check the **CO₂ reg psi** reading on the display or in the dashboard.
+2. Confirm the regulator setting — it should be 30–40 psi.
+3. Change the CO₂ cylinder before it empties.
+4. If pressure is low but the supply is full, see Ident A — [By Symptom](/troubleshooting/by-symptom).
+
+<Callout kind="tip">
+
+Running out mid-batch stalls carbonation. The batch then has to be rested with the FizzWizz in carbonation mode so CO₂ can re-dissolve at the right equilibrium pressure. Planning cylinder changes ahead of long runs avoids this.
+
+</Callout>
+
+### Misconnections
+
+**What it means:** Gas is going somewhere it should not — typically a hose connected to the wrong port, or a valve in the wrong position.
+
+**What to do:**
+
+1. Check the stone hose and arm hose are on the correct ports.
+2. Confirm the swiffer valve on the separator is closed.
+3. Confirm the stone isolation valve is in the expected position.
+4. Run [Check 3](/troubleshooting/health-check/check-3-solenoid-co2-in) and [Check 4](/troubleshooting/health-check/check-4-solenoid-arm) to confirm each button operates the expected port.
+
+### Leaking fittings
+
+**What it means:** Gas is escaping somewhere in the circuit.
+
+**What to do:**
+
+1. Spray suspect fittings with soapy water and look for bubbles.
+2. **Check the push-to-connect fittings first** — they are the most common source of small leaks.
+3. Run [Check 6 — Leak Testing](/troubleshooting/health-check/check-6-leak-testing) to isolate which circuit is leaking.
+4. If the tank will not build pressure, see [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure).
+
+### Glycol system issues
+
+**What it means:** Something in the glycol system is affecting the unit or the tank's thermal behaviour. Glycol faults usually show up as temperature instability.
+
+**What to do:**
+
+1. Check the glycol system is running and at the expected setpoint.
+2. Look for glycol line runs near the FizzWizz — a dripping glycol line onto the enclosure is a problem.
+3. Check for condensation around the unit.
+4. Confirm the temperature reading is stable, and if not, run the [Slushy WizzTemp Test](/troubleshooting/temperature-probe) to rule the probe out.
+
+### Carbonation stone inefficiencies
+
+**What it means:** The stone is not diffusing gas as effectively as expected — usually fouling or hydrophobic buildup.
+
+**What to do:**
+
+1. Clean the stone — see [WizzStone-Combo cleaning](/setup/wizzstone-combo#cleaning).
+2. Check the flow rate against the [calculator](/setup/wizzstone-combo#setting-the-co-flow-rate).
+3. Inspect the stone for damage. Ceramic is not impact-resistant.
+4. If cleaning does not help, see [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure).
+
+<Callout kind="alert">
+
+Carbonation stones cause a disproportionate share of carbonation complaints. A regular cleaning schedule prevents hydrophobic buildup and most stone-related issues. The stone **must be cleaned after every use**.
+
+</Callout>
+
+## Alerts that are not about the machine
+
+Some alert behaviour has nothing to do with the FizzWizz:
+
+| Symptom | Cause | Where to go |
+| --- | --- | --- |
+| Alert history empty | Plan does not include alert features, or the **Unacknowledged only** filter is on | [Understanding Your Plan](/dashboard/understanding-your-plan) |
+| No SMS received | Plan, opt-in status, missing phone number, or SMS toggled off | [Notification Preferences](/dashboard/notification-preferences) |
+| No email received | Plan, channel toggled off, or inbox filtering | [Dashboard Troubleshooting](/dashboard/troubleshooting) |
+| No alerts at all, and **Upgrade** shows in the menu | No active or trial subscription | [Billing & Subscriptions](/dashboard/billing) |
+
+## SMS keywords
+
+Control SMS delivery from your phone:
+
+| Keyword | Action |
+| --- | --- |
+| STOP | Unsubscribe from all BrewWizz SMS notifications |
+| START | Re-enable SMS delivery |
+| HELP | Receive help information about the service |
+
+SMS opt-in is tied to your **phone number**, not to an individual device — replying `STOP` affects alerts across all devices on your account.
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Alerts & Alert Rules" href="/dashboard/alerts-and-rules" icon="bell">
+  Configure thresholds and cooldowns.
+  </Card>
+  <Card title="Notification Preferences" href="/dashboard/notification-preferences" icon="mail">
+  Choose how alerts reach you.
+  </Card>
+  <Card title="Carbonation & Brite Pressure" href="/troubleshooting/carbonation-and-brite-pressure" icon="gauge">
+  When carbonation is off target.
+  </Card>
+</Columns>

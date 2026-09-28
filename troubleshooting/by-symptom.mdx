@@ -1,0 +1,85 @@
+---
+title: By Symptom (A–X)
+description: >-
+  Look up the failed Health Check ident letter and work through ordered
+  troubleshooting actions to identify and fix the problem.
+---
+## Troubleshooting by symptom
+
+Find the ID letter of the failed check from your [Results Form](/troubleshooting/health-check/results-form), then work through the actions in order. Do not skip steps — earlier actions rule out simpler causes before replacing components.
+
+<Callout kind="alert" collapsed="false">
+  Fluid inside the FizzWizz is the most common root cause of multiple failures. If several unrelated checks fail, fix the fluid path (separator, check valves) before replacing individual components. See the [Pneumatics Schematic](/get-started/pneumatics-schematic) for component locations.
+</Callout>
+
+## Find the issue by symptom category
+
+Expand the section that matches your failed check, then work through the actions in order.
+
+<ExpandableGroup>
+  <Expandable title="Power (Check 1)" default-open="false">
+    | Ident   | Symptom               | Actions (in order)                                                                                           |
+    | ------- | --------------------- | ------------------------------------------------------------------------------------------------------------ |
+    | Check 1 | Green power light off | 1. Confirm the outlet is live and the barrel connector is fully seated. 2. Replace the plug-in power supply. |
+  </Expandable>
+
+  <Expandable title="Display values — CO₂_In (Check 2)" default-open="false">
+    | Ident | Symptom                        | Actions (in order)                                                                                                    |
+    | ----- | ------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+    | A     | CO₂ reg psi incorrect          | 1. Try a different CO₂ regulator. 2. Change CO₂\_In pressure transducer. 3. Check CO₂\_In check valve.                |
+    | B     | Brite psi not near zero        | 1. Change Brite pressure transducer. 2. Inspect for fluid inside unit.                                                |
+    | C     | Temperature not representative | 1. Change WizzTemp sensor. 2. Inspect internal loom. Confirm with [Slushy WizzTemp Test](/troubleshooting/temperature-probe). |
+  </Expandable>
+
+  <Expandable title="Solenoid — CO₂_In (Check 3)" default-open="false">
+    | Ident | Symptom                                   | Actions                                                                                                                  |
+    | ----- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+    | D     | Flow from Stone at rest                   | CO₂\_in solenoid stuck OPEN — change the CO₂\_in solenoid.                                                               |
+    | E     | Flow from Arm at rest                     | Head\_Transfer solenoid stuck OPEN — change the Head\_Transfer solenoid.                                                 |
+    | F     | Flow from Vent at rest                    | Both Head\_Transfer and Vent solenoid stuck OPEN — change both.                                                          |
+    | G     | Ball up at rest                           | Same as D — CO₂\_in solenoid stuck OPEN.                                                                                 |
+    | H     | No gas pulse from Arm (Up pressed)        | Head\_Transfer solenoid stuck CLOSED — change the Head\_Transfer solenoid.                                               |
+    | I     | No gas pulse from Stone (Down pressed)    | 1. Flow meter may be off — rotate knob counterclockwise and retest. 2. If still no pulse, CO₂\_in solenoid stuck CLOSED. |
+    | J     | No click or gas from Vent (Enter pressed) | 1. Check vent valve is not physically open. 2. Vent solenoid stuck CLOSED — change the Vent solenoid.                    |
+  </Expandable>
+
+  <Expandable title="Solenoid — ARM (Check 4)" default-open="false">
+    | Ident | Symptom                                                | Actions                                                                                                                                                                                                                                                  |
+    | ----- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | K     | Flow from Stone at rest                                | Same as D — CO₂\_in solenoid stuck OPEN.                                                                                                                                                                                                                 |
+    | L     | Flow from Arm at rest                                  | Replace CO₂\_In check valve — risk of reverse fluid flow from ARM circuit if CO₂ supply runs out.                                                                                                                                                        |
+    | M     | Flow from Vent at rest                                 | Vent solenoid stuck OPEN — change the Vent solenoid.                                                                                                                                                                                                     |
+    | N     | Ball up at rest                                        | Same as K — CO₂\_in solenoid stuck OPEN.                                                                                                                                                                                                                 |
+    | O     | Gas pulse from Arm (Up pressed) instead of quiet click | 1. Flow meter not fully off — rotate CCW and retest. 2. Investigate Head\_Transfer solenoid. Note: the original guide cross-references Ident I (flow meter), but O is a listening test and Head\_Transfer is the more probable cause. Both steps listed. |
+    | P     | No gas pulse from Stone (Down pressed)                 | 1. Flow meter off — rotate CCW and retest. 2. If still no pulse, CO₂\_in solenoid stuck CLOSED.                                                                                                                                                          |
+    | Q     | No gas from Vent (Enter pressed)                       | 1. Check vent valve is not physically open. 2. Vent solenoid stuck CLOSED — change the Vent solenoid.                                                                                                                                                    |
+  </Expandable>
+
+  <Expandable title="Display values — ARM (Check 5)" default-open="false">
+    | Ident | Symptom                                  | Actions                                                                                                               |
+    | ----- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+    | R     | CO₂ reg psi incorrect                    | 1. Try a different regulator. 2. Change CO₂\_In pressure transducer. 3. Check CO₂\_In check valve (per Ident L).      |
+    | S     | Brite psi not matching reg psi           | 1. Change Brite pressure transducer. 2. Inspect for fluid inside unit.                                                |
+    | T     | Temperature changed significantly from C | 1. Change WizzTemp sensor. 2. Inspect internal loom. Confirm with [Slushy WizzTemp Test](/troubleshooting/temperature-probe). |
+  </Expandable>
+
+  <Expandable title="Leak tests (Check 6)" default-open="false">
+    | Ident | Symptom                                         | Actions                                                                                                                                            |
+    | ----- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | U     | Pressure rises more than 0.10 psi in 30 seconds | Replace Head\_Transfer solenoid — small leak past the seat.                                                                                        |
+    | V     | Pressure drops more than 1.5 psi in 30 seconds  | 1. Check swiffer valve is closed. 2. Remove separator and recheck. 3. Suspect leak in arm hose or separator. 4. Check vent solenoid (per Ident M). |
+  </Expandable>
+
+  <Expandable title="Stone circuit (Check 7)" default-open="false">
+    | Ident | Symptom                              | Actions                                                                                                            |
+    | ----- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+    | W     | Ball not adjustable with valve open  | 1. Flow meter not fully off — rotate CCW. 2. Blocked carbonation stone. 3. Check sanitary and inline check valves. |
+    | X     | Ball does not drop with valve closed | Check stone hose and push fittings between FizzWizz and isolation valve for leaks.                                 |
+  </Expandable>
+</ExpandableGroup>
+
+## Still not resolved?
+
+For how to clean or service a solenoid that has been exposed to product, see [Solenoid Cleaning & Servicing](/setup/solenoid-cleaning). Replacement solenoids are available through [Support & Parts](/get-started/support-and-parts).
+
+If all checks pass but carbonation is off-target, see [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure). For parts ordering and support, see [Support & Parts](/get-started/support-and-parts).
