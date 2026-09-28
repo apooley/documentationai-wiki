@@ -1,0 +1,112 @@
+---
+title: Temperature Sensor (WizzTemp)
+description: Connecting and positioning the WizzTemp sensor, and why its accuracy determines whether your carbonation hits target.
+---
+
+## Temperature sensor (WizzTemp)
+
+The WizzTemp sensor reads product temperature. Its reading drives the entire carbonation calculation, so where you place it — and whether it is accurate — determines whether the beer hits its target.
+
+<Callout kind="alert">
+
+Carbonation volumes are calculated from temperature. A probe that reads warm causes systematic **under-carbonation**: the FizzWizz thinks the beer is warmer than it is and calculates less CO₂ than needed. See the [Slushy WizzTemp Test](/troubleshooting/temperature-probe) to verify accuracy.
+
+</Callout>
+
+## Connecting the sensor
+
+The FizzWizz detects a connected sensor automatically.
+
+<Callout kind="danger">
+
+Power the FizzWizz **OFF** before connecting or disconnecting sensors.
+
+</Callout>
+
+<Steps>
+  <Step title="Power off">
+
+  Switch the FizzWizz OFF.
+
+  </Step>
+  <Step title="Connect to the temperature sensor port">
+
+  Plug the WizzTemp sensor into the temperature sensor connector on the FizzWizz.
+
+  </Step>
+  <Step title="Confirm the reading">
+
+  Power the unit and confirm the **Temperature** field on the display shows a plausible reading. In [Test Mode](/troubleshooting/health-check/test-mode) the value updates live.
+
+  </Step>
+</Steps>
+
+<Callout kind="info">
+
+On a FizzWizz, the temperature sensor and the [Foot Pressure Sensor](/setup/foot-pressure-sensor) share the same connector. If you use both, you need the optional sensor switch box so they can stay permanently connected and be selected with a toggle.
+
+</Callout>
+
+## Positioning the sensor
+
+Where the sensor sits determines what temperature it reads. The carbonation calculation assumes it is reading the **product**, not the tank wall or the head space.
+
+| Location | Suitability |
+| --- | --- |
+| **WizzStone-Combo thermowell** | Purpose-built for this — the carrier has a built-in thermowell. Recommended |
+| A tank thermowell in the product | Suitable, provided it reads product rather than the tank wall |
+| Clamped to the outside of the tank | Not recommended — reads ambient and tank wall, not product |
+| In the head space | Not suitable — reads gas temperature, not product |
+
+If you are running multiple tanks, a [WizzKoga Selector](/setup/wizzkoga-selector) lets up to six permanently installed sensors be switched between one or two FizzWizz units, so sensors can stay in the tanks.
+
+## Verifying accuracy
+
+The Health Check (Ident C) confirms the temperature reading is *plausible*. To confirm it is **accurate**, run the [Slushy WizzTemp Test](/troubleshooting/temperature-probe) — it compares the probe against a 0 °C ice-water reference, the only way to prove genuine calibration.
+
+| Test | What it proves | Where |
+| --- | --- | --- |
+| Ident C / T | The reading is plausible and has not changed significantly | [Check 2](/troubleshooting/health-check/check-2-display-values) · [Check 5](/troubleshooting/health-check/check-5-arm-display-values) |
+| Slushy WizzTemp Test | The probe is accurate against a known reference | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+
+<Callout kind="tip">
+
+Use deionised water instead of tap water for the slushy test. Without dissolved impurities the freezing point is closer to exactly 0 °C, giving a tighter pass/fail band.
+
+</Callout>
+
+## Troubleshooting
+
+| Symptom | Likely cause | Where to go |
+| --- | --- | --- |
+| Temperature not representative | WizzTemp sensor or internal loom | Ident C — [Check 2](/troubleshooting/health-check/check-2-display-values) |
+| Temperature changed significantly between checks | Sensor or loom; confirm with the slushy test | Ident T — [Check 5](/troubleshooting/health-check/check-5-arm-display-values) |
+| Slushy test reads high | Usually insufficient agitation, not a faulty probe | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+| Slushy test reads impossibly low | Faulty probe or internal loom | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+| Carbonation consistently below target with everything else passing | Probe reading warm | [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
+
+## Replacement
+
+The WizzTemp sensor is a commonly replaced item. Quote your FizzWizz serial number when ordering — see [Support & Parts](/get-started/support-and-parts).
+
+## Next step
+
+<Card title="Foot Pressure Sensor" href="/setup/foot-pressure-sensor" icon="gauge">
+
+Optional, but valuable if packaging accuracy matters.
+
+</Card>
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Slushy WizzTemp Test" href="/troubleshooting/temperature-probe" icon="thermometer">
+  Prove the probe is accurate.
+  </Card>
+  <Card title="WizzKoga Selector" href="/setup/wizzkoga-selector" icon="cable">
+  Switch sensors between tanks.
+  </Card>
+  <Card title="How the FizzWizz Works" href="/get-started/how-it-works" icon="workflow">
+  Why temperature drives carbonation.
+  </Card>
+</Columns>

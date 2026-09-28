@@ -1,0 +1,95 @@
+---
+title: System Components
+description: The complete FizzWizz component and accessory range — what each part does, whether you need it, and where to find its guide.
+---
+
+## System components
+
+A FizzWizz installation is more than the unit itself. This page is the index to every component and accessory in the system: what it does, when you need it, and where its detailed guide lives.
+
+Component names used throughout this documentation are defined here and in the [Glossary](/get-started/glossary).
+
+## The FizzWizz unit
+
+The main enclosure contains the manifold, the three solenoids, the flow controller, the pressure transducers, and the electronics. Gas and hose connections are on the outside; the front panel carries the display and the three control buttons.
+
+| Part number | Description |
+| --- | --- |
+| FizzWizz-BAE | FizzWizz Bubbles Anywhere Edition, the standard unit |
+
+See [FizzWizz at a Glance](/get-started/fizzwizz-overview) for features and [Specifications](/get-started/specifications) for dimensions.
+
+## Sensors
+
+Sensors are what let the FizzWizz calculate carbonation. The unit reads product temperature and tank pressure, and uses both to work out the finish pressure.
+
+| Component | Purpose | Required? | Guide |
+| --- | --- | --- | --- |
+| **WizzTemp temperature sensor** | Reads product temperature, which drives the carbonation calculation | **Yes** — the unit cannot carbonate correctly without it | [Temperature Sensor](/setup/temperature-sensor) |
+| **Foot Pressure Sensor (INS039)** | Reads the pressure your packaging line actually sees, eliminating hydrostatic pressure error | Optional — for packaging accuracy | [Foot Pressure Sensor](/setup/foot-pressure-sensor) |
+| **WizzKoga Selector** | Switches up to six tank temperature sensors between one or two FizzWizz units | Optional — for multi-tank sites | [WizzKoga Selector](/setup/wizzkoga-selector) |
+| **Sensor switch box** | Lets a temperature sensor and a Foot Pressure Sensor stay permanently connected to one port | Optional — needed with the Foot Pressure Sensor on a FizzWizz | [Foot Pressure Sensor](/setup/foot-pressure-sensor#switch-box-option-fizzwizz) |
+
+## Carbonation hardware
+
+The parts that deliver CO₂ into the tank. These are wetted components, so they matter for both carbonation quality and hygiene.
+
+| Component | Purpose | Guide |
+| --- | --- | --- |
+| **WizzStone-Combo** | Stainless steel carrier with a thermowell, holding a 16 in ceramic carbonation stone | [WizzStone-Combo](/setup/wizzstone-combo) |
+| **Carbonation stone** | The porous ceramic diffusion element. A dirty stone is a leading cause of low carbonation | [WizzStone-Combo](/setup/wizzstone-combo) |
+| **Check Valve** | One-way valve preventing product flowing back up the CO₂ line | [Check Valve](/setup/check-valve) |
+| **Stone adaptor kit** | Adapts a Zahm & Nagel 24 in stone to the FizzWizz stone circuit | [Check Valve](/setup/check-valve) |
+| **Ultrasonic Stone Cleaner** | 10 L ultrasonic tank for deep-cleaning ceramic and stainless stones | [Ultrasonic Stone Cleaner](/setup/ultrasonic-cleaner) |
+
+## Pneumatic and hose components
+
+| Component | Purpose | Guide |
+| --- | --- | --- |
+| **Stone hose** | 5/16 inch ID NSF tubing from the FizzWizz to the stone assembly | [Stone Circuit](/setup/stone-circuit) |
+| **Arm hose** | Connects the ARM port to the tank head | [Arm Circuit & Separator](/setup/arm-circuit) |
+| **Separator** | Catches liquid and foam before it reaches the unit. **The single most important protective component** | [Arm Circuit & Separator](/setup/arm-circuit) |
+| **Swiffer valve** | Drain valve on the separator | [Arm Circuit & Separator](/setup/arm-circuit) |
+| **Push-to-connect fittings** | Quick-release connectors. A common source of small leaks | [Stone Circuit](/setup/stone-circuit) |
+| **Jumper hose** | Push-to-connect hose used to move the CO₂ supply between ports during testing | [Health Check Overview](/troubleshooting/health-check/overview) |
+
+## Power
+
+| Component | Purpose | Guide |
+| --- | --- | --- |
+| **Power supply (wall-wart)** | Supplies power to the FizzWizz. A green light confirms it is functional | [Power Connection](/setup/power) |
+| **Battery Backup** | Keeps the unit running through brownouts and short power cuts — about 1 hour on a full charge | [Battery Backup](/setup/battery-backup) |
+
+## Software
+
+| Component | Purpose | Guide |
+| --- | --- | --- |
+| **BrewWizz Dashboard** | Web monitoring: device health, telemetry charts, alerts, and billing | [Dashboard Overview](/dashboard/overview) |
+| **BrewWizz mobile app** | Phone monitoring — currently in development | [Mobile App Overview](/mobile-app/overview) |
+| **BrewWizz web app** | Carbonation calculators, free for all brewers, plus remote monitoring once connected | [WizzStone-Combo](/setup/wizzstone-combo#setting-the-co-flow-rate) |
+
+## Consumables and spares
+
+Commonly replaced items. Quote your FizzWizz serial number when ordering — see [Support & Parts](/get-started/support-and-parts).
+
+- CO₂_In and Brite pressure transducers
+- CO₂_in, Head_Transfer, and Vent solenoids
+- WizzTemp temperature sensor
+- Check valves (`CO₂ inlet`, `inline`, `sanitary`)
+- Carbonation stones
+- Arm separators
+- Orange O-rings and hairpin cotter pins (supplied with the WizzStone-Combo)
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Glossary" href="/get-started/glossary" icon="book">
+  Definitions for every named component.
+  </Card>
+  <Card title="Installation Overview" href="/setup/installation-overview" icon="clipboard-list">
+  How these parts come together in an install.
+  </Card>
+  <Card title="Pneumatics Schematic" href="/get-started/pneumatics-schematic" icon="book-open">
+  Where each component sits in the gas path.
+  </Card>
+</Columns>

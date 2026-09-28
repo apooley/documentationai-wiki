@@ -1,0 +1,108 @@
+---
+title: CO₂ Supply Connection
+description: Connecting your CO₂ supply to the FizzWizz CO₂_In port, setting the regulator, and checking for the common regulator problems.
+---
+
+## CO₂ supply connection
+
+The FizzWizz takes CO₂ from your regulator into the `CO₂_In` port. This is the first pneumatic connection to make, and the pressure you set here is the reference for everything downstream.
+
+## Requirements
+
+| Requirement | Detail |
+| --- | --- |
+| Regulator setting | **30–40 psi** |
+| Connection point | The `CO₂_In` port on the unit |
+| Supply | Sized for your batch volume and target carbonation — see the [flow rate calculator](/setup/wizzstone-combo#setting-the-co-flow-rate) |
+
+## Connecting the supply
+
+<Callout kind="danger">
+
+Power the FizzWizz **OFF** before connecting or disconnecting any hoses.
+
+</Callout>
+
+<Steps>
+  <Step title="Power off">
+
+  Switch the FizzWizz OFF.
+
+  </Step>
+  <Step title="Connect CO₂ to CO₂_In">
+
+  Connect the CO₂ supply from your regulator to the `CO₂_In` port.
+
+  </Step>
+  <Step title="Set the regulator">
+
+  Set the CO₂ regulator to approximately **30–40 psi**.
+
+  </Step>
+  <Step title="Check for leaks">
+
+  With the supply open, check the connection for leaks. A soapy water solution on the fitting will show bubbles at a leak.
+
+  </Step>
+</Steps>
+
+## The CO₂ inlet circuit
+
+From the `CO₂_In` port, gas passes the **CO₂ check valve** and enters the internal manifold, which distributes it to the three solenoids.
+
+The CO₂ check valve is a one-way valve that prevents reverse flow back toward the regulator if the supply runs out. It matters more than it looks: if it fails or is missing, and the CO₂ supply runs out, product can flow back from the tank toward your regulator.
+
+See the [Pneumatics Schematic](/get-started/pneumatics-schematic) for the full path and component glossary.
+
+## Reading the pressure
+
+Once the unit is powered, **CO₂ reg psi** on the display shows the pressure at this inlet. In [Test Mode](/troubleshooting/health-check/test-mode) it updates live.
+
+A `CO₂ reg psi` reading that does not match your regulator setting is Health Check **Ident A** (or **Ident R** on the ARM circuit) — see [By Symptom](/troubleshooting/by-symptom).
+
+## Common problems
+
+| Symptom | Likely cause | Where to go |
+| --- | --- | --- |
+| Display reading differs from the regulator | Faulty CO₂_In pressure transducer, or a regulator problem | Ident A / R — [By Symptom](/troubleshooting/by-symptom) |
+| Pressure drops during a run | CO₂ supply running low | [Responding to Alerts](/troubleshooting/responding-to-alerts) |
+| Gas escaping at the fitting | Loose connection, or a failed push-to-connect fitting | [Leak testing](/troubleshooting/health-check/check-6-leak-testing) |
+| No flow into the stone circuit despite pressure at the inlet | CO₂-in solenoid stuck closed, or the flow controller is closed | Ident I — [Check 3](/troubleshooting/health-check/check-3-solenoid-co2-in) |
+
+<Callout kind="tip">
+
+If flow appears to be blocked, **check the flow controller first**. A flow meter turned all the way off looks exactly like a stuck solenoid. Rotate the knob counterclockwise and retest before suspecting a component — this is the first action for Ident I and Ident P.
+
+</Callout>
+
+## During the Health Check
+
+The Health Check moves the CO₂ supply between ports to isolate faults:
+
+- Checks 2 and 3 use CO₂ connected to `CO₂_In`
+- Check 4 moves CO₂ to the **ARM** port and repeats the solenoid tests — the expected results swap, which is the point of the test
+- Checks 6 and 7 move CO₂ back to `CO₂_In`
+
+A push-to-connect jumper hose makes these moves quick. See the [Health Check Overview](/troubleshooting/health-check/overview) for the prerequisites.
+
+## Next step
+
+<Card title="Stone Circuit" href="/setup/stone-circuit" icon="circle-dot">
+
+Connect the stone hose, isolation valve, and carbonation stone.
+
+</Card>
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Stone Circuit" href="/setup/stone-circuit" icon="circle-dot">
+  Where the CO₂ goes next.
+  </Card>
+  <Card title="Pneumatics Schematic" href="/get-started/pneumatics-schematic" icon="book-open">
+  Full gas path and glossary.
+  </Card>
+  <Card title="Check 2 — Display Values" href="/troubleshooting/health-check/check-2-display-values" icon="gauge">
+  Verify the inlet readings.
+  </Card>
+</Columns>

@@ -1,0 +1,78 @@
+---
+title: Troubleshooting Overview
+description: Where to start when something is wrong with your FizzWizz — triage by symptom, or run the full Health Check if the cause is unclear.
+---
+
+## Troubleshooting overview
+
+This section has several different tools. Picking the right one saves time, so start here rather than at the first page in the sidebar.
+
+## Start with the symptom
+
+| What you are seeing | Go to |
+| --- | --- |
+| **Carbonation is off target** — under-carbonated, or brite pressure behaving oddly | [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
+| **You have a failed Health Check ident** (A–X) | [By Symptom (A–X)](/troubleshooting/by-symptom) |
+| **An alert fired** — CO₂ low, leak, glycol, stone inefficiency | [Responding to Alerts](/troubleshooting/responding-to-alerts) |
+| **The device is not reporting** — Stale or Offline on the dashboard | [Device Offline or Not Reporting](/troubleshooting/device-offline) |
+| **Temperature looks wrong** | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+| **You do not know what is wrong** | Run the [Health Check](/troubleshooting/health-check/overview) |
+
+## When to run the full Health Check
+
+The [Health Check](/troubleshooting/health-check/overview) is a structured 7-check sequence that isolates problems across the pneumatics, solenoids, sensors, and leaks. It takes about 30 minutes.
+
+Run it when:
+
+- Commissioning a new or relocated FizzWizz
+- Performing preventative maintenance during off-season or scheduled service
+- After replacing a component (solenoid, transducer, sensor)
+- Carbonation results are off-target with no obvious cause
+- You suspect a leak, stuck solenoid, or faulty sensor
+- Support has asked you for results
+
+<Callout kind="tip">
+
+A completed [Results Form](/troubleshooting/health-check/results-form) with **actual measured values** is the single most useful thing you can provide when contacting support. It eliminates most of the back-and-forth.
+
+</Callout>
+
+## Read this before replacing parts
+
+<Callout kind="alert">
+
+**Fluid inside the FizzWizz is the most common root cause of transducer and solenoid failures.** It happens when the arm separator is not used or is overwhelmed, or when check valves are stuck open or missing.
+
+If several unrelated checks fail, investigate the fluid path **before** replacing individual components. Replacing a failed transducer or solenoid without establishing how fluid got in will simply reproduce the failure. See [Arm Circuit & Separator](/setup/arm-circuit) and the [Pneumatics Schematic](/get-started/pneumatics-schematic).
+
+</Callout>
+
+This single principle explains a large share of FizzWizz failures, and it is the reason several pages in this section ask about separator condition and fluid ingress before recommending parts.
+
+## The Health Check sequence
+
+| Check | What it tests | Idents | Page |
+| --- | --- | --- | --- |
+| Check 1 | Setup and power supply | — | [Setup & Power Check](/troubleshooting/health-check/setup-and-power-check) |
+| Check 2 | Display values on CO₂_In circuit | A–C | [Check 2](/troubleshooting/health-check/check-2-display-values) |
+| Check 3 | Solenoid function on CO₂_In | D–J | [Check 3](/troubleshooting/health-check/check-3-solenoid-co2-in) |
+| Check 4 | Solenoid function on ARM | K–Q | [Check 4](/troubleshooting/health-check/check-4-solenoid-arm) |
+| Check 5 | Display values on ARM circuit | R–T | [Check 5](/troubleshooting/health-check/check-5-arm-display-values) |
+| Check 6 | Leak testing | U–V | [Check 6](/troubleshooting/health-check/check-6-leak-testing) |
+| Check 7 | Stone hose and isolation valve | W–X | [Check 7](/troubleshooting/health-check/check-7-stone-isolation-valve) |
+
+Every result is identified by a letter — A through X — that appears consistently across the procedure pages, the Results Form, and the symptom guide.
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Health Check Overview" href="/troubleshooting/health-check/overview" icon="stethoscope">
+  Start the 7-check sequence.
+  </Card>
+  <Card title="Pneumatics Schematic" href="/get-started/pneumatics-schematic" icon="book-open">
+  Component locations and glossary.
+  </Card>
+  <Card title="Support & Parts" href="/get-started/support-and-parts" icon="life-buoy">
+  Contact support and order parts.
+  </Card>
+</Columns>

@@ -1,0 +1,107 @@
+---
+title: Glossary
+description: Definitions for every named FizzWizz component, reading, and operating term used throughout this documentation.
+---
+
+## Glossary
+
+Every named component, reading, and term used across this documentation, in one place. Component names here match the labels used on the [Pneumatics Schematic](/get-started/pneumatics-schematic) and in the Health Check.
+
+## Components inside the enclosure
+
+| Term | Definition |
+| --- | --- |
+| **Flow Controller** | The vertical flow meter with the adjustment knob. The ball indicates CO₂ flow rate into the stone circuit. Rotate the knob counterclockwise to open. |
+| **Head_Transfer Solenoid** | Controls gas to the ARM connection. Operated by the **Up** button in Test Mode. |
+| **CO₂-in Solenoid** | Controls gas to the STONE connection. Operated by the **Down** button in Test Mode. |
+| **Vent Solenoid** | Controls gas to the vent valve. Operated by the **Enter** button in Test Mode. |
+| **Internal Filter** | Protects the solenoids and transducers from particulate carried in the gas stream. |
+| **Vent Valve** | The manual valve on the manifold that releases pressure to atmosphere. Must be open for the vent test in Check 4. |
+| **CO₂ check valve** | One-way valve on the CO₂ inlet. Prevents reverse flow back toward the regulator if the supply runs out. |
+| **Manifold** | The internal gas distribution block that feeds the three solenoids. |
+
+## Stone circuit
+
+| Term | Definition |
+| --- | --- |
+| **Stone hose** | 5/16 inch ID NSF tubing running from the FizzWizz to the stone assembly. |
+| **Inline check valve** | One-way valve in the stone hose. Blocks liquid travelling back toward the unit. |
+| **Stone Isolation Valve** | Manual valve that isolates the carbonation stone. Used to prove the stone circuit holds in Check 7. |
+| **Sanitary Check Valve** | Second one-way valve immediately before the stone, on the wetted side. |
+| **Check Valve** | The serviceable BrewWizz check valve used in the CO₂ line. See [Check Valve](/setup/check-valve). |
+| **Elbow** | Right-angle fitting connecting the check valve assembly to the stone. |
+| **Stone adaptor kit** | BrewWizz kit that adapts a Zahm & Nagel 24 in carbonation stone to the FizzWizz stone circuit through a threaded adaptor. Its threaded joints are epoxy welded at the factory. |
+| **Carbonation stone** | The porous ceramic diffusion element. Can be left in the tank. Blocked or dirty stones are a leading cause of low carbonation. |
+| **WizzStone-Combo** | Stainless steel carrier with a built-in thermowell, holding a 16 in ceramic carbonation stone. |
+| **Push-to-connect fitting** | Quick-release connector. A common source of small leaks — check these first when the flow meter ball behaves oddly. |
+| **1/4 inch NPT pneumatic push fitting** | Threaded fitting joining the hose to the stone assembly. |
+| **Epoxy weld** | Factory-applied food-grade epoxy sealing on NPT threaded joints. Will not come undone without a wrench; do not attempt to unscrew it. |
+
+## Arm circuit
+
+| Term | Definition |
+| --- | --- |
+| **Arm Hose** | Connects the ARM port to the tank head. |
+| **Separator** | Catches liquid and foam before it can reach the FizzWizz. **The single most important component for protecting the unit.** |
+| **Swiffer valve** | Drain valve on the separator. Must be **closed** during Check 6.2, and is the first thing to check if the arm circuit will not hold pressure. |
+
+## Sensors and accessories
+
+| Term | Definition |
+| --- | --- |
+| **WizzTemp** | The temperature sensor. Its reading drives the carbonation calculation. |
+| **Brite pressure transducer** | Reads pressure in the arm/head transfer circuit — the tank head space pressure. |
+| **CO₂_In pressure transducer** | Reads pressure at the CO₂ inlet port. |
+| **Foot Pressure Sensor** | Reads the pressure the packaging line actually sees, eliminating hydrostatic pressure error. Part number INS039. |
+| **WizzKoga Selector** | Electronic multiplexer that switches up to six tank temperature sensors between one or two FizzWizz units. |
+| **Sensor switch box** | Sits between the FizzWizz and both sensors so a temperature sensor and Foot Pressure Sensor can stay permanently connected. |
+| **Battery Backup** | Keeps the FizzWizz running through brownouts and short power cuts — about 1 hour on a full charge. |
+
+## Readings and display fields
+
+| Term | Definition |
+| --- | --- |
+| **CO₂ reg psi** | Pressure at the CO₂ inlet port, as shown on the display. Normally 30–40 psi. |
+| **Brite psi** | Pressure in the arm/head transfer circuit, as shown on the display. |
+| **Finish pressure** | The tank pressure required to reach your target carbonation level at the current product temperature. |
+| **Foot pressure** | The pressure read at the foot of the tank, which is head space pressure **plus** hydrostatic pressure. |
+| **Hydrostatic pressure** | Pressure exerted by the column of liquid above the sensor — approximately 0.43 psi per foot of product for water. |
+
+## Operating terms
+
+| Term | Definition |
+| --- | --- |
+| **Test Mode** | A diagnostic mode showing live readings and allowing manual solenoid firing. Required for Health Checks 2 through 6. |
+| **Carbonation mode** | The normal operating mode. Calculates and holds the finish pressure. Used for Check 7. |
+| **Head Pressure mode** | Used during packaging to regulate pressure between the tank and the filling system. |
+| **Health Check** | The structured 7-check diagnostic sequence using A–X ident letters. |
+| **Ident** | A single letter (A through X) identifying one test result within the Health Check. Used consistently across the procedure pages, the Results Form, and the symptom guide. |
+| **Results Form** | The printable form for recording measured values during the Health Check. |
+| **Fluid ingress** | Product or moisture reaching the inside of the unit. The most common root cause of transducer and solenoid failures. |
+
+## Acronyms
+
+| Term | Meaning |
+| --- | --- |
+| **BAE** | Bubbles Anywhere Edition — the FizzWizz model |
+| **CFH** | Cubic feet per hour — the unit for CO₂ flow rate |
+| **PRV** | Pressure relief valve. Should be set to 15 psi on tanks used with BrewWizz products |
+| **NPT** | National Pipe Thread — the standard US pipe thread |
+| **FNPT** | Female NPT |
+| **PBW** | Powdered Brewery Wash — a common caustic cleaner |
+| **NSF** | National Sanitation Foundation — food-contact certification |
+| **CIP** | Clean-in-place |
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Pneumatics Schematic" href="/get-started/pneumatics-schematic" icon="book-open">
+  Where each component sits in the gas path.
+  </Card>
+  <Card title="System Components" href="/get-started/system-components" icon="layers">
+  The component and accessory index.
+  </Card>
+  <Card title="Health Check Overview" href="/troubleshooting/health-check/overview" icon="stethoscope">
+  The 7-check sequence that uses these terms.
+  </Card>
+</Columns>

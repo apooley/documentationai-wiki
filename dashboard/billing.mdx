@@ -1,0 +1,56 @@
+---
+title: Billing
+description: Start or manage your BrewWizz subscription through Stripe, and what the past due and trial statuses mean for your access.
+---
+
+## Starting a Subscription
+
+The Billing page lets you start a paid BrewWizz subscription or manage one you already have. If you do not have a subscription paid through Stripe yet, use **Upgrade** or select a plan on the Billing page to pay by card through Stripe.
+
+After you choose a plan, BrewWizz takes you to Stripe to pay. Once payment succeeds, your subscription is updated in BrewWizz automatically.
+
+The dashboard then refreshes to show the features included in your new plan.
+
+## Managing Your Subscription
+
+Use the Billing page to open the Stripe Customer Portal if your subscription is paid through Stripe. The portal lets you manage billing details without contacting support.
+
+From the Customer Portal, you can update your payment method, review billing details, change plans (where more than one is offered), or cancel your subscription.
+
+Changes you make in Stripe are applied to BrewWizz automatically, and the dashboard updates to match your new status and plan.
+
+## Subscription Statuses
+
+| Status | Plan features available? | What it means |
+| --- | --- | --- |
+| Active | Yes | Your subscription is current and all your plan's features are available. |
+| Trial | Yes | Your trial is running and all your plan's features are available. |
+| Past due | No | A payment failed. Alert features are switched off and **Upgrade** appears in the menu until payment is fixed. |
+| Cancelled | No | Your subscription has ended. Alert features are switched off. |
+| Incomplete | No | Subscription setup wasn't finished. Alert features are switched off. |
+
+## Past Due Banner
+
+<Callout kind="alert">
+
+If a payment fails and your subscription becomes past due, a banner asks you to update your payment method. Until it's fixed, alert features are switched off: no new alerts are created and the Notifications page is hidden. Click the banner to open the Stripe Customer Portal and update your payment details.
+
+</Callout>
+
+## Complimentary and trial subscriptions
+
+BrewWizz can set up complimentary or trial subscriptions for your organization without going through Stripe. They show as Active or Trial and work like a normal subscription, but they are managed by BrewWizz rather than in the Customer Portal. [Contact BrewWizz](/get-started/support-and-parts) if you need one.
+
+## Related Articles
+
+<Columns cols={3}>
+  <Card title="Understanding Your Plan" href="/dashboard/understanding-your-plan" icon="credit-card">
+  Learn how BrewWizz plan features control alerts, notifications, and upgrade prompts.
+  </Card>
+  <Card title="Notification Preferences" href="/dashboard/notification-preferences" icon="mail">
+  Manage in-app, email, and SMS notification settings based on your current plan.
+  </Card>
+  <Card title="Dashboard Overview" href="/dashboard/overview" icon="gauge">
+  Explore the BrewWizz dashboard — device health states, navigation, and real-time telemetry.
+  </Card>
+</Columns>

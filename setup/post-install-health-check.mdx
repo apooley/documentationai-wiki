@@ -1,0 +1,96 @@
+---
+title: Post-Install Health Check
+description: Running the 7-check Health Check as the final step of installation, and what to do if a check fails.
+---
+
+## Post-install health check
+
+The Health Check is the final step of installation. It confirms the unit is functional before it goes into service, and gives you a baseline record of the installation.
+
+<Callout kind="danger">
+
+Do not put a newly installed FizzWizz into service until it passes a Health Check.
+
+</Callout>
+
+## Before you begin
+
+The Health Check is run with both hoses disconnected and CO₂ connected to the `CO₂_In` port — the fixture arrangement set up during [commissioning](/setup/commissioning). You will need:
+
+- CO₂ supply with regulator (30–40 psi)
+- Stone hose and carbonation stone
+- Arm hose with separator
+- Push-to-connect jumper hose
+- Disposable glove
+- A printed [Results Form](/troubleshooting/health-check/results-form)
+
+Start at the [Health Check Overview](/troubleshooting/health-check/overview).
+
+## The sequence
+
+| Check | What it tests | Idents | Page |
+| --- | --- | --- | --- |
+| Check 1 | Setup and power supply | — | [Setup & Power Check](/troubleshooting/health-check/setup-and-power-check) |
+| Check 2 | Display values on CO₂_In circuit | A–C | [Check 2](/troubleshooting/health-check/check-2-display-values) |
+| Check 3 | Solenoid function on CO₂_In | D–J | [Check 3](/troubleshooting/health-check/check-3-solenoid-co2-in) |
+| Check 4 | Solenoid function on ARM | K–Q | [Check 4](/troubleshooting/health-check/check-4-solenoid-arm) |
+| Check 5 | Display values on ARM circuit | R–T | [Check 5](/troubleshooting/health-check/check-5-arm-display-values) |
+| Check 6 | Leak testing | U–V | [Check 6](/troubleshooting/health-check/check-6-leak-testing) |
+| Check 7 | Stone hose and isolation valve | W–X | [Check 7](/troubleshooting/health-check/check-7-stone-isolation-valve) |
+
+Checks 2 through 6 are run in [Test Mode](/troubleshooting/health-check/test-mode). Check 7 is run in Carbonation mode.
+
+## Recording results
+
+<Callout kind="tip">
+
+Fill in the [Results Form](/troubleshooting/health-check/results-form) during each check, recording **actual measured values** — not just pass or fail. The numbers are what let support diagnose borderline or intermittent problems later.
+
+</Callout>
+
+For a new installation this form doubles as the commissioning record. Keep it with the unit's documentation.
+
+## If a check fails
+
+<Callout kind="alert">
+
+**If several unrelated checks fail, investigate the fluid path first.** Fluid inside the FizzWizz is the most common root cause of transducer and solenoid failures, and it produces failures that look unrelated. Check the separator is fitted and functioning, and that the check valves are present and not stuck open. See [Arm Circuit & Separator](/setup/arm-circuit).
+
+</Callout>
+
+For a single failed check, look up its ident letter in [By Symptom (A–X)](/troubleshooting/by-symptom) and work through the actions in order.
+
+| Failure | First place to look |
+| --- | --- |
+| Power (Check 1) | [Power Connection](/setup/power) |
+| Display values (A–C, R–T) | [CO₂ Supply](/setup/co2-supply) · [Temperature Sensor](/setup/temperature-sensor) |
+| Solenoid function (D–Q) | [Front Panel & Operating Modes](/get-started/operating-modes) · [Solenoid Cleaning](/setup/solenoid-cleaning) |
+| Leaks (U–V) | [Arm Circuit & Separator](/setup/arm-circuit) |
+| Stone circuit (W–X) | [Stone Circuit](/setup/stone-circuit) · [Check Valve](/setup/check-valve) |
+
+## After a pass
+
+Once the Health Check passes:
+
+1. Reconnect CO₂ to its normal operating position.
+2. Reconnect the stone hose and confirm the stone is installed in the tank.
+3. Reconnect the arm hose **through the separator** and confirm the swiffer valve is closed.
+4. Confirm the unit is reporting to the dashboard with an **Online** badge.
+5. Set the CO₂ flow rate — see [Setting the CO₂ flow rate](/setup/wizzstone-combo#setting-the-co-flow-rate).
+6. Confirm alert rules and notification preferences are configured — see [Alerts & Alert Rules](/dashboard/alerts-and-rules).
+
+The unit is then ready for service. Ongoing maintenance is covered in the [Installation Overview](/setup/installation-overview#after-installation).
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Health Check Overview" href="/troubleshooting/health-check/overview" icon="stethoscope">
+  Start the sequence.
+  </Card>
+  <Card title="Results Form" href="/troubleshooting/health-check/results-form" icon="clipboard-list">
+  Print and fill in during testing.
+  </Card>
+  <Card title="By Symptom (A–X)" href="/troubleshooting/by-symptom" icon="wrench">
+  Look up a failed ident.
+  </Card>
+</Columns>

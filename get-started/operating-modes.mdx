@@ -1,0 +1,92 @@
+---
+title: Front Panel & Operating Modes
+description: How to drive the FizzWizz — the three control buttons, the display fields, and what each of the five operating modes does.
+---
+
+## Front panel and operating modes
+
+The FizzWizz is controlled entirely from the front panel: a display and three buttons. There is no touchscreen and no menu tree to navigate.
+
+## The three buttons
+
+Each button operates one internal solenoid:
+
+| Button | Solenoid operated | Port |
+| --- | --- | --- |
+| **Up** | Head_Transfer | ARM |
+| **Down** | CO₂_in | STONE |
+| **Enter** | Vent | Vent valve |
+
+In normal operation the buttons drive the carbonation sequence. In [Test Mode](/troubleshooting/health-check/test-mode) they let you fire each solenoid manually, which is what the Health Check uses to isolate faults.
+
+<Callout kind="tip">
+
+The button you press determines which solenoid opens, but **which port gas comes out of depends on where the CO₂ supply is connected**. This is deliberate — it is what lets the Health Check tell a stuck solenoid apart from a blocked hose.
+
+</Callout>
+
+## The display
+
+| Display field | What it shows |
+| --- | --- |
+| CO₂ reg psi | Pressure at the CO₂ inlet port |
+| Brite psi | Pressure in the arm/head transfer circuit |
+| Temperature | WizzTemp probe reading |
+
+In [Test Mode](/troubleshooting/health-check/test-mode) the display shows `Test Mode` at the top, and these three values update live. Outside Test Mode the same values drive the carbonation calculation.
+
+## Operating modes
+
+The FizzWizz has five built-in modes.
+
+### Carbonation
+
+The normal operating mode. The unit calculates the finish pressure needed for your target carbonation level, adds CO₂ through the stone until the tank reaches it, and holds it. It recalculates continuously as temperature and pressure change.
+
+This is the mode you leave the unit in during carbonation. It is also the mode used for [Check 7](/troubleshooting/health-check/check-7-stone-isolation-valve) of the Health Check.
+
+### Pre-scrub
+
+Used to prepare the system before carbonation begins. Running a pre-scrub cycle purges the lines and brings the circuit to a known state.
+
+### Head pressure
+
+Used during packaging. Head Pressure mode keeps the product at its target carbonation level while kegging, canning, or bottling by regulating pressure between the tank and the filling system.
+
+If head space pressure falls below the finish pressure during packaging, CO₂ starts to come out of solution. Once breakout starts it tends to run away and is difficult to stop — see [Choosing a foot pressure](/setup/foot-pressure-sensor#choosing-a-foot-pressure) for how to set a safe packaging pressure.
+
+### CO₂ flow control
+
+Controls the rate at which CO₂ is delivered through the stone. The **flow controller** on the side of the unit — the vertical flow meter with the adjustment knob — sets the flow rate, with the ball indicating the current rate.
+
+The correct flow rate depends on your stone and product. Use the BrewWizz app's CO₂ Stone flow rate calculator: see [Setting the CO₂ flow rate](/setup/wizzstone-combo#setting-the-co-flow-rate).
+
+<Callout kind="alert">
+
+Before adjusting the flow controller, confirm it is not already closed. If the flow meter is turned all the way off, a stone that appears blocked may simply have no flow. Rotate the knob counterclockwise and retest — this is the first step for Health Check Idents I and P.
+
+</Callout>
+
+### Venting
+
+Releases pressure to atmosphere through the vent valve. Operated by the **Enter** button, which opens the Vent solenoid.
+
+The vent valve itself is a manual valve on the manifold. It must be open for the vent test in [Check 4](/troubleshooting/health-check/check-4-solenoid-arm) — if it is physically closed, the vent test cannot work.
+
+## Switching modes
+
+Mode changes are made from the front panel. To leave [Test Mode](/troubleshooting/health-check/test-mode), switch the FizzWizz OFF and back ON without holding any buttons — it boots normally into Carbonation mode.
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Test Mode" href="/troubleshooting/health-check/test-mode" icon="play-circle">
+  Enter Test Mode and fire solenoids manually.
+  </Card>
+  <Card title="How the FizzWizz Works" href="/get-started/how-it-works" icon="workflow">
+  The circuits behind the modes.
+  </Card>
+  <Card title="Monitoring Your Carbonation" href="/get-started/monitoring" icon="line-chart">
+  Watch the process from the dashboard or app.
+  </Card>
+</Columns>

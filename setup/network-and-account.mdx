@@ -1,0 +1,98 @@
+---
+title: Network & Account Setup
+description: Getting the FizzWizz online and connected to your BrewWizz account so it reports to the dashboard and can raise alerts.
+---
+
+## Network and account setup
+
+The FizzWizz carbonates whether or not it is online. Connecting it to your network and account is what adds remote monitoring, telemetry history, and alerts.
+
+<Callout kind="info">
+
+Without network access the unit still runs normally. You lose dashboard monitoring and alerts, and the device shows as **Stale** or **Offline** — see [Device Offline or Not Reporting](/troubleshooting/device-offline).
+
+</Callout>
+
+## Before you start
+
+| Requirement | Detail |
+| --- | --- |
+| Wi-Fi coverage | At the mounting location. Breweries are often poor Wi-Fi environments — test before you commit to a position |
+| Network credentials | SSID and password |
+| BrewWizz account | An account for your organisation, with an administrator able to assign the device |
+| Serial number | From the FizzWizz label — you need it to claim the device |
+
+## Connecting the unit
+
+<Steps>
+  <Step title="Position for signal">
+
+  Confirm adequate Wi-Fi signal where the unit is mounted. If signal is marginal, reposition the unit or add an access point before proceeding — intermittent reporting is much harder to diagnose later.
+
+  </Step>
+  <Step title="Connect to your network">
+
+  Configure the FizzWizz for your Wi-Fi network.
+
+  </Step>
+  <Step title="Confirm the unit is reporting">
+
+  Once connected, readings begin arriving at BrewWizz. The device appears in the dashboard with a health badge — **Online** means it reported within the last 10 minutes.
+
+  </Step>
+</Steps>
+
+## Assigning the device to your account
+
+A FizzWizz must be assigned to an organisation before it appears in your dashboard.
+
+<Callout kind="alert">
+
+**The no-organization state cannot be bypassed.** If your account has not been assigned to an organisation, the dashboard and mobile app will not show any devices or alerts. This is the most common "no devices showing" cause.
+
+</Callout>
+
+See [Adding & Claiming a Device](/dashboard/adding-a-device) for the full procedure, and [Signing In & Account Setup](/dashboard/signing-in) for account and organisation details.
+
+## Device health states
+
+Once reporting, the device shows one of three states based on how recently a reading arrived:
+
+| State | Last reading | Meaning |
+| --- | --- | --- |
+| **Online** | Less than 10 minutes | Actively reporting |
+| **Stale** | 10–120 minutes | Intermittent or delayed reporting |
+| **Offline** | More than 120 minutes, or never | Not reporting — needs attention |
+
+## Setting up alerts
+
+With the device reporting, configure how you want to be notified:
+
+- **[Alerts & Alert Rules](/dashboard/alerts-and-rules)** — create per-device thresholds and understand cooldowns
+- **[Notification Preferences](/dashboard/notification-preferences)** — turn on email and SMS delivery, and manage SMS opt-in
+
+Alert features depend on your plan. See [Understanding Your Plan](/dashboard/understanding-your-plan).
+
+<Callout kind="tip">
+
+The FizzWizz detects and sends notifications for diminishing CO₂ supply, misconnections, leaking fittings, glycol system issues, and carbonation stone inefficiencies. Setting up notifications at commissioning means you hear about these before they cost you a batch.
+
+</Callout>
+
+## Commissioning is not finished yet
+
+Network setup gets the device online. The installation is not complete until the unit passes a Health Check — see [First Run & Commissioning](/setup/commissioning).
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Adding & Claiming a Device" href="/dashboard/adding-a-device" icon="plus-circle">
+  Assign the unit to your organisation.
+  </Card>
+  <Card title="Device Offline or Not Reporting" href="/troubleshooting/device-offline" icon="wifi-off">
+  If the device does not come online.
+  </Card>
+  <Card title="First Run & Commissioning" href="/setup/commissioning" icon="play-circle">
+  The next installation step.
+  </Card>
+</Columns>

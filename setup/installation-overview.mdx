@@ -1,0 +1,112 @@
+---
+title: Installation Overview
+description: How a FizzWizz installation fits together — the full sequence from site planning through commissioning, and which parts are optional.
+---
+
+## Installation overview
+
+This section covers everything from planning a site through commissioning a working unit. The pages are ordered as a sequence: work through them in order for a new installation, or jump to the page you need for a change to an existing one.
+
+<Callout kind="info">
+
+**Before you start:** read [Site Requirements](/setup/site-requirements) first. Most installation problems trace back to something that was missing at the planning stage — insufficient CO₂ pressure, no tri-clamp port at the tank foot, or no arm separator.
+
+</Callout>
+
+## The installation sequence
+
+| Stage | What happens | Pages |
+| --- | --- | --- |
+| **1. Plan** | Confirm the site has what the installation needs | [Site Requirements](/setup/site-requirements) |
+| **2. Mount and power** | Fix the unit in place and connect power | [Mounting the Unit](/setup/mounting) · [Power Connection](/setup/power) |
+| **3. Connect pneumatics** | CO₂ supply, stone circuit, arm circuit | [CO₂ Supply](/setup/co2-supply) · [Stone Circuit](/setup/stone-circuit) · [Arm Circuit & Separator](/setup/arm-circuit) |
+| **4. Connect sensors** | Temperature, and optionally foot pressure | [Temperature Sensor](/setup/temperature-sensor) · [Foot Pressure Sensor](/setup/foot-pressure-sensor) |
+| **5. Commission** | First power-on and a full Health Check | [First Run & Commissioning](/setup/commissioning) |
+| **6. Go live** | Connect to the dashboard and start monitoring | [Network & Account Setup](/setup/network-and-account) |
+
+## What is essential and what is optional
+
+Not every site needs every component. The distinction matters when planning.
+
+### Essential
+
+| Component | Why |
+| --- | --- |
+| FizzWizz-BAE unit | The controller |
+| Power supply | Included with the unit |
+| CO₂ supply and regulator | 30–40 psi at the regulator |
+| WizzTemp temperature sensor | The carbonation calculation depends on it |
+| Stone hose and carbonation stone | Where CO₂ enters the tank |
+| Arm hose **and separator** | The separator is the unit's main protection against fluid ingress |
+| Tank PRV set to 15 psi | Safety requirement |
+
+<Callout kind="danger">
+
+Only use BrewWizz products with tanks that have a pressure relief valve (PRV) fitted. The PRV should be set to 15 psi.
+
+</Callout>
+
+### Optional
+
+| Component | When you need it |
+| --- | --- |
+| [Foot Pressure Sensor](/setup/foot-pressure-sensor) | When packaging accuracy matters — eliminates hydrostatic pressure error. Requires FizzWizz-BAE V2 code or newer |
+| [WizzKoga Selector](/setup/wizzkoga-selector) | Multi-tank sites wanting to switch sensors without moving them |
+| [Battery Backup](/setup/battery-backup) | Sites with brownouts or short power cuts |
+| [Ultrasonic Stone Cleaner](/setup/ultrasonic-cleaner) | Regular stone cleaning — strongly recommended for ceramic stones |
+| Sensor switch box | Needed if you use a Foot Pressure Sensor on a FizzWizz, since both sensors share one port |
+
+## Accessories that are part of the install
+
+These have their own guides, linked from the relevant stage above:
+
+<Columns cols={3}>
+  <Card title="Foot Pressure Sensor" href="/setup/foot-pressure-sensor" icon="gauge">
+  Install at the tank foot between two isolation valves.
+  </Card>
+  <Card title="WizzKoga Selector" href="/setup/wizzkoga-selector" icon="cable">
+  Switch up to six tank sensors between two FizzWizz units.
+  </Card>
+  <Card title="Battery Backup" href="/setup/battery-backup" icon="battery-charging">
+  Ride through brownouts and short outages.
+  </Card>
+</Columns>
+
+## Carbonation hardware
+
+The wetted parts of the stone circuit. Read these before assembling the stone end of the installation:
+
+<Columns cols={3}>
+  <Card title="WizzStone-Combo" href="/setup/wizzstone-combo" icon="circle-dot">
+  Carrier, stone, assembly, and cleaning.
+  </Card>
+  <Card title="Check Valve" href="/setup/check-valve" icon="shield">
+  Prevents product flowing back up the CO₂ line.
+  </Card>
+  <Card title="Ultrasonic Stone Cleaner" href="/setup/ultrasonic-cleaner" icon="waves">
+  Deep-clean ceramic and stainless stones.
+  </Card>
+</Columns>
+
+## After installation
+
+Once the unit is commissioned and passing a Health Check, the ongoing tasks are:
+
+- **[Monitoring](/get-started/monitoring)** the carbonation run from the dashboard
+- **[Cleaning the carbonation stone](/setup/wizzstone-combo#cleaning)** after every use
+- **[Servicing solenoids](/setup/solenoid-cleaning)** if product reaches them
+- **Running a [Health Check](/troubleshooting/health-check/overview)** at the start of each season, after relocating the unit, or after replacing a component
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Site Requirements" href="/setup/site-requirements" icon="clipboard-list">
+  What the site needs before you begin.
+  </Card>
+  <Card title="System Components" href="/get-started/system-components" icon="layers">
+  The full component index.
+  </Card>
+  <Card title="How the FizzWizz Works" href="/get-started/how-it-works" icon="workflow">
+  The circuits you are about to connect.
+  </Card>
+</Columns>
