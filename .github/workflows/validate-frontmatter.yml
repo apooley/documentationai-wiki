@@ -1,0 +1,32 @@
+name: Validate frontmatter
+
+# Backstop for the local pre-commit hook, which is opt-in per clone and can be
+# bypassed with `git commit --no-verify`. Invalid frontmatter is invisible in
+# review but breaks the published page (Mintlify renders "Untitled" and prints
+# the raw frontmatter into the body), so it is checked on every change.
+
+on:
+  push:
+    paths:
+      - "**/*.md"
+      - "**/*.mdx"
+      - "scripts/check_frontmatter.py"
+      - ".github/workflows/validate-frontmatter.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "**/*.mdx"
+      - "scripts/check_frontmatter.py"
+  workflow_dispatch:
+
+jobs:
+  frontmatter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install PyYAML
+        run: python3 -m pip install --quiet pyyaml
+
+      - name: Validate frontmatter
+        run: python3 scripts/check_frontmatter.py --all
