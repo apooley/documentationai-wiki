@@ -1,0 +1,84 @@
+---
+title: "Troubleshooting"
+metaTitle: "PacWizz — Troubleshooting"
+description: "Resolve common PacWizz gas-supply, sensor, packaging-pressure, purge-time, and pressure-hold issues, and know when to contact BrewWizz."
+---
+
+## Start with safety
+
+If a PRV activates unexpectedly, a gas alarm sounds, or the setup appears unsafe, follow your facility's safety procedure before investigating. Do not bypass a relief valve or keep running through an unresolved hazard.
+
+Read [Safety & Site Requirements](/pacwizz/safety) before changing connections. Isolate and depressurize affected equipment safely before removing fittings or a sensor.
+
+## A gas-supply or regulator warning appears
+
+**What it may mean:** the regulator setting is unsuitable, or the supply cannot maintain the required pressure and flow.
+
+- Check the available gas supply, regulator arrangement, hoses, and valve positions.
+- During purging, consider the supplied dual connector and two regulators if one cannot maintain flow.
+- If a purge warning continues, the manual recommends slightly throttling the **tank-foot gas-injection valve**. See [Purge Times & Gas Supply](/pacwizz/purge-times) for the important distinction from packaging-sensor valves.
+- The manual does not specify a universal supply-pressure setting. [Contact BrewWizz](/pacwizz/support-and-warranty) if you need help selecting one.
+
+## Packaging reports that the Foot Pressure Sensor is not connected
+
+**What it may mean:** the sensor cable is disconnected or damaged.
+
+- Check that the sensor cable is connected to the unit.
+- Inspect the cable and connection for damage from pulling, stepping, or catching.
+- Check that the sensor is installed at the correct location for your [arm or foot setup](/pacwizz/packaging-connections).
+- If the warning remains, contact BrewWizz rather than attempting unsupported electrical repairs.
+
+## The relief valve triggers during initial pressurization
+
+In a foot-sensor packaging setup, a **closed tank-side valve** can cause this problem.
+
+- Follow your facility's safe stopping/isolation procedure.
+- Check the tank-side sensor valve position and the pressure setting against the tank's limits.
+- Confirm the **tank-side valve is open while pressurizing** and the sensor can measure tank pressure.
+
+Do not raise or defeat the PRV setting to continue. See [Packaging Connections](/pacwizz/packaging-connections).
+
+## Packaging pressure or fill levels vary
+
+- Confirm whether you are using an **arm sensor** or **foot sensor**.
+- An arm setup controls headspace pressure but does not compensate for the changing liquid height. The foot setup is intended to control pressure at the bottom outlet.
+- Check that the supply can keep up with the filling line and that the required isolation valves are open.
+- Check the selected fill pressure and observe the response to any adjustment.
+
+See [Running Packaging Mode](/pacwizz/packaging). If the pressure remains unstable, record the displayed values and contact support.
+
+## Lowering the packaging setting does not lower pressure immediately
+
+This is expected: **Packaging mode does not vent**. It stops adding gas as appropriate, but it does not actively release gas to reach a lower setting. Use your facility's safe venting procedure if pressure must be reduced.
+
+## A purge takes longer than expected
+
+- Compare **total tank capacity**, not only working volume, with the [manual's example times](/pacwizz/purge-times).
+- Check regulator flow capacity and any supply warning.
+- Confirm purge pressure, vent pressure, finish pressure, and cycle count.
+- Check the exhaust route and valve arrangement against [Purging Connections](/pacwizz/purging-connections).
+
+Do not leave a long purge running overnight.
+
+## Pressure falls after purging
+
+Use the [Post-Purge Pressure Check](/pacwizz/pressure-check) to calculate loss over the actual hold time. Temperature changes may also affect pressure.
+
+If the drop is unexpected, check the tank assembly and connections using your facility's safe procedure before transfer. The manual does not specify a universal pass/fail loss rate; share your readings with BrewWizz if you need help interpreting them.
+
+## The calculated oxygen result is not low enough
+
+Review the purge settings and cycle count, then return to **Purge SetUp** instead of starting the run. See [Understanding Purge Calculations](/pacwizz/purge-calculations). Never exceed equipment limits to obtain a lower estimate.
+
+Remember that the displayed O₂ percentage is calculated, not measured.
+
+## Gather these details for support
+
+- Mode: **Packaging** or **Tank Purge**.
+- Sensor location and connection arrangement.
+- Exact warning wording and displayed pressures.
+- For purging: the four setup values, tank total capacity, and regulator arrangement.
+- For a pressure-hold concern: recorded finish pressure, current pressure, purge time, total elapsed time, and any temperature change.
+- Photos of the external connections and display, taken only when safe.
+
+[Contact the WIZZ team](/pacwizz/support-and-warranty). The FizzWizz Health Check and Test Mode instructions are for a different unit; **do not use them as a PacWizz diagnostic procedure**.

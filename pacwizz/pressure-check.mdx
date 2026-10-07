@@ -1,0 +1,64 @@
+---
+title: "Post-Purge Pressure Check"
+metaTitle: "PacWizz — Post-Purge Pressure Check"
+description: "Use the PacWizz completion pressure, current tank pressure, and timers to estimate pressure loss and assess the tank before beverage transfer."
+---
+
+## What happens after purging?
+
+Once the purge is complete, PacWizz records the pressure at completion and the time the purge took. It continues showing **current tank pressure** and **total elapsed time**.
+
+These readings help you judge whether the assembled tank is holding pressure before transferring beverage into it. This is a **pressure-hold check**, not a certified tank pressure test.
+
+## Read the four values
+
+| Display value | Meaning |
+| --- | --- |
+| **Finish pressure** | Actual tank pressure recorded immediately after the purge finished |
+| **Purge time** | How long the purge took |
+| **Current brite pressure** | Tank pressure now |
+| **Total elapsed time** | Time since the purge began, including the time after completion |
+
+The **actual recorded finish pressure** may differ slightly from the value you selected in Purge SetUp. Use the recorded value when comparing readings.
+
+## Estimate pressure loss per hour
+
+First calculate the time **since completion**, not the entire time since the run began:
+
+```text
+Hold time = Total elapsed time − Purge time
+Pressure loss = Recorded finish pressure − Current pressure
+Pressure loss per hour = Pressure loss / Hold time in hours
+```
+
+If you work in minutes, multiply the loss per minute by 60 to get psi per hour.
+
+### Worked example from the manual
+
+- Pressure drop: **0.57 psi**.
+- Time since the purge finished: **13 hours 42 minutes**.
+- Hold time in minutes: `(13 × 60) + 42 = 822`.
+- Pressure loss per hour: `(0.57 / 822) × 60 ≈ 0.0416 psi/hour`.
+
+The manual rounds this to about **0.041 psi/hour**. These values illustrate the calculation only; they are **not** an acceptance limit or a recommended hold duration.
+
+<Callout kind="alert">
+
+Do not leave a tank **actively purging overnight**. The long elapsed-time example in the manual is not an instruction to run an unattended overnight purge. Follow your facility's supervision and pressure-hold procedures.
+
+</Callout>
+
+## Interpret the result carefully
+
+- A falling pressure may indicate a leak, but **temperature changes also affect pressure**.
+- A very short observation interval or small pressure change may be difficult to distinguish from normal measurement variation.
+- There is no universal pass/fail pressure-loss threshold in the supplied manual. Use your facility's requirements and ask BrewWizz for advice if the loss is unexpected.
+- The oxygen estimate does not establish that the tank is leak-free.
+
+If the tank loses pressure unexpectedly, check the assembly and connections under your facility's safe isolation/depressurization procedure before transfer. Record the pressures, timers, settings, and any temperature change when [contacting support](/pacwizz/support-and-warranty).
+
+## Next steps
+
+- [Troubleshooting](/pacwizz/troubleshooting) — pressure and connection problems.
+- [Specifications](/pacwizz/specifications) — sensor limits and measurement characteristics.
+- [Running a Tank Purge](/pacwizz/purging) — review the operating sequence.
