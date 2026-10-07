@@ -1,0 +1,80 @@
+---
+title: "Understanding Purge Calculations"
+metaTitle: "PacWizz — Understanding Purge Calculations"
+description: "Understand PacWizz's pressure-dilution oxygen estimate, the five-cycle manual example, and why the result is not an oxygen measurement."
+---
+
+## Why repeat pressurizing and venting?
+
+Air initially contains about **21% oxygen**. Adding oxygen-free purge gas dilutes the oxygen in the tank's gas space. Venting removes some of that mixture; repeating the process reduces the oxygen fraction further.
+
+PacWizz automates this **dilution method**. The selected purge, vent, and finish pressures, plus the number of cycles, determine the calculated result.
+
+<Callout kind="info">
+
+The displayed percentage is a **calculation**, not an oxygen-sensor reading. It does not measure dissolved oxygen in your beverage. Mixing, gas purity, leaks, and the actual installation can affect the real outcome; use your facility's verification process where a measured oxygen result is required.
+
+</Callout>
+
+## The pressures in the calculation
+
+| Symbol | Meaning | Manual's example |
+| --- | --- | --- |
+| **Ap** | Atmospheric pressure | 14.7 psi, approximately 1.01325 bar |
+| **Pp** | Purge pressure | 15 psi |
+| **Vp** | Vent pressure | 3 psi |
+| **Fp** | Finish pressure | 9.25 psi |
+
+The device uses **local atmospheric pressure** in its calculations. The example atmosphere above is a reference, not a value that applies at every altitude.
+
+## A plain-language view of the maths
+
+Dilution ratios use **absolute pressure**: add atmospheric pressure to a gauge-pressure value. For an ideal, well-mixed tank, adding oxygen-free gas reduces the oxygen fraction by the ratio of the pressure before filling to the pressure after filling.
+
+For the first fill from atmospheric pressure:
+
+```text
+Oxygen after first fill (%) = 21 × Ap / (Ap + Pp)
+```
+
+Venting an ideally mixed gas does not itself change its oxygen percentage. Each refill from vent pressure to purge pressure multiplies the current oxygen percentage by:
+
+```text
+(Ap + Vp) / (Ap + Pp)
+```
+
+After the last vent, filling to the finish pressure applies:
+
+```text
+(Ap + Vp) / (Ap + Fp)
+```
+
+You do not need to calculate these values by hand to operate PacWizz: review the device's **Purge Summary** before confirming a run.
+
+## The manual's five-cycle example
+
+With **15 psi purge**, **3 psi vent**, **9.25 psi finish**, and **five cycles**, the supplied manual shows:
+
+| Display stage | Calculated oxygen shown in the manual |
+| --- | --- |
+| Purge 1 | 10.29% |
+| Purge 2 | 6.09% |
+| Purge 3 | 3.60% |
+| Purge 4 | 2.13% |
+| Purge 5 | 1.26% |
+| Finish | 0.99% |
+
+These are the **manual's illustrative display values**, not guaranteed values for every unit or installation. Applying the ideal formulas above with exactly 14.7 psi atmospheric pressure gives a final estimate of approximately **0.97%**; the manual's rounded display example shows **0.99%**. Both illustrate a result just below 1%, but do not treat either as a measured result or a margin of safety for your process.
+
+The manual describes **below 1%** as a typical gas-space oxygen target for fermented products. Use your own product/process requirements when deciding whether a purge is sufficient.
+
+## What changing a setting does
+
+- **More cycles** generally lower the calculated residual oxygen but take more time and gas.
+- **Higher purge pressure** increases dilution per fill, but must stay within equipment limits.
+- **Lower vent pressure** leaves less mixed gas before the next refill.
+- **Finish pressure** affects the final dilution step and the pressure held after completion.
+
+Review the calculated result after any change. Never change pressure settings beyond the limits in [Safety & Site Requirements](/pacwizz/safety).
+
+Return to [Running a Tank Purge](/pacwizz/purging), or plan your run with [Purge Times & Gas Supply](/pacwizz/purge-times).
