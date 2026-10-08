@@ -36,6 +36,12 @@
     }
   },
   "navigation": {
+    "pages": [
+      {
+        "title": "Choose Your Product",
+        "path": "welcome"
+      }
+    ],
     "products": [
       {
         "product": "FizzWizz",
