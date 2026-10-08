@@ -1,6 +1,6 @@
 {
   "name": "BrewWizz",
-  "initialRoute": "get-started/welcome",
+  "initialRoute": "welcome",
   "colors": {
     "dark": {
       "brand": "#34936B",
@@ -22,7 +22,7 @@
       "links": [
         {
           "title": "Choose Your Product",
-          "link": "/get-started/welcome"
+          "link": "/welcome"
         },
         {
           "title": "Support",
@@ -51,13 +51,6 @@
                 "icon": "book-open",
                 "expandable": true,
                 "pages": [
-                  {
-                    "title": "Choose Your Product",
-                    "path": "get-started/welcome",
-                    "icon": "home",
-                    "show-sidebar": false,
-                    "show-toc": false
-                  },
                   { "title": "How the FizzWizz Works", "path": "get-started/how-it-works" },
                   { "title": "System Components", "path": "get-started/system-components" },
                   { "title": "Specifications", "path": "get-started/specifications" }
@@ -365,7 +358,8 @@
     { "source": "/dashboard-web/client/:slug", "destination": "/dashboard/:slug", "statusCode": 301 },
     { "source": "/dashboard-web/overview", "destination": "/dashboard/overview", "statusCode": 301 },
     { "source": "/dashboard-web/troubleshooting", "destination": "/dashboard/troubleshooting", "statusCode": 301 },
-    { "source": "/health-check/:slug", "destination": "/troubleshooting/health-check/:slug", "statusCode": 301 }
+    { "source": "/health-check/:slug", "destination": "/troubleshooting/health-check/:slug", "statusCode": 301 },
+    { "source": "/get-started/welcome", "destination": "/welcome", "statusCode": 301 }
   ],
   "seo": {
     "siteName": "BrewWizz",
