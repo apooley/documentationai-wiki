@@ -325,6 +325,7 @@
           },
           {
             "tab": "Dashboard",
+            "hidden": true,
             "icon": "monitor",
             "path": "dashboard/overview",
             "groups": [
@@ -407,6 +408,7 @@
           },
           {
             "tab": "Mobile App",
+            "hidden": true,
             "icon": "smartphone",
             "path": "mobile-app/overview",
             "badge": "Coming Soon",
