@@ -51,9 +51,18 @@
                 "icon": "book-open",
                 "expandable": true,
                 "pages": [
-                  { "title": "How the FizzWizz Works", "path": "get-started/how-it-works" },
-                  { "title": "System Components", "path": "get-started/system-components" },
-                  { "title": "Specifications", "path": "get-started/specifications" }
+                  {
+                    "title": "How the FizzWizz Works",
+                    "path": "get-started/how-it-works"
+                  },
+                  {
+                    "title": "System Components",
+                    "path": "get-started/system-components"
+                  },
+                  {
+                    "title": "Specifications",
+                    "path": "get-started/specifications"
+                  }
                 ]
               },
               {
@@ -61,8 +70,14 @@
                 "icon": "settings-2",
                 "expandable": true,
                 "pages": [
-                  { "title": "Front Panel & Operating Modes", "path": "get-started/operating-modes" },
-                  { "title": "Monitoring Your Carbonation", "path": "get-started/monitoring" }
+                  {
+                    "title": "Front Panel & Operating Modes",
+                    "path": "get-started/operating-modes"
+                  },
+                  {
+                    "title": "Monitoring Your Carbonation",
+                    "path": "get-started/monitoring"
+                  }
                 ]
               },
               {
@@ -70,8 +85,14 @@
                 "icon": "layers",
                 "expandable": true,
                 "pages": [
-                  { "title": "Pneumatics Schematic", "path": "get-started/pneumatics-schematic" },
-                  { "title": "Glossary", "path": "get-started/glossary" }
+                  {
+                    "title": "Pneumatics Schematic",
+                    "path": "get-started/pneumatics-schematic"
+                  },
+                  {
+                    "title": "Glossary",
+                    "path": "get-started/glossary"
+                  }
                 ]
               },
               {
@@ -79,8 +100,14 @@
                 "icon": "life-buoy",
                 "expandable": true,
                 "pages": [
-                  { "title": "Support & Parts", "path": "get-started/support-and-parts" },
-                  { "title": "Warranty & Service", "path": "get-started/warranty-and-service" }
+                  {
+                    "title": "Support & Parts",
+                    "path": "get-started/support-and-parts"
+                  },
+                  {
+                    "title": "Warranty & Service",
+                    "path": "get-started/warranty-and-service"
+                  }
                 ]
               }
             ]
@@ -95,12 +122,30 @@
                 "icon": "package",
                 "expandable": true,
                 "pages": [
-                  { "title": "Site Requirements", "path": "setup/site-requirements" },
-                  { "title": "Mounting the Unit", "path": "setup/mounting" },
-                  { "title": "Power Connection", "path": "setup/power" },
-                  { "title": "CO₂ Supply Connection", "path": "setup/co2-supply" },
-                  { "title": "Stone Circuit", "path": "setup/stone-circuit" },
-                  { "title": "Arm Circuit & Separator", "path": "setup/arm-circuit" }
+                  {
+                    "title": "Site Requirements",
+                    "path": "setup/site-requirements"
+                  },
+                  {
+                    "title": "Mounting the Unit",
+                    "path": "setup/mounting"
+                  },
+                  {
+                    "title": "Power Connection",
+                    "path": "setup/power"
+                  },
+                  {
+                    "title": "CO₂ Supply Connection",
+                    "path": "setup/co2-supply"
+                  },
+                  {
+                    "title": "Stone Circuit",
+                    "path": "setup/stone-circuit"
+                  },
+                  {
+                    "title": "Arm Circuit & Separator",
+                    "path": "setup/arm-circuit"
+                  }
                 ]
               },
               {
@@ -108,11 +153,26 @@
                 "icon": "cable",
                 "expandable": true,
                 "pages": [
-                  { "title": "Temperature Sensor (WizzTemp)", "path": "setup/temperature-sensor" },
-                  { "title": "Foot Pressure Sensor", "path": "setup/foot-pressure-sensor" },
-                  { "title": "WizzKoga Selector", "path": "setup/wizzkoga-selector" },
-                  { "title": "Battery Backup", "path": "setup/battery-backup" },
-                  { "title": "Network & Account Setup", "path": "setup/network-and-account" }
+                  {
+                    "title": "Temperature Sensor (WizzTemp)",
+                    "path": "setup/temperature-sensor"
+                  },
+                  {
+                    "title": "Foot Pressure Sensor",
+                    "path": "setup/foot-pressure-sensor"
+                  },
+                  {
+                    "title": "WizzKoga Selector",
+                    "path": "setup/wizzkoga-selector"
+                  },
+                  {
+                    "title": "Battery Backup",
+                    "path": "setup/battery-backup"
+                  },
+                  {
+                    "title": "Network & Account Setup",
+                    "path": "setup/network-and-account"
+                  }
                 ]
               },
               {
@@ -120,8 +180,14 @@
                 "icon": "clipboard-check",
                 "expandable": true,
                 "pages": [
-                  { "title": "First Run & Commissioning", "path": "setup/commissioning" },
-                  { "title": "Post-Install Health Check", "path": "setup/post-install-health-check" }
+                  {
+                    "title": "First Run & Commissioning",
+                    "path": "setup/commissioning"
+                  },
+                  {
+                    "title": "Post-Install Health Check",
+                    "path": "setup/post-install-health-check"
+                  }
                 ]
               },
               {
@@ -129,9 +195,18 @@
                 "icon": "circle-dot",
                 "expandable": true,
                 "pages": [
-                  { "title": "WizzStone-Combo", "path": "setup/wizzstone-combo" },
-                  { "title": "Check Valve", "path": "setup/check-valve" },
-                  { "title": "Ultrasonic Stone Cleaner", "path": "setup/ultrasonic-cleaner" }
+                  {
+                    "title": "WizzStone-Combo",
+                    "path": "setup/wizzstone-combo"
+                  },
+                  {
+                    "title": "Check Valve",
+                    "path": "setup/check-valve"
+                  },
+                  {
+                    "title": "Ultrasonic Stone Cleaner",
+                    "path": "setup/ultrasonic-cleaner"
+                  }
                 ]
               },
               {
@@ -139,7 +214,10 @@
                 "icon": "hammer",
                 "expandable": true,
                 "pages": [
-                  { "title": "Solenoid Cleaning & Servicing", "path": "setup/solenoid-cleaning" }
+                  {
+                    "title": "Solenoid Cleaning & Servicing",
+                    "path": "setup/solenoid-cleaning"
+                  }
                 ]
               }
             ]
@@ -154,16 +232,46 @@
                 "icon": "stethoscope",
                 "expandable": true,
                 "pages": [
-                  { "title": "Health Check Overview", "path": "troubleshooting/health-check/overview" },
-                  { "title": "Check 1 — Setup & Power", "path": "troubleshooting/health-check/setup-and-power-check" },
-                  { "title": "Test Mode", "path": "troubleshooting/health-check/test-mode" },
-                  { "title": "Check 2 — Display Values", "path": "troubleshooting/health-check/check-2-display-values" },
-                  { "title": "Check 3 — Solenoid CO₂_In", "path": "troubleshooting/health-check/check-3-solenoid-co2-in" },
-                  { "title": "Check 4 — Solenoid ARM", "path": "troubleshooting/health-check/check-4-solenoid-arm" },
-                  { "title": "Check 5 — ARM Display Values", "path": "troubleshooting/health-check/check-5-arm-display-values" },
-                  { "title": "Check 6 — Leak Testing", "path": "troubleshooting/health-check/check-6-leak-testing" },
-                  { "title": "Check 7 — Stone/Isolation Valve", "path": "troubleshooting/health-check/check-7-stone-isolation-valve" },
-                  { "title": "Results Form", "path": "troubleshooting/health-check/results-form" }
+                  {
+                    "title": "Health Check Overview",
+                    "path": "troubleshooting/health-check/overview"
+                  },
+                  {
+                    "title": "Check 1 — Setup & Power",
+                    "path": "troubleshooting/health-check/setup-and-power-check"
+                  },
+                  {
+                    "title": "Test Mode",
+                    "path": "troubleshooting/health-check/test-mode"
+                  },
+                  {
+                    "title": "Check 2 — Display Values",
+                    "path": "troubleshooting/health-check/check-2-display-values"
+                  },
+                  {
+                    "title": "Check 3 — Solenoid CO₂_In",
+                    "path": "troubleshooting/health-check/check-3-solenoid-co2-in"
+                  },
+                  {
+                    "title": "Check 4 — Solenoid ARM",
+                    "path": "troubleshooting/health-check/check-4-solenoid-arm"
+                  },
+                  {
+                    "title": "Check 5 — ARM Display Values",
+                    "path": "troubleshooting/health-check/check-5-arm-display-values"
+                  },
+                  {
+                    "title": "Check 6 — Leak Testing",
+                    "path": "troubleshooting/health-check/check-6-leak-testing"
+                  },
+                  {
+                    "title": "Check 7 — Stone/Isolation Valve",
+                    "path": "troubleshooting/health-check/check-7-stone-isolation-valve"
+                  },
+                  {
+                    "title": "Results Form",
+                    "path": "troubleshooting/health-check/results-form"
+                  }
                 ]
               },
               {
@@ -171,8 +279,14 @@
                 "icon": "wrench",
                 "expandable": true,
                 "pages": [
-                  { "title": "By Symptom (A–X)", "path": "troubleshooting/by-symptom" },
-                  { "title": "Carbonation & Brite Pressure", "path": "troubleshooting/carbonation-and-brite-pressure" }
+                  {
+                    "title": "By Symptom (A–X)",
+                    "path": "troubleshooting/by-symptom"
+                  },
+                  {
+                    "title": "Carbonation & Brite Pressure",
+                    "path": "troubleshooting/carbonation-and-brite-pressure"
+                  }
                 ]
               },
               {
@@ -180,7 +294,10 @@
                 "icon": "thermometer",
                 "expandable": true,
                 "pages": [
-                  { "title": "Slushy WizzTemp Test", "path": "troubleshooting/temperature-probe" }
+                  {
+                    "title": "Slushy WizzTemp Test",
+                    "path": "troubleshooting/temperature-probe"
+                  }
                 ]
               },
               {
@@ -188,8 +305,14 @@
                 "icon": "alert-triangle",
                 "expandable": true,
                 "pages": [
-                  { "title": "Responding to Alerts", "path": "troubleshooting/responding-to-alerts" },
-                  { "title": "Device Offline or Not Reporting", "path": "troubleshooting/device-offline" }
+                  {
+                    "title": "Responding to Alerts",
+                    "path": "troubleshooting/responding-to-alerts"
+                  },
+                  {
+                    "title": "Device Offline or Not Reporting",
+                    "path": "troubleshooting/device-offline"
+                  }
                 ]
               }
             ]
@@ -204,8 +327,14 @@
                 "icon": "gauge",
                 "expandable": false,
                 "pages": [
-                  { "title": "Signing In & Account Setup", "path": "dashboard/signing-in" },
-                  { "title": "Adding & Claiming a Device", "path": "dashboard/adding-a-device" }
+                  {
+                    "title": "Signing In & Account Setup",
+                    "path": "dashboard/signing-in"
+                  },
+                  {
+                    "title": "Adding & Claiming a Device",
+                    "path": "dashboard/adding-a-device"
+                  }
                 ]
               },
               {
@@ -213,9 +342,18 @@
                 "icon": "line-chart",
                 "expandable": true,
                 "pages": [
-                  { "title": "Devices & Health States", "path": "dashboard/devices" },
-                  { "title": "Device Detail & Charts", "path": "dashboard/device-detail" },
-                  { "title": "Understanding Your Readings", "path": "dashboard/readings-explained" }
+                  {
+                    "title": "Devices & Health States",
+                    "path": "dashboard/devices"
+                  },
+                  {
+                    "title": "Device Detail & Charts",
+                    "path": "dashboard/device-detail"
+                  },
+                  {
+                    "title": "Understanding Your Readings",
+                    "path": "dashboard/readings-explained"
+                  }
                 ]
               },
               {
@@ -223,8 +361,14 @@
                 "icon": "bell",
                 "expandable": true,
                 "pages": [
-                  { "title": "Alerts & Alert Rules", "path": "dashboard/alerts-and-rules" },
-                  { "title": "Notification Preferences", "path": "dashboard/notification-preferences" }
+                  {
+                    "title": "Alerts & Alert Rules",
+                    "path": "dashboard/alerts-and-rules"
+                  },
+                  {
+                    "title": "Notification Preferences",
+                    "path": "dashboard/notification-preferences"
+                  }
                 ]
               },
               {
@@ -232,8 +376,14 @@
                 "icon": "credit-card",
                 "expandable": true,
                 "pages": [
-                  { "title": "Understanding Your Plan", "path": "dashboard/understanding-your-plan" },
-                  { "title": "Billing & Subscriptions", "path": "dashboard/billing" }
+                  {
+                    "title": "Understanding Your Plan",
+                    "path": "dashboard/understanding-your-plan"
+                  },
+                  {
+                    "title": "Billing & Subscriptions",
+                    "path": "dashboard/billing"
+                  }
                 ]
               },
               {
@@ -241,7 +391,10 @@
                 "icon": "wrench",
                 "expandable": true,
                 "pages": [
-                  { "title": "Dashboard Troubleshooting", "path": "dashboard/troubleshooting" }
+                  {
+                    "title": "Dashboard Troubleshooting",
+                    "path": "dashboard/troubleshooting"
+                  }
                 ]
               }
             ]
@@ -257,12 +410,30 @@
                 "icon": "smartphone",
                 "expandable": true,
                 "pages": [
-                  { "title": "Getting Started", "path": "mobile-app/getting-started" },
-                  { "title": "Device List", "path": "mobile-app/devices" },
-                  { "title": "Device Detail", "path": "mobile-app/device-detail" },
-                  { "title": "Alerts", "path": "mobile-app/alerts" },
-                  { "title": "Notifications", "path": "mobile-app/notifications" },
-                  { "title": "Settings", "path": "mobile-app/settings" }
+                  {
+                    "title": "Getting Started",
+                    "path": "mobile-app/getting-started"
+                  },
+                  {
+                    "title": "Device List",
+                    "path": "mobile-app/devices"
+                  },
+                  {
+                    "title": "Device Detail",
+                    "path": "mobile-app/device-detail"
+                  },
+                  {
+                    "title": "Alerts",
+                    "path": "mobile-app/alerts"
+                  },
+                  {
+                    "title": "Notifications",
+                    "path": "mobile-app/notifications"
+                  },
+                  {
+                    "title": "Settings",
+                    "path": "mobile-app/settings"
+                  }
                 ]
               },
               {
@@ -270,7 +441,10 @@
                 "icon": "wrench",
                 "expandable": true,
                 "pages": [
-                  { "title": "Mobile App Troubleshooting", "path": "mobile-app/troubleshooting" }
+                  {
+                    "title": "Mobile App Troubleshooting",
+                    "path": "mobile-app/troubleshooting"
+                  }
                 ]
               }
             ]
@@ -291,8 +465,14 @@
                 "icon": "rocket",
                 "expandable": true,
                 "pages": [
-                  { "title": "Safety & Site Requirements", "path": "pacwizz/safety" },
-                  { "title": "Components & Controls", "path": "pacwizz/components-and-controls" }
+                  {
+                    "title": "Safety & Site Requirements",
+                    "path": "pacwizz/safety"
+                  },
+                  {
+                    "title": "Components & Controls",
+                    "path": "pacwizz/components-and-controls"
+                  }
                 ]
               },
               {
@@ -300,8 +480,14 @@
                 "icon": "package",
                 "expandable": true,
                 "pages": [
-                  { "title": "Packaging Connections", "path": "pacwizz/packaging-connections" },
-                  { "title": "Running Packaging Mode", "path": "pacwizz/packaging" }
+                  {
+                    "title": "Packaging Connections",
+                    "path": "pacwizz/packaging-connections"
+                  },
+                  {
+                    "title": "Running Packaging Mode",
+                    "path": "pacwizz/packaging"
+                  }
                 ]
               },
               {
@@ -309,11 +495,26 @@
                 "icon": "repeat",
                 "expandable": true,
                 "pages": [
-                  { "title": "Purging Connections", "path": "pacwizz/purging-connections" },
-                  { "title": "Running a Tank Purge", "path": "pacwizz/purging" },
-                  { "title": "Purge Times & Gas Supply", "path": "pacwizz/purge-times" },
-                  { "title": "Understanding Purge Calculations", "path": "pacwizz/purge-calculations" },
-                  { "title": "Post-Purge Pressure Check", "path": "pacwizz/pressure-check" }
+                  {
+                    "title": "Purging Connections",
+                    "path": "pacwizz/purging-connections"
+                  },
+                  {
+                    "title": "Running a Tank Purge",
+                    "path": "pacwizz/purging"
+                  },
+                  {
+                    "title": "Purge Times & Gas Supply",
+                    "path": "pacwizz/purge-times"
+                  },
+                  {
+                    "title": "Understanding Purge Calculations",
+                    "path": "pacwizz/purge-calculations"
+                  },
+                  {
+                    "title": "Post-Purge Pressure Check",
+                    "path": "pacwizz/pressure-check"
+                  }
                 ]
               },
               {
@@ -321,8 +522,14 @@
                 "icon": "book-open",
                 "expandable": true,
                 "pages": [
-                  { "title": "Assisted Manual Carbonation", "path": "pacwizz/manual-carbonation" },
-                  { "title": "Specifications", "path": "pacwizz/specifications" }
+                  {
+                    "title": "Assisted Manual Carbonation",
+                    "path": "pacwizz/manual-carbonation"
+                  },
+                  {
+                    "title": "Specifications",
+                    "path": "pacwizz/specifications"
+                  }
                 ]
               },
               {
@@ -330,8 +537,14 @@
                 "icon": "life-buoy",
                 "expandable": true,
                 "pages": [
-                  { "title": "Troubleshooting", "path": "pacwizz/troubleshooting" },
-                  { "title": "Support, Warranty & Returns", "path": "pacwizz/support-and-warranty" }
+                  {
+                    "title": "Troubleshooting",
+                    "path": "pacwizz/troubleshooting"
+                  },
+                  {
+                    "title": "Support, Warranty & Returns",
+                    "path": "pacwizz/support-and-warranty"
+                  }
                 ]
               }
             ]
@@ -341,29 +554,107 @@
     ]
   },
   "redirects": [
-    { "source": "/overview", "destination": "/troubleshooting/health-check/overview", "statusCode": 301 },
-    { "source": "/pneumatics-schematic", "destination": "/get-started/pneumatics-schematic", "statusCode": 301 },
-    { "source": "/troubleshooting-guide", "destination": "/troubleshooting/by-symptom", "statusCode": 301 },
-    { "source": "/troubleshooting-carbonation", "destination": "/troubleshooting/carbonation-and-brite-pressure", "statusCode": 301 },
-    { "source": "/support-and-parts", "destination": "/get-started/support-and-parts", "statusCode": 301 },
-    { "source": "/testing/temperature-probe", "destination": "/troubleshooting/temperature-probe", "statusCode": 301 },
-    { "source": "/hardware-setup/product-overview", "destination": "/get-started/fizzwizz-overview", "statusCode": 301 },
-    { "source": "/hardware-setup/carbonation-stones/wizzstone-combo", "destination": "/setup/wizzstone-combo", "statusCode": 301 },
-    { "source": "/hardware-setup/carbonation-stones/check-valve", "destination": "/setup/check-valve", "statusCode": 301 },
-    { "source": "/hardware-setup/carbonation-stones/ultrasonic-cleaner", "destination": "/setup/ultrasonic-cleaner", "statusCode": 301 },
-    { "source": "/hardware-setup/sensors-and-power/foot-pressure-sensor", "destination": "/setup/foot-pressure-sensor", "statusCode": 301 },
-    { "source": "/hardware-setup/sensors-and-power/wizzkoga-selector", "destination": "/setup/wizzkoga-selector", "statusCode": 301 },
-    { "source": "/hardware-setup/sensors-and-power/battery-backup", "destination": "/setup/battery-backup", "statusCode": 301 },
-    { "source": "/hardware-setup/servicing/solenoid-cleaning", "destination": "/setup/solenoid-cleaning", "statusCode": 301 },
-    { "source": "/dashboard-web/client/:slug", "destination": "/dashboard/:slug", "statusCode": 301 },
-    { "source": "/dashboard-web/overview", "destination": "/dashboard/overview", "statusCode": 301 },
-    { "source": "/dashboard-web/troubleshooting", "destination": "/dashboard/troubleshooting", "statusCode": 301 },
-    { "source": "/health-check/:slug", "destination": "/troubleshooting/health-check/:slug", "statusCode": 301 },
-    { "source": "/get-started/welcome", "destination": "/welcome", "statusCode": 301 }
+    {
+      "source": "/overview",
+      "destination": "/troubleshooting/health-check/overview",
+      "statusCode": 301
+    },
+    {
+      "source": "/pneumatics-schematic",
+      "destination": "/get-started/pneumatics-schematic",
+      "statusCode": 301
+    },
+    {
+      "source": "/troubleshooting-guide",
+      "destination": "/troubleshooting/by-symptom",
+      "statusCode": 301
+    },
+    {
+      "source": "/troubleshooting-carbonation",
+      "destination": "/troubleshooting/carbonation-and-brite-pressure",
+      "statusCode": 301
+    },
+    {
+      "source": "/support-and-parts",
+      "destination": "/get-started/support-and-parts",
+      "statusCode": 301
+    },
+    {
+      "source": "/testing/temperature-probe",
+      "destination": "/troubleshooting/temperature-probe",
+      "statusCode": 301
+    },
+    {
+      "source": "/hardware-setup/product-overview",
+      "destination": "/get-started/fizzwizz-overview",
+      "statusCode": 301
+    },
+    {
+      "source": "/hardware-setup/carbonation-stones/wizzstone-combo",
+      "destination": "/setup/wizzstone-combo",
+      "statusCode": 301
+    },
+    {
+      "source": "/hardware-setup/carbonation-stones/check-valve",
+      "destination": "/setup/check-valve",
+      "statusCode": 301
+    },
+    {
+      "source": "/hardware-setup/carbonation-stones/ultrasonic-cleaner",
+      "destination": "/setup/ultrasonic-cleaner",
+      "statusCode": 301
+    },
+    {
+      "source": "/hardware-setup/sensors-and-power/foot-pressure-sensor",
+      "destination": "/setup/foot-pressure-sensor",
+      "statusCode": 301
+    },
+    {
+      "source": "/hardware-setup/sensors-and-power/wizzkoga-selector",
+      "destination": "/setup/wizzkoga-selector",
+      "statusCode": 301
+    },
+    {
+      "source": "/hardware-setup/sensors-and-power/battery-backup",
+      "destination": "/setup/battery-backup",
+      "statusCode": 301
+    },
+    {
+      "source": "/hardware-setup/servicing/solenoid-cleaning",
+      "destination": "/setup/solenoid-cleaning",
+      "statusCode": 301
+    },
+    {
+      "source": "/dashboard-web/client/:slug",
+      "destination": "/dashboard/:slug",
+      "statusCode": 301
+    },
+    {
+      "source": "/dashboard-web/overview",
+      "destination": "/dashboard/overview",
+      "statusCode": 301
+    },
+    {
+      "source": "/dashboard-web/troubleshooting",
+      "destination": "/dashboard/troubleshooting",
+      "statusCode": 301
+    },
+    {
+      "source": "/health-check/:slug",
+      "destination": "/troubleshooting/health-check/:slug",
+      "statusCode": 301
+    },
+    {
+      "source": "/get-started/welcome",
+      "destination": "/welcome",
+      "statusCode": 301
+    }
   ],
   "seo": {
     "siteName": "BrewWizz",
-    "defaultDescription": "BrewWizz documentation for FizzWizz carbonation and monitoring, and PacWizz packaging pressure and tank purging: setup, operation, safety, troubleshooting, and support."
+    "defaultDescription": "BrewWizz documentation for FizzWizz carbonation and monitoring, and PacWizz packaging pressure and tank purging: setup, operation, safety, troubleshooting, and support.",
+    "robots:index": false,
+    "robots:follow": false
   },
   "customCss": [
     {
