@@ -45,7 +45,7 @@
         "group": "Choose Your Product",
         "path": "welcome",
         "icon": "layout-grid",
-        "expandable": true,
+        "expandable": false,
         "pages": [
           {
             "title": "FizzWizz",
