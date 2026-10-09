@@ -1,1 +1,7 @@
 .dai-footer { display: none !important; }
+
+.dai-logo img {
+  height: 60px !important;
+  width: auto !important;
+  max-height: none !important;
+}
