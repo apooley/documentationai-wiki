@@ -1,5 +1,9 @@
 .dai-footer { display: none !important; }
 
+.dai-navbar {
+  min-height: 72px !important;
+}
+
 .dai-logo img {
   height: 60px !important;
   width: auto !important;
