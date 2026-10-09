@@ -42,11 +42,21 @@
   "navigation": {
     "pages": [
       {
-        "title": "Choose Your Product",
+        "group": "Choose Your Product",
         "path": "welcome",
+        "icon": "layout-grid",
+        "expandable": true,
         "pages": [
-          { "title": "FizzWizz", "path": "get-started/fizzwizz-overview", "icon": "sparkles" },
-          { "title": "PacWizz", "path": "pacwizz/overview", "icon": "package" }
+          {
+            "title": "FizzWizz",
+            "path": "get-started/fizzwizz-overview",
+            "icon": "sparkles"
+          },
+          {
+            "title": "PacWizz",
+            "path": "pacwizz/overview",
+            "icon": "package"
+          }
         ]
       }
     ],
@@ -326,140 +336,6 @@
                   {
                     "title": "Device Offline or Not Reporting",
                     "path": "troubleshooting/device-offline"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "Dashboard",
-            "hidden": true,
-            "icon": "monitor",
-            "path": "dashboard/overview",
-            "groups": [
-              {
-                "group": "Getting Started",
-                "icon": "gauge",
-                "expandable": false,
-                "pages": [
-                  {
-                    "title": "Signing In & Account Setup",
-                    "path": "dashboard/signing-in"
-                  },
-                  {
-                    "title": "Adding & Claiming a Device",
-                    "path": "dashboard/adding-a-device"
-                  }
-                ]
-              },
-              {
-                "group": "Monitoring",
-                "icon": "line-chart",
-                "expandable": true,
-                "pages": [
-                  {
-                    "title": "Devices & Health States",
-                    "path": "dashboard/devices"
-                  },
-                  {
-                    "title": "Device Detail & Charts",
-                    "path": "dashboard/device-detail"
-                  },
-                  {
-                    "title": "Understanding Your Readings",
-                    "path": "dashboard/readings-explained"
-                  }
-                ]
-              },
-              {
-                "group": "Alerts & Notifications",
-                "icon": "bell",
-                "expandable": true,
-                "pages": [
-                  {
-                    "title": "Alerts & Alert Rules",
-                    "path": "dashboard/alerts-and-rules"
-                  },
-                  {
-                    "title": "Notification Preferences",
-                    "path": "dashboard/notification-preferences"
-                  }
-                ]
-              },
-              {
-                "group": "Account & Billing",
-                "icon": "credit-card",
-                "expandable": true,
-                "pages": [
-                  {
-                    "title": "Understanding Your Plan",
-                    "path": "dashboard/understanding-your-plan"
-                  },
-                  {
-                    "title": "Billing & Subscriptions",
-                    "path": "dashboard/billing"
-                  }
-                ]
-              },
-              {
-                "group": "Troubleshooting",
-                "icon": "wrench",
-                "expandable": true,
-                "pages": [
-                  {
-                    "title": "Dashboard Troubleshooting",
-                    "path": "dashboard/troubleshooting"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "Mobile App",
-            "hidden": true,
-            "icon": "smartphone",
-            "path": "mobile-app/overview",
-            "badge": "Coming Soon",
-            "groups": [
-              {
-                "group": "Using the App",
-                "icon": "smartphone",
-                "expandable": true,
-                "pages": [
-                  {
-                    "title": "Getting Started",
-                    "path": "mobile-app/getting-started"
-                  },
-                  {
-                    "title": "Device List",
-                    "path": "mobile-app/devices"
-                  },
-                  {
-                    "title": "Device Detail",
-                    "path": "mobile-app/device-detail"
-                  },
-                  {
-                    "title": "Alerts",
-                    "path": "mobile-app/alerts"
-                  },
-                  {
-                    "title": "Notifications",
-                    "path": "mobile-app/notifications"
-                  },
-                  {
-                    "title": "Settings",
-                    "path": "mobile-app/settings"
-                  }
-                ]
-              },
-              {
-                "group": "Troubleshooting",
-                "icon": "wrench",
-                "expandable": true,
-                "pages": [
-                  {
-                    "title": "Mobile App Troubleshooting",
-                    "path": "mobile-app/troubleshooting"
                   }
                 ]
               }
