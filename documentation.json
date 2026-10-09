@@ -1,7 +1,9 @@
 {
   "name": "BrewWizz",
-  "logo": "images/brewwizz-logo.png",
-  "favicon": "images/brewwizz-w-icon.png",
+  "logo-dark": "https://blob-cdn.documentation.ai/org-d02460af-4cac-495c-a050-a115cbfdc002/doc-f3fac239-5aff-4e82-bab6-70f7a3314d83/1791506723058-jlc5qtt3fyg-brewwizz-logo.png?fm=auto&auto=compress%2Cformat",
+  "logo-light": "https://blob-cdn.documentation.ai/org-d02460af-4cac-495c-a050-a115cbfdc002/doc-f3fac239-5aff-4e82-bab6-70f7a3314d83/1791506723058-jlc5qtt3fyg-brewwizz-logo.png?fm=auto&auto=compress%2Cformat",
+  "logo-small-dark": "",
+  "logo-small-light": "",
   "initialRoute": "welcome",
   "colors": {
     "dark": {
@@ -12,7 +14,7 @@
     "light": {
       "brand": "#218AB2",
       "heading": "#121212",
-      "text": "#4D4D4D"
+      "text": "#000000"
     }
   },
   "navbar": {
@@ -676,5 +678,6 @@
   ],
   "theme": {
     "font": "Assistant"
-  }
+  },
+  "favicon": "https://blob-cdn.documentation.ai/org-d02460af-4cac-495c-a050-a115cbfdc002/doc-f3fac239-5aff-4e82-bab6-70f7a3314d83/1791506718445-digd1kdrr3h-brewwizz-w-icon.png?fm=auto&auto=compress%2Cformat"
 }
