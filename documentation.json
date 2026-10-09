@@ -43,7 +43,11 @@
     "pages": [
       {
         "title": "Choose Your Product",
-        "path": "welcome"
+        "path": "welcome",
+        "pages": [
+          { "title": "FizzWizz", "path": "get-started/fizzwizz-overview", "icon": "sparkles" },
+          { "title": "PacWizz", "path": "pacwizz/overview", "icon": "package" }
+        ]
       }
     ],
     "products": [
