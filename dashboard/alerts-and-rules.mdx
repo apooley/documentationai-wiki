@@ -58,7 +58,7 @@ Useful starting rules: **CO₂ supply below** a little under your regulator sett
 1. Your device sends a reading to BrewWizz.
 2. BrewWizz compares it with each active rule for that device. A rule fires only when the reading is strictly above or below the threshold; a reading exactly at the threshold does not trigger it.
 3. If the rule fired in the last 30 minutes, BrewWizz skips it (see [Cooldowns](#cooldowns)).
-4. Otherwise BrewWizz creates an alert. The alert is **Critical** if the reading is more than 50% beyond the threshold, and **Warning** otherwise.
+4. Otherwise BrewWizz creates an alert. The alert is **Critical** if the reading is at least 3 °C (5.4 °F), 0.5 bar (about 7 psi) or 0.3 volumes (about 0.6 g/L) past the threshold, depending on the metric, and **Warning** otherwise.
 5. The alert appears in the alert history and the bell, and is sent to everyone in your organization by each notification channel they have turned on, in their own display units.
 
 If nobody in your organization has set up any notification channel, alert emails go to your organization's contact email address. Once anyone adds a channel, even one that's switched off, alerts go only to the channels that are on.
@@ -89,7 +89,7 @@ Notices that a device has stopped reporting are not alert rules. You turn them o
 
 ## If your plan doesn't include alert rules
 
-The device's Alerts tab shows **No alert rules on this device. Upgrade on billing to configure thresholds.** with a **View billing plans** button.
+The device's Alerts tab shows **No alert rules on this device. Upgrade on billing to configure thresholds.** with a **Go to billing** button.
 
 <Callout kind="info">
 
