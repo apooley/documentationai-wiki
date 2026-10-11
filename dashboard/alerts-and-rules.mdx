@@ -1,83 +1,128 @@
 ---
 title: Alerts & Alert Rules
-description: Create per-device alert rules, understand cooldowns, and review your in-app alert history, from device reading to notification.
+description: Create per-device alert rules, understand severity and cooldowns, and review and acknowledge alerts in the alert history and the alert bell.
 ---
 
 ## Alerts & Alert Rules
 
-Alert rules let you define thresholds for each device's telemetry readings and turn those thresholds into actionable alerts. When a reading crosses a rule condition, BrewWizz evaluates the rule, applies its cooldown, and records an alert event that you can review in the dashboard. Use this page to understand how rules work, why alerts fire or do not fire, and where to review your alert history.
+Alert rules watch a device's readings and raise an alert when a reading goes above or below a threshold you set. Alerts appear in the dashboard and, depending on your [notification preferences](/dashboard/notification-preferences), reach you by email, SMS or push.
 
 ## Prerequisites
 
 <Callout kind="alert">
 
-Your plan must include **alert rules** to create or edit alert rules, and **in-app alerts** to see alert history and the alert bell. See [Understanding Your Plan](/dashboard/understanding-your-plan).
+Your plan must include **alert rules** to create rules, and **in-app alerts** for the alert history and the alert bell. See [Understanding Your Plan](/dashboard/understanding-your-plan).
 
 </Callout>
 
-## Alert Rules
+## Creating a rule
 
-Each alert rule is tied to a specific device. You configure the rule on that device so the system knows which readings to watch and what condition should trigger an alert.
+Rules belong to one device. To watch the same reading on several tanks, create a rule on each.
 
-A rule compares incoming telemetry against a threshold condition, such as temperature above a value, temperature below a value, or pressure outside an expected range. When a new reading arrives, BrewWizz evaluates that reading against the device's active rules.
+<Steps>
+  <Step title="Open the device's Alerts tab">
 
-If your plan doesn't include alert rules, the rule settings are read-only and BrewWizz doesn't check new readings against your rules.
+  Open the device from **Devices** and select the **Alerts** tab.
+
+  </Step>
+  <Step title="Add a rule">
+
+  Select **+ Add Rule** and choose:
+
+  - **Metric:** Temperature, Tank pressure, Target pressure, CO₂ supply or Carbonation
+  - **Condition:** above or below
+  - **Threshold:** in your current [display units](/dashboard/overview#display-units)
+
+  </Step>
+  <Step title="Save it">
+
+  Select **Create**. The rule starts checking new readings straight away.
+
+  </Step>
+</Steps>
+
+Each rule shows its condition, **Cooldown: 30 min**, an on/off switch and a delete button.
+
+- **Pause a rule** with its switch, and turn it back on when you need it again.
+- **Delete a rule** with the delete button, then confirm **Delete alert rule?**.
+- **Change a rule** by deleting it and creating a new one. Rules cannot be edited.
+
+<Callout kind="tip">
+
+Useful starting rules: **CO₂ supply below** a little under your regulator setting, to catch an empty cylinder; **Temperature above** your product's limit, to catch a glycol problem; and **Carbonation above** your style's maximum.
+
+</Callout>
 
 ## How an alert is created
 
 1. Your device sends a reading to BrewWizz.
-2. BrewWizz checks the reading and stores it.
-3. If your plan includes alert rules, BrewWizz compares the reading with that device's active rules.
-4. If the same rule fired recently and is still within its cooldown period, BrewWizz skips it.
-5. If the rule matches and the cooldown has passed, BrewWizz creates an alert.
-6. If your plan and notification preferences allow it, BrewWizz sends the alert by SMS, email, or both.
+2. BrewWizz compares it with each active rule for that device. A rule fires only when the reading is strictly above or below the threshold; a reading exactly at the threshold does not trigger it.
+3. If the rule fired in the last 30 minutes, BrewWizz skips it (see [Cooldowns](#cooldowns)).
+4. Otherwise BrewWizz creates an alert. The alert is **Critical** if the reading is more than 50% beyond the threshold, and **Warning** otherwise.
+5. The alert appears in the alert history and the bell, and is sent to everyone in your organization by each notification channel they have turned on, in their own display units.
+
+If nobody in your organization has added an email channel, alert emails go to your organization's contact email address.
 
 ## Cooldowns
 
-Cooldowns prevent alert storms when the same problem continues across multiple readings. If a rule fires and later readings still match that same condition, BrewWizz waits until the rule's cooldown period has elapsed before creating another alert from the same rule.
+Each rule has a 30-minute cooldown. Once it fires, it does not fire again for 30 minutes, even if later readings still cross the threshold. This stops one ongoing problem from flooding you with alerts.
 
-Cooldown is set per rule, so different devices or conditions can use different repeat intervals. Short cooldowns make recurring issues more visible, while longer cooldowns reduce repeated notifications during extended fault conditions.
+If an alert could not be sent by any email, SMS or push channel, the rule can fire again after 5 minutes instead.
 
-## In-App Alert History
+## Alert history
 
-The Alerts page shows a chronological history of alert events for devices in your organization. Use it to confirm that a rule fired, review when it happened, and compare alert timing against device activity.
+The **Alerts** page lists the alerts for your organization's devices, newest first.
 
-If your plan includes in-app alerts, the dashboard header also shows an alert bell with the count of unacknowledged alerts. That bell updates automatically as new alert events occur, so new in-app alerts appear without requiring a manual refresh.
+- **Active**, the default, shows alerts nobody has acknowledged yet. **All** shows the full history, up to the latest 100.
+- Select **Acknowledge** to mark an alert as dealt with. Alerts cannot be deleted.
+- When there is nothing to show, the page reads **All clear! No active alerts.** or **No alerts have been triggered yet.**
 
-## Read-Only Rules
+The history can also include **Critical** alerts you did not set up. BrewWizz watches every device against its own safety limits, and alerts BrewWizz support when a reading crosses one.
+
+## The alert bell
+
+The bell in the header shows how many alerts are unacknowledged, up to **99+**. Select it to see the five most recent; select **✓** next to one to acknowledge it, or **View all alerts** to open the Alerts page. The bell updates live as alerts arrive.
+
+## Device offline notices
+
+Notices that a device has stopped reporting are not alert rules. You turn them on per notification channel in [Notification Preferences](/dashboard/notification-preferences). They are sent by email, SMS or push only, and do not appear in the alert history or the bell.
+
+## If your plan doesn't include alert rules
+
+The device's Alerts tab shows **No alert rules on this device. Upgrade on billing to configure thresholds.** with a **View billing plans** button.
 
 <Callout kind="info">
 
-If your plan doesn't include alert rules, your existing rules are paused and shown as read-only, and BrewWizz stops checking readings against them. The rules aren't deleted, and they start working again if your plan includes alert rules later.
+If your plan stops including alert rules, BrewWizz switches all your rules off. They are kept, not deleted. When your plan includes alert rules again, turn each rule back on with its switch, because they do not restart by themselves.
 
 </Callout>
 
-## When Alerts Don't Fire
+## When alerts don't fire
 
 <Callout kind="info">
 
-Check these conditions first:
+Check these first:
 
-- Your plan must include alert rules.
-- A rule must exist for the device that sent the reading.
-- The rule's cooldown window must have elapsed.
-- The incoming reading must match the rule condition.
-- Your subscription must be active or in trial.
+- Your plan includes alert rules, and your subscription is active.
+- A rule exists **on the device** that sent the reading, and its switch is on.
+- The reading actually went past the threshold, in the units you entered it in.
+- The rule has not fired in the last 30 minutes.
+- The device is reporting. A Stale or Offline device sends no readings to check.
 
-For broader diagnosis steps, see [Troubleshooting](/dashboard/troubleshooting).
+For delivery problems, such as an alert that appears in the dashboard but not on your phone, see [Troubleshooting](/dashboard/troubleshooting).
 
 </Callout>
 
 ## Related Articles
 
 <Columns cols={3}>
-  <Card title="Understanding Your Plan" href="/dashboard/understanding-your-plan" icon="credit-card">
-  Learn which plan features control alert rules, in-app alerts, SMS, and email.
-  </Card>
   <Card title="Notification Preferences" href="/dashboard/notification-preferences" icon="mail">
-  Choose how you receive alert notifications and manage channel-specific settings.
+  Choose how alerts reach you.
   </Card>
-  <Card title="Troubleshooting" href="/dashboard/troubleshooting" icon="wrench">
-  Diagnose missing readings, inactive subscriptions, and alert delivery issues.
+  <Card title="Understanding Your Plan" href="/dashboard/understanding-your-plan" icon="credit-card">
+  Which alert features your plan includes.
+  </Card>
+  <Card title="Responding to Alerts" href="/troubleshooting/responding-to-alerts" icon="wrench">
+  What to do when an alert fires.
   </Card>
 </Columns>

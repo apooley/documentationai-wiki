@@ -1,60 +1,62 @@
 ---
 title: Understanding Your Readings
-description: What each FizzWizz metric means — CO₂ reg psi, Brite psi, and temperature — and what good values look like during carbonation and packaging.
+description: What each FizzWizz reading in the dashboard means — temperature, tank pressure, target pressure, CO₂ supply and carbonation — and what good values look like during carbonation and packaging.
 ---
 
 ## Understanding your readings
 
-The dashboard and the FizzWizz display show three core values. Understanding what each one represents makes it much easier to tell a normal run from a problem.
+The dashboard shows the readings the FizzWizz reports, plus a few values it calculates. Knowing what each one represents makes it much easier to tell a normal run from a problem.
 
-## The three core readings
+## The readings
 
-| Reading | What it measures | Where it comes from |
+| Dashboard label | On the FizzWizz display | What it measures |
 | --- | --- | --- |
-| **CO₂ reg psi** | Pressure at the CO₂ inlet port | CO₂_In pressure transducer |
-| **Brite psi** | Pressure in the arm/head transfer circuit — the tank head space pressure | Brite pressure transducer |
-| **Temperature** | Product temperature | WizzTemp sensor |
+| **Temperature** (Temp) | Temperature | Product temperature, from the WizzTemp sensor |
+| **Tank pressure** (Tank P) | Brite psi | Tank headspace pressure, from the Brite pressure transducer |
+| **Target pressure** (Target P) | — | The pressure the FizzWizz is aiming for to reach your carbonation target at the current temperature |
+| **CO₂ supply** | CO₂ reg psi | Pressure at the CO₂ inlet, from the CO₂_In pressure transducer |
+| **Carbonation** | — | The carbonation level the FizzWizz reports |
+| **Expected carbonation (T+P)** | — | The dashboard's estimate of where carbonation is heading, calculated from temperature and tank pressure. It is a guide, not a lab assay. |
 
-All three are visible on the FizzWizz display, in [Test Mode](/troubleshooting/health-check/test-mode), and on the dashboard.
+The values are shown in your [display units](/dashboard/overview#display-units). Pressures are in bar or psi, and carbonation is in g/L or volumes (1 volume = 1.96 g/L). This article gives pressures in psi.
 
-## CO₂ reg psi
+## CO₂ supply
 
-**What it should be:** 30–40 psi, matching your regulator setting, and **steady**.
+**What it should be:** 30–40 psi, matching your regulator setting, and **steady**. The CO₂ supply gauge is green in this range.
 
-This is your supply pressure. It tells you how much CO₂ is available to push into the tank.
+This is your supply pressure. It tells you how much pressure is available to push CO₂ into the tank.
 
 | Value | Meaning |
 | --- | --- |
 | Steady 30–40 psi | Normal |
-| Slowly declining | CO₂ supply running low — plan a cylinder change |
-| Well below the regulator setting | Regulator problem, or a failed CO₂_In transducer |
-| Not matching the regulator at all | Ident A — [By Symptom](/troubleshooting/by-symptom) |
+| Slowly declining | CO₂ supply running low. Plan a cylinder change. |
+| Well below the regulator setting (gauge blue or yellow) | Regulator problem, or a failed CO₂_In transducer |
+| Above 40 psi (gauge red) | Regulator set too high |
+| Not matching the regulator at all | Ident A. See [By Symptom](/troubleshooting/by-symptom). |
 
 <Callout kind="tip">
 
-A declining CO₂ reg psi is one of the alerts the FizzWizz raises. Running out mid-batch stalls carbonation, and the batch then has to be rested so CO₂ can re-dissolve at the right equilibrium pressure.
+Set a **CO₂ supply below** [alert rule](/dashboard/alerts-and-rules) a little under your regulator setting. Running out mid-batch stalls carbonation, and the batch then has to rest so CO₂ can re-dissolve at the right equilibrium pressure.
 
 </Callout>
 
-## Brite psi
+## Tank pressure and target pressure
 
-**What it should be:** climbing steadily toward the finish pressure during carbonation, then holding.
+**What they should be:** tank pressure tracking target pressure. The **Pressure control** card and chip show how closely: **On setpoint** within 0.05 bar (0.7 psi), **Near setpoint** within 0.15 bar (2.2 psi), and **Off setpoint** beyond that. An Off setpoint device is flagged amber on the Devices page.
 
-This is the pressure in the tank head space — the pressure actually driving CO₂ into solution.
+Tank pressure is the pressure in the tank headspace, which is what actually drives CO₂ into solution.
 
 | Value | Meaning |
 | --- | --- |
-| Not near zero at rest | Brite transducer issue, or fluid inside the unit — Ident B |
-| Climbing steadily toward target | Normal carbonation in progress |
-| Flat, never climbing | A leak — see [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
-| Climbing unusually fast | Leaking Head_Transfer solenoid, or a broken stone — Ident U |
-| Not matching CO₂ reg psi when expected to | Brite transducer, or fluid inside the unit — Ident S |
+| Not near zero at rest | Brite transducer issue, or fluid inside the unit. Ident B. |
+| Climbing steadily towards target | Normal carbonation in progress |
+| Flat, never reaching target | A leak. See [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure). |
+| Climbing unusually fast | Leaking Head_Transfer solenoid, or a broken stone. Ident U. |
+| Not matching CO₂ supply when expected to | Brite transducer, or fluid inside the unit. Ident S. |
 
-### Why Brite psi alone is not the whole story
+### Why tank pressure alone is not the whole story
 
-Carbonation depends on **both** pressure and temperature. The FizzWizz calculates the finish pressure required for your target at the current temperature — so the same Brite psi means different carbonation at different temperatures.
-
-This is why the unit recalculates continuously, and why a temperature error causes systematic carbonation error even when pressure looks perfect.
+Carbonation depends on **both** pressure and temperature. The FizzWizz calculates the pressure needed for your target at the current temperature, so the same tank pressure means different carbonation at different temperatures. This is why target pressure moves when temperature moves, and why a temperature error causes a systematic carbonation error even when pressure looks perfect.
 
 ## Temperature
 
@@ -63,21 +65,34 @@ This is why the unit recalculates continuously, and why a temperature error caus
 | Value | Meaning |
 | --- | --- |
 | Stable at the product setpoint | Normal |
-| Drifting or stepping | Probe, loom, or glycol system — Ident C / T |
-| Implausible (impossibly low or high) | Faulty probe or internal loom |
-| Plausible but inaccurate | Causes systematic under- or over-carbonation — run the [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+| Drifting or stepping | Probe, loom, or glycol system. Ident C / T. |
+| Implausible, or marked in the **Flags** column | Faulty probe or internal loom |
+| Plausible but inaccurate | Causes systematic under- or over-carbonation. Run the [Slushy WizzTemp Test](/troubleshooting/temperature-probe). |
 
 <Callout kind="alert">
 
-Carbonation volumes are calculated from temperature. A probe that reads **warm** makes the FizzWizz calculate *less* CO₂ than needed, and the beer is systematically under-carbonated — while every pressure reading looks correct. This is one of the hardest faults to spot from the dashboard alone, and one of the most common causes of persistent under-carbonation.
+Carbonation is calculated from temperature. A probe that reads **warm** makes the FizzWizz calculate *less* CO₂ than needed, so the beer is systematically under-carbonated while every pressure reading looks correct. This is one of the hardest faults to spot from the dashboard alone, and one of the most common causes of persistent under-carbonation.
 
 </Callout>
 
+## Carbonation
+
+**What it should be:** climbing towards your target, then holding inside the style band.
+
+If BrewWizz has set a style band for the device, the Carbonation gauge shows it in green and the chart shades it. The device card chip reads **Below target**, **In target band** or **Above target**. Carbonation outside the band flags the device amber on the Devices page. To have a style band set or changed, contact support.
+
+Compare **Carbonation** with **Expected carbonation (T+P)**. If expected carbonation is well above the current value, the tank is still carbonating. If the two stay apart once pressure has settled, check temperature accuracy first.
+
+## Function, User mode and Flags
+
+- **Function** and **User mode** are status codes from the FizzWizz. Support may ask for them.
+- **Flags** mark readings the dashboard considers implausible, for example `out_of_range:temperature`. One flagged reading can be a glitch. Repeated flags point to a sensor or wiring fault.
+
 ## During packaging
 
-During kegging, canning, or bottling, the important reading is the pressure the **packaging line** sees. If you have a [Foot Pressure Sensor](/setup/foot-pressure-sensor) fitted at the tank foot, that is the value to watch.
+During kegging, canning or bottling, the important reading is the pressure the **packaging line** sees. If you have a [Foot Pressure Sensor](/setup/foot-pressure-sensor) fitted at the tank foot, that is the value to watch.
 
-The foot pressure must stay at or above the finish pressure, or CO₂ starts coming out of solution. Once breakout starts it tends to run away and is difficult to stop.
+The foot pressure must stay at or above the finish pressure, or CO₂ starts coming out of solution. Once breakout starts, it tends to run away and is difficult to stop.
 
 **Minimum foot pressure = (product depth in ft × 0.43 psi) + finish pressure**
 
@@ -87,10 +102,11 @@ See [Choosing a foot pressure](/setup/foot-pressure-sensor#choosing-a-foot-press
 
 | Reading | Normal | Warning sign | Go to |
 | --- | --- | --- | --- |
-| CO₂ reg psi | Steady 30–40 psi | Declining, or not matching regulator | [Responding to Alerts](/troubleshooting/responding-to-alerts) |
-| Brite psi | Climbing, then holding | Flat, or climbing too fast | [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
-| Temperature | Stable and accurate | Drifting or inaccurate | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
-| Health badge | Online | Stale or Offline | [Device Offline](/troubleshooting/device-offline) |
+| CO₂ supply | Steady 30–40 psi (green) | Declining, or not matching the regulator | [Responding to Alerts](/troubleshooting/responding-to-alerts) |
+| Tank pressure | Tracking target, On setpoint | Flat, Off setpoint, or climbing too fast | [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
+| Temperature | Stable and accurate | Drifting, flagged or inaccurate | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+| Carbonation | In target band | Below or above target once settled | [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
+| Health pill | Online | Stale or Offline | [Device Offline](/troubleshooting/device-offline) |
 
 ## Related articles
 

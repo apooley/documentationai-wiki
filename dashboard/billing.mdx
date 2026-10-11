@@ -1,56 +1,108 @@
 ---
 title: Billing
-description: Start or manage your BrewWizz subscription through Stripe, and what the past due and trial statuses mean for your access.
+description: How BrewWizz subscriptions are bought and managed in the billing portal, what each subscription status means, the 30-day grace period for overdue payments, and what happens to your data if a subscription lapses.
 ---
 
-## Starting a Subscription
+## How billing works
 
-The Billing page lets you start a paid BrewWizz subscription or manage one you already have. If you do not have a subscription paid through Stripe yet, use **Upgrade** or select a plan on the Billing page to pay by card through Stripe.
+BrewWizz subscriptions are bought and managed in the **BrewWizz billing portal**, not inside the dashboard. The dashboard's **Billing** page shows your current subscription and links to the portal.
 
-After you choose a plan, BrewWizz takes you to Stripe to pay. Once payment succeeds, your subscription is updated in BrewWizz automatically.
+## The Billing page
 
-The dashboard then refreshes to show the features included in your new plan.
+When your organization has a subscription, the Billing page shows:
 
-## Managing Your Subscription
+| Item | What it means |
+| --- | --- |
+| **Plan name and price** | Your current plan |
+| **Status** | active, trialing or past due. See [Subscription statuses](#subscription-statuses). |
+| **Renews on** | The date the current billing period ends |
+| **Devices: N of LIMIT** | How many devices you have claimed, out of the number your subscription covers |
+| **Manage subscription** | Opens the billing portal, where you can update your payment method, change your plan or device count, or cancel |
 
-Use the Billing page to open the Stripe Customer Portal if your subscription is paid through Stripe. The portal lets you manage billing details without contacting support.
+If BrewWizz set up your subscription directly, for example a complimentary or trial subscription, the page shows **Managed by BrewWizz — contact support for billing changes.** Contact [Support & Parts](/get-started/support-and-parts) to change it.
 
-From the Customer Portal, you can update your payment method, review billing details, change plans (where more than one is offered), or cancel your subscription.
+## Starting a subscription
 
-Changes you make in Stripe are applied to BrewWizz automatically, and the dashboard updates to match your new status and plan.
+If your organization has no subscription, the Billing page shows **Get a subscription**, or **Resubscribe** if you had one before.
 
-## Subscription Statuses
+<Steps>
+  <Step title="Subscribe in the billing portal">
 
-| Status | Plan features available? | What it means |
+  Select **Subscribe at** followed by the portal's address, and complete checkout there. Use your organization's contact email address as the billing email.
+
+  </Step>
+  <Step title="Link it to the dashboard">
+
+  Back on the Billing page, select **Check for my subscription**. BrewWizz looks for an active subscription under your organization's contact email and links it. **Subscription linked.** confirms it worked, and the full dashboard unlocks straight away.
+
+  </Step>
+</Steps>
+
+| Message after checking | What to do |
+| --- | --- |
+| **Subscription linked.** | Done |
+| No active subscription was found for your billing email yet. | Checkout may still be processing. Wait a minute and check again. If it still fails, make sure you used your organization's contact email at checkout. |
+| Several subscriptions match | Contact [Support & Parts](/get-started/support-and-parts) to link the right one |
+| No billing email on file | Contact [Support & Parts](/get-started/support-and-parts) to add a contact email to your organization |
+
+## Subscription statuses
+
+| Status | Dashboard access | What it means |
 | --- | --- | --- |
-| Active | Yes | Your subscription is current and all your plan's features are available. |
-| Trial | Yes | Your trial is running and all your plan's features are available. |
-| Past due | No | A payment failed. Alert features are switched off and **Upgrade** appears in the menu until payment is fixed. |
-| Cancelled | No | Your subscription has ended. Alert features are switched off. |
-| Incomplete | No | Subscription setup wasn't finished. Alert features are switched off. |
+| **Active** | Full, per your plan | Your subscription is current. |
+| **Trialing** | Full, per your plan | Your trial is running. |
+| **Past due**, first 30 days | Full, per your plan, with a warning banner | A payment failed. Renew before the grace period ends. |
+| **Past due**, after 30 days | Billing page only | The grace period has ended. |
+| **Cancelled** | Billing page only | Your subscription has ended. |
+| **Incomplete** | Billing page only | Checkout was not finished. |
+| **No subscription** | Billing page only | Subscribe to unlock the dashboard. |
 
-## Past Due Banner
+## Overdue payments and the grace period
+
+If a payment fails, your subscription becomes **past due** and you have a **30-day grace period**. Everything keeps working, but every page shows a banner:
+
+> Your subscription payment is overdue. Renew by *date* to keep alerts and notifications running.
+
+Select **Renew now** in the banner, or **Renew or update payment method** on the Billing page, to fix it in the billing portal.
 
 <Callout kind="alert">
 
-If a payment fails and your subscription becomes past due, a banner asks you to update your payment method. Until it's fixed, alert features are switched off: no new alerts are created and the Notifications page is hidden. Click the banner to open the Stripe Customer Portal and update your payment details.
+When the grace period ends, the banner changes to say alerts and notifications are paused. The dashboard then shows only the Billing page until you renew. No alerts are created or sent in the meantime.
 
 </Callout>
 
-## Complimentary and trial subscriptions
+## When the dashboard is locked
 
-BrewWizz can set up complimentary or trial subscriptions for your organization without going through Stripe. They show as Active or Trial and work like a normal subscription, but they are managed by BrewWizz rather than in the Customer Portal. [Contact BrewWizz](/get-started/support-and-parts) if you need one.
+Without an active subscription, or once the grace period has ended, every page shows only **Billing**, with this message:
+
+> Your organization doesn't have an active BrewWizz subscription, so the dashboard is unavailable.
+
+Subscribe or renew in the billing portal, or email [info@brewwizz.com](mailto:info@brewwizz.com) to sign up. The dashboard unlocks as soon as the subscription is active.
+
+## Device allowance
+
+Your subscription covers a set number of devices, shown as **Devices: N of LIMIT**. When you reach the limit, claiming another device fails with *Your subscription covers N device(s). Add a device to your subscription to claim another.* Add devices to your subscription in the billing portal, or release a device you no longer use.
+
+## What happens to your data
+
+Your devices keep sending readings, and BrewWizz keeps storing them, even while your subscription is lapsed.
+
+| Situation | How long readings and batches are kept |
+| --- | --- |
+| Devices claimed by an organization with an active subscription | 5 years |
+| Organization without an active subscription for 90 days or more | The most recent 180 days |
+| Readings recorded while a device was unclaimed | 90 days |
 
 ## Related Articles
 
 <Columns cols={3}>
   <Card title="Understanding Your Plan" href="/dashboard/understanding-your-plan" icon="credit-card">
-  Learn how BrewWizz plan features control alerts, notifications, and upgrade prompts.
+  Which features your plan includes.
   </Card>
-  <Card title="Notification Preferences" href="/dashboard/notification-preferences" icon="mail">
-  Manage in-app, email, and SMS notification settings based on your current plan.
+  <Card title="Adding & Claiming a Device" href="/dashboard/adding-a-device" icon="plus-circle">
+  Claim devices within your allowance.
   </Card>
-  <Card title="Dashboard Overview" href="/dashboard/overview" icon="gauge">
-  Explore the BrewWizz dashboard — device health states, navigation, and real-time telemetry.
+  <Card title="Troubleshooting" href="/dashboard/troubleshooting" icon="wrench">
+  Fix access and billing problems.
   </Card>
 </Columns>

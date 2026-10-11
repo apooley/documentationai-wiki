@@ -1,41 +1,58 @@
 ---
 title: Devices & Health States
-description: Reading the BrewWizz dashboard device list — health badges, what Online, Stale, and Offline mean, and how to find a device quickly.
+description: Reading the BrewWizz device list — what each device card shows, how devices needing attention are flagged, and what Online, Stale and Offline mean.
 ---
 
 ## Devices and health states
 
-The device list is the dashboard's home view. It shows every FizzWizz in your organisation and its current health at a glance.
+The **Devices** page (titled **My Devices**) is the dashboard's home view. It shows every FizzWizz in your organization as a card with live gauges. The **Claim a device** card for adding a new unit is also on this page; see [Adding & Claiming a Device](/dashboard/adding-a-device).
 
-## The device list
+## What each card shows
 
-Each device appears with:
+| Element | What you see |
+| --- | --- |
+| **Name** | The name you gave the device, or its serial number if it has no name. The serial number and firmware version appear underneath. |
+| **Health pill** | Online, Stale or Offline |
+| **Gauges** | Temperature, Tank pressure (with a tick at the target pressure) and CO₂ supply |
+| **Carbonation** | The carbonation level the unit reports, and **Δ pressure**, the gap between tank and target pressure |
+| **Pressure control chip** | **On setpoint** (tank pressure within 0.05 bar / 0.7 psi of target), **Near setpoint** (within 0.15 bar / 2.2 psi), or **Off setpoint** |
+| **Carbonation band chip** | **Below target**, **In target band** or **Above target**, when a style band is set for the device |
+| **Last reading** | How long ago the device last reported, or **Never** |
+| **Release device** | Removes the device from your organization. See [Releasing a device](/dashboard/adding-a-device#releasing-a-device). |
 
-- Its **name** — ideally the tank or vessel it serves
-- Its **health badge** — Online, Stale, or Offline
-- Its **latest readings** — current pressure and temperature values
+Select a card to open the device's [detail page](/dashboard/device-detail). To rename a device, open it and select the pencil next to its name.
 
-Selecting a device opens its [detail page](/dashboard/device-detail) with charts, readings, metadata, and alert rules.
+## Devices that need attention
+
+The page lists devices that need attention first, and shows a count such as **2 devices need attention · shown first**. The card border shows why:
+
+| Border | Means |
+| --- | --- |
+| **Red** | The device is Offline |
+| **Amber** | The device is Stale, tank pressure is **Off setpoint**, or carbonation is outside the style band |
+| **None** | Reporting normally and on target |
+
+Within each group, devices are sorted by name. The page updates live, so a card moves as soon as its state changes.
 
 ## Device health states
 
-Health is determined entirely by **how long it has been since the last reported reading**. It is a measure of reporting, not of whether the unit is carbonating correctly.
+Health is determined entirely by **how long it has been since the last reading**. It shows whether the unit is reporting, not whether it is carbonating correctly. The legend at the top of the page is a reminder: *online (< 10 min), stale (10–120 min), offline (> 120 min)*.
 
-| State | Last reading age | Colour | Meaning |
+| State | Last reading | Colour | Meaning |
 | --- | --- | --- | --- |
-| **Online** | Less than 10 minutes | Green | Actively reporting |
-| **Stale** | 10–120 minutes | Yellow | Intermittent reporting |
-| **Offline** | More than 120 minutes | Red | Not reporting |
+| **Online** | Less than 10 minutes ago | Green | Actively reporting |
+| **Stale** | 10–120 minutes ago | Yellow | Reporting intermittently |
+| **Offline** | More than 120 minutes ago, or never | Red | Not reporting |
 
 <Callout kind="info">
 
-A device showing **Stale** may recover on its own. Wait 10 minutes before investigating.
+A device showing **Stale** often recovers on its own. Wait 10 minutes before investigating.
 
 </Callout>
 
 <Callout kind="alert">
 
-A green **Online** badge does **not** mean carbonation is on target. It only means the unit is reporting. A FizzWizz can be reporting perfectly while carbonation drifts — that is what [alert rules](/dashboard/alerts-and-rules) are for. See [Understanding Your Readings](/dashboard/readings-explained) for what to actually watch.
+A green **Online** pill does **not** mean carbonation is on target. It only means the unit is reporting. Watch the pressure control and carbonation chips, and set [alert rules](/dashboard/alerts-and-rules) for the readings that matter. See [Understanding Your Readings](/dashboard/readings-explained).
 
 </Callout>
 
@@ -44,27 +61,17 @@ A green **Online** badge does **not** mean carbonation is on target. It only mea
 | Cause | Detail |
 | --- | --- |
 | **Power interruption** | The unit lost power, or the power supply failed |
-| **Network connectivity** | Wi-Fi dropped, or signal is marginal at the mounting location |
+| **Network connectivity** | Wi-Fi dropped, or the signal is weak where the unit is mounted |
 | **Firmware update** | The device is briefly unavailable during an update |
 | **Relocation** | The unit was moved and has not reconnected |
-| **Account or organisation change** | Device assignment changed |
 
-Full diagnosis is on [Device Offline or Not Reporting](/troubleshooting/device-offline).
-
-## Finding a device
-
-As your fleet grows, use search and filtering to find a specific unit:
-
-- **Search** by device name or serial number
-- **Filter** by health state to see only the devices needing attention
-
-In the [mobile app](/mobile-app/devices), the same filtering is available with the same health states, so a device showing **Stale** on your phone means the same thing as on the desktop.
+To get an email, text or push notification when a device stops reporting for 2 hours, turn on **Also tell me when a device stops reporting for 2 hours** for a channel in [Notification Preferences](/dashboard/notification-preferences). Full diagnosis is on [Device Offline or Not Reporting](/troubleshooting/device-offline).
 
 ## What to do with a red device
 
-1. Confirm whether carbonation is actually affected, or whether it is only reporting that stopped. The unit carbonates without the network.
+1. Check whether carbonation is actually affected, or only the reporting has stopped. The unit keeps carbonating without the network.
 2. Work through [Device Offline or Not Reporting](/troubleshooting/device-offline).
-3. Once it reconnects, review its [charts](/dashboard/device-detail) for the gap period to confirm the batch stayed on track.
+3. Once it reconnects, check its [charts](/dashboard/device-detail) for the gap to confirm the batch stayed on track.
 
 ## Related articles
 

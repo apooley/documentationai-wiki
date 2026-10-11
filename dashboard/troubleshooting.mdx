@@ -1,110 +1,93 @@
 ---
 title: Troubleshooting
-description: "Solve common BrewWizz dashboard issues: devices showing no readings, alerts not firing, SMS opt-in problems, and features missing from your plan."
+description: "Solve common BrewWizz dashboard issues: sign-in problems, a dashboard that shows only Billing, offline devices, claim codes, alerts that don't fire, and email, SMS or push notifications that don't arrive."
 ---
 
 ## Common issues and how to fix them
 
-Use this page to quickly diagnose and fix the most common BrewWizz dashboard problems with device readings, alerts, and notifications. Each section lists the most likely causes first, then walks you through the checks that usually resolve the issue.
+Each section lists the most likely causes first. For problems specific to the installed app on a phone, see [Mobile App Troubleshooting](/mobile-app/troubleshooting).
 
-## No Readings — Device Appears Offline
+## Can't sign in
 
-A device appears offline when it has not reported any data for more than 2 hours, or when no recent readings appear on the dashboard. In most cases, the device has lost power, lost network connectivity, or is temporarily unavailable during a firmware update.
+1. Check your email address and password. **Incorrect email or password. Please try again.** means one of them is wrong.
+2. If you forgot your password, select **Forgot password?** on the sign-in page. See [Signing In & Account Setup](/dashboard/signing-in#resetting-your-password).
+3. **Too many sign-in attempts** means you need to wait a few minutes before trying again.
+4. New user? Open the invitation email from BrewWizz and set your password first. There is no sign-up page. To get an account, email [info@brewwizz.com](mailto:info@brewwizz.com).
 
-**Symptom:** Device shows **Offline** status or no data on the dashboard.
+## The dashboard shows only Billing
 
-**Likely causes:**
+Your organization does not have an active subscription. Either there has never been one, it was cancelled or not finished, or a payment has been overdue for more than 30 days. See [Billing](/dashboard/billing) to subscribe or renew.
 
-1. The device lost power.
-2. The device lost network connectivity.
-3. A firmware update is in progress.
+If you have just subscribed, select **Check for my subscription** on the Billing page to link it.
 
-**Steps to resolve:**
+## Device shows Offline or no readings
 
-1. Check that the device has power and that its network connection is working. If power cuts are common on site, a [Battery Backup](/setup/battery-backup) keeps the FizzWizz running through short outages.
-2. Wait a few minutes. A device in **Stale** status may recover on its own.
-3. If you recently moved or reinstalled the device, confirm that the setup is complete and correct.
-4. If the problem persists, contact BrewWizz support.
+A device is **Offline** when it has not reported for more than 2 hours, and **Stale** after 10 minutes.
 
-<Callout kind="info">
+1. Check that the unit has power and that its network connection is working. If power cuts are common on site, a [Battery Backup](/setup/battery-backup) keeps the FizzWizz running through short outages.
+2. Wait 10 minutes. A **Stale** device often recovers on its own.
+3. If you recently moved or reinstalled the unit, confirm the setup is complete.
+4. Work through [Device Offline or Not Reporting](/troubleshooting/device-offline).
 
-A device showing **Stale** status means it has not reported in the last 10 to 120 minutes. This may resolve on its own, so wait 10 minutes before investigating further.
+## A claimed device is missing, or the claim code doesn't work
 
-</Callout>
+| Problem | What to do |
+| --- | --- |
+| You missed the claim code on the display | Contact [Support & Parts](/get-started/support-and-parts) with the serial number for a new code |
+| The code is rejected | Check for a typo. The code may have expired (after 30 days), or the device may already belong to an organization. |
+| *Your subscription covers N device(s)* | Add a device to your subscription in the billing portal, or release one you no longer use |
+| A device disappeared from your list | Someone in your organization may have selected **Release device**. Claim it again with the new code on its display. |
 
-## Alerts Not Firing
+See [Adding & Claiming a Device](/dashboard/adding-a-device).
 
-If a device reading crosses a threshold but no alert appears, the cause is usually your plan, the rule setup, the rule's cooldown, or your subscription status. Check each item in order before moving to the next one.
-
-**Symptom:** A device reading crosses a threshold but no alert is generated.
-
-**Check in order:**
-
-1. **Plan includes alert rules:** Check that your plan includes alert rules. See [Understanding Your Plan](/dashboard/understanding-your-plan).
-2. **Rule exists:** Confirm that an active alert rule exists for the specific device and condition.
-3. **Cooldown:** Check whether the same rule fired recently. The cooldown period may still be active.
-4. **Rule condition:** Confirm that the reading actually matches the rule threshold.
-5. **Subscription status:** Confirm that your subscription is Active or in Trial. Alert features are switched off while a subscription is past due, cancelled, or incomplete.
-
-<Callout kind="alert">
-
-Without a subscription, you can still see alert history, but alert rules don't run, so no new rule-based alerts are created. See [Billing](/dashboard/billing) to start a subscription.
-
-</Callout>
-
-## SMS Notifications Not Received
-
-If alerts are firing but no text message arrives, check your plan and notification settings before assuming delivery failed. SMS delivery depends on both your plan and your phone number's opt-in status.
-
-**Symptom:** Alerts fire but no SMS is received.
+## Alerts not firing
 
 **Check in order:**
 
-1. **Plan includes SMS:** Confirm that your plan includes SMS notifications.
-2. **Opt-in status:** If you previously replied `STOP`, reply `START` to any BrewWizz alert text to opt back in.
-3. **Phone number:** Confirm that a valid phone number is saved in your notification preferences.
-4. **SMS toggled on:** Confirm that SMS is turned on in the Notifications page.
-5. If all of these are correct and SMS still does not arrive, contact BrewWizz support.
+1. **Plan includes alert rules.** See [Understanding Your Plan](/dashboard/understanding-your-plan).
+2. **The rule exists on that device, and its switch is on.** Rules are switched off when a plan stops including alert rules, and do not turn themselves back on.
+3. **The reading went past the threshold.** It must be strictly above or below it, in the units you entered the threshold in.
+4. **Cooldown.** A rule does not fire again for 30 minutes after it fires.
+5. **The device is reporting.** A Stale or Offline device sends no readings to check.
+6. **Subscription is active**, or within its 30-day grace period.
 
-## SMS STOP / START / HELP
+## Alert shows in the dashboard but no notification arrives
 
-Use these keywords to control SMS delivery for your phone number.
+1. Open **Notifications** and check that the channel is listed and switched on.
+2. A channel marked **Not on plan** is not included in your current plan.
+3. For email, check your spam or junk folder.
+4. For SMS, see below. For push, see [Push Notifications](/mobile-app/notifications#troubleshooting).
+
+## SMS not received
+
+1. **Plan includes SMS.** The channel is marked **Not on plan** if it doesn't.
+2. **Number verified.** A number marked **Not verified** gets no alerts. Select **Text me a code to verify this number**.
+3. **Opted out.** If the number ever texted STOP, the switch is locked. Text **START** to BrewWizz Alerts from that phone.
+4. **Number format.** Enter numbers in international format, such as `+15551234567`.
+5. If all of these are correct, contact BrewWizz support.
 
 | Keyword | Action |
-|---|---|
-| STOP | Unsubscribe from all BrewWizz SMS notifications |
-| START | Re-enable SMS delivery |
-| HELP | Receive help information about the service |
+| --- | --- |
+| STOP | Unsubscribe from all BrewWizz SMS |
+| START | Opt back in |
+| HELP | Get help information |
 
-<Callout kind="tip">
+## Upgrade appears in the menu
 
-SMS opt-in is tied to your phone number, not to an individual device. Replying `STOP` affects SMS alerts across all devices on your account.
+**Upgrade** replaces a menu item when your plan does not include that feature. See [Understanding Your Plan](/dashboard/understanding-your-plan).
 
-</Callout>
+## Values are in the wrong units
 
-## Email Notifications Not Received
+Units are a personal setting. Change them with the unit selectors in the header, or under **Display units** on a device page. See [Display units](/dashboard/overview#display-units).
 
-If alert emails are missing, start by checking whether your plan includes email notifications and whether the email channel is turned on. After that, check your inbox filters before contacting support.
+## Buttons are greyed out
 
-**Check in order:**
-
-1. Confirm that your plan includes email notifications.
-2. Confirm that the email channel is turned on in your notification preferences.
-3. Check the spam or junk folder for your registered email address.
-4. If all of these are correct and emails still do not arrive, contact BrewWizz support.
-
-## Dashboard Shows Upgrade
-
-<Callout kind="info">
-
-If the dashboard menu shows **Upgrade**, you don't have an active or trial subscription. Either there is no subscription yet, or it is past due, cancelled, or incomplete. See [Billing](/dashboard/billing) to start a subscription or fix a payment.
-
-</Callout>
+If an amber bar reads **You are offline — data may be outdated**, your connection has dropped. Buttons that save changes stay disabled until you are back online.
 
 ## Related Articles
 
 <Columns cols={3}>
   <Card title="Dashboard Overview" href="/dashboard/overview" icon="gauge" />
-  <Card title="Alerts and Alert Rules" href="/dashboard/alerts-and-rules" icon="bell" />
-  <Card title="Understanding Your Plan" href="/dashboard/understanding-your-plan" icon="credit-card" />
+  <Card title="Alerts & Alert Rules" href="/dashboard/alerts-and-rules" icon="bell" />
+  <Card title="Mobile App Troubleshooting" href="/mobile-app/troubleshooting" icon="smartphone" />
 </Columns>

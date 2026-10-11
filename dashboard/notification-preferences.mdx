@@ -1,72 +1,120 @@
 ---
 title: Notification Preferences
-description: Manage SMS opt-in/out with STOP/START/HELP keywords, email and in-app alert delivery, and how plan downgrades affect your notification channels.
+description: Choose how BrewWizz alerts reach you — email, SMS, or push to each phone and computer — verify SMS numbers, use STOP and START, get device offline notices, and set your display units.
 ---
 
 ## Configure notification delivery
 
-Notification preferences control how you receive alert notifications in BrewWizz: in-app, email, or SMS. Your plan determines which channels are available, and you can use the Notifications page to turn eligible channels on or off for your account.
+The **Notifications** page (**Notification Preferences**) controls how alerts reach you. Your channels are personal: each person in your organization sets up their own, and every alert goes to everyone's channels that are switched on.
 
 ## Prerequisites
 
 <Callout kind="alert">
 
-The **Notifications** page appears only when your plan includes email notifications, SMS notifications, or alert rules. If the page is missing, review [Understanding Your Plan](/dashboard/understanding-your-plan) to see which features your organization currently has.
+The **Notifications** menu item appears when your plan includes at least one of alert rules, email, SMS or push notifications. If it is missing, see [Understanding Your Plan](/dashboard/understanding-your-plan).
 
 </Callout>
 
-## Available Channels
+## Available channels
 
 | Channel | Plan feature needed | How it works |
 | --- | --- | --- |
-| In-app | In-app alerts | Alerts appear on the Alerts page and in the alert bell. Always on when your plan includes in-app alerts. |
-| Email | Email notifications | Alert emails are sent to the email address on your account. |
-| SMS | SMS notifications | Alert texts are sent to your verified phone number. You must also be opted in to SMS. |
+| **In-app** | In-app alerts | Alerts appear on the Alerts page and in the bell. Shown as **In-App Notifications · Included with your plan · Active**. Nothing to set up. |
+| **Email** | Email notifications | Alerts are emailed to each address you add. |
+| **SMS** | SMS notifications | Alerts are texted to each number you add and verify. |
+| **Push** | Push notifications | Alerts appear as notifications on each phone or computer you turn push on for, even when BrewWizz is closed. |
 
-## SMS Opt-In and Opt-Out
+If nobody in your organization has added any channels, alerts are emailed to your organization's contact address. The page then shows **No additional channels configured. Alerts will be sent to your organization's contact email by default.**
 
-SMS alerts depend on both your plan and your phone number's current opt-in status. If SMS is enabled for your account, BrewWizz sends alert texts to your verified phone number.
+## Adding an email address
 
-Use these keywords to control SMS delivery:
+1. Select **+ Add Channel** and choose **Email**.
+2. Enter the address and select **Add**.
 
-- **STOP** — Reply `STOP` to any BrewWizz alert text to unsubscribe from all SMS notifications.
-- **START** — Reply `START` to opt back in and resume SMS delivery.
-- **HELP** — Reply `HELP` to receive information about the SMS service.
+You can add more than one address, such as your own and a shared brewery inbox.
 
-BrewWizz processes these inbound text messages automatically and updates your SMS opt-in status. You do not need to change anything manually in the dashboard after sending one of these keywords.
+## Adding and verifying a phone number for SMS
+
+<Steps>
+  <Step title="Add the number">
+
+  Select **+ Add Channel**, choose **SMS**, and enter the mobile number in international format, for example `+15551234567`.
+
+  </Step>
+  <Step title="Give consent">
+
+  Tick **I agree to receive automated BrewWizz device alert text messages at the number I provide.** The full SMS terms appear under the checkbox. Then select **Add**.
+
+  </Step>
+  <Step title="Verify the number">
+
+  Select **Text me a code to verify this number**. Enter the 6-digit code from the text message and select **Verify**.
+
+  </Step>
+</Steps>
+
+The number shows **Not verified** and receives no alerts until you verify it. Each code works for 10 minutes and allows 5 tries. Use **Send a new code** if it expires. You can request up to 5 codes an hour.
+
+<Callout kind="info">
+
+No code after a minute? If that number has ever texted STOP to BrewWizz Alerts, text **START** to the same number, then select **Send a new code**.
+
+</Callout>
+
+## SMS keywords: STOP, START and HELP
+
+Reply to any BrewWizz Alerts text with one of these words:
+
+| Keyword (any of) | What happens |
+| --- | --- |
+| **STOP**, STOPALL, UNSUBSCRIBE, CANCEL, END, QUIT | Unsubscribes that number from all BrewWizz SMS |
+| **START**, UNSTOP, YES | Opts the number back in |
+| **HELP**, INFO | Replies with help information. SMS support: [alerts@allendale.biz](mailto:alerts@allendale.biz). |
+
+BrewWizz processes these automatically. After you text STOP, the SMS switch for that number is locked, and the dashboard explains that only texting **START** can turn it back on.
 
 <Callout kind="tip">
 
-SMS opt-in status is managed per phone number, not per device. If you stop SMS delivery, BrewWizz stops sending alert texts for all devices on your account to that phone number.
+SMS opt-out applies to the **phone number**, not to one device. Texting STOP stops alert texts for every device in your organization to that number.
 
 </Callout>
 
-## Email and In-App Preferences
+## Push notifications on this device
 
-Email notifications are sent to the email address on your account profile. If your plan includes email delivery, use the Notifications page to turn email alerts on or off for your account.
+Push sends alerts to the phone or computer you are using, even when BrewWizz is closed.
 
-In-app alerts appear in the Alerts page and in the bell icon count in the dashboard header. If your plan includes in-app alerts, those alert events are available there whenever alert activity occurs.
+1. Open **Notifications** on the phone or computer you want alerts on.
+2. In **Push notifications on this device**, select **Turn on for this device**.
+3. When your browser or phone asks, allow notifications. A test notification, **Notifications are on for this device.**, confirms it worked.
 
-## Downgrade Behavior
+On iPhone and iPad (iOS or iPadOS 16.4 or later), you must first add BrewWizz to your Home Screen and open it from there. The Notifications page shows install steps for the device you are on. See [Install & Sign In](/mobile-app/getting-started) and [Push Notifications](/mobile-app/notifications).
 
-If your plan changes, BrewWizz updates your available notification channels to match. A channel your plan no longer includes is switched off.
+Each phone or computer you turn on is listed as a **Push** channel labelled with its type, such as *iPhone*, *Android* or *Windows*. The one you are using is marked **This device**. You can have up to 10 devices. Signing out of BrewWizz removes push from that device.
 
-<Callout kind="alert">
+## Managing your channels
 
-If your plan is downgraded, or your subscription is past due or cancelled, any channel your plan no longer includes is turned off automatically. You can turn off a blocked channel, but you cannot turn it back on until your plan includes that channel again. For example, if your plan no longer includes SMS, the SMS toggle becomes disabled and greyed out.
+- **Pause a channel** with its switch.
+- **Remove a channel** with the bin icon, then confirm **Remove notification channel?**.
+- **Device offline notices:** tick **Also tell me when a device stops reporting for 2 hours** on any channel. BrewWizz checks every 15 minutes and sends one notice per outage. It does not keep sending notices about devices that have been silent for more than 7 days. Offline notices do not appear in the alert history.
 
-</Callout>
+## Display units
+
+The Notifications page also sets your display units. Pick **Metric** (°C, bar, g/L) or **US** (°F, psi, volumes), or set each unit separately, then select **Save units**. **Use org default** goes back to your organization's units. Alert messages you receive use your units.
+
+## When your plan changes
+
+If your plan stops including a channel, or your subscription lapses, BrewWizz stops sending alerts on it and its row shows **Not on plan**. You can still switch it off or remove it, but you cannot switch it back on until your plan includes that channel again.
 
 ## Related Articles
 
 <Columns cols={3}>
-  <Card title="Alerts and alert rules" href="/dashboard/alerts-and-rules" icon="bell">
-  Learn how alert rules trigger notifications and where alert events appear.
+  <Card title="Alerts & Alert Rules" href="/dashboard/alerts-and-rules" icon="bell">
+  How rules trigger alerts.
   </Card>
-  <Card title="Understanding your plan" href="/dashboard/understanding-your-plan" icon="credit-card">
-  Check which alert and notification features your current plan includes.
+  <Card title="Push Notifications" href="/mobile-app/notifications" icon="smartphone">
+  Push on phones, in detail.
   </Card>
-  <Card title="Billing" href="/dashboard/billing" icon="credit-card">
-  Review subscription status changes that can affect notification delivery.
+  <Card title="Understanding Your Plan" href="/dashboard/understanding-your-plan" icon="credit-card">
+  Which channels your plan includes.
   </Card>
 </Columns>

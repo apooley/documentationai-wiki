@@ -1,89 +1,138 @@
 ---
 title: Device Detail & Charts
-description: Using the BrewWizz device detail page — telemetry charts, recent readings, device metadata, and per-device alert rules.
+description: Using the BrewWizz device page — gauges, charts, the readings table, CSV export, batches, notes, and per-device alert rules.
 ---
 
 ## Device detail and charts
 
-The device detail page is where you inspect a single FizzWizz in depth. Open it by selecting a device from the [device list](/dashboard/devices).
+The device page is where you inspect a single FizzWizz in depth. To open it, select a device card on the [Devices](/dashboard/devices) page. When your organization has more than one device, the device switcher on the page moves between them without going back to the list.
 
-## What the page shows
+## Header and gauges
 
-| Section | Contents |
+The header shows **Back to devices**, the device name, a **Live** pill and the health state. Below it are four gauges with the latest values:
+
+| Gauge | Scale | Colour zones |
+| --- | --- | --- |
+| **Temperature** | −5 to 20 °C | Blue below 5 °C, yellow 5–15 °C, red above 15 °C |
+| **Carbonation** | 0 to 4 volumes | Green over the style band, if one is set |
+| **CO₂ supply** | 0 to 55 psi | Blue below 18 psi, yellow 18–30, green 30–40, red above 40 |
+| **Tank pressure** | 0 to 55 psi | A tick marks the target pressure |
+
+The scales are shown in your display units. When the device is Stale, the gauges show **Last reading … ago**. When it is Offline, they dim and show **Offline · showing values … ago**, so you know the values are not current.
+
+## Summary cards
+
+| Card | What it tells you |
 | --- | --- |
-| **Telemetry charts** | Pressure and temperature plotted over time, updating automatically as new readings arrive |
-| **Recent readings** | The latest values from the unit |
-| **Device metadata** | Serial number, name, firmware version |
-| **Health badge** | The device's current reporting state |
-| **Alert rules** | Thresholds for this device — editable if your plan includes alert rules, otherwise read-only |
+| **Expected carbonation (T+P)** | An estimate of the carbonation the tank is heading for, calculated from its current temperature and pressure. It is a guide, not a lab assay. |
+| **Pressure control** | How close tank pressure is to target: **On setpoint** within 0.05 bar (0.7 psi), **Near setpoint** within 0.15 bar (2.2 psi), otherwise **Off setpoint** |
+| **Style band** | The carbonation range set for this device, if any. To set or change it, contact BrewWizz support. |
+| **Rates** | How fast carbonation and tank pressure are currently changing |
 
-If your plan does not include alert rules, the page still opens but the alert rules section is read-only. See [Understanding Your Plan](/dashboard/understanding-your-plan).
+## Device and batch cards
+
+The **device card** shows:
+
+- the name, with a pencil to rename it (up to 60 characters)
+- the serial number
+- the firmware version, or **Unknown**
+- the network (Wi-Fi) the unit is on and its last IP address
+- when the last reading arrived
+- **Display units**, to switch units without leaving the page
+
+The **batch card** shows the batch you are viewing, marked **(current)** for the latest one. You can rename the batch (up to 60 characters) and see when it **Started** and its **Start temperature**. Select **View this batch's charts →** to chart the batch from start to finish.
+
+## Notes
+
+Use **Notes** to record what happened during a batch, such as dry hopping, a CO₂ cylinder change or a tasting result. Type in **Add a note** and select **Add note**.
+
+- Notes can be up to 2,000 characters, and the newest is listed first.
+- Everyone in your organization can see them.
+- Notes cannot be edited. You can delete notes you wrote yourself.
+
+## Latest reading
+
+The latest reading row shows the time of the reading, the unit's **Function** and **User mode**, **Tank P**, **Target P**, **Carbonation** and **CO₂ supply**. Function and User mode are status codes from the unit. Quote them to support if you are asked.
+
+## Tabs
+
+The lower part of the page has four tabs: **Charts** (the default), **Readings**, **Batches** and **Alerts**.
+
+### Time range
+
+Choose **1h**, **24h** (the default), **7d**, **30d**, **This batch** or **Custom**. With **Custom**, pick a **From** and **To** time and select **Apply**. The **1h** and **24h** views update live.
+
+### Charts
+
+| Chart | Lines |
+| --- | --- |
+| **Temperature** | Temperature |
+| **Pressure** | Tank pressure, Target pressure (dashed) and CO₂ supply |
+| **Carbonation** | Measured and Expected carbonation, with the style band shaded |
+
+- Switch between **Line**, **Area** and **Bar** charts, or use **All Metrics** to overlay everything on one chart.
+- Drag the zoom bar under the charts to focus on part of the range, and select **Reset zoom** to go back.
+- Each chart plots up to 500 points. Over longer ranges, readings are grouped into time buckets so the chart stays fast. For every individual reading, use the Readings tab or a CSV export.
+- If there is no data, the chart shows **No readings in this time range.**
+
+### Readings
+
+The readings table lists every reading in the time range, with columns **Time**, **Temp**, **Tank P**, **Target P**, **CO₂ supply**, **Carbonation** and **Flags**. Choose 50, 100, 250 or 500 rows per page.
+
+**Flags** mark readings that look wrong, such as a temperature outside the sensor's plausible range (`out_of_range:temperature`). A flagged reading usually points to a sensor or wiring problem rather than to the beer.
+
+### Exporting to CSV
+
+Select **Export CSV** on the Charts or Readings tab to download the selected time range. The file is named after the serial number and the time range. Its columns are time, temperature, tank pressure, target pressure, CO₂ supply, carbonation, function, user mode and flags, in your display units.
+
+An export holds up to 50,000 readings. For more, export a shorter range at a time.
+
+### Batches
+
+A new batch starts each time the unit reports one and runs until the next. The Batches tab lists the 50 most recent, with **Batch**, **Started**, **Start Temp** and **External IP** columns. A batch is labelled with the name you gave it, or **Batch N** or **Batch of** its start date.
+
+### Alerts
+
+The Alerts tab holds this device's alert rules. See [Alerts & Alert Rules](/dashboard/alerts-and-rules).
 
 ## Reading the charts
 
-The charts show the same values the front panel displays, but with history — which is what makes them useful.
-
-| Metric | What to look for |
-| --- | --- |
-| **CO₂ reg psi** | Should hold steady at your regulator setting. A steady decline means the CO₂ supply is running low |
-| **Brite psi** | Should climb steadily during carbonation toward the finish pressure, then hold |
-| **Temperature** | Should be stable. Drift shifts the required finish pressure with it |
+The charts show the same values as the FizzWizz display, but with history, which is what makes them useful. **CO₂ supply** is the display's *CO₂ reg psi*, and **Tank pressure** is its *Brite psi*.
 
 ### What a healthy carbonation run looks like
 
-During a normal run:
-
 1. **Temperature holds steady** at the setpoint for the product.
-2. **CO₂ reg psi stays flat** at 30–40 psi.
-3. **Brite psi climbs** as CO₂ dissolves, then flattens as the tank approaches the finish pressure for the target carbonation.
+2. **CO₂ supply stays flat**, at 30–40 psi.
+3. **Tank pressure follows target pressure.** Pressure control stays **On setpoint**, and carbonation climbs towards the style band, then levels off.
 
-The FizzWizz recalculates the required finish pressure continuously as conditions change, so the plateau may shift slightly if temperature moves.
+The FizzWizz recalculates the required pressure continuously as conditions change, so target pressure may shift slightly if temperature moves.
 
 ### What problem patterns look like
 
 | Pattern | Likely cause | Where to go |
 | --- | --- | --- |
-| Brite psi flat, never climbing | A leak in the arm or stone circuit | [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
-| Brite psi climbing unusually fast | Leaking Head_Transfer solenoid, or a broken stone | [Check 6 — Leak Testing](/troubleshooting/health-check/check-6-leak-testing) |
-| CO₂ reg psi declining steadily | CO₂ supply running low | [Responding to Alerts](/troubleshooting/responding-to-alerts) |
+| Tank pressure flat, never climbing | A leak in the arm or stone circuit | [Carbonation & Brite Pressure](/troubleshooting/carbonation-and-brite-pressure) |
+| Tank pressure climbing unusually fast | Leaking Head_Transfer solenoid, or a broken stone | [Check 6 — Leak Testing](/troubleshooting/health-check/check-6-leak-testing) |
+| CO₂ supply declining steadily | CO₂ supply running low | [Responding to Alerts](/troubleshooting/responding-to-alerts) |
 | Temperature drifting or stepping | WizzTemp probe, loom, or glycol | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
-| Temperature implausibly low or high | Faulty probe or internal loom | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
+| Temperature implausibly low or high, or flagged | Faulty probe or internal loom | [Slushy WizzTemp Test](/troubleshooting/temperature-probe) |
 | A gap in the data | Device went Stale or Offline | [Device Offline or Not Reporting](/troubleshooting/device-offline) |
 | Pressure sawtooth pattern | Vent or solenoid cycling unexpectedly | [By Symptom](/troubleshooting/by-symptom) |
 
-## Recent readings
-
-The readings panel gives the latest values without needing to interpret a chart. This is the fastest way to answer "what is it doing right now?" — useful when checking on a device from your phone.
-
-## Device metadata
-
-Metadata confirms you are looking at the right unit and helps support:
-
-| Field | Use |
-| --- | --- |
-| **Serial number** | Quote this when ordering parts or contacting support |
-| **Name** | Confirms which tank this unit serves |
-| **Firmware version** | Support will ask for this. Some features — such as the [Foot Pressure Sensor](/setup/foot-pressure-sensor) — need V2 code or newer |
-
 <Callout kind="tip">
 
-Check the firmware version when installing a Foot Pressure Sensor. It requires FizzWizz-BAE running **V2 code or newer**. If your unit runs earlier code, contact support about updating it.
+Check the firmware version before installing a [Foot Pressure Sensor](/setup/foot-pressure-sensor). It needs FizzWizz-BAE running **V2 code or newer**. If your unit runs earlier code, contact support about updating it.
 
 </Callout>
 
-## Alert rules on this page
+## Using the device page for quality control
 
-Each device has its own alert thresholds. If your plan includes alert rules, you can create and edit them here; if not, they are read-only.
+The dashboard keeps each batch's history, so the device page doubles as a batch record:
 
-See [Alerts & Alert Rules](/dashboard/alerts-and-rules) for how rules are evaluated, cooldowns, and where alert history appears.
-
-## Using charts for quality control
-
-Because the dashboard retains the full run, you can keep telemetry as a batch record:
-
-- Correlate a finished batch's carbonation result against the pressure and temperature trace it was produced under
-- Investigate an off-target batch by finding where the trace diverged from a good run
-- Confirm a batch stayed on track through a device outage
+- Compare a finished batch's carbonation result with the pressure and temperature trace it was made under.
+- Find where an off-target batch's trace diverged from a good one by charting both with **This batch**.
+- Confirm a batch stayed on track through a device outage.
+- Keep tasting notes and process changes next to the data with **Notes**, and export the batch to CSV for your records.
 
 ## Related articles
 
@@ -92,7 +141,7 @@ Because the dashboard retains the full run, you can keep telemetry as a batch re
   What each metric means.
   </Card>
   <Card title="Alerts & Alert Rules" href="/dashboard/alerts-and-rules" icon="bell">
-  Configure thresholds.
+  Set thresholds.
   </Card>
   <Card title="Monitoring Your Carbonation" href="/get-started/monitoring" icon="line-chart">
   The full monitoring picture.
