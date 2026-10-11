@@ -1,76 +1,61 @@
 ---
 title: Device List
-description: Browse, search, and filter all devices assigned to your organization in the BrewWizz mobile app.
+description: Check all your FizzWizz units from your phone — what each device card shows, how devices needing attention come first, and claiming a device on the go.
 ---
 
 ## Your device list
 
-Use the Devices tab to browse every device assigned to your organization, open a device for more detail, and quickly narrow the list with search and health filters. The Devices tab is your home screen for monitoring all of your devices, and every device appears as a tappable row.
+**Devices** is the first screen you see in BrewWizz. Each FizzWizz in your organization appears as a card, one under another, with devices that need attention at the top. Tap a card to open the [device's detail screen](/mobile-app/device-detail).
 
-## What each device row shows
-
-Each row gives you the most important device information at a glance.
+## What each card shows
 
 | Element | What you see |
 | --- | --- |
-| Serial number | Bold text — the device's primary identifier |
-| Health badge | Colored dot and label showing the device's current status |
-| Live metrics | Temperature and CO2 values from the most recent reading, when available |
-| Last reading | How long ago the device last reported, such as `3 minutes ago`, or `Never` |
-| Firmware version | The device's current firmware, or a dash if unknown |
+| **Name** | The device name, or its serial number if it has no name, with the serial number and firmware version underneath |
+| **Health pill** | Online, Stale or Offline |
+| **Gauges** | Temperature, Tank pressure and CO₂ supply |
+| **Carbonation** | The current carbonation, and **Δ pressure**, the gap between tank and target pressure |
+| **Chips** | Pressure control (**On**, **Near** or **Off setpoint**) and, if a style band is set, **Below target**, **In target band** or **Above target** |
+| **Last reading** | How long ago the device last reported, or **Never** |
 
-Tap any row to open the device detail page. For more about what you can do there, see [Device Detail](/mobile-app/device-detail).
+A red border means the device is Offline. An amber border means it is Stale, off its target pressure, or outside its style band. For the details, see [Devices & Health States](/dashboard/devices).
 
-## Search by serial number
+## Health states
 
-Use the **Search serial** field above the list to find a device by part of its serial number. As you type, the list filters instantly to show only matching devices.
+| State | Colour | Last reading |
+| --- | --- | --- |
+| **Online** | Green | Within 10 minutes |
+| **Stale** | Yellow | 10–120 minutes ago |
+| **Offline** | Red | More than 120 minutes ago, or never |
 
-Search works while you type, so you do not need to tap a search button or reload the page. The match is based on the serial number shown in each row.
+## Live updates
 
-## Filter by health
+The list updates by itself while BrewWizz is open. A card moves up or down as soon as its state changes, so you don't need to refresh.
 
-Use the pill-shaped buttons below the search bar to show only devices in a specific health state.
+## Claiming a device from your phone
 
-- **All** — Shows every device by default
-- **Online** — Shows only devices actively reporting
-- **Stale** — Shows only devices with intermittent or delayed reporting
-- **Offline** — Shows only devices that are not reporting
+The **Claim a device** card is also on this screen. That makes it easy to claim a unit while you are standing at the tank: enter the 6-digit code from the FizzWizz display in **Claim code** and tap **Claim device**. See [Adding & Claiming a Device](/dashboard/adding-a-device).
 
-The active filter is highlighted so you can see which view you are using. You can also combine search and health filters, such as searching for part of a serial number while showing only Offline devices.
+<Callout kind="alert">
 
-## Health badges explained
+Each card has a **Release device** button, which removes the device from your organization **immediately, with no confirmation**. Take care not to tap it by accident when scrolling. If you do, claim the device again with the new code on its display.
 
-Device health is based on how long it has been since the last reading.
+</Callout>
 
-| Badge | Color | Last reading received | What it means |
-| --- | --- | --- | --- |
-| **Online** | Green | Within 10 minutes | The device is actively reporting |
-| **Stale** | Yellow | 10–120 minutes ago | The device may have a connectivity issue |
-| **Offline** | Red | More than 120 minutes ago or never | The device is not reporting and may need attention |
+## When the list is empty
 
-## Automatic updates
-
-The device list updates automatically while the app is open. If a device changes status while you are looking at the list, that row updates without a manual refresh.
-
-You can still pull down to refresh the list at any time. The **Last reading** timestamps also update every 60 seconds, so relative times stay current instead of becoming stale on screen.
-
-## Empty states
-
-The Devices tab shows a different message depending on why the list is empty.
-
-- If your organization has no devices, you see **No devices assigned yet**.
-- If your current search or health filter returns no matches, you see **No devices match your filters**.
+**No devices yet** means no devices are claimed for your organization yet. Claim one with the code on its display, or contact [Support & Parts](/get-started/support-and-parts) to have one assigned.
 
 ## Related Articles
 
 <Columns cols={3}>
   <Card title="Device Detail" href="/mobile-app/device-detail" icon="line-chart">
-  Open a device to view its latest readings, charts, batches, and alert rules.
+  Open a device for gauges, charts and alert rules.
   </Card>
-  <Card title="Mobile App Overview" href="/mobile-app/overview" icon="gauge">
-  See how the main areas of the BrewWizz mobile app fit together.
+  <Card title="Devices & Health States" href="/dashboard/devices" icon="monitor">
+  The device list in full detail.
   </Card>
   <Card title="Alerts" href="/mobile-app/alerts" icon="bell">
-  Monitor alert activity and review which devices need attention.
+  Check and acknowledge alerts.
   </Card>
 </Columns>

@@ -1,70 +1,92 @@
 ---
 title: Signing In & Account Setup
-description: How BrewWizz accounts and organisations work — signing in, organisation assignment, and why an unassigned account shows no devices.
+description: How BrewWizz accounts work — accepting your invitation, signing in, resetting your password, and what you see if your organization has no active subscription.
 ---
 
 ## Signing in and account setup
 
-The BrewWizz dashboard runs at [brewwizzdata.onesmartview.com/auth/login](https://brewwizzdata.onesmartview.com/auth/login). Before you can see any devices, two things need to be true: you have an account, and that account is assigned to an organisation.
+The BrewWizz dashboard runs at [bw-dash.allendale.biz](https://bw-dash.allendale.biz). There is no sign-up page. BrewWizz creates accounts and emails each person an invitation. To get an account for yourself or a teammate, email [info@brewwizz.com](mailto:info@brewwizz.com).
+
+## Accepting your invitation
+
+<Steps>
+  <Step title="Open the invitation email">
+
+  Select the link in the email from BrewWizz.
+
+  </Step>
+  <Step title="Set your password">
+
+  The **Set your password** page opens. Enter a **New password** of at least 8 characters, enter it again under **Confirm password**, and select **Save password**.
+
+  </Step>
+  <Step title="You are signed in">
+
+  The dashboard opens on your **Devices** page.
+
+  </Step>
+</Steps>
 
 ## Signing in
 
-1. Go to [brewwizzdata.onesmartview.com/auth/login](https://brewwizzdata.onesmartview.com/auth/login).
-2. Sign in with your email address and password.
-3. You land on your organisation's dashboard.
+1. Go to [bw-dash.allendale.biz](https://bw-dash.allendale.biz).
+2. Enter your **Email address** and **Password**.
+3. Select **Sign in**.
+
+You stay signed in on that browser until you sign out. If your session ends, the dashboard shows **Your session expired. Please sign in again.** and takes you back to the sign-in page.
+
+| Message | What to do |
+| --- | --- |
+| Incorrect email or password. Please try again. | Check both and try again, or reset your password |
+| Too many sign-in attempts. Please wait a moment and try again. | Wait a few minutes before trying again |
+| Please confirm your email before signing in | Open the invitation email and follow its link first |
+
+## Resetting your password
+
+1. On the sign-in page, select **Forgot password?**.
+2. Enter your email address and select **Send reset link**.
+3. Open the email and select the link. The dashboard shows the message below whether or not that address has an account, so it never reveals which addresses are registered:
+
+   > If an account exists for that email, you will receive a reset link shortly.
+
+4. On the **Set your password** page, choose a new password of at least 8 characters and select **Save password**.
 
 <Callout kind="info">
 
-If you have forgotten your password, use the reset flow. After completing the reset in your browser, sign in again with the new password.
+If you use the installed [mobile app](/mobile-app/getting-started), the reset link opens in your browser. Finish the reset there, then sign in to the app with your new password.
 
 </Callout>
 
-## Accounts and organisations
+## Accounts and organizations
 
-BrewWizz organises everything around **organisations**. Devices belong to an organisation; users are assigned to an organisation. You see the devices, alerts, and billing for the organisation your account is assigned to.
+Every account belongs to one **organization**, usually your brewery. Everyone in the organization sees the same devices, alerts, batch notes and billing, and everyone can do the same things: claim and rename devices, set alert rules, manage API keys and view billing. There are no separate owner or viewer roles.
 
-<Callout kind="alert">
+Some settings are personal to you:
 
-**The no-organization state cannot be bypassed.** If your account has not been assigned to an organisation, the dashboard and mobile app will not show any devices, alerts, or telemetry — no matter how many FizzWizz units you have installed and online.
+- your notification channels (email addresses, phone numbers, push devices)
+- your display units
 
-This is the most common cause of "no devices showing", and it is easy to mistake for a device problem. If your devices are missing entirely, check this first.
+To add or remove people in your organization, contact [Support & Parts](/get-started/support-and-parts).
 
-</Callout>
+## If the dashboard shows only Billing
 
-### Who assigns accounts
+The dashboard needs an active BrewWizz subscription. If your organization does not have one, every page shows only **Billing**, along with this message:
 
-Organisation assignment is done by an administrator for your organisation. If you are not sure who that is, contact [Support & Parts](/get-started/support-and-parts).
+> Your organization doesn't have an active BrewWizz subscription, so the dashboard is unavailable.
 
-### After you are assigned
+This happens when there has never been a subscription, when it was cancelled, or when a payment has been overdue for more than 30 days. See [Billing](/dashboard/billing) to subscribe or renew. Your devices keep recording readings in the meantime.
 
-Once your administrator confirms the assignment, refresh the dashboard. The dashboard updates automatically when your assignment or plan changes — you do not need to sign out and back in.
+## Account setup incomplete
 
-## What you see depends on your plan
-
-The dashboard adapts to your plan and subscription status. Menu items you expect may be missing:
-
-| What you see | What it means |
-| --- | --- |
-| **Notifications** menu item missing | Your plan does not include alert rules, email notifications, or SMS notifications |
-| **Upgrade** shown in the menu | You do not have an active or trial subscription |
-| Device alert rules are read-only | Your plan includes in-app alerts only |
-
-See [Understanding Your Plan](/dashboard/understanding-your-plan) for the full feature matrix, and [Billing & Subscriptions](/dashboard/billing) to start or fix a subscription.
+If you see **Account setup incomplete — Your account profile is missing**, select **Retry**. If the message comes back, sign out and contact [Support & Parts](/get-started/support-and-parts).
 
 ## After signing in
 
-Once you can see the dashboard, the usual next steps are:
-
-1. **[Add and claim your devices](/dashboard/adding-a-device)** so they appear in your device list.
-2. **[Review device health](/dashboard/devices)** to confirm they are reporting.
-3. **[Configure alert rules](/dashboard/alerts-and-rules)** for the thresholds that matter to you.
-4. **[Set notification preferences](/dashboard/notification-preferences)** so alerts reach you.
-
-## Signing in to the mobile app
-
-The [mobile app](/mobile-app/getting-started) uses the same account and shows the same devices and alerts. It is currently in development.
-
-If the app signs you in but you stay on a **No organization** screen, the cause is the same organisation assignment described above.
+1. **[Claim your devices](/dashboard/adding-a-device)** so they appear in your device list.
+2. **[Check their health](/dashboard/devices)** to confirm they are reporting.
+3. **[Set alert rules](/dashboard/alerts-and-rules)** for the readings that matter to you.
+4. **[Choose how alerts reach you](/dashboard/notification-preferences)**.
+5. **[Install the app](/mobile-app/getting-started)** on your phone for push notifications.
 
 ## Related articles
 
@@ -75,7 +97,7 @@ If the app signs you in but you stay on a **No organization** screen, the cause 
   <Card title="Adding & Claiming a Device" href="/dashboard/adding-a-device" icon="plus-circle">
   Get your devices listed.
   </Card>
-  <Card title="Understanding Your Plan" href="/dashboard/understanding-your-plan" icon="credit-card">
-  Which features your plan includes.
+  <Card title="Billing" href="/dashboard/billing" icon="credit-card">
+  Start or renew a subscription.
   </Card>
 </Columns>

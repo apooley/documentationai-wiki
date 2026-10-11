@@ -1,0 +1,81 @@
+---
+title: API Keys
+description: Create and revoke read-only BrewWizz API keys, and use them to pull device readings, batches and alerts into your own scripts and integrations.
+---
+
+## API keys
+
+API keys let your own scripts, spreadsheets and integrations read data from BrewWizz. Keys are **read-only**. They can see every device in your organization, but they cannot change anything.
+
+<Callout kind="alert">
+
+The **API** menu item appears when your plan includes **API access**. Without it, the page reads **API access requires an active subscription**. See [Understanding Your Plan](/dashboard/understanding-your-plan).
+
+</Callout>
+
+## Creating a key
+
+<Steps>
+  <Step title="Open API">
+
+  Select **API** in the menu, then **New key**.
+
+  </Step>
+  <Step title="Name it">
+
+  Enter a **Key name** that says where the key will be used, such as `Brewhouse spreadsheet`, and select **Create key**.
+
+  </Step>
+  <Step title="Copy it now">
+
+  The full key starts with `bw_live_`. **This is the only time the full key is shown**, so copy it and store it somewhere safe, such as a password manager.
+
+  </Step>
+</Steps>
+
+Your organization can have up to 10 active keys. Anyone in your organization can create and revoke them.
+
+<Callout kind="tip">
+
+Treat a key like a password: anyone who has it can read all your device data. Use a separate key for each integration so you can revoke one without breaking the others.
+
+</Callout>
+
+## Revoking a key
+
+Select **Revoke** next to the key and confirm with **Revoke key**. The key stops working immediately. Revoke a key if it may have been exposed, or when the integration that used it is retired.
+
+## Using a key
+
+Send the key as a bearer token with each request:
+
+```bash
+curl -H "Authorization: Bearer bw_live_YOUR_KEY" \
+  https://bw-dash.allendale.biz/functions/v1/customer-api/v1/devices
+```
+
+| Endpoint | Returns |
+| --- | --- |
+| `GET /v1/me` | The organization the key belongs to |
+| `GET /v1/devices` | Your devices with their latest values |
+| `GET /v1/devices/{serial}` | One device |
+| `GET /v1/devices/{serial}/readings` | Individual readings, up to 7 days per request |
+| `GET /v1/devices/{serial}/series` | Readings grouped into time buckets, up to 31 days per request, for charts |
+| `GET /v1/devices/{serial}/batches` | The device's batches |
+| `GET /v1/alert-events` | Your organization's alert history |
+
+Each key can make up to 120 requests per minute. For the full request and response details, contact [Support & Parts](/get-started/support-and-parts).
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Understanding Your Plan" href="/dashboard/understanding-your-plan" icon="credit-card">
+  Check whether your plan includes API access.
+  </Card>
+  <Card title="Device Detail & Charts" href="/dashboard/device-detail" icon="line-chart">
+  Export a single device to CSV without the API.
+  </Card>
+  <Card title="Understanding Your Readings" href="/dashboard/readings-explained" icon="gauge">
+  What each value means.
+  </Card>
+</Columns>

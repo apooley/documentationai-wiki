@@ -1,63 +1,68 @@
 ---
 title: Understanding Your Plan
-description: Which alert and notification features your BrewWizz plan includes, and how your subscription status affects what you can see and do in the dashboard.
+description: The six features a BrewWizz plan can include, how your subscription status affects dashboard access, and why a menu item might be missing.
 ---
 
 ## What your plan includes
 
-Your BrewWizz plan decides which alert and notification features you can use in the dashboard. If a menu item or setting you expect is missing, it is usually because your plan does not include that feature or your subscription is not currently active.
-
-## Plan features
+Every BrewWizz subscription includes the dashboard itself: your devices, live gauges, charts, readings, batches, notes and CSV export. Your plan then decides which of these six features you get:
 
 | Feature | What it gives you | Where you see it |
 | --- | --- | --- |
-| **In-app alerts** | Alert history and the alert bell in the dashboard header | Alerts |
-| **Alert rules** | Create and edit alert thresholds for each device | Device detail page |
-| **Email notifications** | Alert emails sent to your account email address | Notifications |
-| **SMS notifications** | Alert text messages sent to your verified phone number | Notifications |
+| **In-app alerts** | Alert history and the alert bell | **Alerts** menu item, bell in the header |
+| **Alert rules** | Create alert thresholds for each device | The **Alerts** tab on each device page |
+| **Email notifications** | Alerts sent to email addresses you add | **Notifications** |
+| **SMS notifications** | Alerts texted to phone numbers you verify | **Notifications** |
+| **Push notifications** | Alerts on your phone or computer through the installed app | **Notifications** |
+| **API access** | Read-only [API keys](/dashboard/api-keys) for scripts and integrations | **API** menu item |
 
-Most paid plans include all four. Some plans include in-app alerts only.
+To find out exactly what your plan includes, or to change it, contact [Support & Parts](/get-started/support-and-parts) or open the billing portal from [Billing](/dashboard/billing).
 
-## What you see for each subscription status
+## Your subscription status and what you can use
 
 | Subscription status | What you can use |
 | --- | --- |
-| **Active or trial** | Every feature included in your plan. |
-| **Active, in-app alerts only plan** | Alert history and the alert bell. The **Notifications** menu item is hidden and device alert rules are read-only. |
-| **No subscription** | Alert history only. You can't create alert rules or receive alert emails or texts. **Upgrade** appears in the menu and **Notifications** is hidden. |
-| **Past due, cancelled, or incomplete** | No alert features. No new alerts are created or sent, **Upgrade** appears in the menu, and **Notifications** is hidden. If a payment is past due, a banner asks you to update your payment method. |
+| **Active or trialing** | Everything your plan includes. |
+| **Past due, within 30 days** | Everything your plan includes, with a banner asking you to renew. |
+| **Past due for more than 30 days, cancelled, incomplete, or no subscription** | The Billing page only. No alerts are created or sent. Your devices keep recording readings. |
+
+See [Billing](/dashboard/billing) for the grace period and how to renew.
 
 ## Why a menu item is missing
 
 <Callout kind="info">
 
-**Notifications** appears only when your plan includes alert rules, email notifications, or SMS notifications. **Upgrade** appears when you don't have an active or trial subscription. See [Billing](/dashboard/billing) to start or fix a subscription.
+- **Alerts** needs in-app alerts.
+- **Notifications** needs at least one of alert rules, email, SMS or push notifications.
+- **API** needs API access.
+
+When your plan does not include one of these, **Upgrade** appears in the menu instead and links to Billing. If the dashboard cannot load your plan, it shows **Could not load plan features. Alert navigation may be unavailable.** Select **Retry**.
 
 </Callout>
 
-The dashboard updates automatically when your plan or subscription changes. You don't need to sign out or refresh the page.
+The dashboard updates automatically when your plan or subscription changes. You do not need to sign out or reload.
 
 ## When your plan changes
 
 <Callout kind="alert">
 
-If your plan is downgraded or your subscription stops being active, any features no longer included are switched off automatically:
+If your plan is downgraded or your subscription lapses:
 
-- Your alert rules are paused. They are kept, and start working again when your plan includes alert rules.
-- Email or SMS notifications that are no longer included are turned off. You can't turn them back on until your plan includes them again.
+- **Alert rules** are switched off and kept. When your plan includes alert rules again, turn each rule back on from the device's Alerts tab.
+- **Email, SMS or push channels** your plan no longer includes stop receiving alerts and show **Not on plan**. You cannot switch them back on until your plan includes them again.
 
 </Callout>
 
 ## Related articles
 
 <Columns cols={3}>
+  <Card title="Billing" href="/dashboard/billing" icon="credit-card">
+  Start, change, or renew your subscription.
+  </Card>
   <Card title="Alerts & Alert Rules" href="/dashboard/alerts-and-rules" icon="bell">
   How alert history and per-device alert rules work.
   </Card>
   <Card title="Notification Preferences" href="/dashboard/notification-preferences" icon="mail">
-  Turn email, SMS, and in-app notifications on or off.
-  </Card>
-  <Card title="Billing" href="/dashboard/billing" icon="credit-card">
-  Start, change, or fix your subscription.
+  Turn email, SMS and push on or off.
   </Card>
 </Columns>

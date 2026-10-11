@@ -1,84 +1,85 @@
 ---
 title: Adding & Claiming a Device
-description: How to get a FizzWizz assigned to your BrewWizz organisation so it appears in the dashboard, mobile app, and alerting.
+description: How to claim a FizzWizz into your BrewWizz organization with the 6-digit code on its display, what to do if a claim fails, and how to release a device.
 ---
 
 ## Adding and claiming a device
 
-A FizzWizz has to be assigned to your organisation before it appears anywhere in BrewWizz. This page covers that link — the connection between the hardware you installed and the account you monitor it from.
+A FizzWizz has to belong to your organization before it appears in the dashboard and before its readings are checked against your alert rules. You link it by **claiming** it with a 6-digit code that the unit shows on its display.
 
 ## What you need
 
-| Requirement | Where to find it |
+| Requirement | Detail |
 | --- | --- |
-| **Serial number** | On the FizzWizz label |
-| **Device name** | What you want to call it in the dashboard — use something recognisable, such as the tank it serves |
-| Organisation assignment | Your account must already be assigned to an organisation — see [Signing In & Account Setup](/dashboard/signing-in) |
-| Network connection | The unit must be online — see [Network & Account Setup](/setup/network-and-account) |
-
-<Callout kind="tip">
-
-Name devices by the tank or vessel they serve, not by serial number. When an alert fires at 2 a.m., `Brite Tank 2` is far more useful than `FW-0413`.
-
-</Callout>
+| **The unit online** | Connected to your network and reporting. See [Network & Account Setup](/setup/network-and-account). |
+| **Its claim code** | 6 digits, shown on the FizzWizz display after it first connects |
+| **An active subscription** | With room in your device allowance. The Billing page shows **Devices: N of LIMIT**. See [Billing](/dashboard/billing). |
 
 ## Claiming the device
 
 <Steps>
-  <Step title="Confirm the unit is online">
+  <Step title="Connect the unit">
 
-  The FizzWizz must be connected to your network and reporting before it can be claimed. See [Network & Account Setup](/setup/network-and-account).
-
-  </Step>
-  <Step title="Sign in to the dashboard">
-
-  Sign in at [brewwizzdata.onesmartview.com/auth/login](https://brewwizzdata.onesmartview.com/auth/login).
+  Power the FizzWizz and connect it to your network. See [Network & Account Setup](/setup/network-and-account).
 
   </Step>
-  <Step title="Add the device">
+  <Step title="Write down the claim code">
 
-  Add the FizzWizz using its serial number, and give it a recognisable name.
+  When the unit first reports to BrewWizz, its display shows **CLAIM CODE:** followed by 6 digits. The display shows the code for about a minute, so write it down. The code stays valid for **30 days**.
 
   </Step>
-  <Step title="Confirm it appears">
+  <Step title="Enter the code in the dashboard">
 
-  The device should now appear in your device list with a health badge. **Online** means it has reported within the last 10 minutes.
+  Sign in and go to **Devices**. In the **Claim a device** card, type the 6 digits into **Claim code** and select **Claim device**. A **Claimed** message with the serial number confirms it worked.
+
+  </Step>
+  <Step title="Name the device">
+
+  Open the new device and select the pencil next to its name. Use the tank or vessel it serves.
 
   </Step>
 </Steps>
 
-If the device does not appear, work through the checks below.
+<Callout kind="tip">
 
-## If the device does not appear
-
-| Check | What to confirm | Where to go |
-| --- | --- | --- |
-| **Is the unit online?** | Green power light on, unit reporting | [Power Connection](/setup/power) · [Network & Account Setup](/setup/network-and-account) |
-| **Is the serial number correct?** | Match against the label on the unit | — |
-| **Is your account assigned to an organisation?** | Without this, nothing appears at all | [Signing In & Account Setup](/dashboard/signing-in) |
-| **Was the device claimed for a different email?** | The claim must be made from the account that will use it | [Signing In & Account Setup](/dashboard/signing-in) |
-| **Has the list refreshed?** | The dashboard updates automatically, but refresh to be sure | — |
-| **Is the device shown as Stale or Offline?** | It is claimed but not reporting | [Device Offline or Not Reporting](/troubleshooting/device-offline) |
-
-<Callout kind="alert">
-
-If **no** devices appear — not just this one — the most likely cause is that your account is not assigned to an organisation. See [Signing In & Account Setup](/dashboard/signing-in).
+Name devices by the tank or vessel they serve, not by serial number. When an alert fires at 2 a.m., `Brite Tank 2` is far more useful than `FW-0413`. Names can be up to 60 characters. If you clear the name, the dashboard shows the serial number instead.
 
 </Callout>
 
+BrewWizz can also assign a device to your organization for you. If you would rather do that, contact [Support & Parts](/get-started/support-and-parts) with the serial number from the unit's label.
+
+## If the claim fails
+
+| Problem | What to do |
+| --- | --- |
+| **You missed the code on the display** | Restarting the unit does not show the code again. Contact [Support & Parts](/get-started/support-and-parts) with the serial number, and BrewWizz will issue a new code or assign the device to you. |
+| **The code is rejected** | Check for a typo. The code may also have expired after 30 days, or the device may already belong to an organization. Contact support for a new code. |
+| **Your organization needs an active BrewWizz subscription to manage devices.** | Start or renew your subscription on [Billing](/dashboard/billing). |
+| **Your subscription covers N device(s). Add a device to your subscription to claim another.** | Add a device to your subscription in the billing portal, or release a device you no longer use. |
+| **Too many claim attempts** | Wait 15 minutes and try again. |
+| **The device is claimed but shows Stale or Offline** | It is claimed but not reporting. See [Device Offline or Not Reporting](/troubleshooting/device-offline). |
+
 ## After claiming
 
-Once the device is listed and reporting:
+1. **[Check its health](/dashboard/devices)** to confirm it is Online.
+2. **[Open its detail page](/dashboard/device-detail)** for gauges, charts and batches.
+3. **[Set alert rules](/dashboard/alerts-and-rules)** for its readings.
+4. **[Choose how alerts reach you](/dashboard/notification-preferences)**.
 
-1. **[Review its health state](/dashboard/devices)** to confirm it is Online.
-2. **[Open the device detail page](/dashboard/device-detail)** to see its telemetry charts and metadata.
-3. **[Configure alert rules](/dashboard/alerts-and-rules)** for that device's thresholds.
-4. **[Set notification preferences](/dashboard/notification-preferences)** so alerts reach you.
-5. **[Check your plan](/dashboard/understanding-your-plan)** if alert features are missing.
+## Releasing a device
+
+Each device card on the Devices page has a **Release device** button. Releasing removes the device from your organization straight away.
+
+<Callout kind="alert">
+
+**There is no confirmation step.** Selecting **Release device** releases it immediately. The device disappears from your list. The next time it connects, it shows a new claim code, so anyone who can see its display could claim it. To bring it back, claim it again with the new code.
+
+</Callout>
 
 ## Moving or replacing a device
 
-If you relocate a FizzWizz to a different tank, update its name so the dashboard still reflects what it serves. If you replace a unit, claim the new serial number and remove or rename the old entry so you are not alerted on a device that no longer exists.
+- **Moving a unit to a different tank:** rename it so the dashboard still shows what it serves.
+- **Replacing a unit:** claim the new unit, then release the old one so it no longer counts towards your device allowance.
 
 ## Related articles
 

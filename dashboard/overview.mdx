@@ -1,64 +1,79 @@
 ---
 title: Dashboard Overview
-description: "Explore the BrewWizz carbonation telemetry dashboard: device health states, navigation, and how readings get from your FizzWizz to your screen."
+description: "What the BrewWizz dashboard does, how it is laid out, the device health states, display units, and how readings get from your FizzWizz to your screen."
 ---
 
 ## BrewWizz Dashboard at a glance
 
-BrewWizz Dashboard is your online hub for monitoring carbonation telemetry from your BrewWizz devices. It runs at [brewwizzdata.onesmartview.com/auth/login](https://brewwizzdata.onesmartview.com/auth/login) and gives you a single place to check device health, review telemetry data, manage alerts, and handle your subscription billing.
+The BrewWizz dashboard is where you monitor your FizzWizz units. It shows live gauges and charts for every tank, raises alerts when a reading goes out of range, and holds your subscription details. It runs in any modern browser at [bw-dash.allendale.biz](https://bw-dash.allendale.biz). You can also install it on your phone or computer as an app; see [Mobile App Overview](/mobile-app/overview).
 
 <Callout kind="info">
 
-The BrewWizz Dashboard currently supports **FizzWizz devices only**. PacWizz devices do not report telemetry to the dashboard. If you are a PacWizz user, see the [PacWizz User Guide](/pacwizz/overview) instead.
+The BrewWizz Dashboard supports **FizzWizz devices only**. PacWizz devices do not report to the dashboard. If you use PacWizz, see the [PacWizz User Guide](/pacwizz/overview).
 
 </Callout>
 
-## Your Dashboard
+## Navigation
 
-When you sign in to BrewWizz, you land on your organization's dashboard. The dashboard centers on your devices, their current health, and the alerts and billing tools available on your plan.
+| Menu item | What it is for |
+| --- | --- |
+| **Devices** | Your device list, with live gauges for every FizzWizz in your organization. This is also where you claim a new device. Open a device for charts, readings, batches, notes and alert rules. |
+| **Alerts** | Alert history. Acknowledge alerts here. |
+| **Notifications** | Choose how alerts reach you: email, SMS, or push notifications on this phone or computer. You can also set your display units here. |
+| **API** | Create read-only [API keys](/dashboard/api-keys) for scripts and integrations. |
+| **Billing** | Your plan, device allowance and subscription status. |
+| **Help** | Opens this help center in a new tab. |
 
-- **Overview** — See your device list and current health state at a glance.
-- **Device detail** — Open a device by serial number to inspect charts, readings, metadata, and alert rules.
-- **Alerts** — Review alert history for your organization when in-app alerts are enabled.
-- **Notifications** — Manage SMS, email, and in-app notification preferences when your plan allows those channels.
-- **Billing** — View subscription status and access billing actions.
+The header also holds the alert bell, the unit selectors, your name and a sign-out button. On a phone, everything except the bell moves into the menu (☰) at the top right.
 
 <Callout kind="info">
 
-Some menu items depend on your plan. If Alerts or Notifications do not appear, check [Understanding Your Plan](/dashboard/understanding-your-plan).
+**Alerts**, **Notifications** and **API** depend on your plan. When your plan does not include them, **Upgrade** appears in their place. See [Understanding Your Plan](/dashboard/understanding-your-plan).
 
 </Callout>
 
-## Device Detail View
+## Device health states
 
-The device detail page shows everything about a single unit. You can follow real-time telemetry on charts, inspect recent readings, review device metadata such as serial number and firmware version, and confirm the current health badge.
+Health is based only on how long it has been since BrewWizz last received a reading from the device.
 
-If your plan includes alert rules, the same page also shows each device's alert thresholds. If it doesn't, the page is still available but alert rules are read-only.
-
-## Device Health States
-
-Device health is determined by how long it has been since the last reported reading.
-
-| State | Last reading age | Color | Meaning |
+| State | Last reading | Colour | Meaning |
 | --- | --- | --- | --- |
-| **Online** | Less than 10 minutes | Green | Actively reporting |
-| **Stale** | 10–120 minutes | Yellow | Intermittent reporting |
-| **Offline** | More than 120 minutes | Red | Not reporting |
+| **Online** | Less than 10 minutes ago | Green | Actively reporting |
+| **Stale** | 10–120 minutes ago | Yellow | Reporting intermittently |
+| **Offline** | More than 120 minutes ago, or never | Red | Not reporting |
 
-## How Telemetry Flows
+See [Devices & Health States](/dashboard/devices) for what each state means in practice.
 
-Your BrewWizz device sends telemetry readings to BrewWizz, where they are validated and stored. When a new reading arrives, BrewWizz checks your active alert rules and creates alert events when thresholds are crossed. If your plan includes SMS or email notifications, BrewWizz sends those based on your preferences. The dashboard updates automatically as new data arrives, so you see fresh readings and alerts without needing to refresh the page.
+## Display units
+
+You can show temperature in **°C or °F**, pressure in **bar or psi**, and carbonation in **g/L or volumes** (1 volume = 1.96 g/L). Change them with the unit selectors in the header. They are also on the Notifications page and on each device page, under **Display units**.
+
+Your choice is saved to your account, so it follows you to every browser and to the installed app. It applies to gauges, charts, alert thresholds, your alert messages and CSV exports. If you have not chosen units, the dashboard uses your organization's default.
+
+## How readings flow
+
+1. Your FizzWizz sends a reading to BrewWizz over your network.
+2. BrewWizz checks it and stores it.
+3. BrewWizz compares it against that device's alert rules, if your plan includes them, and creates an alert when a threshold is crossed.
+4. Alerts go out by email, SMS or push, depending on your plan and your [notification preferences](/dashboard/notification-preferences).
+
+The dashboard updates live as new readings and alerts arrive, so you do not need to refresh the page.
+
+## Welcome banner and offline bar
+
+- The first time you sign in, a **Welcome to the new BrewWizz dashboard** banner lists some quick tips. Once you dismiss it, it stays hidden in that browser.
+- If your connection drops, an amber bar reads **You are offline — data may be outdated**. Buttons that save changes are greyed out until you reconnect.
 
 ## Related Articles
 
 <Columns cols={3}>
+  <Card title="Devices & Health States" href="/dashboard/devices" icon="monitor">
+  Read the device list and what each card shows.
+  </Card>
+  <Card title="Device Detail & Charts" href="/dashboard/device-detail" icon="line-chart">
+  Gauges, charts, readings, batches and notes for one device.
+  </Card>
   <Card title="Understanding Your Plan" href="/dashboard/understanding-your-plan" icon="credit-card">
-  Learn which alert and notification features your plan includes.
-  </Card>
-  <Card title="Alerts & Alert Rules" href="/dashboard/alerts-and-rules" icon="bell">
-  See how rules are evaluated and where alert history appears in the dashboard.
-  </Card>
-  <Card title="Troubleshooting" href="/dashboard/troubleshooting" icon="wrench">
-  Diagnose missing readings, offline devices, and alerts that did not fire.
+  Which features your plan includes.
   </Card>
 </Columns>

@@ -1,84 +1,57 @@
 ---
-title: Settings
-description: Update your profile and manage your subscription in the BrewWizz mobile app.
+title: Menu, Units & Account
+description: Change units, check billing, sign out, get updates and remove the BrewWizz app on your phone.
 ---
 
-## The Settings tab
+## The menu
 
-Settings is your hub for account and subscription management, with three sections: **Profile**, **Notifications**, and **Billing**.
+BrewWizz has no separate Settings screen. Everything is in the menu (☰) at the top right of every screen: your pages, your unit selectors, **Help** and **Sign out**.
 
-<Callout kind="alert">
+## Display units
 
-**Coming Soon** — The BrewWizz mobile app is currently in development. This page describes planned features and may change before release.
+Use the unit selectors in the menu to switch temperature (°C or °F), pressure (bar or psi) and carbonation (g/L or volumes). The same selectors are under **Display units** on each device screen. For one-tap **Metric** or **US** presets, go to **Notifications**.
 
-</Callout>
-
-## Profile
-
-Profile shows the account details tied to your BrewWizz sign-in. Some details are for reference only, while your full name can be updated directly in the app.
-
-<Callout kind="info">
-
-Your email address, role, and organization are shown for reference. Only your full name is editable on this screen.
-
-</Callout>
-
-| Field | What you see |
-| --- | --- |
-| Email | Shown as read-only — you cannot change your email address in the app |
-| Role | Displayed as a badge, such as `client` or `admin` |
-| Organization | Shown as read-only and managed by an administrator |
-| Full name | Editable — enter your name and tap **Save profile** to update it. A confirmation toast appears when the update succeeds |
-
-The profile screen also shows the note: `Role and organization are managed by an administrator.`
-
-Tap **Sign out** to end your session and return to the sign-in screen.
-
-At the bottom of the screen, the app version and build number appear in small text, such as `BrewWizz v1.3.0 (42)`.
-
-## Notifications
-
-Notification destinations and local notification permissions are configured on the [Notifications](/mobile-app/notifications) page.
+Units are saved to your account, so your phone, computer and alert messages all use the same ones. See [Display units](/dashboard/overview#display-units).
 
 ## Billing
 
-Billing shows your current subscription status and the actions available for your account. What you see depends on whether you belong to an organization and whether a subscription already exists.
+**Billing** shows your plan, status, renewal date and device allowance. Tap **Manage subscription** to open the billing portal in your browser, where you can update your payment method or change your plan. See [Billing](/dashboard/billing).
 
-### No organization assigned
+If your organization's subscription is not active, BrewWizz shows only the Billing screen until it is renewed.
 
-If you do not have an organization, the billing screen shows: `Billing is available after an administrator assigns you to an organization.`
+## Signing out
 
-### Current subscription
+Tap **Sign out** in the menu. Signing out also turns off push notifications on that phone or computer. Turn push back on after you sign in again if you still want it there.
 
-When a subscription exists, the screen shows a card with the current billing details.
+## Updates
 
-| Field | What you see |
-| --- | --- |
-| Subscription status | Current state, such as `active`, `trialing`, `past_due`, `cancelled`, or `incomplete` |
-| Plan name | The name of your current plan |
-| Billing period end date | When the current billing period ends |
-| Manage billing button | Opens the billing portal in your device's browser for subscriptions managed through the billing system |
+BrewWizz updates itself. When you open the app with a connection, it downloads the new version in the background. The update takes effect the next time you open the app. To get it straight away, close BrewWizz completely and open it again.
 
-If the subscription is not managed through the billing system, the screen shows this note: `This subscription is managed locally. Contact support for billing changes.`
+## Removing the app
 
-### Past due warning
+<Steps>
+  <Step title="Remove push from this device first">
 
-When payment is overdue, the billing screen shows a warning card with an **Open billing portal** button. Use it to update your payment method and avoid service interruption.
+  Go to **Notifications** and remove the **This device** push channel, or just tap **Sign out**. This stops BrewWizz sending alerts to a phone that no longer has the app.
 
-### Incomplete checkout
+  </Step>
+  <Step title="Delete the icon">
 
-If checkout was started but not completed, the billing screen shows a card prompting you to resume checkout or open the billing portal.
+  Remove BrewWizz like any other app. On iPhone, press and hold the icon and choose **Remove App**. On Android, press and hold and choose **Uninstall**. On a computer, open BrewWizz and choose **Uninstall** from its window menu.
 
-### Available plans
+  </Step>
+</Steps>
 
-When there is no active subscription, or when the current subscription is cancelled or incomplete, the screen shows available plans as cards. Each card includes the plan name, the price, and a **Subscribe** button.
+Removing the app does not affect your account, your devices or your other phones and computers.
 
-Tap **Subscribe** to open checkout in your device's browser. After you complete checkout and return to the app, the billing screen automatically confirms your subscription.
+## Help
+
+**Help** in the menu opens this help center in your browser. For anything else, see [Support & Parts](/get-started/support-and-parts).
 
 ## Related Articles
 
 <Columns cols={3}>
   <Card title="Mobile App Overview" href="/mobile-app/overview" icon="monitor" />
-  <Card title="Notifications" href="/mobile-app/notifications" icon="bell" />
-  <Card title="Troubleshooting" href="/mobile-app/troubleshooting" icon="settings" />
+  <Card title="Push Notifications" href="/mobile-app/notifications" icon="bell" />
+  <Card title="Troubleshooting" href="/mobile-app/troubleshooting" icon="wrench" />
 </Columns>

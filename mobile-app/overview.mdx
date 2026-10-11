@@ -1,58 +1,75 @@
 ---
 title: Mobile App Overview
-description: Understand the BrewWizz mobile app's navigation, main tabs, and how it complements the web dashboard for monitoring your devices on the go.
+description: The BrewWizz mobile app is the dashboard installed from your browser onto your phone, tablet or computer. Learn what it does, why to install it, and how it looks on a small screen.
 ---
-
-<Callout kind="alert">
-
-**Coming Soon** — The BrewWizz mobile app is currently in development. The guides in this section describe planned features and may change before release.
-
-</Callout>
 
 ## The BrewWizz mobile app at a glance
 
-Use the BrewWizz mobile app to check device health, review alerts, and manage key account settings when you are away from your desk. It complements the web dashboard by bringing the most important monitoring and account tools to your phone, with live updates designed for quick checks and fast action. From this page, you can understand the app's navigation, main tabs, and how it fits alongside the web dashboard.
+The BrewWizz mobile app is the [BrewWizz dashboard](/dashboard/overview), installed straight from your browser. There is nothing to download from the App Store or Google Play. It uses the same account and shows the same devices, alerts and settings, so anything you change on your phone shows up on your computer, and the other way round.
 
-## Main navigation
+Installing BrewWizz gives you:
 
-The mobile app centers on three bottom tabs so you can move quickly between monitoring, alert review, and account settings.
-
-- **Devices** — Browse and monitor all devices assigned to your organization, with live health badges and instant search.
-- **Alerts** — Review alert history, filter by severity or device, and acknowledge alerts to clear your unread count.
-- **Settings** — Manage your profile, configure notification destinations, and handle subscription billing.
+- **Its own icon.** BrewWizz opens full screen, like any other app.
+- **Push notifications.** Alerts, and notices that a device has stopped reporting, appear on your phone even when BrewWizz is closed.
+- **Automatic updates.** New versions arrive by themselves, with no app store involved.
 
 <Callout kind="info">
 
-Some features in the mobile app depend on your subscription plan. If Alerts or certain settings are not available, your plan may not include those capabilities. See [Understanding Your Plan](/dashboard/understanding-your-plan) for details on how plan features work.
+On iPhone and iPad, push notifications only work after you add BrewWizz to your Home Screen. On Android and computers you can turn on push in the browser without installing, but installing is still recommended.
 
 </Callout>
 
+## What it needs
+
+| Device | Requirement |
+| --- | --- |
+| **iPhone or iPad** | iOS or iPadOS 16.4 or later, installed from Safari |
+| **Android** | Chrome |
+| **Computer** | Chrome or Edge to install. Push also works in Firefox, and in Safari on a Mac, without installing. |
+
+You also need an internet connection. BrewWizz shows live data, so it does not work offline. See [Offline](#offline).
+
+## Getting around on a phone
+
+At the top of every screen are the BrewWizz logo, the alert bell and the menu button (☰). The menu holds:
+
+- **Devices**: your device list
+- **Alerts**, **Notifications** and **API**, depending on your plan (or **Upgrade** if your plan doesn't include them)
+- **Billing**
+- **Help**: opens this help center
+- your unit selectors (temperature, pressure, carbonation)
+- **Sign out**
+
+The screens are the same as on the desktop dashboard, laid out to fit your screen.
+
 ## Device health states
 
-Device health is based on how recently BrewWizz received a reading from the device. These same states appear throughout the app so you can spot reporting issues quickly.
+The same health states appear on every screen, on your phone and on the desktop:
 
-| State | Color | Last reading received | Meaning |
+| State | Colour | Last reading | Meaning |
 | --- | --- | --- | --- |
 | **Online** | Green | Within 10 minutes | Actively reporting |
-| **Stale** | Yellow | 10–120 minutes ago | Intermittent or delayed |
-| **Offline** | Red | More than 120 minutes ago or never | Not reporting; needs attention |
+| **Stale** | Yellow | 10–120 minutes ago | Reporting intermittently |
+| **Offline** | Red | More than 120 minutes ago, or never | Not reporting; needs attention |
 
-## How telemetry flows
+## Live updates
 
-Your BrewWizz device sends telemetry readings to BrewWizz, where the readings are stored and checked against your alert rules. The mobile app receives those updates automatically, so you see fresh readings, health changes, and new alerts without needing to refresh.
+While BrewWizz is open, readings, health states and new alerts appear by themselves without you refreshing. When BrewWizz is closed, [push notifications](/mobile-app/notifications) tell you about alerts.
 
-When a reading crosses one of your alert thresholds, BrewWizz creates an alert event that appears in your Alerts tab. Depending on your plan and notification preferences, that alert may also trigger a notification so you can respond quickly even when the app is not in front of you.
+## Offline
+
+If your phone loses its connection, an amber bar reads **You are offline — data may be outdated**. The screen keeps showing what was already loaded, but buttons that save changes are greyed out until you reconnect. Readings are not stored on your phone, so opening BrewWizz without a connection shows no device data.
 
 ## Related Articles
 
 <Columns cols={3}>
-  <Card title="Getting Started" href="/mobile-app/getting-started" icon="log-in">
-  Set up the app, sign in, and connect the mobile experience to your BrewWizz account.
+  <Card title="Install & Sign In" href="/mobile-app/getting-started" icon="download">
+  Add BrewWizz to your phone and sign in.
   </Card>
-  <Card title="Device List" href="/mobile-app/devices" icon="smartphone">
-  See how to search devices, understand health badges, and open device details.
+  <Card title="Push Notifications" href="/mobile-app/notifications" icon="bell">
+  Get alerts on your phone.
   </Card>
-  <Card title="Alerts" href="/mobile-app/alerts" icon="bell">
-  Learn how alert history, filters, and acknowledgements work in the mobile app.
+  <Card title="Troubleshooting" href="/mobile-app/troubleshooting" icon="wrench">
+  Fix install, sign-in and notification problems.
   </Card>
 </Columns>
