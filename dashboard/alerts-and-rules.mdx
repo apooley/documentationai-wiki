@@ -93,7 +93,7 @@ The device's Alerts tab shows **No alert rules on this device. Upgrade on billin
 
 <Callout kind="info">
 
-If your plan stops including alert rules, BrewWizz switches all your rules off. They are kept, not deleted. When your plan includes alert rules again, turn each rule back on with its switch, because they do not restart by themselves.
+If your plan stops including alert rules, your rules are kept exactly as they are, but BrewWizz stops checking them. When your plan includes alert rules again, they start working straight away.
 
 </Callout>
 
@@ -104,7 +104,7 @@ If your plan stops including alert rules, BrewWizz switches all your rules off. 
 Check these first:
 
 - Your plan includes alert rules, and your subscription is active.
-- A rule exists **on the device** that sent the reading, and its switch is on.
+- A rule exists **on the device** that sent the reading, and its switch is on. Rules belong to the organization that created them, so a device that changed owner starts with no rules.
 - The reading actually went past the threshold, in the units you entered it in.
 - The rule has not fired in the last 30 minutes.
 - The device is reporting. A Stale or Offline device sends no readings to check.
