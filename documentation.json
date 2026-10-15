@@ -540,6 +540,26 @@
       "source": "/get-started/welcome",
       "destination": "/welcome",
       "statusCode": 301
+    },
+    {
+      "destination": "/troubleshooting/responding-to-alerts",
+      "source": "/dashboard/alerts-and-rules",
+      "statusCode": 302
+    },
+    {
+      "destination": "/troubleshooting/responding-to-alerts",
+      "source": "/dashboard/notification-preferences",
+      "statusCode": 302
+    },
+    {
+      "destination": "/get-started/support-and-parts",
+      "source": "/dashboard/understanding-your-plan",
+      "statusCode": 302
+    },
+    {
+      "destination": "/get-started/support-and-parts",
+      "source": "/dashboard/billing",
+      "statusCode": 302
     }
   ],
   "seo": {

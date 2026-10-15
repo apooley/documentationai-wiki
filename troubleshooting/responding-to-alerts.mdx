@@ -1,30 +1,17 @@
 ---
 title: Responding to Alerts
-description: What each FizzWizz alert means, what to do when one fires, and how alerts reach you from the unit to your phone.
+description: What each FizzWizz alert means, what to check first when one arrives, and what to do if an alert you expected never comes.
 ---
 
 ## Responding to alerts
 
 The FizzWizz detects conditions that affect carbonation and sends notifications. This page covers what each alert means from the *machine's* side — what is actually happening, and what to do about it.
 
-For how alerts are configured and delivered, see [Alerts & Alert Rules](/dashboard/alerts-and-rules) and [Notification Preferences](/dashboard/notification-preferences).
-
 ## How alerts reach you
 
-Readings flow from the FizzWizz to BrewWizz, where they are validated and stored. When a new reading arrives, BrewWizz checks your active alert rules and creates an alert event when a threshold is crossed. Depending on your plan and preferences, that event appears in the dashboard and can also be sent by email or SMS.
+While the FizzWizz is online, its readings flow to BrewWizz. When a reading points to one of the problems below, BrewWizz sends an email alert to the addresses on your monitoring subscription. SMS alerts are coming soon.
 
-| Layer | What to configure | Where |
-| --- | --- | --- |
-| Detection | The FizzWizz measures the condition | On the unit |
-| Rules | Thresholds and cooldowns per device | [Alerts & Alert Rules](/dashboard/alerts-and-rules) |
-| Delivery | Email, SMS, and in-app channels | [Notification Preferences](/dashboard/notification-preferences) |
-| Visibility | Alert history in the dashboard | [Alerts & Alert Rules](/dashboard/alerts-and-rules) |
-
-<Callout kind="alert">
-
-If a threshold is crossed but no alert appears, the cause is usually your plan, the rule setup, or the cooldown — not the device. Check in this order: plan includes alert rules → rule exists for that device and condition → cooldown has expired → the reading actually matches the threshold → subscription is Active or in Trial. Alert features are switched off while a subscription is past due, cancelled, or incomplete.
-
-</Callout>
+Alerts depend on the unit reporting. An offline FizzWizz keeps carbonating, but no new alerts go out until it reconnects. See [Device Offline or Not Reporting](/troubleshooting/device-offline).
 
 ## What the FizzWizz alerts on
 
@@ -95,37 +82,28 @@ Carbonation stones cause a disproportionate share of carbonation complaints. A r
 
 </Callout>
 
-## Alerts that are not about the machine
+## If an expected alert doesn't arrive
 
-Some alert behaviour has nothing to do with the FizzWizz:
+<Callout kind="info">
 
-| Symptom | Cause | Where to go |
-| --- | --- | --- |
-| Alert history empty | Plan does not include alert features, or the **Unacknowledged only** filter is on | [Understanding Your Plan](/dashboard/understanding-your-plan) |
-| No SMS received | Plan, opt-in status, missing phone number, or SMS toggled off | [Notification Preferences](/dashboard/notification-preferences) |
-| No email received | Plan, channel toggled off, or inbox filtering | [Dashboard Troubleshooting](/dashboard/troubleshooting) |
-| No alerts at all, and **Upgrade** shows in the menu | No active or trial subscription | [Billing & Subscriptions](/dashboard/billing) |
+Check these first:
 
-## SMS keywords
+- The FizzWizz is online and reporting. See [Device Offline or Not Reporting](/troubleshooting/device-offline).
+- Your monitoring subscription is active.
+- The alert email hasn't been caught by a spam or junk filter.
 
-Control SMS delivery from your phone:
+If all three check out, contact [BrewWizz support](/get-started/support-and-parts) with the unit's serial number and roughly when you expected the alert. To add or change the email addresses alerts go to, contact support too.
 
-| Keyword | Action |
-| --- | --- |
-| STOP | Unsubscribe from all BrewWizz SMS notifications |
-| START | Re-enable SMS delivery |
-| HELP | Receive help information about the service |
-
-SMS opt-in is tied to your **phone number**, not to an individual device — replying `STOP` affects alerts across all devices on your account.
+</Callout>
 
 ## Related articles
 
 <Columns cols={3}>
-  <Card title="Alerts & Alert Rules" href="/dashboard/alerts-and-rules" icon="bell">
-  Configure thresholds and cooldowns.
+  <Card title="Health Check Overview" href="/troubleshooting/health-check/overview" icon="book-open">
+  Test the unit when an alert keeps coming back.
   </Card>
-  <Card title="Notification Preferences" href="/dashboard/notification-preferences" icon="mail">
-  Choose how alerts reach you.
+  <Card title="Device Offline or Not Reporting" href="/troubleshooting/device-offline" icon="wifi-off">
+  When the unit stops reporting.
   </Card>
   <Card title="Carbonation & Brite Pressure" href="/troubleshooting/carbonation-and-brite-pressure" icon="gauge">
   When carbonation is off target.
