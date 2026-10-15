@@ -1,0 +1,153 @@
+---
+title: Batches, Targets & Reports
+description: Set a carbonation target for each batch, see when a batch will reach it, compare it with a past batch, and print a batch report.
+---
+
+## Batches, targets and reports
+
+Each time a FizzWizz starts a new carbonation run, the dashboard records a new **batch**. The batch keeps its own name, carbonation target, notes and history, so you can follow it while it carbonates and look back at it later.
+
+All of this lives on the device page, in the **Batch** card and on the **This batch** chart range. To open a device page, select a tank on the [Devices](/dashboard/devices) page.
+
+## The Batch card
+
+The **Batch** card shows one batch at a time. It starts on the tank's current batch.
+
+- **Choose another batch.** When the tank has more than one batch, pick one from the list at the top of the card. The current batch is marked **(current)**.
+- **Name it.** Select the pencil next to **Name** and type a name, such as the beer and brew number (up to 60 characters). Until you name it, a batch is called **Batch N** or **Batch of** its start date.
+- **Started** and **Start temperature** show when the run began and how cold the beer was.
+- **Carbonation target** shows the batch's target range. See [Setting a carbonation target](#setting-a-carbonation-target).
+- **View this batch's charts →** opens the Charts tab on the **This batch** range.
+- **Batch report →** opens a printable report. See [Batch reports](#batch-reports).
+- **Notes** keep a record of the batch. See [Notes](#notes).
+
+## Setting a carbonation target
+
+The carbonation target is the range you want the batch to finish in. You set it yourself; you don't need to ask BrewWizz support.
+
+<Steps>
+  <Step title="Open the target editor">
+
+  On the device page, find **Carbonation target** in the **Batch** card and select the pencil next to it.
+
+  </Step>
+  <Step title="Pick a style, or type your own range">
+
+  Choose a style from **Style** to fill in a typical range, or leave it on **Custom** and type **Target min** and **Target max** yourself. The boxes use your carbonation unit (volumes or g/L).
+
+  </Step>
+  <Step title="Save it">
+
+  Select **Save target**. To remove a target, open the editor and select **Clear target**.
+
+  </Step>
+</Steps>
+
+The style presets, in volumes of CO₂:
+
+| Style | Target range |
+| --- | --- |
+| British ale | 1.5–2.0 |
+| Porter / Stout | 1.7–2.3 |
+| Belgian ale | 1.9–2.4 |
+| Lager / Pale ale / IPA | 2.2–2.7 |
+| American lager | 2.5–2.8 |
+| Fruit lambic | 3.0–4.5 |
+| Wheat beer | 3.3–4.5 |
+
+A target must be above 0 and no more than 6 volumes, and you need both a minimum and a maximum.
+
+### How targets carry over
+
+- **The current batch's target is the tank's target.** The overview, the gauges, the **Needs attention** filter and the alerts all use it. The editor reminds you: **This is the tank's current target; its next batch starts with it.**
+- **A new batch starts with the previous batch's target**, so a tank that always runs the same beer only needs setting once.
+- **Past batches keep the target they had.** Changing a past batch's target changes that batch only, for example to correct its report.
+- **A tank with no batches yet** shows the target editor on its own, under the Batch card. The tank's first batch starts with that target.
+
+## Time to target and ready
+
+While a batch is below its target, the device page, the tank's card on the Devices page and its Board view tile show an estimate of when it will get there:
+
+| You see | What it means |
+| --- | --- |
+| **Reaches target in ~5 h (around 3:40 PM)** | Carbonation is climbing steadily. The estimate comes from the last hour of readings in this batch. |
+| **ETA after a few more readings** | The batch has just started, or there are not enough recent readings yet. |
+| **Not rising: no ETA** | Carbonation is flat or falling. |
+| **Too unsteady for an ETA** | The readings jump around too much for a reliable estimate. |
+| **Rising slowly: more than 3 days to target at this rate** | The batch is climbing, but very slowly. |
+
+No estimate shows when the tank has no target, or when carbonation is already above it.
+
+A batch counts as **ready** once its carbonation has stayed inside its target for 2 hours. The device page then shows **Ready since** with the day and time, and the tank's tile on the [Board view](/dashboard/devices#board-view-and-cellar-screen) says **Ready** and **Ready since**. If you change the batch's target, the ready time is cleared so the batch can become ready again against the new target.
+
+<Callout kind="tip">
+
+You can be told when a batch is ready. Turn on **Also tell me when a batch is ready** for an email, SMS or push channel in [Notification Preferences](/dashboard/notification-preferences#batch-ready-notices). It is off until you turn it on.
+
+</Callout>
+
+## The This batch chart
+
+Select **This batch** above the charts, or **View this batch's charts →** in the Batch card, to chart the selected batch from its start to its end (or to now, for the current batch).
+
+- The **Carbonation** chart shades this batch's own target, labelled with the batch name, for example **Kölsch 12 target 2.40–2.70 vol**. On the other time ranges, the chart shades the tank's current target instead.
+- The **Batches** tab shows **Carbonation at batch start** and **Latest carbonation** (or **End carbonation** for a past batch) when the This batch range is selected.
+
+### Comparing with a past batch
+
+On the **This batch** range, when the tank has other batches, **Compare with** appears above the charts.
+
+<Steps>
+  <Step title="Pick a batch to compare with">
+
+  Choose one of the tank's other batches from **Compare with**. The list shows each batch's name and start date, newest first.
+
+  </Step>
+  <Step title="Read the overlay">
+
+  The **Carbonation**, **Temperature** and **Tank pressure** charts each show both batches. The comparison batch is drawn as a second line, and both are lined up by time since each batch started, so you can see which one carbonated faster.
+
+  </Step>
+  <Step title="Check the time to target">
+
+  **Time to reach target** above the charts shows how long each batch took to reach its own target, and how much faster or slower this batch was. A batch that never reached its target, or had none, says so.
+
+  </Step>
+</Steps>
+
+Choose **None** to go back to the normal charts. Zooming is not available while comparing.
+
+## Batch reports
+
+A batch report is a one-page record of a batch for your quality files. Open it with **Batch report →** in the Batch card.
+
+The report shows your brewery name, the batch name, the tank and its serial number, and the date it was printed. It contains:
+
+- **Summary**: **Started**, **Ended** (or **In progress**), **Duration**, **Readings**, **Carbonation target**, **Time to reach target**, **Ready (held in target for 2 h)**, the **Final carbonation** (or **Latest carbonation** for a batch still running), the temperature minimum, average and maximum, and the tank pressure and CO₂ supply ranges
+- **Carbonation**: a chart of the whole batch with its target shaded
+- **Alerts during this batch**
+- **Notes**
+
+Select **Print / Save as PDF** to print it, or choose **Save as PDF** in your browser's print window to keep a copy. Values use your [display units](/dashboard/overview#display-units). Select **Back to** the tank name to return to the device page.
+
+## Notes
+
+Use **Notes** in the Batch card to record what happened during a batch, such as dry hopping, a CO₂ cylinder change or a tasting result. Type in **Add a note** and select **Add note**.
+
+- Notes can be up to 2,000 characters, and the newest is listed first.
+- Everyone in your organization can see them, and they appear on the batch report.
+- Notes cannot be edited. You can delete notes you wrote yourself.
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Device Detail & Charts" href="/dashboard/device-detail" icon="line-chart">
+  Everything else on the device page.
+  </Card>
+  <Card title="Notification Preferences" href="/dashboard/notification-preferences" icon="mail">
+  Get told when a batch is ready.
+  </Card>
+  <Card title="Carbonation & Brite Pressure" href="/troubleshooting/carbonation-and-brite-pressure" icon="wrench">
+  When a batch won't reach its target.
+  </Card>
+</Columns>

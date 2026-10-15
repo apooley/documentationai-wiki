@@ -36,7 +36,7 @@ This is your supply pressure. It tells you how much pressure is available to pus
 
 <Callout kind="tip">
 
-Set a **CO₂ supply below** [alert rule](/dashboard/alerts-and-rules) a little under your regulator setting. Running out mid-batch stalls carbonation, and the batch then has to rest so CO₂ can re-dissolve at the right equilibrium pressure.
+Set a **CO₂ supply below** [alert rule](/dashboard/alerts-and-rules) a little under your regulator setting. Running out mid-batch stalls carbonation, and the batch then has to rest so CO₂ can re-dissolve at the right equilibrium pressure. BrewWizz's automatic **CO₂ supply running low** alert also warns you when supply pressure falls quickly; see [Automatic alerts](/dashboard/alerts-and-rules#automatic-alerts).
 
 </Callout>
 
@@ -77,9 +77,9 @@ Carbonation is calculated from temperature. A probe that reads **warm** makes th
 
 ## Carbonation
 
-**What it should be:** climbing towards your target, then holding inside the style band.
+**What it should be:** climbing towards your target, then holding inside your carbonation target.
 
-If BrewWizz has set a style band for the device, the Carbonation gauge shows it in green and the chart shades it. The device card chip reads **Below target**, **In target band** or **Above target**. Carbonation outside the band flags the device amber on the Devices page. To have a style band set or changed, contact support.
+You set the carbonation target yourself for each batch, from a style preset or your own range; see [Setting a carbonation target](/dashboard/batches-and-targets#setting-a-carbonation-target). Once it is set, the Carbonation gauge shows it in green and the chart shades it. The device card chip reads **Below target**, **In target band** or **Above target**, and carbonation outside the target flags the device amber on the Devices page. While the batch is below its target, the dashboard estimates when it will get there, such as **Reaches target in ~5 h**, and marks it **Ready** once it has held the target for 2 hours.
 
 Compare **Carbonation** with **Expected carbonation (T+P)**. If expected carbonation is well above the current value, the tank is still carbonating. If the two stay apart once pressure has settled, check temperature accuracy first.
 

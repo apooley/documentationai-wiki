@@ -1,6 +1,6 @@
 ---
 title: Notification Preferences
-description: Choose how BrewWizz alerts reach you — email, SMS, or push to each phone and computer — verify SMS numbers, use STOP and START, get device offline notices, and set your display units.
+description: Choose how BrewWizz alerts reach you — email, SMS, or push to each phone and computer — verify SMS numbers, use STOP and START, get device offline and batch ready notices, turn on the weekly summary email, and set your display units.
 ---
 
 ## Configure notification delivery
@@ -24,11 +24,13 @@ The **Notifications** menu item appears when your plan includes at least one of 
 | **SMS** | SMS notifications | Alerts are texted to each number you add and verify. |
 | **Push** | Push notifications | Alerts appear as notifications on each phone or computer you turn push on for, even when BrewWizz is closed. |
 
-If nobody in your organization has added any channels, alerts are emailed to your organization's contact address. The page then shows **No additional channels configured. Alerts will be sent to your organization's contact email by default.**
+Every channel gets both your own [rule alerts](/dashboard/alerts-and-rules) and BrewWizz's [automatic alerts](/dashboard/alerts-and-rules#automatic-alerts).
+
+If you haven't added any channels, the page reads **You haven't set up any channels. If no one in your organization has, alerts go to your organization's contact email.**
 
 ## Adding an email address
 
-1. Select **+ Add Channel** and choose **Email**.
+1. Select **Add Channel** and choose **Email**.
 2. Enter the address and select **Add**.
 
 You can add more than one address, such as your own and a shared brewery inbox.
@@ -38,7 +40,7 @@ You can add more than one address, such as your own and a shared brewery inbox.
 <Steps>
   <Step title="Add the number">
 
-  Select **+ Add Channel**, choose **SMS**, and enter the mobile number in international format, for example `+15551234567`.
+  Select **Add Channel**, choose **SMS**, and enter the mobile number in international format, for example `+15551234567`.
 
   </Step>
   <Step title="Give consent">
@@ -79,7 +81,7 @@ SMS opt-out applies to the **phone number**, not to one device. Texting STOP sto
 
 </Callout>
 
-## Push notifications on this device
+## Push notifications
 
 Push sends alerts to the phone or computer you are using, even when BrewWizz is closed.
 
@@ -87,19 +89,47 @@ Push sends alerts to the phone or computer you are using, even when BrewWizz is 
 2. In **Push notifications on this device**, select **Turn on for this device**.
 3. When your browser or phone asks, allow notifications. A test notification, **Notifications are on for this device.**, confirms it worked.
 
-On iPhone and iPad (iOS or iPadOS 16.4 or later), you must first add BrewWizz to your Home Screen and open it from there. The Notifications page shows install steps for the device you are on. See [Install & Sign In](/mobile-app/getting-started) and [Push Notifications](/mobile-app/notifications).
+On iPhone and iPad (iOS or iPadOS 16.4 or later), you must first add BrewWizz to your Home Screen and open it from there. Until push is on, the Notifications page shows install steps for the device you are on. See [Install & Sign In](/mobile-app/getting-started) and [Push Notifications](/mobile-app/notifications).
 
 Each phone or computer you turn on is listed as a **Push** channel labelled with its type, such as *iPhone*, *Android* or *Windows*. The one you are using is marked **This device**. You can have up to 10 devices. Signing out of BrewWizz removes push from that device.
+
+<Callout kind="tip">
+
+On Android phones and on computers, alert notifications have an **Acknowledge** button, so you can clear an alert for your whole team without opening the dashboard first. iPhone and iPad notifications don't show the button. See [Acknowledging from a push notification](/dashboard/alerts-and-rules#acknowledging-from-a-push-notification).
+
+</Callout>
 
 ## Managing your channels
 
 - **Pause a channel** with its switch.
 - **Remove a channel** with the bin icon, then confirm **Remove notification channel?**.
-- **Device offline notices:** tick **Also tell me when a device stops reporting for 2 hours** on any channel. BrewWizz checks every 15 minutes and sends one notice per outage. It does not keep sending notices about devices that have been silent for more than 7 days. Offline notices do not appear in the alert history.
+
+Each email, SMS and push channel also has two optional notices, both off until you tick them. They are separate from alerts and do not appear on the Alerts page or in the bell.
+
+### Device offline notices
+
+Tick **Also tell me when a device stops reporting for 2 hours** on a channel to be told when a tank goes quiet. BrewWizz checks every 15 minutes and sends one notice per outage. It does not keep sending notices about devices that have been silent for more than 7 days.
+
+### Batch ready notices
+
+Tick **Also tell me when a batch is ready (carbonation in target for 2 hours)** on a channel to be told when a batch is ready to package. The notice names the tank and the batch and gives its carbonation. It is sent once per batch, and only for batches with a [carbonation target](/dashboard/batches-and-targets#setting-a-carbonation-target). If you change a batch's target, it can become ready, and notify you, again.
+
+## Weekly summary email
+
+The **Weekly summary email** is a short email every Monday covering the week before: batches started and finished, time to target, batches marked ready, alerts, and any tanks offline right now.
+
+- **It is off until you turn it on.** Nobody else, including your organization or BrewWizz, can turn it on for you, and adding an email channel does not turn it on.
+- Turn it on with the switch on the **Notifications** page. The card then shows **On since** the date you turned it on, and the address it goes to.
+- It goes to the email address you sign in with. It does not need an email channel or an email plan feature.
+- The week runs Monday to Monday in UTC, and the days in the email are UTC days. Values are in your display units.
+
+**To stop it**, turn the switch off, or use the unsubscribe link at the bottom of any weekly summary email. The link asks **Stop sending the BrewWizz weekly summary to this inbox?**; select **Stop the weekly summary**. The link only turns the weekly summary off. It does not change your alerts or any other notification, and it can't turn anything on.
+
+**If your sign-in email changes**, the summary stops, and the card shows **Paused: your sign-in email changed.** Turn it on again to get it at your new address. Each time you turn it on, unsubscribe links in older emails stop working; use the link in your newest email.
 
 ## Display units
 
-The Notifications page also sets your display units. Pick **Metric** (°C, bar, g/L) or **US** (°F, psi, volumes), or set each unit separately, then select **Save units**. **Use org default** goes back to your organization's units. Alert messages you receive use your units.
+The Notifications page also sets your display units. Pick **Metric** (°C, bar, g/L) or **US** (°F, psi, volumes), or set each unit separately, then select **Save units**. **Use org default** goes back to your organization's units. Alert messages and the weekly summary use your units.
 
 ## When your plan changes
 
@@ -109,7 +139,7 @@ If your plan stops including a channel, or your subscription lapses, BrewWizz st
 
 <Columns cols={3}>
   <Card title="Alerts & Alert Rules" href="/dashboard/alerts-and-rules" icon="bell">
-  How rules trigger alerts.
+  How rules and automatic alerts work.
   </Card>
   <Card title="Push Notifications" href="/mobile-app/notifications" icon="smartphone">
   Push on phones, in detail.

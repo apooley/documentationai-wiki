@@ -1,6 +1,6 @@
 ---
 title: Push Notifications
-description: Turn on BrewWizz push notifications on your phone or computer, manage which devices get them, and fix notifications that don't arrive.
+description: Turn on BrewWizz push notifications on your phone or computer, manage which devices get them, choose which notices you want, and fix notifications that don't arrive.
 ---
 
 ## Push notifications
@@ -18,7 +18,7 @@ Push needs **push notifications** on your plan. On iPhone and iPad you also need
 <Steps>
   <Step title="Open Notifications on the device you want alerts on">
 
-  On an iPhone or iPad, open BrewWizz from its **Home Screen icon**, not from Safari. Open the menu (☰) and choose **Notifications**.
+  On an iPhone or iPad, open BrewWizz from its **Home Screen icon**, not from Safari. Tap **Notifications** (on a phone, along the bottom of the screen).
 
   </Step>
   <Step title="Turn it on">
@@ -38,28 +38,39 @@ The card tells you if something is in the way:
 | The card says | What to do |
 | --- | --- |
 | *On iPhone and iPad, add BrewWizz to your Home Screen first, then open it from there.* | [Install BrewWizz](/mobile-app/getting-started), then open it from the Home Screen icon |
-| *Notifications are blocked for this site.* | Allow notifications in your browser or phone settings, then reload. See [Troubleshooting](#troubleshooting). |
-| *This browser can't receive push notifications.* | Update your iPhone or iPad to iOS 16.4 or later, use a different browser, or use email or SMS instead |
-| *On. Alerts show up on this device even when BrewWizz is closed.* | You're all set |
+| *Notifications are blocked for this site. Allow them in your browser or system settings, then reload.* | Allow notifications in your browser or phone settings, then reload. See [Troubleshooting](#troubleshooting). |
+| *This browser can't receive push notifications. Use email or SMS instead.* | Update your iPhone or iPad to iOS 16.4 or later, use a different browser, or use email or SMS instead |
+| *On. Alerts show up on this device even when BrewWizz is closed. Manage it in the list below.* | You're all set |
+
+Until you open BrewWizz as an installed app, the same card also shows an **Install the BrewWizz app** section with steps for your device.
 
 ## What you'll receive
 
 | Notification | When |
 | --- | --- |
-| **Alert** | An alert rule on one of your organization's devices fires. It names the metric, the threshold, the actual reading and the device, in your display units. |
+| **Alert** | An alert rule on one of your organization's devices fires. It names the metric, the threshold, the actual reading and the device, in your display units. It can carry an **Acknowledge** button. See [Alerts](/mobile-app/alerts#acknowledging-from-a-notification). |
 | **Device stopped reporting** | A device has not sent a reading for 2 hours, if you have ticked **Also tell me when a device stops reporting for 2 hours** for this device's push channel |
+| **Batch ready** | A batch has stayed in its carbonation target for 2 hours, if you have ticked **Also tell me when a batch is ready (carbonation in target for 2 hours)** for this device's push channel |
 
 Tap a notification to open that device in BrewWizz.
+
+<Callout kind="info">
+
+The **Acknowledge** button on an alert notification appears on Android and on computers only. On an iPhone or iPad, iOS doesn't show notification buttons, so tapping the notification opens the tank instead. Acknowledging also needs you to be signed in.
+
+</Callout>
 
 ## Managing your devices
 
 Each phone or computer you turn push on for appears on the Notifications page as a **Push** channel, labelled with its type (such as *iPhone*, *iPad*, *Android*, *Mac* or *Windows*). The one you're using is marked **This device**.
 
 - **Pause** push on a device with its switch.
-- **Remove** a device with the bin icon, for example an old phone.
+- **Remove** a device with the bin icon, for example an old phone. BrewWizz asks you to confirm.
 - Tick **Also tell me when a device stops reporting for 2 hours** to get offline notices by push on that device.
+- Tick **Also tell me when a batch is ready (carbonation in target for 2 hours)** to get a **Batch ready** notice on that device.
+- These ticks belong to each device, so your phone and your tablet can have different choices. They are greyed out while that device's push is paused.
 - You can have push on up to 10 phones and computers.
-- **Signing out** of BrewWizz removes push from that device.
+- **Signing out** of BrewWizz (**Sign out** in **More**, or the sign-out button on a wider screen) removes push from that device. If you are signed out because your sign-in expired instead, push stays on, so sign in and remove it yourself if you no longer want it.
 
 <Callout kind="tip">
 
@@ -67,16 +78,27 @@ Before you replace, reset or give away a phone, remove it from your channels or 
 
 </Callout>
 
+## Other things on this page
+
+- **Weekly summary email.** A switch near the top of the page. It is off unless you turn it on. When it is on, you get one email every Monday with last week's batches started and finished, time to target, batches marked ready, alerts, and tanks offline now. It goes to your sign-in email address, and every email has a one-click unsubscribe link. If your sign-in email changes, the summary pauses until you switch it on again.
+- **Display units.** Choose temperature, pressure and carbonation units, then tap **Save units**. See [Menu, Units & Account](/mobile-app/settings).
+- **Email and SMS.** Tap **Add Channel** to add them. See [Notification Preferences](/dashboard/notification-preferences).
+
+If your plan doesn't include notification channels, you only see the weekly summary, the display units and an upgrade message.
+
 ## Troubleshooting
 
 | Problem | What to do |
 | --- | --- |
 | No **Turn on for this device** button on iPhone | Add BrewWizz to your Home Screen and open it from there. Push isn't available in a Safari tab. |
-| No **Push notifications on this device** card at all | Your plan may not include push notifications. See [Understanding Your Plan](/dashboard/understanding-your-plan). |
+| No **Push notifications on this device** card at all | Your plan may not include push notifications. See [Understanding Your Plan](/dashboard/understanding-your-plan). If it does, contact BrewWizz support. |
+| **Turn on for this device** is greyed out | You are offline. Reconnect and try again. |
 | "Notifications are blocked for this site" | You tapped **Don't Allow** earlier. On iPhone, go to **Settings → Notifications → BrewWizz** and turn on **Allow Notifications**. On Android or a computer, allow notifications for BrewWizz in your browser's site settings. Then reload BrewWizz. |
-| "Could not save push notifications for this device." | You may already have 10 devices. Remove one you no longer use and try again. |
+| "You can have push notifications on up to 10 devices. Remove one you no longer use, then try again." | You have reached the limit. Remove a device you no longer use from your channels and try again. |
+| "Could not save push notifications for this device." | Check your connection and try again. |
 | Push is on but nothing arrives | Check Focus, Do Not Disturb and battery saver, which can hold back notifications. Make sure the device's push switch is on, and that you have [alert rules](/dashboard/alerts-and-rules) set up. |
 | You get alerts on an old phone | Remove that device from your channels on the Notifications page. |
+| Alerts stopped on a phone where someone else signed in | Turning push on replaces whatever was set up on that phone before. Sign in as yourself and turn push on again. |
 
 <Callout kind="alert">
 
@@ -87,13 +109,7 @@ For critical alerts, keep email or SMS turned on as well. Push delivery depends 
 ## Related articles
 
 <Columns cols={3}>
-  <Card title="Notification Preferences" href="/dashboard/notification-preferences" icon="mail">
-  Email, SMS and push together.
-  </Card>
-  <Card title="Alerts" href="/mobile-app/alerts" icon="bell">
-  Review alerts in the app.
-  </Card>
-  <Card title="Install & Sign In" href="/mobile-app/getting-started" icon="download">
-  Add BrewWizz to your phone.
-  </Card>
+  <Card title="Alerts" href="/mobile-app/alerts" icon="bell" />
+  <Card title="Install & Sign In" href="/mobile-app/getting-started" icon="download" />
+  <Card title="Notification Preferences" href="/dashboard/notification-preferences" icon="settings" />
 </Columns>

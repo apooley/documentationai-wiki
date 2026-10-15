@@ -1,24 +1,26 @@
 ---
 title: Device Detail & Charts
-description: Using the BrewWizz device page — gauges, charts, the readings table, CSV export, batches, notes, and per-device alert rules.
+description: Using the BrewWizz device page — gauges, carbonation target and ETA, charts, the readings table, CSV export, batches and per-device alert rules.
 ---
 
 ## Device detail and charts
 
-The device page is where you inspect a single FizzWizz in depth. To open it, select a device card on the [Devices](/dashboard/devices) page. When your organization has more than one device, the device switcher on the page moves between them without going back to the list.
+The device page is where you inspect a single FizzWizz in depth. To open it, select a tank on the [Devices](/dashboard/devices) page. When your organization has more than one device, the device switcher on the page moves between them without going back to the list. The browser tab shows the tank's name, so you can tell several open tanks apart.
 
 ## Header and gauges
 
-The header shows **Back to devices**, the device name, a **Live** pill and the health state. Below it are four gauges with the latest values:
+The header shows **Back to devices**, the device name, **Updated … ago**, a **Live** pill while the device is Online, and the health state. Below it are four gauges with the latest values:
 
 | Gauge | Scale | Colour zones |
 | --- | --- | --- |
 | **Temperature** | −5 to 20 °C | Blue below 5 °C, yellow 5–15 °C, red above 15 °C |
-| **Carbonation** | 0 to 4 volumes | Green over the style band, if one is set |
+| **Carbonation** | 0 to 4 volumes | Green over the tank's carbonation target, if one is set |
 | **CO₂ supply** | 0 to 55 psi | Blue below 18 psi, yellow 18–30, green 30–40, red above 40 |
 | **Tank pressure** | 0 to 55 psi | A tick marks the target pressure |
 
-The scales are shown in your display units. When the device is Stale, the gauges show **Last reading … ago**. When it is Offline, they dim and show **Offline · showing values … ago**, so you know the values are not current.
+The scales are shown in your display units. When the device is Stale, the gauges show **Last reading … ago**. When it is Offline, they dim and show **Offline · showing values from … ago**, so you know the values are not current.
+
+The page keeps itself up to date while it is open. If you switch to another app or tab for more than about 30 seconds, it reloads as soon as you come back, so a phone left in your pocket never shows old values.
 
 ## Summary cards
 
@@ -26,29 +28,23 @@ The scales are shown in your display units. When the device is Stale, the gauges
 | --- | --- |
 | **Expected carbonation (T+P)** | An estimate of the carbonation the tank is heading for, calculated from its current temperature and pressure. It is a guide, not a lab assay. |
 | **Pressure control** | How close tank pressure is to target: **On setpoint** within 0.05 bar (0.7 psi), **Near setpoint** within 0.15 bar (2.2 psi), otherwise **Off setpoint** |
-| **Style band** | The carbonation range set for this device, if any. To set or change it, contact BrewWizz support. |
-| **Rates** | How fast carbonation and tank pressure are currently changing |
+| **Carbonation target** | Where the latest carbonation sits against the tank's target: **Below target**, **In target band**, **Above target**, or **No CO₂ band** when no target is set. Below it you see the time-to-target estimate, such as **Reaches target in ~5 h**, or **Ready since** once the batch has held its target for 2 hours. |
+| **Rates** | **Carbonation rate** and **Tank P rate**: how fast each is changing over the selected chart range (at least 10 minutes of data) |
+
+You set the carbonation target yourself, in the Batch card. See [Batches, Targets & Reports](/dashboard/batches-and-targets).
 
 ## Device and batch cards
 
-The **device card** shows:
+The **Device** card shows:
 
 - the name, with a pencil to rename it (up to 60 characters)
 - the serial number
 - the firmware version, or **Unknown**
 - the network (Wi-Fi) the unit is on and its last IP address
-- when the last reading arrived
+- **Last reading**, such as **3 min ago**. Hover over it (or press and hold on a phone) to see the exact date and time.
 - **Display units**, to switch units without leaving the page
 
-The **batch card** shows the batch you are viewing, marked **(current)** for the latest one. You can rename the batch (up to 60 characters) and see when it **Started** and its **Start temperature**. Select **View this batch's charts →** to chart the batch from start to finish.
-
-## Notes
-
-Use **Notes** to record what happened during a batch, such as dry hopping, a CO₂ cylinder change or a tasting result. Type in **Add a note** and select **Add note**.
-
-- Notes can be up to 2,000 characters, and the newest is listed first.
-- Everyone in your organization can see them.
-- Notes cannot be edited. You can delete notes you wrote yourself.
+The **Batch** card shows one batch: its name, when it **Started**, its **Start temperature** and its **Carbonation target**. From the Batch card you can rename the batch, set its target with a style preset, open **View this batch's charts →** or the printable **Batch report →**, and keep **Notes**. All of this is covered in [Batches, Targets & Reports](/dashboard/batches-and-targets).
 
 ## Latest reading
 
@@ -60,7 +56,9 @@ The lower part of the page has four tabs: **Charts** (the default), **Readings**
 
 ### Time range
 
-Choose **1h**, **24h** (the default), **7d**, **30d**, **This batch** or **Custom**. With **Custom**, pick a **From** and **To** time and select **Apply**. The **1h** and **24h** views update live.
+Choose **1h**, **24h** (the default), **7d**, **30d**, **This batch** or **Custom**. With **Custom**, pick a **From** and **To** time and select **Apply**.
+
+Any range that runs up to now updates live as new readings arrive. **This batch** charts the selected batch from start to finish; see [The This batch chart](/dashboard/batches-and-targets#the-this-batch-chart).
 
 ### Charts
 
@@ -68,32 +66,40 @@ Choose **1h**, **24h** (the default), **7d**, **30d**, **This batch** or **Custo
 | --- | --- |
 | **Temperature** | Temperature |
 | **Pressure** | Tank pressure, Target pressure (dashed) and CO₂ supply |
-| **Carbonation** | Measured and Expected carbonation, with the style band shaded |
+| **Carbonation** | Measured and Expected (T+P) carbonation, with the carbonation target shaded |
 
+- The shaded target is labelled above the charts. On **This batch** it is that batch's own target, such as **Kölsch 12 target 2.40–2.70 vol**. On the other ranges it is the tank's **Current target**.
 - Switch between **Line**, **Area** and **Bar** charts, or use **All Metrics** to overlay everything on one chart.
-- Drag the zoom bar under the charts to focus on part of the range, and select **Reset zoom** to go back.
+- Drag the handles on the zoom strip under the charts to zoom every chart into part of the range, and select **Reset zoom** to go back.
+- Select the expand button on any chart to open it full screen, which is handy on a phone turned sideways. Press **Esc** or select the close button (**×**) to return.
 - Each chart plots up to 500 points. Over longer ranges, readings are grouped into time buckets so the chart stays fast. For every individual reading, use the Readings tab or a CSV export.
 - If there is no data, the chart shows **No readings in this time range.**
 
+On the **This batch** range you can also compare the batch with a past one. See [Comparing with a past batch](/dashboard/batches-and-targets#comparing-with-a-past-batch).
+
 ### Readings
 
-The readings table lists every reading in the time range, with columns **Time**, **Temp**, **Tank P**, **Target P**, **CO₂ supply**, **Carbonation** and **Flags**. Choose 50, 100, 250 or 500 rows per page.
+The Readings tab lists every reading in the time range, with **Time**, **Temp**, **Tank P**, **Target P**, **CO₂ supply**, **Carbonation** and **Flags**. Choose 50, 100, 250 or 500 rows per page. On a phone, and wherever the page is too narrow for a table, each reading is shown as a card instead, with the same values.
 
 **Flags** mark readings that look wrong, such as a temperature outside the sensor's plausible range (`out_of_range:temperature`). A flagged reading usually points to a sensor or wiring problem rather than to the beer.
 
 ### Exporting to CSV
 
-Select **Export CSV** on the Charts or Readings tab to download the selected time range. The file is named after the serial number and the time range. Its columns are time, temperature, tank pressure, target pressure, CO₂ supply, carbonation, function, user mode and flags, in your display units.
+Select **Export CSV** on the Charts or Readings tab to download the selected time range. The file is named after the serial number and the dates it covers. Its columns are time, temperature, tank pressure, target pressure, CO₂ supply, carbonation, function, user mode and flags, in your display units.
 
 An export holds up to 50,000 readings. For more, export a shorter range at a time.
 
 ### Batches
 
-A new batch starts each time the unit reports one and runs until the next. The Batches tab lists the 50 most recent, with **Batch**, **Started**, **Start Temp** and **External IP** columns. A batch is labelled with the name you gave it, or **Batch N** or **Batch of** its start date.
+A new batch starts each time the unit reports one and runs until the next. The Batches tab shows the selected batch's **Started**, **Start temp**, **Carbonation at batch start** and **Latest carbonation** (select **This batch** to fill in the carbonation values), then lists the 50 most recent batches with **Batch**, **Started**, **Start Temp** and **External IP** columns.
 
 ### Alerts
 
 The Alerts tab holds this device's alert rules. See [Alerts & Alert Rules](/dashboard/alerts-and-rules).
+
+## Sharing a view
+
+The address in your browser remembers what you are looking at: the tab, the time range, any **Custom** dates, the selected batch and any comparison batch. Reloading the page, or coming back to it with your browser's Back button, puts you where you were. Copy the address to send a colleague in your organization straight to the same chart.
 
 ## Reading the charts
 
@@ -103,7 +109,7 @@ The charts show the same values as the FizzWizz display, but with history, which
 
 1. **Temperature holds steady** at the setpoint for the product.
 2. **CO₂ supply stays flat**, at 30–40 psi.
-3. **Tank pressure follows target pressure.** Pressure control stays **On setpoint**, and carbonation climbs towards the style band, then levels off.
+3. **Tank pressure follows target pressure.** Pressure control stays **On setpoint**, and carbonation climbs into the shaded target band, then levels off.
 
 The FizzWizz recalculates the required pressure continuously as conditions change, so target pressure may shift slightly if temperature moves.
 
@@ -119,6 +125,8 @@ The FizzWizz recalculates the required pressure continuously as conditions chang
 | A gap in the data | Device went Stale or Offline | [Device Offline or Not Reporting](/troubleshooting/device-offline) |
 | Pressure sawtooth pattern | Vent or solenoid cycling unexpectedly | [By Symptom](/troubleshooting/by-symptom) |
 
+Several of these patterns also raise an automatic alert without any rule from you. See [Automatic alerts](/dashboard/alerts-and-rules#automatic-alerts).
+
 <Callout kind="tip">
 
 Check the firmware version before installing a [Foot Pressure Sensor](/setup/foot-pressure-sensor). It needs FizzWizz-BAE running **V2 code or newer**. If your unit runs earlier code, contact support about updating it.
@@ -130,20 +138,20 @@ Check the firmware version before installing a [Foot Pressure Sensor](/setup/foo
 The dashboard keeps each batch's history, so the device page doubles as a batch record:
 
 - Compare a finished batch's carbonation result with the pressure and temperature trace it was made under.
-- Find where an off-target batch's trace diverged from a good one by charting both with **This batch**.
+- Overlay an off-target batch on a good one with **Compare with** to see where it diverged.
 - Confirm a batch stayed on track through a device outage.
-- Keep tasting notes and process changes next to the data with **Notes**, and export the batch to CSV for your records.
+- Keep tasting notes and process changes next to the data with **Notes**, print a **Batch report** for your records, or export the batch to CSV.
 
 ## Related articles
 
 <Columns cols={3}>
+  <Card title="Batches, Targets & Reports" href="/dashboard/batches-and-targets" icon="flask-conical">
+  Targets, ETA, comparing and reports.
+  </Card>
   <Card title="Understanding Your Readings" href="/dashboard/readings-explained" icon="gauge">
   What each metric means.
   </Card>
   <Card title="Alerts & Alert Rules" href="/dashboard/alerts-and-rules" icon="bell">
   Set thresholds.
-  </Card>
-  <Card title="Monitoring Your Carbonation" href="/get-started/monitoring" icon="line-chart">
-  The full monitoring picture.
   </Card>
 </Columns>

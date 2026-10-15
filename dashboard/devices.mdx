@@ -1,11 +1,13 @@
 ---
 title: Devices & Health States
-description: Reading the BrewWizz device list — what each device card shows, how devices needing attention are flagged, and what Online, Stale and Offline mean.
+description: Reading the BrewWizz device list — what each device card shows, filters and search, the Board view and cellar screen, how devices needing attention are flagged, and what Online, Stale and Offline mean.
 ---
 
 ## Devices and health states
 
 The **Devices** page (titled **My Devices**) is the dashboard's home view. It shows every FizzWizz in your organization as a card with live gauges. The **Claim a device** card for adding a new unit is also on this page; see [Adding & Claiming a Device](/dashboard/adding-a-device).
+
+Next to the title, **Board view** opens a big-screen view of every tank (see [Board view and cellar screen](#board-view-and-cellar-screen)), and **Updated … ago** shows how fresh the page is.
 
 ## What each card shows
 
@@ -16,11 +18,30 @@ The **Devices** page (titled **My Devices**) is the dashboard's home view. It sh
 | **Gauges** | Temperature, Tank pressure (with a tick at the target pressure) and CO₂ supply |
 | **Carbonation** | The carbonation level the unit reports, and **Δ pressure**, the gap between tank and target pressure |
 | **Pressure control chip** | **On setpoint** (tank pressure within 0.05 bar / 0.7 psi of target), **Near setpoint** (within 0.15 bar / 2.2 psi), or **Off setpoint** |
-| **Carbonation band chip** | **Below target**, **In target band** or **Above target**, when a style band is set for the device |
-| **Last reading** | How long ago the device last reported, or **Never** |
+| **Carbonation target chip** | **Below target**, **In target band** or **Above target**, when the tank has a [carbonation target](/dashboard/batches-and-targets#setting-a-carbonation-target) |
+| **Time to target** | While the batch is below its target, an estimate such as **Reaches target in ~5 h (around 3:40 PM)** |
+| **Last reading** | How long ago the device last reported, such as **Last reading 3 min ago**, or **Never**. Hover over it (or press and hold on a phone) for the exact date and time. |
 | **Release device** | Removes the device from your organization. See [Releasing a device](/dashboard/adding-a-device#releasing-a-device). |
 
 Select a card to open the device's [detail page](/dashboard/device-detail). To rename a device, open it and select the pencil next to its name.
+
+## Filtering and searching
+
+Above the cards, filter buttons narrow the list. Each shows how many tanks it matches:
+
+| Filter | Shows |
+| --- | --- |
+| **All** | Every device |
+| **Needs attention** | Devices with a red or amber border (see below) |
+| **Carbonating** | Devices below their carbonation target that reported in the last 30 minutes |
+| **Ready** | Devices whose carbonation is inside their target |
+| **Offline** | Devices with no reading for 2 hours |
+
+A filter only appears when it matches at least one tank. When you have more than 6 devices, a **Search by name or serial** box appears too. It matches any part of a tank's name or serial number.
+
+If nothing matches, the page reads **No tanks match** and offers **Show all** to clear the filter and search.
+
+The chosen filter and search are kept in the page address, so reloading the page, or going back to it from a device, keeps your view. You can bookmark a filtered view, such as **Needs attention**, or send the link to a colleague in your organization.
 
 ## Devices that need attention
 
@@ -29,10 +50,41 @@ The page lists devices that need attention first, and shows a count such as **2 
 | Border | Means |
 | --- | --- |
 | **Red** | The device is Offline |
-| **Amber** | The device is Stale, tank pressure is **Off setpoint**, or carbonation is outside the style band |
+| **Amber** | The device is Stale, tank pressure is **Off setpoint**, or carbonation is outside its target |
 | **None** | Reporting normally and on target |
 
 Within each group, devices are sorted by name. The page updates live, so a card moves as soon as its state changes.
+
+## Board view and cellar screen
+
+**Board view** (the **Tank board** page) shows every tank as a large tile you can read from across the cellar. Open it with **Board view** next to the **My Devices** title, and go back with **All devices**.
+
+Each tile shows:
+
+- the tank name
+- one status word: **Offline**, **Stale**, **Below target**, **Above target**, **Off setpoint**, **Ready**, **In target band**, **On setpoint**, **Near setpoint** or **Online**, in that order of importance
+- the carbonation in large type, with **Target** and its range, or **No target set**
+- the temperature
+- the time-to-target estimate, or **Ready since** once the batch has held its target for 2 hours
+- **Last reading … ago**
+
+Tanks that need attention come first. Select a tile to open that tank. **Dark theme** switches to light text on a dark background, which is easier to read in a dim cellar.
+
+### Cellar screen
+
+Select **Cellar screen** to turn the board into a wall display, for example on a tablet mounted in the cellar.
+
+- The board fills the whole screen, with no menus. Where the browser allows it, it also goes full screen; select **Full screen** if it didn't.
+- The screen is kept awake. If the device doesn't allow that, the page shows **Screen may sleep on this device**; change the device's own sleep setting instead.
+- Tiles can't be tapped, so nobody opens a tank by accident.
+- The board refreshes itself at least once a minute, as well as updating live.
+- Select **Exit cellar screen**, or press **Esc**, to go back.
+
+<Callout kind="tip">
+
+The cellar screen and dark theme are kept in the page address. Bookmark the page while the cellar screen is showing, or add it to the tablet's Home Screen, and it opens straight into the cellar screen next time. The tablet still needs to be signed in to BrewWizz.
+
+</Callout>
 
 ## Device health states
 

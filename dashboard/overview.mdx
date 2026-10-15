@@ -5,7 +5,7 @@ description: "What the BrewWizz dashboard does, how it is laid out, the device h
 
 ## BrewWizz Dashboard at a glance
 
-The BrewWizz dashboard is where you monitor your FizzWizz units. It shows live gauges and charts for every tank, raises alerts when a reading goes out of range, and holds your subscription details. It runs in any modern browser at [dash.brewwizz.com](https://dash.brewwizz.com). You can also install it on your phone or computer as an app; see [Mobile App Overview](/mobile-app/overview).
+The BrewWizz dashboard is where you monitor your FizzWizz units. It shows live gauges and charts for every tank, tells you when a batch will reach its carbonation target, raises alerts when something goes wrong, and holds your subscription details. It runs in any modern browser at [dash.brewwizz.com](https://dash.brewwizz.com). You can also install it on your phone or computer as an app; see [Mobile App Overview](/mobile-app/overview).
 
 <Callout kind="info">
 
@@ -17,18 +17,20 @@ The BrewWizz Dashboard supports **FizzWizz devices only**. PacWizz devices do no
 
 | Menu item | What it is for |
 | --- | --- |
-| **Devices** | Your device list, with live gauges for every FizzWizz in your organization. This is also where you claim a new device. Open a device for charts, readings, batches, notes and alert rules. |
-| **Alerts** | Alert history. Acknowledge alerts here. |
-| **Notifications** | Choose how alerts reach you: email, SMS, or push notifications on this phone or computer. You can also set your display units here. |
+| **Devices** | Your device list, with live gauges for every FizzWizz in your organization, filters and search. This is also where you claim a new device, and where **Board view** opens a big-screen view of every tank. Open a device for charts, readings, batches, carbonation targets, notes and alert rules. |
+| **Alerts** | Alert history, and the on/off switches for automatic alerts. Acknowledge alerts here. |
+| **Notifications** | Choose how alerts reach you: email, SMS, or push notifications on this phone or computer. You can also turn on batch ready notices and the weekly summary email, and set your display units here. |
 | **API** | Create read-only [API keys](/dashboard/api-keys) for scripts and integrations. |
 | **Billing** | Your plan, device allowance and subscription status. |
 | **Help** | Opens this help center in a new tab. |
 
-The header also holds the alert bell, the unit selectors, your name and a sign-out button. On a phone, everything except the bell moves into the menu (☰) at the top right.
+The header also holds the alert bell, the unit selectors, your name and a sign-out button.
+
+On a phone, a tab bar along the bottom of the screen holds **Devices**, **Alerts** and **Notifications** (or **Upgrade**), plus **More** for API, Billing, Help, display units and **Sign out**. The alert bell stays at the top.
 
 <Callout kind="info">
 
-**Alerts**, **Notifications** and **API** depend on your plan. When your plan does not include them, **Upgrade** appears in their place. See [Understanding Your Plan](/dashboard/understanding-your-plan).
+**Alerts**, **Notifications** and **API** depend on your plan. When your plan does not include alerts, **Upgrade** appears instead. See [Understanding Your Plan](/dashboard/understanding-your-plan).
 
 </Callout>
 
@@ -46,18 +48,24 @@ See [Devices & Health States](/dashboard/devices) for what each state means in p
 
 ## Display units
 
-You can show temperature in **°C or °F**, pressure in **bar or psi**, and carbonation in **g/L or volumes** (1 volume = 1.96 g/L). Change them with the unit selectors in the header. They are also on the Notifications page and on each device page, under **Display units**.
+You can show temperature in **°C or °F**, pressure in **bar or psi**, and carbonation in **g/L or volumes** (1 volume = 1.96 g/L). Change them with the unit selectors in the header (in **More** on a phone). They are also on the Notifications page and on each device page, under **Display units**.
 
-Your choice is saved to your account, so it follows you to every browser and to the installed app. It applies to gauges, charts, alert thresholds, your alert messages and CSV exports. If you have not chosen units, the dashboard uses your organization's default.
+Your choice is saved to your account, so it follows you to every browser and to the installed app. It applies to gauges, charts, carbonation targets, alert thresholds, your alert messages, batch reports, the weekly summary and CSV exports. If you have not chosen units, the dashboard uses your organization's default.
 
 ## How readings flow
 
 1. Your FizzWizz sends a reading to BrewWizz over your network.
 2. BrewWizz checks it and stores it.
-3. BrewWizz compares it against that device's alert rules, if your plan includes them, and creates an alert when a threshold is crossed.
+3. BrewWizz compares it against that device's alert rules, if your plan includes them, and watches the tank's recent trend for [automatic alerts](/dashboard/alerts-and-rules#automatic-alerts). It creates an alert when something is wrong.
 4. Alerts go out by email, SMS or push, depending on your plan and your [notification preferences](/dashboard/notification-preferences).
 
-The dashboard updates live as new readings and alerts arrive, so you do not need to refresh the page.
+## Keeping the screen up to date
+
+- The dashboard updates live as new readings and alerts arrive, so you do not need to refresh the page.
+- The Devices page and each device page show **Updated … ago**, so you can see how fresh the values are. Hover over it for the exact time.
+- If you switch away from the dashboard for more than about 30 seconds, for example by locking your phone, it reloads as soon as you come back or your connection returns.
+- Times such as **Last reading 3 min ago** count up on their own. Hover over one (or press and hold on a phone) to see the exact date and time.
+- The browser tab shows which page you are on, such as **Alerts** or a tank's name, so several open tabs are easy to tell apart.
 
 ## Welcome banner and offline bar
 
@@ -68,12 +76,12 @@ The dashboard updates live as new readings and alerts arrive, so you do not need
 
 <Columns cols={3}>
   <Card title="Devices & Health States" href="/dashboard/devices" icon="monitor">
-  Read the device list and what each card shows.
+  Read the device list, filters and Board view.
   </Card>
   <Card title="Device Detail & Charts" href="/dashboard/device-detail" icon="line-chart">
-  Gauges, charts, readings, batches and notes for one device.
+  Gauges, charts, readings and alert rules for one device.
   </Card>
-  <Card title="Understanding Your Plan" href="/dashboard/understanding-your-plan" icon="credit-card">
-  Which features your plan includes.
+  <Card title="Batches, Targets & Reports" href="/dashboard/batches-and-targets" icon="flask-conical">
+  Carbonation targets, ETA, comparing and reports.
   </Card>
 </Columns>

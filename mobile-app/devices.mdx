@@ -1,11 +1,13 @@
 ---
 title: Device List
-description: Check all your FizzWizz units from your phone — what each device card shows, how devices needing attention come first, and claiming a device on the go.
+description: Check all your FizzWizz units from your phone — what each device card shows, how devices needing attention come first, filtering, the tank board, and claiming a device on the go.
 ---
 
 ## Your device list
 
-**Devices** is the first screen you see in BrewWizz. Each FizzWizz in your organization appears as a card, one under another, with devices that need attention at the top. Tap a card to open the [device's detail screen](/mobile-app/device-detail).
+**Devices** is the first screen you see in BrewWizz, and the first tab along the bottom. Each FizzWizz in your organization appears as a card, one under another on a phone (two across on a tablet, three on a wide screen), with devices that need attention at the top. Tap a card to open the [device's detail screen](/mobile-app/device-detail).
+
+Under the title, a line such as **2 devices need attention · shown first** counts the devices that are offline, stale, off their target pressure or outside their carbonation target.
 
 ## What each card shows
 
@@ -15,10 +17,11 @@ description: Check all your FizzWizz units from your phone — what each device 
 | **Health pill** | Online, Stale or Offline |
 | **Gauges** | Temperature, Tank pressure and CO₂ supply |
 | **Carbonation** | The current carbonation, and **Δ pressure**, the gap between tank and target pressure |
-| **Chips** | Pressure control (**On**, **Near** or **Off setpoint**) and, if a style band is set, **Below target**, **In target band** or **Above target** |
+| **Chips** | Pressure control (**On setpoint**, **Near setpoint** or **Off setpoint**) and, if a carbonation target is set, **Below target**, **In target band** or **Above target** |
+| **Time to target** | An estimate of when a carbonating tank will reach its target, when BrewWizz has enough readings to give one |
 | **Last reading** | How long ago the device last reported, or **Never** |
 
-A red border means the device is Offline. An amber border means it is Stale, off its target pressure, or outside its style band. For the details, see [Devices & Health States](/dashboard/devices).
+A red border means the device is Offline. An amber border means it is Stale, off its target pressure, or outside its carbonation target. For the details, see [Devices & Health States](/dashboard/devices).
 
 ## Health states
 
@@ -28,17 +31,37 @@ A red border means the device is Offline. An amber border means it is Stale, off
 | **Stale** | Yellow | 10–120 minutes ago |
 | **Offline** | Red | More than 120 minutes ago, or never |
 
-## Live updates
+## Filtering and searching
 
-The list updates by itself while BrewWizz is open. A card moves up or down as soon as its state changes, so you don't need to refresh.
+Above the cards, a row of chips narrows the list. Each shows how many devices match:
+
+- **All**
+- **Needs attention**
+- **Carbonating**: a carbonation target is set, the tank is still below it, and the device reported in the last 30 minutes
+- **Ready**: carbonation is inside the target band
+- **Offline**
+
+Chips with nothing in them are hidden. If you have more than 6 devices, a **Search by name or serial** box appears as well. If nothing matches, tap **Show all** to clear the filter.
+
+## Staying up to date
+
+The list updates by itself while BrewWizz is open. A card moves up or down as soon as its state changes. The **Updated … ago** line at the top right shows when the list last refreshed. If you switch to another app for 30 seconds or more, BrewWizz refreshes the list when you come back.
+
+## Board view and Cellar screen
+
+Tap **Board view** at the top of the Devices screen to open the **Tank board**: one large tile per tank, with devices that need attention first. Tap **All devices** to go back.
+
+- **Dark theme** switches the board to a dark background.
+- **Cellar screen** turns the board into a full-window display with nothing else on screen, for a tablet or phone propped up in the cellar. It keeps the screen awake while it is open and tries to go full screen where your device allows it. If the screen may still go to sleep, BrewWizz shows **Screen may sleep on this device**.
+- Tap **Exit cellar screen** (or press Esc on a keyboard) to leave.
 
 ## Claiming a device from your phone
 
-The **Claim a device** card is also on this screen. That makes it easy to claim a unit while you are standing at the tank: enter the 6-digit code from the FizzWizz display in **Claim code** and tap **Claim device**. See [Adding & Claiming a Device](/dashboard/adding-a-device).
+The **Claim a device** card is also on the Devices screen, above the cards. That makes it easy to claim a unit while you are standing at the tank: enter the 6-digit code from the FizzWizz display in **Claim code** and tap **Claim device**. See [Adding & Claiming a Device](/dashboard/adding-a-device).
 
 <Callout kind="alert">
 
-Each card has a **Release device** button, which removes the device from your organization **immediately, with no confirmation**. Take care not to tap it by accident when scrolling. If you do, claim the device again with the new code on its display.
+Each card has a **Release device** button. Tapping it opens a confirmation that names the device (for example **Release Tank 3?**). If you confirm with **Release**, the device leaves your organization right away and its alert rules are deleted. Its screen then shows a new claim code on its next report, which you can use to claim it again. Take care not to tap **Release device** by accident when scrolling.
 
 </Callout>
 

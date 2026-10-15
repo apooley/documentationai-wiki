@@ -1,17 +1,22 @@
 ---
 title: Alerts & Alert Rules
-description: Create per-device alert rules, understand severity and cooldowns, and review and acknowledge alerts in the alert history and the alert bell.
+description: Create per-device alert rules, use BrewWizz's automatic trend alerts, understand severity and cooldowns, and acknowledge alerts in the dashboard or from a push notification.
 ---
 
 ## Alerts & Alert Rules
 
-Alert rules watch a device's readings and raise an alert when a reading goes above or below a threshold you set. Alerts appear in the dashboard and, depending on your [notification preferences](/dashboard/notification-preferences), reach you by email, SMS or push.
+BrewWizz raises two kinds of alerts:
+
+- **Rule alerts** come from rules you set on a device: a reading goes above or below a threshold you choose.
+- **Automatic alerts** come from BrewWizz itself, which watches each tank's trend for problems like a cooling failure or a leak. They are marked **Automatic**.
+
+Both appear in the dashboard and, depending on your [notification preferences](/dashboard/notification-preferences), reach you by email, SMS or push.
 
 ## Prerequisites
 
 <Callout kind="alert">
 
-Your plan must include **alert rules** to create rules, and **in-app alerts** for the alert history and the alert bell. See [Understanding Your Plan](/dashboard/understanding-your-plan).
+Your plan must include **alert rules** to create rules, and **in-app alerts** for the Alerts page and the alert bell. See [Understanding Your Plan](/dashboard/understanding-your-plan).
 
 </Callout>
 
@@ -27,7 +32,7 @@ Rules belong to one device. To watch the same reading on several tanks, create a
   </Step>
   <Step title="Add a rule">
 
-  Select **+ Add Rule** and choose:
+  Select **Add Rule** and choose:
 
   - **Metric:** Temperature, Tank pressure, Target pressure, CO₂ supply or Carbonation
   - **Condition:** above or below
@@ -53,15 +58,27 @@ Useful starting rules: **CO₂ supply below** a little under your regulator sett
 
 </Callout>
 
-## How an alert is created
+## How a rule alert is created
 
 1. Your device sends a reading to BrewWizz.
 2. BrewWizz compares it with each active rule for that device. A rule fires only when the reading is strictly above or below the threshold; a reading exactly at the threshold does not trigger it.
 3. If the rule fired in the last 30 minutes, BrewWizz skips it (see [Cooldowns](#cooldowns)).
-4. Otherwise BrewWizz creates an alert. The alert is **Critical** if the reading is more than 50% beyond the threshold, and **Warning** otherwise.
-5. The alert appears in the alert history and the bell, and is sent to everyone in your organization by each notification channel they have turned on, in their own display units.
+4. Otherwise BrewWizz creates an alert. The alert is **Critical** when the reading is well past the threshold, and **Warning** otherwise (see [Severity](#severity)).
+5. The alert appears on the Alerts page and in the bell, and is sent to everyone in your organization by each notification channel they have turned on, in their own display units.
 
 If nobody in your organization has added an email channel, alert emails go to your organization's contact email address.
+
+### Severity
+
+A rule alert is **Critical** when the reading is at least this far past the threshold:
+
+| Metric | Critical when past the threshold by |
+| --- | --- |
+| Temperature | 3 °C (5.4 °F) or more |
+| Tank pressure, Target pressure, CO₂ supply | 0.5 bar (7.3 psi) or more |
+| Carbonation | 0.3 volumes (0.59 g/L) or more |
+
+Anything closer to the threshold is a **Warning**.
 
 ## Cooldowns
 
@@ -69,27 +86,58 @@ Each rule has a 30-minute cooldown. Once it fires, it does not fire again for 30
 
 If an alert could not be sent by any email, SMS or push channel, the rule can fire again after 5 minutes instead.
 
-## Alert history
+## Automatic alerts
 
-The **Alerts** page lists the alerts for your organization's devices, newest first.
+BrewWizz watches the trend of each tank's recent readings, not just one reading, and alerts you when it sees one of these problems. You don't need to set anything up: all four are on until you turn them off.
+
+| Alert | What it catches | Default level | Severity |
+| --- | --- | --- | --- |
+| **Temperature rising fast** | A cooling failure | The tank warms by 1 °C (1.8 °F) or more in an hour | Critical |
+| **Tank pressure falling** | A leak | Tank pressure drops by 0.15 bar (2.2 psi) or more in an hour, without you changing the setpoint | Critical |
+| **CO₂ supply running low** | A cylinder running out | CO₂ supply pressure falls by 0.2 bar (2.9 psi) or more in an hour | Warning |
+| **Carbonation stalled** | Carbonation that has stopped climbing | Carbonation is below the batch's target and rising by less than 0.01 volumes per hour for 3 hours | Warning |
+
+- A trend counts only when it is clear in the readings, so ordinary noise or a flat line doesn't set it off.
+- **Carbonation stalled** needs a [carbonation target](/dashboard/batches-and-targets#setting-a-carbonation-target) on the batch.
+- Only tanks that have reported in the last 30 minutes are checked. A tank that stops reporting is covered by [device offline notices](#device-offline-notices) instead.
+- Each problem raises **one** alert. If it clears and comes back within 2 hours of the last alert, BrewWizz treats it as the same problem and stays quiet.
+- Automatic alerts go to every notification channel your organization has turned on, the same as rule alerts. If BrewWizz can't deliver one within 6 hours, it is dropped rather than sent late.
+- On the Alerts page and in the bell they carry an **Automatic** badge, so you can tell them from your own rules. You acknowledge them in the same way.
+
+### Turning automatic alerts on or off
+
+Scroll to **Automatic alerts** at the bottom of the **Alerts** page. Each of the four alerts has its own switch, with a line that describes it in your display units. A switch applies to your whole brewery: turning one off stops that alert for every tank and everyone in your organization.
+
+The levels themselves are set by BrewWizz. If one of them doesn't suit your process, contact [Support & Parts](/get-started/support-and-parts).
+
+## The Alerts page
+
+The **Alerts** page lists your organization's alerts, newest first, with the severity, the tank, the time and what happened.
 
 - **Active**, the default, shows alerts nobody has acknowledged yet. **All** shows the full history, up to the latest 100.
-- Select **Acknowledge** to mark an alert as dealt with. Alerts cannot be deleted.
+- Select **Acknowledge** to mark an alert as dealt with. Acknowledging is shared: it clears the alert for everyone in your organization. Alerts cannot be deleted.
 - When there is nothing to show, the page reads **All clear! No active alerts.** or **No alerts have been triggered yet.**
-
-The history can also include **Critical** alerts you did not set up. BrewWizz watches every device against its own safety limits, and alerts BrewWizz support when a reading crosses one.
+- The page updates live as alerts arrive, and reloads when you come back to it after a while away.
 
 ## The alert bell
 
 The bell in the header shows how many alerts are unacknowledged, up to **99+**. Select it to see the five most recent; select **✓** next to one to acknowledge it, or **View all alerts** to open the Alerts page. The bell updates live as alerts arrive.
 
+## Acknowledging from a push notification
+
+On Android phones and on desktop browsers, an alert's push notification has an **Acknowledge** button. Select it and BrewWizz opens, acknowledges the alert and shows **Thanks - it's marked as seen for everyone on your account.** If you are signed out, you sign in first and are brought back to finish.
+
+iPhone and iPad notifications don't show the button. Tap the notification to open the tank, then acknowledge the alert on the Alerts page or from the bell.
+
+To get push notifications, see [Push notifications](/dashboard/notification-preferences#push-notifications).
+
 ## Device offline notices
 
-Notices that a device has stopped reporting are not alert rules. You turn them on per notification channel in [Notification Preferences](/dashboard/notification-preferences). They are sent by email, SMS or push only, and do not appear in the alert history or the bell.
+Notices that a device has stopped reporting are not alert rules. You turn them on per notification channel in [Notification Preferences](/dashboard/notification-preferences). They are sent by email, SMS or push only, and do not appear on the Alerts page or in the bell.
 
 ## If your plan doesn't include alert rules
 
-The device's Alerts tab shows **No alert rules on this device. Upgrade on billing to configure thresholds.** with a **View billing plans** button.
+The device's Alerts tab shows **No alert rules on this device. Upgrade on billing to configure thresholds.** with a **Go to billing** button.
 
 <Callout kind="info">
 
@@ -108,6 +156,7 @@ Check these first:
 - The reading actually went past the threshold, in the units you entered it in.
 - The rule has not fired in the last 30 minutes.
 - The device is reporting. A Stale or Offline device sends no readings to check.
+- For an automatic alert: its switch under **Automatic alerts** is on, and the same problem hasn't already alerted in the last 2 hours.
 
 For delivery problems, such as an alert that appears in the dashboard but not on your phone, see [Troubleshooting](/dashboard/troubleshooting).
 

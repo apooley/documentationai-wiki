@@ -34,9 +34,12 @@ A device is **Offline** when it has not reported for more than 2 hours, and **St
 | Problem | What to do |
 | --- | --- |
 | You missed the claim code on the display | Contact [Support & Parts](/get-started/support-and-parts) with the serial number for a new code |
-| The code is rejected | Check for a typo. The code may have expired (after 30 days), or the device may already belong to an organization. |
+| *That code isn't right* | Check for a typo and try again |
+| *That code has expired* | Codes last 30 days. Wait for the unit to report again and use the new code on its display. |
+| *That device already belongs to an organization* | Someone has already claimed it. Contact support with the serial number if it should be yours. |
 | *Your subscription covers N device(s)* | Add a device to your subscription in the billing portal, or release one you no longer use |
-| A device disappeared from your list | Someone in your organization may have selected **Release device**. Claim it again with the new code on its display. |
+| A device disappeared from your list | Someone in your organization may have released it. Claim it again with the new code on its display, then set up its alert rules again, because releasing deletes them. |
+| A device is missing from the list, but others show | Check the filter buttons and search box above the cards. Select **All**, or **Show all** if nothing matches. |
 
 See [Adding & Claiming a Device](/dashboard/adding-a-device).
 
@@ -50,6 +53,27 @@ See [Adding & Claiming a Device](/dashboard/adding-a-device).
 4. **Cooldown.** A rule does not fire again for 30 minutes after it fires.
 5. **The device is reporting.** A Stale or Offline device sends no readings to check.
 6. **Subscription is active**, or within its 30-day grace period.
+
+For **automatic alerts**, also check that the alert's switch is on under **Automatic alerts** on the Alerts page, that the tank reported in the last 30 minutes, and that the same problem hasn't already alerted in the last 2 hours. **Carbonation stalled** needs a carbonation target on the batch. See [Automatic alerts](/dashboard/alerts-and-rules#automatic-alerts).
+
+## No time-to-target estimate, or a batch isn't marked ready
+
+1. **The batch has a carbonation target.** Without one, there is no estimate and no ready time. See [Setting a carbonation target](/dashboard/batches-and-targets#setting-a-carbonation-target).
+2. **Read the message.** **ETA after a few more readings**, **Not rising: no ETA**, **Too unsteady for an ETA** and **Rising slowly** each explain why there is no time yet. See [Time to target and ready](/dashboard/batches-and-targets#time-to-target-and-ready).
+3. **Ready takes 2 hours in target.** A batch is marked ready only after its carbonation has stayed inside the target for 2 hours. Changing the target restarts this.
+4. **Ready notices are opt-in.** Tick **Also tell me when a batch is ready** on a channel in [Notification Preferences](/dashboard/notification-preferences#batch-ready-notices).
+
+## No Acknowledge button on a push notification
+
+The **Acknowledge** button appears on Android phones and on computers. iPhone and iPad notifications don't show it. Tap the notification to open BrewWizz, then acknowledge the alert on the Alerts page or from the bell.
+
+## Weekly summary email not arriving
+
+1. **It is turned on.** The weekly summary is off until you turn it on yourself under **Weekly summary email** on the Notifications page. It goes out on Mondays, covering the week before.
+2. **Your sign-in email hasn't changed.** If it has, the card shows **Paused: your sign-in email changed.** Turn it on again.
+3. **You didn't unsubscribe.** Using the link in an earlier email turns it off. Turn it back on from the Notifications page.
+4. **Check your spam or junk folder** for the address shown on the card.
+5. **Your subscription is active.** The weekly summary stops while the dashboard is locked.
 
 ## Alert shows in the dashboard but no notification arrives
 
@@ -74,11 +98,15 @@ See [Adding & Claiming a Device](/dashboard/adding-a-device).
 
 ## Upgrade appears in the menu
 
-**Upgrade** replaces a menu item when your plan does not include that feature. See [Understanding Your Plan](/dashboard/understanding-your-plan).
+**Upgrade** replaces **Alerts** and **Notifications** when your plan does not include in-app alerts, or when your organization has no active subscription. **API** is simply hidden when your plan does not include API access. See [Understanding Your Plan](/dashboard/understanding-your-plan).
 
 ## Values are in the wrong units
 
-Units are a personal setting. Change them with the unit selectors in the header, or under **Display units** on a device page. See [Display units](/dashboard/overview#display-units).
+Units are a personal setting. Change them with the unit selectors in the header (in **More** on a phone), on the Notifications page, or under **Display units** on a device page.
+
+## Values look out of date
+
+Check **Updated … ago** at the top of the Devices page or device page. The dashboard reloads by itself when you come back to it after a while away, or when your connection returns. If it still looks old, reload the page. If **Last reading** is old too, the device itself has stopped reporting; see [Device shows Offline or no readings](#device-shows-offline-or-no-readings). See [Display units](/dashboard/overview#display-units).
 
 ## Buttons are greyed out
 
