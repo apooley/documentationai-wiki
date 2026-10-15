@@ -1,23 +1,26 @@
 ---
 title: Device Detail
-description: Check one FizzWizz from your phone — gauges, charts, the latest reading, batch notes and alert rules on a single scrolling screen.
+description: Check one FizzWizz from your phone — gauges, charts, readings as cards, batch notes and alert rules, with full-screen charts and a two-column layout on tablets.
 ---
 
 ## Open a device
 
-Tap a card on the **Devices** screen, or tap a push notification about a device, to open its detail screen. Everything from the desktop [device page](/dashboard/device-detail) is here, stacked into one scrolling screen.
+Tap a card on the **Devices** screen, or tap a push notification about a device, to open its detail screen. Everything from the desktop [device page](/dashboard/device-detail) is here, laid out to fit your screen.
+
+- **On a phone**, everything stacks into one scrolling screen.
+- **On a tablet** (about 768 pixels wide and up), the screen splits in two. A narrow column on the left holds the device and batch cards, and the latest reading, tabs and charts fill the rest.
 
 ## What's on the screen
 
-From top to bottom:
+From top to bottom on a phone:
 
 | Section | What it shows |
 | --- | --- |
-| **Header** | **Back to devices**, the device name, **Live**, and the health state |
+| **Header** | **Back to devices**, the device name, **Updated … ago**, **Live** (only while the device is online), and the health state |
 | **Gauges** | Temperature, Carbonation, CO₂ supply and Tank pressure. They dim with **Offline · showing values … ago** when the device is not reporting. |
-| **Summary cards** | Expected carbonation (T+P), Pressure control, Style band and rates |
+| **Summary cards** | Expected carbonation (T+P), Pressure control, Carbonation target and the carbonation and tank pressure rates |
 | **Device card** | Rename with the pencil, serial number, firmware, network, last reading, and **Display units** |
-| **Batch card** | The current batch, its name, start time and start temperature |
+| **Batch card** | The current batch, its name, start date and start temperature, its carbonation target, and a link to the batch report |
 | **Notes** | Notes for the batch. Add one with **Add a note** and **Add note**. |
 | **Latest reading** | The most recent values from the unit |
 | **Tabs** | **Charts**, **Readings**, **Batches** and **Alerts** |
@@ -28,12 +31,26 @@ To answer "what is it doing right now?", the gauges and the Pressure control car
 
 </Callout>
 
-## Charts and readings on a phone
+## Staying up to date
 
-- Pick a time range: **1h**, **24h**, **7d**, **30d**, **This batch** or **Custom**. The 1h and 24h views update live.
-- Drag the zoom bar under the charts to look closer at part of the range, and tap **Reset zoom** to go back.
-- The **Readings** table is wider than a phone screen, so swipe sideways to see every column, or turn your phone to landscape.
+New readings appear on the gauges and the latest reading by themselves while the screen is open. If you leave BrewWizz for 30 seconds or more and come back, or your connection returns, the screen reloads its data on its own, so you never need to pull down to refresh. The **Updated … ago** line under the device name shows how fresh it is.
+
+## Charts on a phone
+
+- Pick a time range: **1h**, **24h**, **7d**, **30d**, **This batch** or **Custom**. **This batch** is greyed out until the device has recorded a batch. **Custom** asks for a start and end time and an **Apply** tap.
+- Switch the chart style with the line, area and bar buttons, or tap **All Metrics** to overlay everything on one chart.
+- Drag the handles on the zoom bar above the charts to look closer at part of the range, and tap **Reset zoom** to go back.
 - **Export CSV** works on a phone, but large exports are easier on a computer.
+
+### Full-screen charts
+
+Every chart has an **expand** button in its top-right corner. Tap it to open the chart full screen. It fills the whole display in portrait and landscape, so turn your phone sideways for the widest view. Tap **Close** (or press Esc on a keyboard) to go back to the page.
+
+## Readings as cards
+
+On the **Readings** tab, a phone shows each reading as its own card instead of a wide table. A card shows the time, **Carbonation**, **Tank P** (with its target), **Temp** and **CO₂ supply**, plus any flags. There is no sideways swiping. Use the **Prev** and **Next** buttons and the **Rows** menu at the bottom to move through older readings.
+
+A tablet shows cards too when the screen is narrow, and the full table (with **Time**, **Temp**, **Tank P**, **Target P**, **CO₂**, **Carbonation** and **Flags** columns) when there is room for it.
 
 For what each chart and value means, see [Device Detail & Charts](/dashboard/device-detail) and [Understanding Your Readings](/dashboard/readings-explained).
 
@@ -43,7 +60,7 @@ The phone is the handiest place to add batch notes, such as a cylinder change, a
 
 ## Alert rules
 
-On the **Alerts** tab, tap **+ Add Rule** and choose a metric, **above** or **below**, and a threshold in your display units, then tap **Create**. Use a rule's switch to pause it, or its delete button to remove it. See [Alerts & Alert Rules](/dashboard/alerts-and-rules).
+On the **Alerts** tab, tap **Add Rule**, choose a **Metric**, **above** or **below**, and a **Threshold** in your display units, then tap **Create**. Use a rule's switch to pause it, or its delete button to remove it (BrewWizz asks you to confirm). See [Alerts & Alert Rules](/dashboard/alerts-and-rules).
 
 ## Related Articles
 

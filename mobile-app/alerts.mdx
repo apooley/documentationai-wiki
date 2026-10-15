@@ -1,6 +1,6 @@
 ---
 title: Alerts
-description: Check and acknowledge BrewWizz alerts from your phone with the alert bell and the Alerts screen, and get alerts as push notifications when the app is closed.
+description: Check and acknowledge BrewWizz alerts from your phone with the alert bell and the Alerts screen, and get alerts as push notifications, with an Acknowledge button on Android and computers.
 ---
 
 ## Alerts on your phone
@@ -8,12 +8,12 @@ description: Check and acknowledge BrewWizz alerts from your phone with the aler
 When an [alert rule](/dashboard/alerts-and-rules) fires, the alert shows up in three places on your phone:
 
 - **The alert bell**, at the top of every screen
-- **The Alerts screen**, in the menu (☰)
+- **The Alerts screen**, from the **Alerts** tab along the bottom
 - **A push notification**, if you have [turned push on](/mobile-app/notifications) for this phone, even when BrewWizz is closed
 
 <Callout kind="info">
 
-The bell and the Alerts screen need **in-app alerts** on your plan, and push needs **push notifications**. If **Alerts** isn't in the menu, see [Understanding Your Plan](/dashboard/understanding-your-plan).
+The bell and the Alerts screen need **in-app alerts** on your plan, and push needs **push notifications**. If the **Alerts** tab isn't there, see [Understanding Your Plan](/dashboard/understanding-your-plan).
 
 </Callout>
 
@@ -26,16 +26,42 @@ Tap the bell to see the five most recent unacknowledged alerts. Tap **✓** next
 ## The Alerts screen
 
 - **Active**, the default, shows alerts that haven't been acknowledged. **All** shows the full history, up to the latest 100.
-- Each alert shows its severity (**Warning** or **Critical**), the device, the reading compared with the rule's threshold, and when it fired.
+- Each alert shows its severity (**Warning** or **Critical**), what happened and the reading compared with the rule's threshold, when it fired, and the device's serial number. Tap the serial number to open that device.
 - Tap **Acknowledge** to mark an alert as dealt with. Acknowledged alerts stay in the history.
+- Acknowledging an alert marks it as seen for everyone on your account, not just you.
 
 When there is nothing to show, the screen reads **All clear! No active alerts.** or **No alerts have been triggered yet.**
+
+If you leave BrewWizz and come back after 30 seconds or more, the Alerts screen and the bell reload on their own.
 
 ## Push notifications
 
 A push notification names the device, the reading and the threshold, in your display units. Tap it to open that device's detail screen, so you can check its gauges and charts straight away.
 
-If you have turned on **Also tell me when a device stops reporting for 2 hours** for push, you also get a **Device stopped reporting** notification when a unit goes quiet. These notices don't appear on the Alerts screen or in the bell.
+BrewWizz sends three kinds of push notification:
+
+| Notification | When |
+| --- | --- |
+| **The alert itself** | One of your alert rules fires |
+| **Device stopped reporting** | A device has sent nothing for 2 hours, if you have ticked **Also tell me when a device stops reporting for 2 hours** for this phone |
+| **Batch ready** | A batch has stayed in its carbonation target for 2 hours, if you have ticked **Also tell me when a batch is ready** for this phone |
+
+The last two don't appear on the Alerts screen or in the bell.
+
+## Acknowledging from a notification
+
+Alert notifications can carry an **Acknowledge** button, so you can deal with an alert without hunting for it.
+
+| Where | What you see |
+| --- | --- |
+| **Android and computers** | **Acknowledge** appears as a button on the notification. On Android you may need to expand the notification first. Tapping it opens BrewWizz on a page that acknowledges the alert for you. Tapping the notification itself opens the device's screen instead. |
+| **iPhone and iPad** | iOS doesn't show the button. Tapping the notification opens that device's screen. Use the bell or the **Alerts** tab to acknowledge it. |
+
+Things to know about the **Acknowledge** button:
+
+- **You must be signed in.** BrewWizz doesn't acknowledge anything silently in the background. If you're signed out, it asks you to sign in first and then goes straight to the alert.
+- The page then tells you what happened: **Alert acknowledged**, **Already acknowledged** (with the time someone else did it), **Alert not found** (it belongs to another account or was removed), or **Couldn't acknowledge this alert** with a **Try again** button. **View tank** and **All alerts** buttons take you onward.
+- Only alert notifications have the button. **Device stopped reporting** and **Batch ready** notifications don't.
 
 ## Related Articles
 

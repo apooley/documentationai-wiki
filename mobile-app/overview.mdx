@@ -10,7 +10,7 @@ The BrewWizz mobile app is the [BrewWizz dashboard](/dashboard/overview), instal
 Installing BrewWizz gives you:
 
 - **Its own icon.** BrewWizz opens full screen, like any other app.
-- **Push notifications.** Alerts, and notices that a device has stopped reporting, appear on your phone even when BrewWizz is closed.
+- **Push notifications.** Alerts, and notices that a device has stopped reporting or a batch is ready, appear on your phone even when BrewWizz is closed.
 - **Automatic updates.** New versions arrive by themselves, with no app store involved.
 
 <Callout kind="info">
@@ -29,18 +29,22 @@ On iPhone and iPad, push notifications only work after you add BrewWizz to your 
 
 You also need an internet connection. BrewWizz shows live data, so it does not work offline. See [Offline](#offline).
 
-## Getting around on a phone
+## Getting around
 
-At the top of every screen are the BrewWizz logo, the alert bell and the menu button (☰). The menu holds:
+On a phone held upright, BrewWizz has a **bar of tabs along the bottom** of the screen:
 
-- **Devices**: your device list
-- **Alerts**, **Notifications** and **API**, depending on your plan (or **Upgrade** if your plan doesn't include them)
-- **Billing**
-- **Help**: opens this help center
-- your unit selectors (temperature, pressure, carbonation)
-- **Sign out**
+| Tab | What it opens |
+| --- | --- |
+| **Devices** | Your [device list](/mobile-app/devices) |
+| **Alerts** | The [Alerts screen](/mobile-app/alerts) |
+| **Notifications** | [Push](/mobile-app/notifications), email and SMS preferences, display units and the weekly email |
+| **More** | **API** (if your plan includes it), **Billing**, **Help**, your unit selectors and **Sign out** |
 
-The screens are the same as on the desktop dashboard, laid out to fit your screen.
+The **alert bell**, with its red count of unacknowledged alerts, sits at the top of every screen.
+
+Which tabs you see depends on your plan. **Alerts** and **Notifications** only appear if your plan includes them, and if your plan needs upgrading a single **Upgrade** tab takes their place. See [Understanding Your Plan](/dashboard/understanding-your-plan).
+
+On a tablet, a computer, or a phone held sideways (anything wider than about 640 pixels), the tabs move to a bar along the top with the same pages, plus **Billing**, **Help**, the unit selectors and a sign-out button.
 
 ## Device health states
 
@@ -52,9 +56,20 @@ The same health states appear on every screen, on your phone and on the desktop:
 | **Stale** | Yellow | 10–120 minutes ago | Reporting intermittently |
 | **Offline** | Red | More than 120 minutes ago, or never | Not reporting; needs attention |
 
-## Live updates
+## Staying up to date
 
-While BrewWizz is open, readings, health states and new alerts appear by themselves without you refreshing. When BrewWizz is closed, [push notifications](/mobile-app/notifications) tell you about alerts.
+While BrewWizz is open, readings, health states and new alerts appear by themselves without you refreshing. The Devices screen, each device screen and the tank board show a quiet **Updated 2 min ago** line near the top so you can see how fresh the data is.
+
+When you switch away and come back, BrewWizz catches up for you. If you were away for 30 seconds or more, or your connection returns, it reloads the data on its own when you reopen it. You never need to pull down to refresh.
+
+When BrewWizz is closed, [push notifications](/mobile-app/notifications) tell you about alerts.
+
+## Made for a bigger screen, too
+
+- **Readings as cards.** On a phone, the **Readings** tab on a device shows each reading as a compact card instead of a wide table. See [Device Detail](/mobile-app/device-detail).
+- **Full-screen charts.** Every chart has an expand button that opens it full screen, in portrait or landscape.
+- **Two columns on a tablet.** From tablet width, the device screen splits into an information column and a charts column.
+- **Tank board and Cellar screen.** The **Board view** link on the Devices screen opens a large-tile view of all your tanks. **Cellar screen** turns it into a wall display that keeps the screen awake. See [Device List](/mobile-app/devices#board-view-and-cellar-screen).
 
 ## Offline
 

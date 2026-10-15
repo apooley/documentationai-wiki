@@ -51,7 +51,7 @@ Send the key as a bearer token with each request:
 
 ```bash
 curl -H "Authorization: Bearer bw_live_YOUR_KEY" \
-  https://bw-dash.allendale.biz/functions/v1/customer-api/v1/devices
+  https://dash.brewwizz.com/functions/v1/customer-api/v1/devices
 ```
 
 | Endpoint | Returns |
@@ -62,7 +62,7 @@ curl -H "Authorization: Bearer bw_live_YOUR_KEY" \
 | `GET /v1/devices/{serial}/readings` | Individual readings, up to 7 days per request |
 | `GET /v1/devices/{serial}/series` | Readings grouped into time buckets, up to 31 days per request, for charts |
 | `GET /v1/devices/{serial}/batches` | The device's batches |
-| `GET /v1/alert-events` | Your organization's alert history |
+| `GET /v1/alert-events` | Your organization's alert history, including automatic alerts |
 
 Each key can make up to 120 requests per minute. For the full request and response details, contact [Support & Parts](/get-started/support-and-parts).
 

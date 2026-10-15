@@ -13,7 +13,7 @@ These are problems specific to BrewWizz on a phone or as an installed app. For d
 | --- | --- |
 | No **Add to Home Screen** option on iPhone or iPad | Open BrewWizz in **Safari**, tap **Share**, and scroll down the list. If it's still missing, update to iOS or iPadOS 16.4 or later. |
 | No **Install BrewWizz** button on Android or a computer | Your browser hasn't offered installation, or BrewWizz is already installed. Use the browser menu and choose **Install app** or **Add to Home screen**, or check your home screen or app list for the icon. |
-| The install card is missing from Notifications | You're already using the installed app, so there's nothing to install. |
+| The install card is missing from Notifications | You're already using the installed app, so there's nothing to install. The card is also part of the push card, so it doesn't appear if your plan doesn't include push. |
 
 ## Asked to sign in again after installing
 
@@ -26,14 +26,23 @@ On iPhone and iPad, the Home Screen app keeps its own sign-in, separate from Saf
 3. **Too many sign-in attempts** means you need to wait a few minutes before trying again.
 4. If you've never had a BrewWizz account, ask BrewWizz for an invitation at [info@brewwizz.com](mailto:info@brewwizz.com).
 
+## "Your session expired. Please sign in again."
+
+Your sign-in ran out, for example after a long time away. Sign in again. Push notifications are not removed when this happens, so they keep arriving.
+
 ## Push notifications don't arrive
 
 1. Check the **Push notifications on this device** card on the Notifications page. It says **On** when push is working.
 2. Check that the **This device** push channel's switch is on.
 3. Check Focus, Do Not Disturb and battery saver on your phone.
-4. Check that you have [alert rules](/dashboard/alerts-and-rules) on your devices. Push only delivers alerts that rules create.
+4. Check that you have [alert rules](/dashboard/alerts-and-rules) on your devices. Push only delivers alerts that rules create, plus the **Device stopped reporting** and **Batch ready** notices if you ticked them.
+5. On iPhone, make sure you opened BrewWizz from its Home Screen icon, and that **Settings → Notifications → BrewWizz** is allowed.
 
 For blocked notifications and other messages, see [Push Notifications](/mobile-app/notifications#troubleshooting).
+
+## There's no Acknowledge button on a notification
+
+The button only appears on alert notifications, and only on Android and computers. On an iPhone or iPad, tapping the notification opens the tank, and you acknowledge from the bell or the **Alerts** tab. See [Alerts](/mobile-app/alerts#acknowledging-from-a-notification).
 
 ## Alerts arrive on a phone I no longer use
 
@@ -45,9 +54,17 @@ Your phone has lost its connection. The screen still shows what was loaded befor
 
 If you open BrewWizz with no connection at all, it can't show any device data. Reconnect and open it again.
 
-## Screen looks out of date, or a new feature is missing
+## Screen looks out of date
 
-BrewWizz updates automatically, but the new version takes effect the next time you open the app. Close BrewWizz completely (swipe it away in the app switcher) and open it again.
+BrewWizz refreshes on its own when you return to it after 30 seconds or more away, and the **Updated … ago** line near the top shows how fresh it is. If the line shows a long time ago, check you are online and close BrewWizz completely (swipe it away in the app switcher), then open it again.
+
+## A new feature is missing
+
+BrewWizz updates automatically, but the new version takes over the next time BrewWizz starts. Close BrewWizz completely (swipe it away in the app switcher) and open it again.
+
+## The Alerts or Notifications tab is missing
+
+Those tabs depend on your plan. If your plan needs upgrading, an **Upgrade** tab appears instead. See [Understanding Your Plan](/dashboard/understanding-your-plan).
 
 ## BrewWizz shows only Billing
 
