@@ -1,0 +1,128 @@
+---
+title: "Team: Inviting and Removing People"
+description: Managers can invite teammates to the BrewWizz dashboard, resend invitations, make someone a manager or a member, and remove people who have left. Includes the 10-person limit and the last-manager rule.
+---
+
+## Team: inviting and removing people
+
+The **Team** page is where you add colleagues to your brewery's BrewWizz dashboard and remove people who have left. You no longer need to email BrewWizz to do it.
+
+<Callout kind="alert">
+
+Only **managers** see the **Team** page. If you are a member and need someone added or removed, ask a manager in your brewery. If nobody can, contact [Support & Parts](/get-started/support-and-parts).
+
+</Callout>
+
+## Managers and members
+
+Everyone in your brewery sees the same devices, alerts, batch notes and billing. The difference is who can manage people and API keys.
+
+| | Manager | Member |
+| --- | --- | --- |
+| See devices, readings, alerts and billing | Yes | Yes |
+| Claim devices, name batches, set alert rules | Yes | Yes |
+| Set their own notification channels and units | Yes | Yes |
+| Open the **Team** page, invite, remove and change roles | Yes | No |
+| Create and revoke [API keys](/dashboard/api-keys) | Yes | No |
+
+Your brewery can have more than one manager. Everyone you invite starts as a member, and you can make them a manager afterwards.
+
+## Inviting someone
+
+<Steps>
+  <Step title="Open Team">
+
+  Select **Team** in the menu.
+
+  </Step>
+  <Step title="Enter their details">
+
+  Enter the person's **Name** and **Email address**, then select **Invite**.
+
+  </Step>
+  <Step title="They accept">
+
+  BrewWizz emails them an invitation that names your brewery and you. When they select the link and choose a password, they are signed in. See [Accepting your invitation](/dashboard/signing-in#accepting-your-invitation).
+
+  </Step>
+</Steps>
+
+An invited person who hasn't accepted yet appears in the list marked **Pending**. Once they have set their password, the label goes away.
+
+<Callout kind="info">
+
+You never set or change another person's password or email address. They choose their own password when they accept. If someone's email address changes, remove them and invite the new address.
+
+</Callout>
+
+## Resending an invitation
+
+If the email didn't arrive, or the person lost it, select **Resend invite** next to their name. It is only available while they are **Pending**. Ask them to check their spam or junk folder first; see [An invitation didn't arrive](/dashboard/troubleshooting#an-invitation-didnt-arrive-or-i-cant-invite-someone).
+
+## Changing someone's role
+
+Select **Make manager** next to a member, or **Make member** next to a manager. The change takes effect straight away, though the person may need to reload the page to see the **Team** page appear or disappear.
+
+### The last manager rule
+
+Your brewery must always have at least one manager. You can't remove the last manager or make them a member. To hand over, first make the new person a manager, then change or remove the old one.
+
+## Removing someone
+
+<Steps>
+  <Step title="Select Remove">
+
+  Select **Remove** next to the person and read the confirmation.
+
+  </Step>
+  <Step title="Decide about API keys">
+
+  If the person created any [API keys](/dashboard/api-keys), the box **Also revoke the API keys this person created** lets you revoke those keys at the same time. Tick it if they had access to your data that you don't want to keep, or if you aren't sure. Untick it if a script of yours still depends on a key they made.
+
+  </Step>
+  <Step title="Confirm">
+
+  Confirm the removal. The person can no longer sign in or see your brewery's data.
+
+  </Step>
+</Steps>
+
+What removal does:
+
+- Deletes their BrewWizz login, so their access to the dashboard stops immediately.
+- Removes their personal notification channels, including email, SMS and push, and their [weekly summary](/dashboard/notification-preferences#weekly-summary-email) subscription. Alerts that were already waiting to be sent to them are skipped.
+- Does **not** delete your devices, readings, batches or alert rules, which belong to your brewery.
+
+<Callout kind="alert">
+
+Removing a person can't be undone. To bring them back, invite them again. They will need to set a password again, and their old notification channels will not return.
+
+</Callout>
+
+## The 10-person limit
+
+A brewery can have up to **10 people**, counting people who are still **Pending**. When you reach the limit, **Invite** is unavailable and the page says so. Remove someone who has left, or contact [Support & Parts](/get-started/support-and-parts) if you need more.
+
+To protect your account, a manager can send up to 10 invitations a day, and each brewery up to 10 a day in total. Resends count towards the same limit.
+
+## Invitations need an active subscription
+
+You can only invite people while your brewery's subscription is active, because new people would have nothing to see otherwise. You can still remove people and change roles at any time. See [Billing](/dashboard/billing).
+
+## Notifications are personal
+
+Inviting someone never signs them up for alerts or the weekly summary. Each person chooses their own channels and turns the weekly summary on themselves. See [Notification Preferences](/dashboard/notification-preferences).
+
+## Related articles
+
+<Columns cols={3}>
+  <Card title="Signing In & Account Setup" href="/dashboard/signing-in" icon="log-in">
+  Accept an invitation and sign in.
+  </Card>
+  <Card title="API Keys" href="/dashboard/api-keys" icon="key">
+  Managers create and revoke keys.
+  </Card>
+  <Card title="Troubleshooting" href="/dashboard/troubleshooting" icon="help-circle">
+  An invitation that didn't arrive.
+  </Card>
+</Columns>
